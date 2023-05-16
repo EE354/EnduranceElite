@@ -11,6 +11,9 @@ const app = express();
 app.use(cors());
 app.use(morgan('tiny'));
 
+//Set routes
+app.get('/', (req, res) => { res.send('Hello World!') });
+
 
 //Listen on the port
 app.listen(port, () => console.log(`Express app listening on port ${port}!`));
