@@ -1,9 +1,11 @@
 <script>
 	import NavBar from './NavBar.svelte'
+	import StyleExample from './StyleExample.svelte'
 </script>
 
 <main>
 	<NavBar/>
+	<!-- <StyleExample/> -->
 </main>
 
 <style>

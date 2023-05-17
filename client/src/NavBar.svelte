@@ -78,19 +78,9 @@ window.onload = function() {
     }
 
     .dropdown-menu {
-        /* Drop-down */
-
-
         box-sizing: border-box;
-        /* Auto layout */
-
-
         background: rgba(0, 0, 0, 0.04);
-        /* Black */
-
         border-bottom: 1px solid #000000;
-
-        /* Inside auto layout */
 
         flex: none;
         order: 2;
@@ -100,7 +90,6 @@ window.onload = function() {
     }
 
     a {
-
         width: 100px;
         height: 24px;
 
@@ -109,20 +98,15 @@ window.onload = function() {
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
-        /* identical to box height, or 24px */
 
         display: flex;
         align-items: center;
         text-align: center;
         letter-spacing: -0.03em;
 
-        /* Black */
-
         color: #000000;
 
         opacity: 0.9;
-
-        /* Inside auto layout */
 
         flex: none;
         order: 1;
@@ -146,10 +130,6 @@ window.onload = function() {
         }
 
         .headerLeft {
-            /* Headers */
-
-            /* Auto layout */
-
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -159,9 +139,6 @@ window.onload = function() {
 
             width: 460px;
             height: 32px;
-
-
-            /* Inside auto layout */
 
             flex: none;
             order: 0;
@@ -170,10 +147,6 @@ window.onload = function() {
         }
 
         .headerRight {
-            /* Headers */
-
-            /* Auto layout */
-
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -184,9 +157,6 @@ window.onload = function() {
             width: 460px;
             height: 32px;
 
-
-            /* Inside auto layout */
-
             flex: none;
             order: 1;
             flex-grow: 1;
@@ -194,7 +164,6 @@ window.onload = function() {
         }
 
         .dropdown-menu {
-            
             flex-direction: row;
             align-items: flex-start;
             padding: 32px 80px 48px 170px;
