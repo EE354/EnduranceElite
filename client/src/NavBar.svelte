@@ -1,18 +1,17 @@
 <script>
-// On load, calculate and change position for each dropdown menu to override to center
-window.onload = function() {
-  
-    forEach(function(dropdownMenu) {
-        var dropdownMenuWidth = dropdownMenu.offsetWidth;
-        var leftPosition = (window.innerWidth - dropdownMenuWidth) / 2;
-        dropdownMenu.style.left = leftPosition + 'px';
-  });
-};
-
+    // On load, calculate and change position for each dropdown menu to override to center
+    window.onload = function() {
+        var dropdownMenus = document.querySelectorAll('dropdown-menu');
+        dropdownMenus.forEach(function(dropdownMenu) {
+            var dropdownMenuWidth = dropdownMenu.offsetWidth;
+            var leftPosition = (window.innerWidth - dropdownMenuWidth) / 2;
+            dropdownMenu.style.left = leftPosition + 'px';
+        });
+    };
 
 </script>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,7 +23,7 @@ window.onload = function() {
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="/" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Aboutd
+                About
                  </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/">Action</a>
@@ -173,7 +172,6 @@ window.onload = function() {
             height: 250px;
 
             position: fixed;
-            top: 10%;
             left: 50%;
             transform: translateX(-50%);
 
