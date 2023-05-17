@@ -19,7 +19,16 @@ const userSchema = new Schema({
     password: {
         hash: String,
         salt: String
+    },
+    classes: {
+        type: Array,
+        default: []
+    },
+    teams: {
+        type: Array,
+        default: []
     }
+
 });
 
 userSchema.methods.setPassword = function (password)  {
