@@ -1,25 +1,6 @@
 <script>
-	import NavBar from './NavBar.svelte'
-	import StyleExample from './StyleExample.svelte'
+	import { Router } from 'svelte-router-spa';
+	import { routes } from './routes.js';
 </script>
 
-<main>
-	<NavBar/>
-	<!-- <StyleExample/> -->
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<Router {routes}/>

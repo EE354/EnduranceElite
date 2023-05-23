@@ -1,4 +1,5 @@
 <script>
+    import { account } from "../stores";
     // On load, calculate and change position for each dropdown menu to override to center
     window.onload = function() {
         var dropdownMenus = document.querySelectorAll('dropdown-menu');
@@ -8,7 +9,6 @@
             dropdownMenu.style.left = leftPosition + 'px';
         });
     };
-
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -22,47 +22,53 @@
             <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="/" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="/client/public" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 About
                  </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/">Action</a>
-                <a class="dropdown-item" href="/">Another action</a>
+                <a class="dropdown-item" href="/client/public">Action</a>
+                <a class="dropdown-item" href="/client/public">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/">Something else here</a>
+                <a class="dropdown-item" href="/client/public">Something else here</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link" href="/" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link" href="/client/public" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 Activities
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/">Action</a>
-                <a class="dropdown-item" href="/">Another action</a>
+                <a class="dropdown-item" href="/client/public">Action</a>
+                <a class="dropdown-item" href="/client/public">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/">Something else here</a>
+                <a class="dropdown-item" href="/client/public">Something else here</a>
             </div>
             </li>
         </div>
         
         <div class="headerRight">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Merchandise</a>
+                <a class="nav-link" href="/client/public">Merchandise</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="/" id="navbarDropdown" role="button"  aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="/client/public" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/">Action</a>
-                <a class="dropdown-item" href="/">Another action</a>
+                <a class="dropdown-item" href="/client/public">Action</a>
+                <a class="dropdown-item" href="/client/public">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/">Something else here</a>
+                <a class="dropdown-item" href="/client/public">Something else here</a>
                 </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Account</a>
-            </li>
+            {#if ($account.email == null)}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            {:else}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/account">Account</a>
+                </li>
+            {/if}
         </div>
       </ul>
     </div>
