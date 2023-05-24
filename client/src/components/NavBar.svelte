@@ -1,5 +1,5 @@
 <script>
-    import { account } from "../stores";
+
     // On load, calculate and change position for each dropdown menu to override to center
     window.onload = function() {
         var dropdownMenus = document.querySelectorAll('dropdown-menu');
@@ -9,68 +9,67 @@
             dropdownMenu.style.left = leftPosition + 'px';
         });
     };
+    
+
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <a class="navbar-brand" href="/">
+        <img alt="Endurance Elite Logo" id="smalllogo" src="https://static.wixstatic.com/media/b16c48_6a92ce20130a4dc79bc51ab9f8c7be1c~mv2.png/v1/crop/x_336,y_301,w_2355,h_2368/fill/w_208,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Badge%20White%20BG.png">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <div class="headerLeft">
+    <ul class="navbar-nav mr-auto">
+        <div class="header-left">
             <li class="nav-item active">
             <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="/client/public" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
-                 </a>
+                </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/client/public">Action</a>
-                <a class="dropdown-item" href="/client/public">Another action</a>
+                <a class="dropdown-item" href="/">Action</a>
+                <a class="dropdown-item" href="/">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/client/public">Something else here</a>
+                <a class="dropdown-item" href="/">Something else here</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link" href="/client/public" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Activities
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/client/public">Action</a>
-                <a class="dropdown-item" href="/client/public">Another action</a>
+                <a class="dropdown-item" href="/">Action</a>
+                <a class="dropdown-item" href="/">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/client/public">Something else here</a>
+                <a class="dropdown-item" href="/">Something else here</a>
             </div>
             </li>
         </div>
-        
-        <div class="headerRight">
+        <img alt="Endurance Elite Logo"  id="biglogo" src="https://static.wixstatic.com/media/b16c48_6a92ce20130a4dc79bc51ab9f8c7be1c~mv2.png/v1/crop/x_336,y_301,w_2355,h_2368/fill/w_208,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Badge%20White%20BG.png">
+        <div class="header-right">
             <li class="nav-item active">
-                <a class="nav-link" href="/client/public">Merchandise</a>
+                <a class="nav-link" href="/">Merch</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="/client/public" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/client/public">Action</a>
-                <a class="dropdown-item" href="/client/public">Another action</a>
+                <a class="dropdown-item" href="/">Action</a>
+                <a class="dropdown-item" href="/">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/client/public">Something else here</a>
+                <a class="dropdown-item" href="/">Something else here</a>
                 </div>
             </li>
-            {#if ($account.email == null)}
-                <li class="nav-item active">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-            {:else}
-                <li class="nav-item active">
-                    <a class="nav-link" href="/account">Account</a>
-                </li>
-            {/if}
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Account</a>
+            </li>
         </div>
-      </ul>
+    </ul>
     </div>
   </nav>
 
@@ -78,9 +77,9 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 
-    .dropdown:hover .dropdown-menu {
+    /* .dropdown:hover .dropdown-menu {
         display: block;
-    }
+    } */
 
     .dropdown-menu {
         box-sizing: border-box;
@@ -118,7 +117,18 @@
         flex-grow: 0;
     }
 
+    #smalllogo {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+
+    #biglogo {
+        display: none;
+    }
+
     @media (min-width: 992px) {
+
 
         .collapse {
             display: block;
@@ -132,40 +142,47 @@
             margin-left: auto;
             margin-right: auto;
             width: 992px;
+
         }
 
-        .headerLeft {
+        .collapse{
+            position: relative;
+            width: fit-content;
+        }
+
+        .header-left {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             padding: 0px;
-            gap: 48px;
 
-            width: 460px;
-            height: 32px;
+            width: 340px;
+            height: 110px;
 
             flex: none;
             order: 0;
             flex-grow: 1;
             z-index: 0;
+            /* background-color: aquamarine; */
         }
 
-        .headerRight {
+        .header-right {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             padding: 0px;
-            gap: 48px;
 
-            width: 460px;
-            height: 32px;
+
+            width: 340px;
+            height: 110px;
 
             flex: none;
             order: 1;
             flex-grow: 1;
             z-index: 1;
+            /* background-color: aquamarine; */
         }
 
         .dropdown-menu {
@@ -182,7 +199,17 @@
             transform: translateX(-50%);
 
         }
-
         
+        #smalllogo {
+        display: none;
+        width: 50px;
+        height: 50px;
+    }
+
+        #biglogo {
+            display: block;
+            width: 164px;
+            height: 165px;
+        }
     }   
 </style>
