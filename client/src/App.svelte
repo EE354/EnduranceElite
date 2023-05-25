@@ -1,6 +1,6 @@
 <script>
-	import { Router } from 'svelte-router-spa';
-	import { routes } from './routes.js';
+  import { Router } from "@roxi/routify";
+  import { routes } from "../.routify/routes";
 </script>
 
-<Router {routes}/>
+<Router {routes} />
