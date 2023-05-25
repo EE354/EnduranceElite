@@ -1,5 +1,7 @@
 <script>
-    import { account } from "../stores";
+    import {account, refresh} from "../stores";
+
+    $account = refresh()
     // On load, calculate and change position for each dropdown menu to override to center
     window.onload = function() {
         var dropdownMenus = document.querySelectorAll('dropdown-menu');
@@ -9,6 +11,7 @@
             dropdownMenu.style.left = leftPosition + 'px';
         });
     };
+
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -182,7 +185,5 @@
             transform: translateX(-50%);
 
         }
-
-        
     }   
 </style>

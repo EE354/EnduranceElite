@@ -1,6 +1,7 @@
 <script>
     import axios from 'axios';
-    import { account } from '../stores.js';
+    import {account} from '../stores.js';
+
     let email = "";
     let password = "";
 
@@ -13,7 +14,10 @@
                 data: {
                     email: email,
                     password: password
-                }
+                },
+                withCredentials: true,
+                credentials: 'include',
+                mode: 'cores'
             });
             //set the account to the response data
             $account = response.data;

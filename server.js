@@ -2,17 +2,19 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const routes = require('./routes/routes');
 
 //import config variables
-const {port, mongoURI} = require('./config.js');
+const {port, mongoURI, corsOptions} = require('./config.js');
 
 //Set up the express app, modules and routes
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(cookieParser())
 app.use(morgan('tiny'));
 routes.setRoutes(app);
 

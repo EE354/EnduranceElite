@@ -11,13 +11,13 @@
     "svelte-router-spa": "^6.0.3",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "axios": "^1.4.0"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack serve"
   },
   "dependencies": {
-    "axios": "^1.4.0"
   }
 }
