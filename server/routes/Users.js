@@ -116,8 +116,7 @@ router.get('/refresh', async (req, res) => {
         createSessionCookie(res, session.userId);
         res.status(200).json(user);
     } catch (err) {
-        console.log(err)
-        res.status(401).json({ message: err.message });
+        res.end();
     }
 });
 
