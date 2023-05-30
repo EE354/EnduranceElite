@@ -1,22 +1,70 @@
 <script>
-
-    import { url } from '@roxi/routify';
+    import { url } from "@roxi/routify";
     import { account } from "../stores";
 
     // On load, calculate and change position for each dropdown menu to override to center
-    window.onload = function() {
-        var dropdownMenus = document.querySelectorAll('dropdown-menu');
-        dropdownMenus.forEach(function(dropdownMenu) {
+    window.onload = function () {
+        var dropdownMenus = document.querySelectorAll("dropdown-menu");
+        dropdownMenus.forEach(function (dropdownMenu) {
             var dropdownMenuWidth = dropdownMenu.offsetWidth;
             var leftPosition = (window.innerWidth - dropdownMenuWidth) / 2;
-            dropdownMenu.style.left = leftPosition + 'px';
+            dropdownMenu.style.left = leftPosition + "px";
         });
     };
-    
-
 </script>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+<!-- TODO: Nav bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav">
+        <!-- Left side of logo -->
+        <div class="header-left">
+            <!-- Home button -->
+            <li class="nav-item">
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Dropdown
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href={$url("/")}>Action</a>
+                    <a class="dropdown-item" href={$url("/")}>Another action</a>
+                    <a class="dropdown-item" href={$url("/")}
+                        >Something else here</a
+                    >
+                </div>
+            </li>
+        </div>
+
+        <!-- Endurance Elite logo -->
+        <!-- svelte-ignore a11y-invalid-attribute -->
+        <div class="container align-self-center mh-50">
+            <a class="navbar-brand" href="#">
+                <img
+                    alt="Endurance Elite Logo"
+                    id="smalllogo"
+                    src="https://static.wixstatic.com/media/b16c48_6a92ce20130a4dc79bc51ab9f8c7be1c~mv2.png/v1/crop/x_336,y_301,w_2355,h_2368/fill/w_208,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Badge%20White%20BG.png"
+                />
+            </a>
+        </div>
+
+        <!-- Right side of logo -->
+    </ul>
+</nav>
+
+<!-- Old nav bar -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
     <a class="navbar-brand" href={$url('/')}>
         <img alt="Endurance Elite Logo" id="smalllogo" src="https://static.wixstatic.com/media/b16c48_6a92ce20130a4dc79bc51ab9f8c7be1c~mv2.png/v1/crop/x_336,y_301,w_2355,h_2368/fill/w_208,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Badge%20White%20BG.png">
     </a>
@@ -81,14 +129,14 @@
     </ul>
     </div>
   </nav>
-
+ -->
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+    /*@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 
-    /* .dropdown:hover .dropdown-menu {
+    .dropdown:hover .dropdown-menu {
         display: block;
-    } */
+    }
 
     .dropdown-menu {
         box-sizing: border-box;
@@ -131,12 +179,12 @@
         width: 50px;
         height: 50px;
     }
-
+    
     #biglogo {
         display: none;
     }
 
-    @media (min-width: 992px) {
+    /*@media (min-width: 992px) {
 
 
         .collapse {
@@ -173,7 +221,7 @@
             order: 0;
             flex-grow: 1;
             z-index: 0;
-            /* background-color: aquamarine; */
+            /* background-color: aquamarine;
         }
 
         .header-right {
@@ -191,7 +239,7 @@
             order: 1;
             flex-grow: 1;
             z-index: 1;
-            /* background-color: aquamarine; */
+            /* background-color: aquamarine; 
         }
 
         .dropdown-menu {
@@ -214,11 +262,12 @@
         width: 50px;
         height: 50px;
     }
-
+    
         #biglogo {
             display: block;
             width: 164px;
             height: 165px;
         }
-    }   
+    }
+    */
 </style>
