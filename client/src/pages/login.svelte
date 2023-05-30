@@ -1,7 +1,7 @@
 <script>
     import axios from 'axios';
     import { account } from '../stores.js';
-    import { url, goto } from '@roxi/routify';
+    import { goto } from '@roxi/routify';
 
     let email = "";
     let password = "";

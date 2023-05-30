@@ -2,11 +2,12 @@
     import {account} from "../stores";
     import {goto} from "@roxi/routify";
 
+
     account.useLocalStorage();
     if (!$account.email) {
         $goto('/login')
     }
-    function logout() {
+    async function logout() {
         $account = {}
         $goto('../index')
     }
