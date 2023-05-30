@@ -4,7 +4,7 @@
     // Toggle On Click
 
     function handleClick(number) {
-        var buttons = document.getElementsByTagName("button");
+        var buttons = document.getElementsByClassName("Group");
         for (let i = 0; i < buttons.length; i++) {
             const btn = buttons[i];
             btn.style.background = "transparent";
@@ -14,9 +14,10 @@
         button.selected = true;
     }
 
+
 </script>
 
-<button id="{number}" on:click={handleClick(number)}>
+<button class="Group" id="{number}" on:click={handleClick(number)} >
     Group {number}
 </button>
 
@@ -43,7 +44,7 @@
 
 
     button:hover {
-        background-color: #CFCFCF;
+        
     }
 
 </style>
