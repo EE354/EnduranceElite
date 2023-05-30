@@ -22,8 +22,7 @@
                     password: password
                 }
             });
-            console.log(response.data)
-            if (response.data == undefined) throw new Error("No response from server");
+            if (response.data === undefined) throw new Error("No response from server");
             //set the account to the response data
             $account = response.data;
             //redirect to the home page
