@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         //Get the user input
-        const {email, password, first, last, dateOfBirth, } = req.body;
+        const {email, password, first, last, dateOfBirth, role} = req.body;
 
         //check if the user already exists
         if (await User.findOne({email: email}) != null) throw Error('Email already in use');
@@ -82,6 +82,7 @@ router.post('/register', async (req, res) => {
         newUser.name.last = last;
         newUser.email = email;
         newUser.dateOfBirth = dateOfBirth;
+        if (role) newUser.role = role;
         newUser.setPassword(password);
 
         //Save the user

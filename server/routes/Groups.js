@@ -182,8 +182,8 @@ router.get('/getGroupById', async (req, res) => {
 });
 
 //Get all the groups a user is enrolled in
-router.get('/getGroupsByUser', async (req, res) => {
-   try{
+router.post('/getGroupsByUser', async (req, res) => {
+   try {
     const { userId } = req.body;
 
    const user = await User.findById(userId);
