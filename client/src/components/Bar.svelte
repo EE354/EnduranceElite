@@ -3,17 +3,20 @@
 </script>
 
 <div>
-
+    <!-- Big Green Rectangle for Background-->
 </div>
 
 <style>
 
     div {
-        /* Rectangle 23808 */
+        /* Rectangle Properties */
 
-        position: absolute;
+        /* Dimensions */
         width: 200%;
         height: 510.31px;
+
+        /* Positioning */
+        position: absolute;
         left: -20%;
         top: 45%;
         z-index: 1;
