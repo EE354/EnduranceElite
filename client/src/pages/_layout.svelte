@@ -5,5 +5,14 @@
 
 <!-- routify:options preload="proximity" -->
 
-<NavBar />
-<slot />
+<main>
+    <NavBar />
+    <slot />
+</main>
+
+<style>
+    main {
+        width: 1440px;
+    }
+</style>
+

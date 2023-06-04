@@ -1,6 +1,9 @@
 <script>
-    import Bar from "../components/Bar.svelte";
     import Button from "../components/Button.svelte";
+    import NewsItem from "../components/NewsItem.svelte";
+    import SmallCard from "../components/SmallCard.svelte";
+
+
 </script>
 
 <main>
@@ -22,9 +25,53 @@
             />
         </div>
     </div>
-    <div id="background">
-        <!-- Background Contents-->
-        <Bar />
+    <div class="divider">
+        <!-- 1st Divider -->
+        <div class="newsbar-header">
+            <h1>News</h1>
+            <div class="alignright">
+                <button id="leftbutton">&lt;</button>
+                <button id="rightbutton">&gt;</button>
+            </div>
+        </div>
+        <div class="newsbar-wrapper">
+            <div class="newsbar-content">
+                <NewsItem date={"3/13-17/2023"} title={"Spring Break Day Camp"} body={"Join us for Spring Break Day Camp, March 13th-17th. Campers enjoy open free play, games, activities, crafts, movie and snacks with friends. See our camp page for more information. Space is limited."}/>
+                <NewsItem date={"3/18/2023"} title={"Parent’s Night Out"} body={"Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm."}/>
+                <NewsItem date={"3/10/2023"} title={"Friday Night Flick"} body={"March FNF has been changed to March 10th. The kids get to participate in free play and enjoy popcorn, juice and candy while watching the flick on our large projected screen."}/>
+                <NewsItem date={"3/5/2023"} title={"Cheer Stunt & Tryout"} body={"Starting Sunday, March 5th we will be offering Open Gym stunt and tryout prep to any and all cheerleaders. Please see flyer for details."}/>
+            </div>
+        </div>
+    </div>
+    <div class="block1">
+        <div class="card-pair">
+            <SmallCard 
+                alt={"Track with Bouncy Castle"}
+                src={"../../public/Images/Landing/birthdayparties.jpg"}
+                title={"Gymanstics"}
+                body={"We offer gymnastics classes to ages 1 year to Adults. From Babynastics to Girl's and Boy's Rec classes and finally to Adult classes, there is something for everyone! As soon as you can walk, we can teach you gymnastics!"}
+                href={"/admin"}/>
+            <SmallCard 
+                alt={""}
+                src={"../../public/Images/Landing/"}
+                title={""}
+                body={""}
+                href={"/admin"}/>
+        </div>
+        <div class="card-pair">
+            <SmallCard 
+                alt={""}
+                src={"../../public/Images/Landing/"}
+                title={""}
+                body={""}
+                href={"/admin"}/>
+            <SmallCard 
+                alt={""}
+                src={"../../public/Images/Landing/"}
+                title={""}
+                body={""}
+                href={"/admin"}/>
+        </div>
     </div>
 </main>
 
@@ -33,9 +80,58 @@
         /* Block 1 */
 
         /* Positioning */
-        position: absolute;
-        z-index: 3;
+        margin: 12px 0 12px 0;
+
+        /* Dimensions */
+        width: 1440px;
     }
+    
+    .divider {
+        /* Divider */
+
+        /* Positioning */
+        margin: 12px 0 12px 0;
+        padding: 28px;
+        
+        /* Dimensions */
+        width: 1440px;
+        height: 400px;
+
+        /* P */
+        background-color: #35CAD5;
+    }
+
+
+    .newsbar-header {
+        display: flex;
+    }
+
+    .newsbar-wrapper {
+        display: flex;
+        overflow-x: auto;
+
+    }
+    
+    .newsbar-wrapper::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .newsbar-content {
+        display: flex;
+    }
+
+    .alignright {
+        display: flex;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .card-pair {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+
 
     @media (min-width: 992px) {
         #block1 .content-container {
