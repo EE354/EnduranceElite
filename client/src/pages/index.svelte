@@ -28,7 +28,7 @@
     <div class="divider">
         <!-- 1st Divider -->
         <div class="newsbar-header">
-            <h1>News</h1>
+            <h2>News</h2>
             <div class="alignright">
                 <button id="leftbutton">&lt;</button>
                 <button id="rightbutton">&gt;</button>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="block1">
-        <div class="card-pair">
+        <div class="card-wrapper">
             <SmallCard 
                 alt={"Track with Bouncy Castle"}
                 src={"../../public/Images/Landing/birthdayparties.jpg"}
@@ -57,8 +57,7 @@
                 title={""}
                 body={""}
                 href={"/admin"}/>
-        </div>
-        <div class="card-pair">
+
             <SmallCard 
                 alt={""}
                 src={"../../public/Images/Landing/"}
@@ -83,7 +82,7 @@
         margin: 12px 0 12px 0;
 
         /* Dimensions */
-        width: 1440px;
+        width: 100%;
     }
     
     .divider {
@@ -94,7 +93,7 @@
         padding: 28px;
         
         /* Dimensions */
-        width: 1440px;
+        width: 100%;
         height: 400px;
 
         /* P */
@@ -126,9 +125,11 @@
         margin-right: 0;
     }
 
-    .card-pair {
+    .card-wrapper {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 12px;
     }
 
@@ -147,7 +148,6 @@
             left: 50%;
 
             /* Properties */
-            border-radius: 24px;
             overflow: hidden;
         }
 
@@ -155,8 +155,8 @@
             /* Big Image in Block1 Content Container */
 
             /* Dimensions */
-            width: 701.59px;
-            height: 679.55px;
+            width: 50%;
+            height: 50%;
 
             /* Properities */
             object-fit: cover;

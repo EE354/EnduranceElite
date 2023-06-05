@@ -6,13 +6,18 @@
 <!-- routify:options preload="proximity" -->
 
 <main>
-    <NavBar />
+    <div>
+        <NavBar />
+    </div>
     <slot />
 </main>
 
 <style>
     main {
-        width: 1440px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
     }
 </style>
 
