@@ -11,31 +11,19 @@
 </div>
 
 <style>
-
-    p {
-       margin-bottom: 4px; 
-    }
     .news-item {
         /* News Item */
-
-        /* News Card */
 
         /* Positioning */
         padding: 1em;
         margin-right: 8px;
 
         /* Dimensions */
-        width: 394px;
-        height: 280px;
+        width: 360px;
+        height: 260px;
 
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-
-        background: #EEECE8;
+        /* Properties */
+        background: #eeece8;
         border-radius: 30px;
     }
 </style>

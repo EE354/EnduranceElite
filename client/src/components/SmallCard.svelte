@@ -8,18 +8,16 @@
     export let href;
 </script>
 
-<div id="box-outline">
+<div class="container" id="box-outline">
     <div id="content-container">
-        <div id="square-image">
-            <img {alt} {src} />
-        </div>
+        <img {alt} {src} />
         <div id="contents">
             <div id="text">
                 <h4>{title}</h4>
                 <p>{body}</p>
             </div>
-            <div>
-                <Button text={"Details"} href={href} />
+            <div id="bottom">
+                <Button text={"Details"} {href} />
             </div>
         </div>
     </div>
@@ -27,51 +25,34 @@
 
 <style>
     #box-outline {
-        /* State=Default */
+        /* Outer Box Outline for Smaller Screens */
 
-        box-sizing: border-box;
-
-        /* Auto layout */
-
+        /* Positioning */
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         padding: 24px;
-        gap: 24px;
 
-        width: 624px;
-        height: 320px;
-        left: 20px;
-        top: 20px;
+        /* Dimensions */
+        width: 320px;
+        height: 624px;
 
-        /* White */
-
+        /* Properties */
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.08);
         border-radius: 16px;
-
     }
 
-    #content-container {
-        /* Frame 45 */
+    img {
+        /* Image */
 
-        /* Auto layout */
-
-        display: flex;
-        flex-direction: row;
-        gap: 18px;
-
-        width: 570px;
-        height: 272px;
-    }
-
-    #square-image {
         /* Dimensions */
         width: 282px;
         height: 272px;
 
+        /* Properities */
+        object-fit: cover;
         border-radius: 16px;
-        background-color: black;
     }
 
     #contents {
@@ -79,10 +60,55 @@
         width: 270px;
     }
 
-    #text, #contents{
+    #contents,
+    #text {
+        /* Contents & Text */
+
         /* Positioning */
         display: flex;
         flex-direction: column;
-        gap: 12px;
+    }
+
+    #bottom {
+        /* Move Button to Buttom of Card */
+        height: fill;
+    }
+
+    @media (min-width: 600px) {
+        #box-outline {
+            /* Outer Box Outline for Bigger Screens */
+
+            /* Positioning */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 24px;
+            gap: 24px;
+
+            left: 20px;
+            top: 20px;
+
+            /* Dimensions */
+            width: 624px;
+            height: 320px;
+
+            /* Properties */
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+        }
+
+        #content-container {
+            /* Content Container */
+
+            /* Positioning */
+            display: flex;
+            flex-direction: row;
+            gap: 18px;
+
+            /* Dimensions */
+            width: 570px;
+            height: 272px;
+        }
     }
 </style>
