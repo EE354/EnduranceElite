@@ -88,6 +88,60 @@
             />
         </div>
     </div>
+    <div class="container division">
+        <div class="divider-content">
+            <img class="divider-image" alt="3 Children Posing" src="../../public/Images/Landing/image1.jpg">
+            <div class="divider-text">
+                <h2>We're Hiring</h2>
+                <p>We offer competitive pay and benefits. Experience is not necessary. We will train anyone with a great attitude and who loves kids. Must be available to work weekends. Fill out our application today! We'd love to meet with you.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Card Block -->
+        <div class="card-wrapper">
+            <SmallCard
+                alt={"Track with a Bouncy Castle"}
+                src={"../../public/Images/Landing/birthdayparties.jpg"}
+                title={"Gymanstics"}
+                body={"We offer gymnastics classes to ages 1 year to Adults. From Babynastics to Girl's and Boy's Rec classes and finally to Adult classes, there is something for everyone! As soon as you can walk, we can teach you gymnastics!"}
+                href={"/admin"}
+            />
+            <SmallCard
+                alt={"Person doing a Handstand"}
+                src={"../../public/Images/Landing/adultclasses.jpg"}
+                title={"Adult Classes"}
+                body={"Looking to try something new or keep up with your favorite sport? Check out our adult gymnastics and dance classes. No commitment necessary. Drop in for a $12 fee."}
+                href={"/admin"}
+            />
+            <SmallCard
+                alt={"Kid doing a T-pose"}
+                src={"../../public/Images/Landing/samplerclasses.jpg"}
+                title={"Sampler Classes"}
+                body={"Take dance and gymnastics in ONE awesome class! We have Sampler BJG (Ballet, Jazz, Gymnastics) and BTG (Ballet, Tap, Gymnastics). Levels are based on experience. Half of the class is in the dance studio and half is out in the main gym. "}
+                href={"/admin"}
+            />
+            <SmallCard
+                alt={"Person doing a Flip"}
+                src={"../../public/Images/Landing/opengym.jpg"}
+                title={"Open Gym"}
+                body={"Need extra time in the gym? Or do you just want to play on the equipment. Come to open gym! We offer supervision and a clean safe environment for everyone of all ages to play and enjoy. All ages are welcome!"}
+                href={"/admin"}
+            />
+        </div>
+    </div>
+    <div class="container division">
+        <div class="divider-content">
+            <img class="divider-image" alt="3 Children Posing" src="../../public/Images/Landing/image1.jpg">
+            <div class="divider-text">
+                <h2>We're Hiring</h2>
+                <p>We offer competitive pay and benefits. Experience is not necessary. We will train anyone with a great attitude and who loves kids. Must be available to work weekends. Fill out our application today! We'd love to meet with you.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container footer">
+
+    </div>
 </main>
 
 <style>
@@ -104,6 +158,16 @@
 
         /* Properties */
         background-color: #35cad5;
+    }
+
+    .divider-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .divider-text {
+        display: flex;
+        flex-direction: column;
     }
 
     .newsbar-header,
@@ -168,6 +232,16 @@
             height: 500px;
 
             /* Properities */
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .divider-image{
+            /* Image in the Divider */
+
+            /* Dimensions */
+            width: 250px;
+            height: 250px;
             object-fit: cover;
             border-radius: 24px;
         }
