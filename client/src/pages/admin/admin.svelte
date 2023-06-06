@@ -1,6 +1,5 @@
 <script>
-    import Group from "../components/Group.svelte";
-    import Button from "../components/Button.svelte";
+    import Group from "../../components/Group.svelte";
 
     function handleClick() {
         // Prompt

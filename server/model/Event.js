@@ -19,6 +19,10 @@ const eventSchema = new Schema({
             required: true
         }
     },
+    allDay: {
+        type: Boolean,
+        default: false
+    },
     location: {
         type: String,
         required: true,
