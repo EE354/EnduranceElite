@@ -1,9 +1,11 @@
 <script>
     import Bar from "../components/Bar.svelte";
     import Button from "../components/Button.svelte";
+    import NavBar from "../components/NavBar.svelte";
 </script>
 
 <main>
+    <NavBar/>
     <div id="block1">
         <!-- 1st Block of Contents -->
         <div class="content-container">

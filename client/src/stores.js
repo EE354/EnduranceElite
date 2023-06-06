@@ -19,4 +19,13 @@ const createWritableStore = (key, startValue) => {
     };
 }
 
+
+export const activeButton = () => {
+
+    return {
+        subscribe
+    }
+
+}
+
 export const account = createWritableStore("account",{});

@@ -2,15 +2,16 @@
     import {account} from "../stores";
     import {goto, ready} from "@roxi/routify";
     import axios from "axios";
+    import NavBar from "../components/NavBar.svelte";
 
     let groups = [];
 
 
     account.useLocalStorage();
     if (!$account.email) {
-        $goto('/login')
+        $goto('./login')
     }
-    async function logout() {
+    function logout() {
         $account = {};
         $goto('../index')
     }
@@ -35,6 +36,7 @@
     })();
 
 </script>
+<NavBar/>
 
 <h1>
     Welcome {$account.name.first} {$account.name.last} to the account dashboard

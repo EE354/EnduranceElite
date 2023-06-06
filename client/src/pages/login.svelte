@@ -2,6 +2,7 @@
     import axios from 'axios';
     import { account } from '../stores.js';
     import { goto } from '@roxi/routify';
+    import NavBar from "../components/NavBar.svelte";
 
     let email = "";
     let password = "";
@@ -32,7 +33,7 @@
         }
     }
 </script>
-
+<NavBar/>
 <main>
     <div>
         <div class="mb-3">

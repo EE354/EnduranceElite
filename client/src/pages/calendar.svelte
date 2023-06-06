@@ -6,6 +6,7 @@
     import axios from "axios";
     import {ready} from "@roxi/routify";
     import EventModal from "../components/EventModal.svelte";
+    import NavBar from "../components/NavBar.svelte";
 
     //Modal control
     let openInfoModal = false;
@@ -76,6 +77,7 @@
 
 
 </script>
+<NavBar/>
 <EventModal bind:event={shownEvent} bind:open={openInfoModal}/>
 <Calendar bind:this={calendar} {plugins} {options} />
 

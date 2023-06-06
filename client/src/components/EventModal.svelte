@@ -23,11 +23,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="sampleModalLabel">{event.name}</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                            on:click={modalClose}
-                    >
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" on:click={modalClose}/>
                 </div>
                 <div class="modal-body">
                     <h5>{event.description}</h5>
