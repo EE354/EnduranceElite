@@ -2,6 +2,7 @@
     import Group from "../../components/Group.svelte";
     import axios from "axios";
     import {ready} from "@roxi/routify";
+    import { apiDomain } from "../../stores";
 
 
     let groups = [];
@@ -32,7 +33,7 @@
         try {
             const response = await axios({
                 method: "GET",
-                url: "http://localhost:3000/api/groups/"
+                url: `${apiDomain}/api/groups/`
             });
             groups = response.data;
             $ready();
@@ -40,11 +41,11 @@
             console.log(e)
         }
     })();
+
+
 </script>
 
-<div class="grid">
 
-</div>
 <div id="Menu" >
     <!-- Box containing Left Menu -->
     <div id="Contents">
@@ -59,6 +60,7 @@
     </div>
 
 </div>
+
 
 <style>
     .grid {
