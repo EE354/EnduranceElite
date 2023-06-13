@@ -68,7 +68,7 @@
             <!-- Endurance Elite logo -->
             <!-- svelte-ignore a11y-invalid-attribute -->
 
-            <a href="#" style="height: 90px;">
+            <a href={$url("/index")} style="height: 90px;">
                 <img
                     alt="Endurance Elite Logo"
                     id="smalllogo"
@@ -86,13 +86,13 @@
             <!-- Events -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link" href={$url("/calendar")}>Calendar</a>
             </li>
 
             <!-- Account -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">Account</a>
+                <a class="nav-link" href={$url("/login")}>Account</a>
             </li>
         </ul>
     </div>
