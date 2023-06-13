@@ -26,7 +26,7 @@
     >
         <span class="navbar-toggler-icon" />
     </button>
-    <div class="container collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
             class="navbar-nav d-flex justify-content-around"
             style="width: 100%;"
@@ -307,7 +307,17 @@
 
 <style>
     img {
-        /* max-width: 100%; */
+        max-width: 100%;
         max-height: 160%;
+    }
+
+    @media (max-width: 1000px) {
+        a:has(img) {
+            display: none;
+        }
+
+        img {
+            display: none;
+        }
     }
 </style>
