@@ -15,6 +15,7 @@
 
 <!-- TODO: Nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <!-- Nav bar toggle -->
     <button
         class="navbar-toggler"
         type="button"
@@ -26,6 +27,8 @@
     >
         <span class="navbar-toggler-icon" />
     </button>
+
+    <!-- Nav bar contents -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
             class="navbar-nav d-flex justify-content-around"
@@ -33,32 +36,28 @@
         >
             <!-- Left side of logo -->
             <!-- Home button -->
-            <li class="nav-item my-auto">
+            <li class="nav-item dropdown my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Home
+                </a>
+
             </li>
 
             <!-- About -->
-            <li class="nav-item my-auto">
+            <li class="nav-item dropdown my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href={$url("/")}>Action</a>
-                    <a class="dropdown-item" href={$url("/")}>Another action</a>
-                    <a class="dropdown-item" href={$url("/")}
-                        >Something else here</a
-                    >
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">1</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">2</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">3</a>
                 </div>
             </li>
 
@@ -80,17 +79,22 @@
             </a>
 
             <!-- Right side of logo -->
+            <!-- Merchandise -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a class="nav-link" href="#">Merchandise</a>
             </li>
+
+            <!-- Events -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a class="nav-link" href="#">Events</a>
             </li>
+
+            <!-- Account -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Account</a>
             </li>
         </ul>
     </div>
@@ -311,7 +315,7 @@
         max-height: 160%;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 991px) {
         a:has(img) {
             display: none;
         }
