@@ -9,25 +9,23 @@
         <slot name="title"></slot>
         <slot name="body"></slot>
     </div>
-    <div class="sub">
         <div class="subtitle"><slot name="subtitle1"></slot></div>
         <div class="subtitle"><slot name="subtitle2"></slot></div>
         <div class="subtitle"><slot name="subtitle3"></slot></div>
-    </div>
-    <div class="sub">
         <div class="subbody"><slot name="subbody1"></slot></div>
         <div class="subbody"><slot name="subbody2"></slot></div>
         <div class="subbody"><slot name="subbody3"></slot></div>
-    </div>
 </div>
 
 <style>
 
-    #content-container {
+#content-container {
         /* Box */
 
         /* Positioning */
         padding: 24px;
+        display: grid;
+        grid-template-columns: auto auto auto;
 
         /* Dimensions */
         max-width: 621px;
@@ -44,17 +42,11 @@
         /* Flex Vertically */
         display: flex;
         flex-direction: column;
-    }
-
-    .sub {
-
-        display: flex;
-        flex-direction: row;
-        /* Dimensions */
+        grid-column-start: 1;
+        grid-column-end: 4;
     }
 
     .subbody {
         margin-right: 8px;
-        width: 33%;
     }
 </style>
