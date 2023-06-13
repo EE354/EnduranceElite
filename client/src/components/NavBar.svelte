@@ -1,16 +1,6 @@
 <script>
     import { url } from "@roxi/routify";
     import { account } from "../stores";
-
-    // On load, calculate and change position for each dropdown menu to override to center
-    window.onload = function () {
-        var dropdownMenus = document.querySelectorAll("dropdown-menu");
-        dropdownMenus.forEach(function (dropdownMenu) {
-            var dropdownMenuWidth = dropdownMenu.offsetWidth;
-            var leftPosition = (window.innerWidth - dropdownMenuWidth) / 2;
-            dropdownMenu.style.left = leftPosition + "px";
-        });
-    };
 </script>
 
 <!-- TODO: Nav bar -->
@@ -38,10 +28,18 @@
             <!-- Home button -->
             <li class="nav-item dropdown my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href={$url("/index")} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Home
                 </a>
 
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">1</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">2</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">3</a>
+                </div>
             </li>
 
             <!-- About -->
