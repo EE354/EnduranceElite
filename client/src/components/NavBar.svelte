@@ -27,7 +27,6 @@
             <!-- Left side of logo -->
             <!-- Home button -->
             <li class="nav-item dropdown my-auto">
-                <!-- svelte-ignore a11y-invalid-attribute -->
                 <a class="nav-link dropdown-toggle" href={$url("/index")} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Home
                 </a>
