@@ -22,48 +22,47 @@ const userSchema = new Schema({
         salt: String
     },
     classes: {
-        type: Array,
+        type: [String],
         default: []
     },
-    teams: {
-        type: Array,
+    groups: {
+        type: [String],
         default: []
     },
-    dependants: {
-        type: Array,
-        default: []
-    },
-    age: {
-        type: Number,
-        required: true,
-    }
-
-});
-
-const childSchema = new Schema({
-    name: {
-        first: {
-            type: String,
-            required: true,
+    dependant: {
+        isDependant: {
+            type: Boolean,
+            default: false
         },
-        last: {
-            type: String,
-            required: true,
+        dependants: {
+            type: [String],
+            default: []
         }
     },
-    age: {
-        type: Number,
+    dateOfBirth: {
+        type: String,
         required: true,
     },
-    teams: {
-        type: Array,
-        default: []
+    isActive: {
+        type: Boolean,
+        default: true
     },
-    classes: {
-        type: Array,
-        default: []
+    role: {
+        type: Number,
+        default: 0
     }
 });
+
+userSchema.methods.getAge = () => {
+    let today = new Date();
+    let birthDate = new Date(this.dateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let month = today.getMonth() - birthDate.getMonth();
+
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) age--;
+
+    return age;
+}
 
 userSchema.methods.setPassword = function (password)  {
     //create a unique salt for the user
@@ -77,16 +76,5 @@ userSchema.methods.checkPassword = function (password) {
     let checkHash = crypto.pbkdf2Sync(password, this.password.salt, 1000, 64, `sha512`).toString(`hex`);
     return this.password.hash === checkHash;
 }
-
-userSchema.methods.addDependant = function (firstName, lastName, age) {
-
-    const newDependant = model('Dependant', childSchema);
-
-    newDependant.name.first = firstName;
-    newDependant.name.last = lastName;
-    newDependant.age = age;
-
-    this.dependants.push(newDependant);
-};
 
 module.exports = model('User', userSchema);

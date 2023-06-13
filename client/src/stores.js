@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
 
+
 const createWritableStore = (key, startValue) => {
     const { subscribe, set } = writable(startValue);
 
@@ -19,4 +20,6 @@ const createWritableStore = (key, startValue) => {
     };
 }
 
+
+export const apiDomain = "http://localhost:3000";
 export const account = createWritableStore("account",{});

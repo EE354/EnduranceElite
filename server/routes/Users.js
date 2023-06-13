@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         //Get the user input
-        const {email, password, first, last} = req.body;
+        const {email, password, first, last, dateOfBirth, role} = req.body;
 
         //check if the user already exists
         if (await User.findOne({email: email}) != null) throw Error('Email already in use');
@@ -81,6 +81,8 @@ router.post('/register', async (req, res) => {
         newUser.name.first = first;
         newUser.name.last = last;
         newUser.email = email;
+        newUser.dateOfBirth = dateOfBirth;
+        if (role) newUser.role = role;
         newUser.setPassword(password);
 
         //Save the user
@@ -89,6 +91,7 @@ router.post('/register', async (req, res) => {
         //Check if the user was saved
         if (!user) throw Error('Something went wrong saving the user');
 
+        user.password = undefined;
         //If everything is OK, return the user
         res.status(201).json(user);
     }catch (err) {
@@ -140,7 +143,7 @@ router.get('/logout', async (req, res) => {
 
 });
 
-router.post('/addDepandant', async (req, res) => {
+router.post('/addDependant', async (req, res) => {
     const {parentId, firstName, lastName, age } = req.body;
 
     const parent = await User.findById(parentId);
