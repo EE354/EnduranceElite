@@ -36,30 +36,28 @@
         >
             <!-- Left side of logo -->
             <!-- Home button -->
-            <li class="nav-item my-auto">
+            <li class="nav-item dropdown my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Home
+                </a>
+
             </li>
 
             <!-- About -->
-            <li class="nav-item my-auto">
+            <li class="nav-item dropdown my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href={$url("/")}>Action</a>
-                    <a class="dropdown-item" href={$url("/")}>Another action</a>
-                    <a class="dropdown-item" href={$url("/")}>Something else here</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">1</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">2</a>
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="dropdown-item" href="#">3</a>
                 </div>
             </li>
 
@@ -317,7 +315,7 @@
         max-height: 160%;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 991px) {
         a:has(img) {
             display: none;
         }
