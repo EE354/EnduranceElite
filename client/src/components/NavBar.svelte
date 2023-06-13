@@ -91,10 +91,10 @@
                 <a class="nav-link" href="#">Events</a>
             </li>
 
-            <!-- About -->
+            <!-- Account -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Account</a>
             </li>
         </ul>
     </div>
