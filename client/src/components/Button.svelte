@@ -1,18 +1,14 @@
 <script>
     export let text;
+    export let href;
 </script>
 
-<button type="button" class="btn btn-primary">{text}</button>
+<a class="btn btn-primary btn-lg" href="{href}" role="button">{text}</a>
 
 <style>
-    button {
-        /* Positioning */
-        position: absolute;
-        z-index: 5;
-    }
-
     .btn-primary {
         /* Default State */
         background-color: #1d7c83;
+        color: white;
     }
 </style>
