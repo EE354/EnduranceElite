@@ -1,7 +1,8 @@
 <script>
     import axios from 'axios';
     import { account } from '../stores.js';
-    import { url, goto } from '@roxi/routify';
+    import { goto } from '@roxi/routify';
+    import NavBar from "../components/NavBar.svelte";
 
     let email = "";
     let password = "";
@@ -22,8 +23,7 @@
                     password: password
                 }
             });
-            console.log(response.data)
-            if (response.data == undefined) throw new Error("No response from server");
+            if (response.data === undefined) throw new Error("No response from server");
             //set the account to the response data
             $account = response.data;
             //redirect to the home page
@@ -33,7 +33,7 @@
         }
     }
 </script>
-
+<NavBar/>
 <main>
     <div>
         <div class="mb-3">

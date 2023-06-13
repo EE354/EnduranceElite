@@ -22,4 +22,11 @@ router.post( '/newEvent', async (req, res) => {
    res.status(200).json(event);
 });
 
+router.post('/getEvents', async (req, res) => {
+
+    const events = await Event.find();
+
+    res.status(200).json(events);
+});
+
 module.exports = router;
