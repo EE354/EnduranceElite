@@ -1,5 +1,5 @@
 <script>
-    import {account} from "../stores";
+    import {account, apiDomain} from "../stores";
     import {goto, ready} from "@roxi/routify";
     import axios from "axios";
     import NavBar from "../components/NavBar.svelte";
@@ -23,7 +23,7 @@
             console.log(id);
             const response = await axios ({
                 method: 'POST',
-                url: 'http://localhost:3000/api/groups/getGroupsByUser',
+                url: `${apiDomain}/api/groups/getGroupsByUser`,
                 data: {
                     userId: id
                 }

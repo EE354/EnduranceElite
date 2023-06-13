@@ -1,6 +1,6 @@
 <script>
     import axios from 'axios';
-    import { account } from '../stores.js';
+    import {account, apiDomain} from '../stores.js';
     import { goto } from '@roxi/routify';
     import NavBar from "../components/NavBar.svelte";
 
@@ -16,7 +16,7 @@
             //Send a request to the server to log in
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:3000/api/user/login',
+                url: `${apiDomain}/api/user/login`,
                 timeout: 5000,
                 data: {
                     email: email,

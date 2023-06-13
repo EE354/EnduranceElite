@@ -2,7 +2,7 @@
     import Calendar from '@event-calendar/core';
     import DayGrid from '@event-calendar/day-grid';
     import Interaction from '@event-calendar/interaction';
-    import {account} from "../stores";
+    import {account, apiDomain} from "../stores";
     import axios from "axios";
     import {ready} from "@roxi/routify";
     import EventModal from "../components/EventModal.svelte";
@@ -49,7 +49,7 @@
         try {
             const response = await axios({
                 method: 'POST',
-                url: 'http://localhost:3000/api/calendar/getEvents',
+                url: `${apiDomain}/api/calendar/getEvents`,
             })
             events = response.data;
         } catch (e) {
