@@ -14,53 +14,79 @@
 </script>
 
 <!-- TODO: Nav bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <ul class="navbar-nav">
-        <!-- Left side of logo -->
-        <div class="header-left">
-            <!-- Home button -->
-            <li class="nav-item">
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                >
-                    Dropdown
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href={$url("/")}>Action</a>
-                    <a class="dropdown-item" href={$url("/")}>Another action</a>
-                    <a class="dropdown-item" href={$url("/")}
-                        >Something else here</a
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse">
+        <div class="container">
+            <ul class="navbar-nav">
+                <!-- Left side of logo -->
+                <!-- Home button -->
+                <li class="nav-item my-auto">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+    
+                <!-- About -->
+                <li class="nav-item my-auto">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
                     >
+                        About
+                    </a>
+    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href={$url("/")}>Action</a>
+                        <a class="dropdown-item" href={$url("/")}>Another action</a>
+                        <a class="dropdown-item" href={$url("/")}
+                            >Something else here</a
+                        >
+                    </div>
+                </li>
+    
+                <!-- Activities -->
+                <li class="nav-item my-auto">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="nav-link" href="#">Activities</a>
+                </li>
+    
+                <!-- Endurance Elite logo -->
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <div class="container" style="height: 90px;">
+                    <a href="#">
+                        <img
+                            alt="Endurance Elite Logo"
+                            id="smalllogo"
+                            src="https://static.wixstatic.com/media/b16c48_6a92ce20130a4dc79bc51ab9f8c7be1c~mv2.png/v1/crop/x_336,y_301,w_2355,h_2368/fill/w_208,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Badge%20White%20BG.png"
+                        />
+                    </a>
                 </div>
-            </li>
+    
+                <!-- Right side of logo -->
+                <li class="nav-item my-auto">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="nav-link" href="#">Merchandise</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="nav-link" href="#">Events</a>
+                </li>
+                <li class="nav-item my-auto    ">
+                    <!-- svelte-ignore a11y-invalid-attribute -->
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
         </div>
-
-        <!-- Endurance Elite logo -->
-        <!-- svelte-ignore a11y-invalid-attribute -->
-        <div class="container align-self-center mh-50">
-            <a class="navbar-brand" href="#">
-                <img
-                    alt="Endurance Elite Logo"
-                    id="smalllogo"
-                    src="https://static.wixstatic.com/media/b16c48_6a92ce20130a4dc79bc51ab9f8c7be1c~mv2.png/v1/crop/x_336,y_301,w_2355,h_2368/fill/w_208,h_209,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Badge%20White%20BG.png"
-                />
-            </a>
-        </div>
-
-        <!-- Right side of logo -->
-    </ul>
+    </div>
+    
 </nav>
 
 <!-- Old nav bar -->
@@ -129,10 +155,10 @@
     </ul>
     </div>
   </nav>
- -->
+-->
 
-<style>
-    /*@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+<!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 
     .dropdown:hover .dropdown-menu {
         display: block;
@@ -184,7 +210,7 @@
         display: none;
     }
 
-    /*@media (min-width: 992px) {
+    @media (min-width: 992px) {
 
 
         .collapse {
@@ -221,7 +247,7 @@
             order: 0;
             flex-grow: 1;
             z-index: 0;
-            /* background-color: aquamarine;
+            /* background-color: aquamarine; */
         }
 
         .header-right {
@@ -239,7 +265,7 @@
             order: 1;
             flex-grow: 1;
             z-index: 1;
-            /* background-color: aquamarine; 
+            /* background-color: aquamarine; */
         }
 
         .dropdown-menu {
@@ -269,5 +295,12 @@
             height: 165px;
         }
     }
-    */
+   
+</style> -->
+
+<style>
+    img {
+        /* max-width: 100%; */
+        max-height: 160%;
+    }
 </style>
