@@ -15,6 +15,7 @@
 
 <!-- TODO: Nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <!-- Nav bar toggle -->
     <button
         class="navbar-toggler"
         type="button"
@@ -26,6 +27,8 @@
     >
         <span class="navbar-toggler-icon" />
     </button>
+
+    <!-- Nav bar contents -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
             class="navbar-nav d-flex justify-content-around"
@@ -56,9 +59,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href={$url("/")}>Action</a>
                     <a class="dropdown-item" href={$url("/")}>Another action</a>
-                    <a class="dropdown-item" href={$url("/")}
-                        >Something else here</a
-                    >
+                    <a class="dropdown-item" href={$url("/")}>Something else here</a>
                 </div>
             </li>
 
@@ -80,14 +81,19 @@
             </a>
 
             <!-- Right side of logo -->
+            <!-- Merchandise -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a class="nav-link" href="#">Merchandise</a>
             </li>
+
+            <!-- Events -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a class="nav-link" href="#">Events</a>
             </li>
+
+            <!-- About -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <a class="nav-link" href="#">About</a>
