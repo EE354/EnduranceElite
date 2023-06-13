@@ -34,7 +34,7 @@
                 About
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href={$url('./')}>Action</a>
+                <a class="dropdown-item" href={$url('./tuition')}>Tuition</a>
                 <a class="dropdown-item" href={$url('./')}>Another action</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href={$url('./')}>Something else here</a>

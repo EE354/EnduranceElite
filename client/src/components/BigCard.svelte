@@ -22,9 +22,6 @@
 </div>
 
 <style>
-    subtitle {
-
-    }
 
     #content-container {
         /* Box */
