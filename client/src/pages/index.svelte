@@ -1,10 +1,12 @@
 <script>
+    import NavBar from "../components/NavBar.svelte";
     import Button from "../components/Button.svelte";
     import NewsItem from "../components/NewsItem.svelte";
     import SmallCard from "../components/SmallCard.svelte";
 </script>
 
 <main>
+    <NavBar />
     <div class="container" id="block1">
         <!-- 1st Block of Contents -->
         <div class="text-button-container">
