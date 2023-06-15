@@ -37,25 +37,26 @@
         position: relative;
         overflow: hidden;
 
-        width: 300px;
-        height: 300px;
+        width: auto;
+        
         border-radius: 50% 0 0 50%;
     }
 
     img {
         display: inline;
         margin: 0 auto;
-        height: 300px;
-        width: 300px;
 
+        width: 700px;
+        height: 500px;
         object-fit: cover;
     }
 
     .master {
         display: grid;
-        padding: 24px 0 24px 24px;
+        padding: 48px 0 48px 48px;
 
         max-width: 1440px;
+        height: 614px;
 
         background-color: #35CAD5;
     }
