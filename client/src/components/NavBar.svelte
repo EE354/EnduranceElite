@@ -99,6 +99,10 @@
 </nav>
 
 <style>
+    a {
+        color: black;
+    }
+
     img {
         max-width: 100%;
         max-height: 160%;
