@@ -3,6 +3,52 @@ const { Router } = require('express');
 const User = require('../model/User');
 const uuid = require('uuid');
 const nodeCache = require('node-cache');
+const nodemailer = require("nodemailer")
+const fs = require("fs");
+const crypto = require("crypto");
+const {clientDomain} = require("../config");
+
+//Nodemailer code
+
+//
+const verifyCache = new nodeCache({stdTTL: 900, checkperiod: 600});
+
+    //Creating the email connection
+    let transporter
+    const verifyhtml = fs.readFileSync('./util/verificationEmail.html').toString();
+
+    //Set up nodemailer
+(async () => {
+    transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: "enduranceelitetestemail@gmail.com",
+            pass: "cnwupgvyqewjfshi"
+        },
+    });
+
+})();
+
+//Email the client with the verify page
+const sendVerifyEmail = async (user, cacheId) => {
+    try {
+        let htmlMessage = verifyhtml
+        htmlMessage = htmlMessage.replace("{name}", user.name.first);
+        htmlMessage = htmlMessage.replace("{cacheId}", cacheId)
+
+        return await transporter.sendMail({
+            from: '"no-reply" <enduranceelitetestemail@gmail.com>', // sender address
+            to: user.email,
+            subject: "Please verify your email address", // Subject line
+            html: htmlMessage //formatted html
+        });
+    } catch (e) {
+
+    }
+
+
+
+}
 
 const router = Router();
 
@@ -92,6 +138,17 @@ router.post('/register', async (req, res) => {
         if (!user) throw Error('Something went wrong saving the user');
 
         user.password = undefined;
+
+
+        let cacheId = crypto.randomBytes(20).toString('hex');
+
+        verifyCache.set(cacheId, user._id);
+        console.log(verifyCache.has(cacheId))
+        console.log(verifyCache.keys())
+
+        //send verify
+        await sendVerifyEmail(user, cacheId)
+
         //If everything is OK, return the user
         res.status(201).json(user);
     }catch (err) {
@@ -150,6 +207,26 @@ router.post('/addDependant', async (req, res) => {
 
     parent.addDependant(firstName, lastName, age);
     res.status(200).json(parent);
+});
+
+router.get('/verify/:cacheId', async (req, res) => {
+   try {
+       const { cacheId } = req.params;
+       console.log(cacheId)
+       console.log(verifyCache.keys())
+
+        const user = await User.findById(verifyCache.get(cacheId));
+
+        user.verified = true;
+        user.password = undefined;
+
+        verifyCache.del(cacheId);
+        res.status(200).json(user);
+   } catch (e) {
+       console.log(e)
+       res.status(401).json({ message: e.message });
+       //res.redirect()
+   }
 });
 
 module.exports = router;
