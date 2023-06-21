@@ -117,7 +117,6 @@
     @media (min-width: 991px) {
         .dropdown:hover .dropdown-menu {
             display: block;
-            width: 100vw;
         }
     }
 </style>
