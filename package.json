@@ -29,6 +29,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@event-calendar/core": "^1.5.0",
+		"@event-calendar/day-grid": "^1.5.0",
+		"@event-calendar/interaction": "^1.5.0",
 		"mongoose": "^7.3.1"
 	}
 }

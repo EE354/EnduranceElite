@@ -3,8 +3,6 @@
     import DayGrid from '@event-calendar/day-grid';
     import Interaction from '@event-calendar/interaction';
     import {account, apiDomain} from "../stores";
-    import axios from "axios";
-    import {ready} from "@roxi/routify";
     import EventModal from "../components/EventModal.svelte";
     import NavBar from "../components/NavBar.svelte";
 
@@ -69,7 +67,6 @@
         },
         eventSources: [{events: () => {
                 let events = fetchEvents()
-                $ready()
                 return events;
 
             }}]
@@ -77,7 +74,6 @@
 
 
 </script>
-<NavBar/>
 <EventModal bind:event={shownEvent} bind:open={openInfoModal}/>
 <Calendar bind:this={calendar} {plugins} {options} />
 
