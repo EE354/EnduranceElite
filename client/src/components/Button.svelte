@@ -3,7 +3,7 @@
     export let href;
 </script>
 
-<a class="btn btn-primary btn-lg" href="{href}" role="button">{text}</a>
+<a class="btn btn-primary btn-lg" {href} role="button">{text}</a>
 
 <style>
     .btn-primary {

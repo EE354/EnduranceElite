@@ -12,7 +12,7 @@
 
 <div class="container">
     <BigCard>
-        <h2 slot="title" style="font-size: 40px;">Membership Fee</h2>
+        <h2 slot="title" style="">Membership Fee</h2>
         <p slot="body">An annual membership fee is collected from all students enrolled in classes. Benefits of Membership Fees include the ability to enroll in any class or program and discounts on Special Activities such as Open Gym, Parent’s Night Out, Friday Night Flick & Day Camps.</p>
         <h4 slot="subtitle1">Each Member Pays:</h4>
         <h4 slot="subtitle2">$45/Anually</h4>
@@ -20,7 +20,7 @@
         <p slot="subbody3">Annual registration fees are charged to the card on file. Annual registration fees are non-refundable</p>
     </BigCard>
     <BigCard>
-        <h2 slot="title" style="font-size: 40px">Gymnastics, Tumbling, Ninja, Cheer & Sampler Classes</h2>
+        <h2 slot="title">Gymnastics, Tumbling, Ninja, Cheer & Sampler Classes</h2>
         <p slot="body">AUTOMATIC TUITION: Monthly tuition will be processed every 1st of the month for that month's tuition. Tuition will be automatically charged unless you've dropped the class before the end of the month. Tuition CAN NOT be substituded with makeup tokens. Late fees apply to tuition that is not paid by the 1st of the month.</p>
         <h4 slot="subtitle1">Preschool Class <br>45 Minutes</h4>
         <h4 slot="subtitle2">Recreational Class <br> 1 Hour</h4>

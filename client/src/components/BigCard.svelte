@@ -19,10 +19,11 @@
 
 <style>
 
-#content-container {
+    #content-container {
         /* Box */
 
         /* Positioning */
+        margin: 24px;
         padding: 24px;
         display: grid;
         grid-template-columns: auto auto auto;
@@ -34,7 +35,7 @@
         /* Properties */
         border-radius: 32px;
         background-color: #35CAD5;
-        box-shadow: 5px 10px 25px rgb(155, 155, 155);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
     }
 
@@ -49,4 +50,9 @@
     .subbody {
         margin-right: 8px;
     }
+
+    #header-text :global(> :first-child) {
+        font-size: 40px;
+	}
+
 </style>
