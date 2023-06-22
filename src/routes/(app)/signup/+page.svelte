@@ -1,5 +1,26 @@
 <script>
     import {enhance} from "$app/forms"
+    import {toastStore} from "@skeletonlabs/skeleton";
+
+
+    const errorToast = {
+        message: "There was an error signing up",
+        background: "variant-filled-error",
+        shown: false,
+
+    }
+
+
+    export let form;
+    let formLast;
+
+
+    $: if (form?.message) {
+        errorToast.message = form.message
+        toastStore.trigger(errorToast)
+    }
+
+
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">

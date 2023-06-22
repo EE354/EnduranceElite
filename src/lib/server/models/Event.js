@@ -1,32 +1,30 @@
 import mongoose from 'mongoose';
 
-export const Event = mongoose.model("event",
-    new mongoose.Schema({
-            name: {
-                type: String,
-                required: true,
-            },
-            description: {
-                type: String,
-                required: true,
-            },
-            dateTime: {
-                startDate: {
+export const Event = mongoose.model(
+    "event",
+    new mongoose.Schema(
+        {
+            timeStamp: {
+                start: {
                     type: Date,
                     required: true
                 },
-                endDate: {
+                end: {
                     type: Date,
                     required: true
                 }
             },
-            allDay: {
-                type: Boolean,
-                default: false
+            name: {
+                type: String,
+                required: true
+            },
+            description: {
+                type: String,
+                default: ""
             },
             location: {
                 type: String,
-                required: true,
+                default: "Endurance Elite Gymnastics & Dance"
             }
         }
     )

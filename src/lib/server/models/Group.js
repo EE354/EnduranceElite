@@ -1,23 +1,21 @@
 import mongoose from "mongoose";
 
-export const Key = mongoose.model(
-    "auth_key",
+export const Group = mongoose.model(
+    "group",
     new mongoose.Schema(
         {
-            _id: {
-                type: String
-            },
-            user_id: {
+            name: {
                 type: String,
                 required: true
             },
-            hashed_password: String,
-            primary_key: {
-                type: Boolean,
-                required: true
+            description: {
+                type: String,
+                default: ""
             },
-            expires: Number
-        },
-        { _id: false }
+            settings: {
+                type: Object,
+                default: {}
+            }
+        }
     )
 );

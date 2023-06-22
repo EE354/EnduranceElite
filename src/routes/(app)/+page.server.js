@@ -15,26 +15,31 @@ export const load = async ({ locals}) => {
     //Set page data
     const news = [
         {
+            id: 1,
             date: "3/18/2023",
             title: "Parent’s Night Out 1",
             body: "Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm.",
         },
         {
+            id: 2,
             date: "3/18/2023",
             title: "Parent’s Night Out 2",
             body: "Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm.",
         },
         {
+            id: 3,
             date: "3/18/2023",
             title: "Parent’s Night Out 3",
             body: "Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm.",
         },
         {
+            id: 4,
             date: "3/18/2023",
             title: "Parent’s Night Out 4",
             body: "Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm.",
         },
         {
+            id: 5,
             date: "3/18/2023",
             title: "Parent’s Night Out 5",
             body: "Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm.",

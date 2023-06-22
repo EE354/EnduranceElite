@@ -1,6 +1,13 @@
 import {dateOfBirthSchema, emailSchema, nameSchema, passwordSchema} from "$lib/server/zodSchemas";
 import {auth} from "$lib/server/lucia.js";
 import {fail, redirect} from "@sveltejs/kit";
+import {toastStore} from "@skeletonlabs/skeleton";
+
+
+const errorToast = {
+    message: "An error occurred while creating your account",
+    background: "variant-filled-error",
+}
 
 export const load = async ({locals}) => {
     const {session} = await locals.auth.validateUser();
@@ -54,8 +61,15 @@ export const actions = {
             const session = await auth.createSession(user.userId);
             locals.auth.setSession(session);
         } catch (e) {
-            console.log(e)
-            return fail(200);
+            let message;
+            if (e.errors) {
+                message = e.errors[0].message;
+            } else {
+                message = e.message;
+            }
+            return fail(300, {
+                message: message
+            });
         }
         //If successful, redirect to home page
         throw redirect(302, "/");

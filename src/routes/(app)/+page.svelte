@@ -68,16 +68,18 @@
         <!-- Wrapper for overflow -->
         <div class="container flex overflow-x-auto">
             {#each newsItems as news}
-                <div class="card variant-filled-surface w-modal-slim rounded-2xl mx-2">
+                <a class="card variant-filled-surface w-modal-slim rounded-2xl mx-2" href="/news/{news.id}">
                     <div class="container p-4">
                         <p>{news.date}</p>
                         <h3>{news.title}</h3>
                         <p>{news.body}</p>
                     </div>
-                </div>
+                </a>
             {/each}
         </div>
     </div>
+
+
     <div class="container py-4">
         <!-- Card Block -->
         <div class="container flex flex-row flex-wrap justify-center">

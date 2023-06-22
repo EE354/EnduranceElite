@@ -8,6 +8,7 @@
 
     export let data;
 
+    //Create a modal component and modal
     const modalComponent = {
         // Pass a reference to your custom component
         ref: Modal,
@@ -29,7 +30,9 @@
     let options = {
         view: 'dayGridMonth',
         eventClick: async (info) => {
+            //Set the props of the modal component
             modalComponent.props = { event: info.event };
+            //Trigger the modal activation
             modalStore.trigger(modal);
         },
         events: data.events,

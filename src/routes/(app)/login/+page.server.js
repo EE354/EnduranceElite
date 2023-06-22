@@ -12,6 +12,7 @@ export const load = async ({locals}) => {
 export const actions = {
     login: async ({request, locals}) => {
         try {
+            console.log("login");
             //Get form data
             const form = await request.formData();
             const email = form.get("email");
@@ -25,12 +26,14 @@ export const actions = {
             //Get userKey
             const key = await auth.useKey("email", email, password);
 
-
             //Login user / create session
             const session = await auth.createSession(key.userId);
             locals.auth.setSession(session);
         } catch (e) {
-            return fail(200);
+            console.log(e);
+            return fail(401, {
+                message: "Username or password is incorrect"
+            });
         }
         //If successful, redirect to home page
         throw redirect(302, "/");
