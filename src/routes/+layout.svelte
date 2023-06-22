@@ -31,8 +31,8 @@
                 {#if data.session?.sessionId}
                     <a class="nav-link" href="/account">Account</a>
                 {:else}
-                    <a class="nav-link text-black dark:text-whtie" href="/signup">Signup</a>
-                    <a class="btn variant-filled-primary" href="/login"><p>Login</p></a>
+                    <a class="nav-link text-black dark:text-whtie " href="/signup"><p class="dark:text-white text-black">Signup</p></a>
+                    <a class="btn variant-filled-tertiary" href="/login"><p class="dark:text-white text-black">Login</p></a>
                 {/if}
             </svelte:fragment>
 

@@ -66,7 +66,7 @@
         <!-- Card Block -->
         <div class="container flex flex-row flex-wrap justify-center">
             {#each data.topLinks as card}
-                <dev class="card w-5/12 variant-filled-surface rounded-2xl flex flex-row justify-center py-8 m-1">
+                <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1">
                     <div class="mr-4">
                         <img class=" rounded-2xl"
                              alt={card.image.alt}
@@ -88,7 +88,7 @@
     </div>
 
 
-    <div class="container variant-ghost-tertiary rounded-xl flex flex-row">
+    <div class="container variant-ghost-tertiary flex flex-row">
         <div class="container w-4/12 h-3/12 p-4">
             <img
                     class="rounded-xl"
@@ -107,7 +107,7 @@
         <!-- Card Block -->
         <div class="container flex flex-row flex-wrap justify-center">
             {#each data.bottomLinks as card}
-                <dev class="card w-5/12 variant-filled-surface rounded-2xl flex flex-row justify-center py-8 m-1">
+                <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1">
                     <div class="mr-4">
                         <img class=" rounded-2xl"
                              alt={card.image.alt}
@@ -128,7 +128,7 @@
         </div>
     </div>
 
-    <div class="container variant-ghost-tertiary rounded-xl flex flex-row">
+    <div class="container variant-ghost-tertiary flex flex-row">
         <div class="container w-4/12 h-3/12 p-4">
             <img
                     class="rounded-xl"
