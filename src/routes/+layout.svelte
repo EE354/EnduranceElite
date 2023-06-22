@@ -17,13 +17,13 @@
 </svelte:head>
 
 <Modal />
-
+{#if !data.disableLayout}
 <AppShell>
     <svelte:fragment slot="header">
         <AppBar>
 
             <svelte:fragment slot="lead">
-                <a href="/"><img alt="Endurance Elite Logo" class="badge w-1/4 p-0" style="max-height: 160%" src="src/lib/assets/Logos/ee-icon.png"/></a>
+                <a href="/"><img alt="Endurance Elite Logo" class="badge w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/ee-icon.png"/></a>
             </svelte:fragment>
 
 
@@ -61,7 +61,9 @@
 
     <slot />
 </AppShell>
-
+{:else}
+    <slot />
+{/if}
 <style>
     .material-symbols-outlined {
         font-variation-settings:

@@ -1,10 +1,10 @@
 
 
 
-export const load = async ({}) => {
+export const load = async ({ locals}) => {
 
     //Get user
-
+    const {session, user} = await locals.auth.validateUser();
 
     //Set page data
     const news = [
@@ -37,17 +37,15 @@ export const load = async ({}) => {
     const topLinks = [
         {
             image: {
-                src: "src/lib/assets/Landing/birthdayparties.jpg",
+                src: "$lib/Landing/birthdayparties.jpg",
                 alt: "Track with a Bouncy Castle",
             },
             title: "Gymnastics",
             body: "We offer gymnastics classes to ages 1 year to Adults. From Babynastics to Girl's and Boy's Rec classes and finally to Adult classes, there is something for everyone! As soon as you can walk, we can teach you gymnastics!",
-            name: undefined,
-            href: undefined,
         },
         {
             image: {
-                src: "src/lib/assets/Landing/adultclasses.jpg",
+                src: "$lib/Landing/adultclasses.jpg",
                 alt: "Person doing a Handstand",
             },
             title: "Adult Classes",
@@ -57,7 +55,7 @@ export const load = async ({}) => {
         },
         {
             image: {
-                src: "src/lib/assets/Landing/samplerclasses.jpg",
+                src: "$lib/Landing/samplerclasses.jpg",
                 alt: "Kid doing a T-pose"
             },
             title: "Sampler Classes",
@@ -67,7 +65,7 @@ export const load = async ({}) => {
         },
         {
             image: {
-                src: "src/lib/assets/Landing/opengym.jpg",
+                src: "$lib/Landing/opengym.jpg",
                 alt: "Person doing a Flip"
             },
             title: "Open Gym",
@@ -79,7 +77,7 @@ export const load = async ({}) => {
     const bottomLinks = [
         {
             image: {
-                src: "src/lib/assets/Landing/gymnastics.jpg",
+                src: "$lib/Landing/gymnastics.jpg",
                 alt: "Person being held up while doing a handstand",
             },
             title: "Gymnastics",
@@ -87,7 +85,7 @@ export const load = async ({}) => {
         },
         {
             image: {
-                src: "src/lib/assets/Landing/dance.jpg",
+                src: "$lib/Landing/dance.jpg",
                 alt: "Three kids in ballet dresses",
             },
             title: "Adult Classes",
@@ -97,7 +95,7 @@ export const load = async ({}) => {
         },
         {
             image: {
-                src: "src/lib/assets/Landing/cheerleadingclasses.jpg",
+                src: "$lib/Landing/cheerleadingclasses.jpg",
                 alt: "Kid being held up"
             },
             title: "Sampler Classes",
@@ -107,7 +105,7 @@ export const load = async ({}) => {
         },
         {
             image: {
-                src: "src/lib/assets/Landing/preschoolclasses.jpg",
+                src: "$lib/Landing/preschoolclasses.jpg",
                 alt: "Kid jumping on a Trampoline"
             },
             title: "Open Gym",

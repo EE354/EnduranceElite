@@ -30,7 +30,6 @@ export const actions = {
             const session = await auth.createSession(key.userId);
             locals.auth.setSession(session);
         } catch (e) {
-            console.log(e)
             return fail(200);
         }
         //If successful, redirect to home page

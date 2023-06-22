@@ -1,91 +1,56 @@
 <script>
+    import {AppBar, AppRail, AppRailAnchor, AppRailTile, AppShell, LightSwitch} from "@skeletonlabs/skeleton";
+    import {page} from "$app/stores";
 
+    export let data;
 </script>
-<div id="logobox">
-    <!-- Box containing Logo -->
-    <img alt="Endurance Elite Logo" src="../../public/Images/Logos/EE Logo.png">
-</div>
-<div id="titlebox">
-    <!-- Box containing Header Title -->
-    <h1>Administrator</h1>
-</div>
+
+<AppShell>
+    <svelte:fragment slot="header">
+        <AppBar>
+
+            <svelte:fragment slot="lead">
+                    <a href="/" class="flex flex-row">
+                        <img alt="Endurance Elite Logo" class="badge w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/ee Logo.png"/>
+                        <p class="pl-4 pt-3 dark:text-white text-black text-xl font-">Admin</p>
+                    </a>
+
+            </svelte:fragment>
+
+
+            <svelte:fragment slot="trail">
+                {#if data.session?.sessionId}
+                    <a class="nav-link" href="/account">Account</a>
+                {:else}
+                    <a class="nav-link text-black dark:text-whtie " href="/signup"><p class="dark:text-white text-black">Signup</p></a>
+                    <a class="btn variant-filled-tertiary" href="/login"><p class="dark:text-white text-black">Login</p></a>
+                {/if}
+            </svelte:fragment>
+
+        </AppBar>
+    </svelte:fragment>
+
+
+    <svelte:fragment slot="sidebarLeft">
+        <AppRail>
+            <AppRailAnchor href="/calendar" selected={$page.url.pathname === '/calendar'}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    event
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Calendar</p></span>
+            </AppRailAnchor>
+
+            <!-- --- -->
+            <svelte:fragment slot="trail">
+                <AppRailTile><div class="p-4"><LightSwitch /></div></AppRailTile>
+            </svelte:fragment>
+        </AppRail>
+    </svelte:fragment>
+
+
+    <slot />
+</AppShell>
+
 <slot/>
-
-
-<style>
-
-    #logobox {
-        /* Logo Box */
-
-        /* Positioning */
-        position: absolute;
-        left: 0px;
-        top: 0px;
-
-        /* Dimensions */
-        width: 279px;
-        height: 160px;
-
-        /* Dashboard/Slight Darker Gray */
-        background: #CFCFCF;
-    }
-
-    #titlebox {
-        /* Title Box */
-
-        /* Positioning */
-        position: absolute;
-        left: 279px;
-        top: 0px;
-
-        /* Dimensions */
-        width: 1161px;
-        height: 108px;
-
-        /* Properties */
-        padding-top: 2.5%;
-        padding-left: 2%;
-
-        /* Dashboard/Light Gray */
-        background: #E3E7EA;
-    }
-
-    #Menu {
-        /* Menu Box */
-
-        /* Positioning */
-        position: absolute;
-        left: 0px;
-        top: 160px;
-
-        /* Dimensions */
-        width: 279px;
-        height: 871px;
-
-        /* Dashboard/Light Gray */
-        background: #e3e7ea;
-    }
-
-    #Contents {
-        /* Menu Contents */
-
-        /* Auto layout */
-
-        /* Positioning */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        gap: 7px;
-
-        position: absolute;
-        left: 93px;
-        top: 271px;
-        flex: auto;
-
-        /* Dimensions */
-        width: 97px;
-        height: 228px;
-
-    }
-</style>

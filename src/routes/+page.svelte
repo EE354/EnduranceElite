@@ -1,9 +1,15 @@
 <script>
     import {Paginator} from "@skeletonlabs/skeleton";
+    import { slide, fly } from 'svelte/transition';
 
     export let data;
 
     $: newsItems = data.news.slice(page.offset, page.offset + page.limit);
+
+    const img = (src) => {
+        const noLib = src.slice(4, src.length).toString()
+        return `src/lib/${noLib}`
+    }
 
     let page = {
         offset: 0,
@@ -30,7 +36,7 @@
         <img
                 class="lg:w-4/12 rounded-2xl grow  lg:grow-0"
                 alt="Arm Stretch"
-                src="src/lib/assets/Landing/image2.jpg"
+                src="$lib/Landing/image2.jpg"
         />
     </div>
 
@@ -66,11 +72,11 @@
         <!-- Card Block -->
         <div class="container flex flex-row flex-wrap justify-center">
             {#each data.topLinks as card}
-                <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1">
+                <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1" in:fly|local >
                     <div class="mr-4">
                         <img class=" rounded-2xl"
                              alt={card.image.alt}
-                             src={card.image.src}>
+                             src={img(card.image.src)}>
                     </div>
                     <div class="w-5/12 r-4">
                         <h3>{card.title}</h3>
@@ -88,12 +94,12 @@
     </div>
 
 
-    <div class="container variant-ghost-tertiary flex flex-row">
+    <div class="card variant-ghost-tertiary flex flex-row">
         <div class="container w-4/12 h-3/12 p-4">
             <img
                     class="rounded-xl"
                     alt="3 Children Posing"
-                    src="src/lib/assets/Landing/image1.jpg">
+                    src="$lib/Landing/image1.jpg">
         </div>
         <div class="container flex flex-col pt-8">
             <h2>We're Hiring</h2>
@@ -111,7 +117,7 @@
                     <div class="mr-4">
                         <img class=" rounded-2xl"
                              alt={card.image.alt}
-                             src={card.image.src}>
+                             src={img(card.image.src)}>
                     </div>
                     <div class="w-5/12 r-4">
                         <h3>{card.title}</h3>
@@ -128,12 +134,12 @@
         </div>
     </div>
 
-    <div class="container variant-ghost-tertiary flex flex-row">
+    <div class="card variant-ghost-tertiary flex flex-row">
         <div class="container w-4/12 h-3/12 p-4">
             <img
                     class="rounded-xl"
                     alt="3 Children Posing"
-                    src="src/lib/assets/Landing/image4.jpg">
+                    src="$lib/Landing/image4.jpg">
         </div>
         <div class="container flex flex-col pt-8">
             <h2>Competitions</h2>
