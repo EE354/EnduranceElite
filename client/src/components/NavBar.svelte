@@ -37,17 +37,28 @@
                     About
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href={$url('./')}>Action</a>
-                <a class="dropdown-item" href={$url('./')}>Another action</a>
+                <a class="dropdown-item" href={$url('./tuition')}>Tuition & Policies</a>
+                <a class="dropdown-item" href={$url('./registration')}>Registration</a>
+                <a class="dropdown-item" href={$url('./contact-us')}>Contact Us</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href={$url('./')}>Something else here</a>
+                <a class="dropdown-item" href={$url('./crew')}>Crew</a>
+                <a class="dropdown-item" href={$url('./join-the-crew')}>Join the Crew</a>
                 </div>
             </li>
 
             <!-- Activities -->
             <li class="nav-item my-auto">
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href="#">Activities</a>
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Activities
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href={$url('./gymnastics')}>Gymanstics</a>
+                    <a class="dropdown-item" href={$url('./dance')}>Dance</a>
+                    <a class="dropdown-item" href={$url('./cheer')}>Cheer</a>
+                    <a class="dropdown-item" href={$url('./ninja-warrior')}>Ninja Warrior</a>
+                    <a class="dropdown-item" href={$url('./adult-classes')}>Adult Classes</a>
+                </div>
             </li>
 
             <!-- Endurance Elite logo -->
