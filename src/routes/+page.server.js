@@ -3,6 +3,10 @@
 
 export const load = async ({}) => {
 
+    //Get user
+
+
+    //Set page data
     const news = [
         {
             date: "3/18/2023",
@@ -30,7 +34,6 @@ export const load = async ({}) => {
             body: "Enjoy a night out and leave the kids with us. We provide pizza, juice, games, free play and a movie. PNO is from 6:00-10:00 pm.",
         },
     ]
-
     const topLinks = [
         {
             image: {
@@ -73,7 +76,6 @@ export const load = async ({}) => {
             name: "See Schedule",
         },
     ]
-
     const bottomLinks = [
         {
             image: {
@@ -114,7 +116,6 @@ export const load = async ({}) => {
             name: "See Schedule",
         },
     ]
-
 
     return {
         news,

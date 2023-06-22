@@ -1,6 +1,6 @@
 //Imports
 const { Router } = require('express');
-const User = require('../model/User');
+const User = require('../model/Auth_user');
 const uuid = require('uuid');
 const nodeCache = require('node-cache');
 
@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({email: req.body.email});
 
         //check if the user exists
-        if (!user) throw Error('User not found');
+        if (!user) throw Error('Auth_user not found');
 
         //check if the password is correct
         if (!user.checkPassword(req.body.password)) throw Error('Incorrect password');

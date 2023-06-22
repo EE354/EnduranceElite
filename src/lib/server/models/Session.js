@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-export const Key = mongoose.model(
-    "auth_key",
+export const Session = mongoose.model(
+    "auth_session",
     new mongoose.Schema(
         {
             _id: {
@@ -11,12 +11,14 @@ export const Key = mongoose.model(
                 type: String,
                 required: true
             },
-            hashed_password: String,
-            primary_key: {
-                type: Boolean,
+            active_expires: {
+                type: Number,
                 required: true
             },
-            expires: Number
+            idle_expires: {
+                type: Number,
+                required: true
+            }
         },
         { _id: false }
     )

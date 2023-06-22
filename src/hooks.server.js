@@ -1,11 +1,10 @@
 import mongoose from 'mongoose';
 import {MONGOOSE_CONNECTION} from "$env/static/private";
+import {auth} from "$lib/server/lucia.js";
 
 export const handle = async ({event, resolve}) => {
-    try {
-        await mongoose.connect(MONGOOSE_CONNECTION);
-        return resolve(event);
-    } catch (err) {
-        console.log(err)
-    }
+
+    await mongoose.connect(MONGOOSE_CONNECTION);
+    event.locals.auth = auth.handleRequest(event);
+    return await resolve(event);
 }

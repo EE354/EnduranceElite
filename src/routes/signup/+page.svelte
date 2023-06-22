@@ -6,8 +6,9 @@
     <div class="space-y-5 container flex justify-center items-center">
         <form method="POST" use:enhance>
             <label class="label">
-                <span>Username</span>
-                <input class="input" type="text" name="username" placeholder="Username" />
+                <span>Name</span>
+                <input class="input" type="text" name="first" placeholder="First" />
+                <input class="input" type="text" name="last" placeholder="Last" />
             </label>
             <label class="label">
                 <span>Email</span>
@@ -16,6 +17,14 @@
             <label class="label">
                 <span>Password</span>
                 <input class="input" type="password" name="password" placeholder="Password" />
+            </label>
+            <label class="label">
+                <span>Confirm Password</span>
+                <input class="input" type="password" name="confirmPassword" placeholder="Password" />
+            </label>
+            <label>
+                <span>Date of Birth</span>
+                <input type="date" class="input" name="dob">
             </label>
 
             <input type="submit" class="btn variant-filled"/>

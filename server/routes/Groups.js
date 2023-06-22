@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const Group = require('../model/Group');
-const User = require('../model/User');
+const User = require('../model/Auth_user');
 
 const router = Router();
 
@@ -43,10 +43,10 @@ router.put('/addUser', async (req, res) => {
 
        //Get the user object
        const user = await User.findById(userId);
-       if (!user) throw Error('User does not exist');
+       if (!user) throw Error('Auth_user does not exist');
 
        //Check if the user is already in the group
-       if (user.groups.includes(groupId)) throw Error('User already in the group');
+       if (user.groups.includes(groupId)) throw Error('Auth_user already in the group');
 
        //Check if the group is full
        if (User.find({groups: groupId}).length >= group.capacity) throw Error('Group is full');
@@ -54,8 +54,8 @@ router.put('/addUser', async (req, res) => {
        //Check if the user is the right age, ignore if age is -1
        const age = user.getAge();
        if (user.role === 0) {
-           if (age < group.age.minAge) throw Error('User is too young for this group');
-           if (age > group.age.maxAge) throw Error('User is too old for this group');
+           if (age < group.age.minAge) throw Error('Auth_user is too young for this group');
+           if (age > group.age.maxAge) throw Error('Auth_user is too old for this group');
        }
 
        //Add the group to the user
@@ -114,10 +114,10 @@ router.delete('/removeUser', async (req, res) => {
 
         //Get the user object
         const user = await User.findById(userId);
-        if (!user) throw Error('User does not exist');
+        if (!user) throw Error('Auth_user does not exist');
 
         //Check if the user is in the group
-        if (!user.groups.includes(groupId)) throw Error('User is not in the group');
+        if (!user.groups.includes(groupId)) throw Error('Auth_user is not in the group');
 
         //Remove the selected group from the user
         let userGroups = user.groups;
@@ -187,7 +187,7 @@ router.post('/getGroupsByUser', async (req, res) => {
     const { userId } = req.body;
 
    const user = await User.findById(userId);
-    if (!user) throw Error('User does not exist');
+    if (!user) throw Error('Auth_user does not exist');
 
     const groupIds = user.groups;
     const groups = [];

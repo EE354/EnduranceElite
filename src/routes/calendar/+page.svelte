@@ -2,78 +2,41 @@
     import Calendar from '@event-calendar/core';
     import DayGrid from '@event-calendar/day-grid';
     import Interaction from '@event-calendar/interaction';
-    import {account, apiDomain} from "../stores";
-    import EventModal from "../components/EventModal.svelte";
-    import NavBar from "../components/NavBar.svelte";
+    import { modalStore } from "@skeletonlabs/skeleton";
+    import {onMount} from "svelte";
+    import Modal from "./Modal.svelte";
 
-    //Modal control
-    let openInfoModal = false;
-    let shownEvent;
+    export let data;
 
-    let events
-
-    const formatEvent = (event) => {
-        let formatedEvent ={
-            resourceId: event._id,
-            title: event.name,
-            start: new Date(event.dateTime.startDate),
-            end: new Date(event.dateTime.endDate),
-            allDay: event.allDay
-        };
-
-        return formatedEvent;
+    const modalComponent = {
+        // Pass a reference to your custom component
+        ref: Modal,
+        // Add the component properties as key/value pairs
+        props: { background: 'bg-red-500' },
+        // Provide a template literal for the default component slot
+        slot: '<p>Skeleton</p>'
     };
 
-    const fetchEvents = async () => {
-        try {
-            let eventList = [];
-            await getEvents();
-            for (let event of events) {
-                eventList.push(formatEvent(event));
-            }
-            return eventList;
-        } catch (e) {
-            console.log(e)
-        }
-
+    const modal = {
+        type: 'component',
+        component: modalComponent,
     }
 
-    const findEvent = (id) => {
-        for (let event of events) {
-            if (event._id === id) {return event}
-        }
-    }
-    const getEvents = async () => {
-        try {
-            const response = await axios({
-                method: 'POST',
-                url: `${apiDomain}/api/calendar/getEvents`,
-            })
-            events = response.data;
-        } catch (e) {
-            console.log(e)
-        }
-    };
+
 
     let calendar;
     let plugins = [DayGrid, Interaction];
     let options = {
-        height: '70%',
         view: 'dayGridMonth',
-        eventClick: (info) => {
-            console.log(info.event)
-            shownEvent = findEvent(info.event.resourceIds[0]);
-            openInfoModal = true;
+        eventClick: async (info) => {
+            modalComponent.props = { event: info.event };
+            modalStore.trigger(modal);
         },
-        eventSources: [{events: () => {
-                let events = fetchEvents()
-                return events;
-
-            }}]
+        events: data.events,
     };
 
 
 </script>
-<EventModal bind:event={shownEvent} bind:open={openInfoModal}/>
-<Calendar bind:this={calendar} {plugins} {options} />
-
+<div class="container p-4 ">
+    <Calendar bind:this={calendar} {plugins} {options} />
+</div>

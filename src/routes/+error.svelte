@@ -1,19 +1,7 @@
-<style>
-    .huge {
-        font-size: 12rem;
-    }
-    .e404 {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-</style>
-
-<div class="e404">
-    <div class="huge">404</div>
-    <div class="big">Page not found.
-        <a href="/static">Go back</a>
+<div class="container flex flex-col justify-center">
+    <div class="container flex flex-col justify-center">
+        <h1>404</h1>
+        <h3>Page not found</h3>
+        <p>Click <a href="/">here</a> to return home</p>
     </div>
 </div>
