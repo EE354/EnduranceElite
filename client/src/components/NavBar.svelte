@@ -36,26 +36,11 @@
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
                 </a>
-
-                <div class="dropdown-menu bg-white" aria-labelledby="navbarDropdown">
-                    <div class="d-flex">
-                        <div class="d-inline-flex flex-column flex-fill">
-                            <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a class="dropdown-item" href="#">Registration</a>
-                            <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a class="dropdown-item" href="#">Schedule</a>
-                            <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a class="dropdown-item" href="#">Tuition & Policies</a>
-                        </div>
-                        <div class="d-inline-flex flex-column flex-fill">
-                            <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a class="dropdown-item" href="#">Crew</a>
-                            <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a class="dropdown-item" href="#">Join the Crew</a>
-                            <!-- svelte-ignore a11y-invalid-attribute -->
-                            <a class="dropdown-item" href="#">Contact Us</a>
-                        </div>
-                    </div>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href={$url('./')}>Action</a>
+                <a class="dropdown-item" href={$url('./')}>Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href={$url('./')}>Something else here</a>
                 </div>
             </li>
 
