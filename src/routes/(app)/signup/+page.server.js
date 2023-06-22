@@ -26,9 +26,6 @@ export const actions = {
             const lastName = form.get("last");
             const dateOfBirth = new Date(form.get("dob"));
 
-            console.log(email, password, confirmPassword, firstName, lastName, dateOfBirth)
-
-
             //Zod validation
             emailSchema.parse(email);
             passwordSchema.parse(password);

@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
-export const User = mongoose.model(
+export const User = (() => {
+    try {
+
+        return mongoose.model(
         "auth_user",
         new mongoose.Schema(
             {
@@ -43,5 +46,9 @@ export const User = mongoose.model(
                 }
             },
             { _id: false, collection: 'users'}
-        )
-    );
+        ));
+
+    } catch (e) {
+        return mongoose.model("auth_user");
+    }
+})();
