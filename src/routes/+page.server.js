@@ -1,5 +1,11 @@
-
-
+import birthdayParties from "$lib/Landing/birthdayparties.jpg";
+import adultClasses from "$lib/Landing/adultclasses.jpg";
+import samplerClasses from "$lib/Landing/samplerclasses.jpg";
+import openGym from "$lib/Landing/opengym.jpg";
+import gymnastics from "$lib/Landing/gymnastics.jpg";
+import dance from "$lib/Landing/dance.jpg";
+import cheerLeadingClasses from "$lib/Landing/cheerleadingclasses.jpg";
+import preschoolClasses from "$lib/Landing/preschoolclasses.jpg";
 
 export const load = async ({ locals}) => {
 
@@ -37,7 +43,7 @@ export const load = async ({ locals}) => {
     const topLinks = [
         {
             image: {
-                src: "$lib/Landing/birthdayparties.jpg",
+                src: birthdayParties,
                 alt: "Track with a Bouncy Castle",
             },
             title: "Gymnastics",
@@ -45,7 +51,7 @@ export const load = async ({ locals}) => {
         },
         {
             image: {
-                src: "$lib/Landing/adultclasses.jpg",
+                src: adultClasses,
                 alt: "Person doing a Handstand",
             },
             title: "Adult Classes",
@@ -55,7 +61,7 @@ export const load = async ({ locals}) => {
         },
         {
             image: {
-                src: "$lib/Landing/samplerclasses.jpg",
+                src: samplerClasses,
                 alt: "Kid doing a T-pose"
             },
             title: "Sampler Classes",
@@ -65,7 +71,7 @@ export const load = async ({ locals}) => {
         },
         {
             image: {
-                src: "$lib/Landing/opengym.jpg",
+                src: openGym,
                 alt: "Person doing a Flip"
             },
             title: "Open Gym",
@@ -77,7 +83,7 @@ export const load = async ({ locals}) => {
     const bottomLinks = [
         {
             image: {
-                src: "$lib/Landing/gymnastics.jpg",
+                src: gymnastics,
                 alt: "Person being held up while doing a handstand",
             },
             title: "Gymnastics",
@@ -85,7 +91,7 @@ export const load = async ({ locals}) => {
         },
         {
             image: {
-                src: "$lib/Landing/dance.jpg",
+                src: dance,
                 alt: "Three kids in ballet dresses",
             },
             title: "Adult Classes",
@@ -95,7 +101,7 @@ export const load = async ({ locals}) => {
         },
         {
             image: {
-                src: "$lib/Landing/cheerleadingclasses.jpg",
+                src: cheerLeadingClasses,
                 alt: "Kid being held up"
             },
             title: "Sampler Classes",
@@ -105,7 +111,7 @@ export const load = async ({ locals}) => {
         },
         {
             image: {
-                src: "$lib/Landing/preschoolclasses.jpg",
+                src: preschoolClasses,
                 alt: "Kid jumping on a Trampoline"
             },
             title: "Open Gym",

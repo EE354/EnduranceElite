@@ -17,9 +17,6 @@
 
 
 <style>
-    .grid {
-
-    }
     #Menu {
         /* Menu Box */
 

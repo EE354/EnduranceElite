@@ -1,4 +1,14 @@
 <script>
+    import birthdayParties from "$lib/Landing/birthdayparties.jpg";
+    import adultClasses from "$lib/Landing/adultclasses.jpg";
+    import samplerClasses from "$lib/Landing/samplerclasses.jpg";
+    import openGym from "$lib/Landing/opengym.jpg";
+    import gymnastics from "$lib/Landing/gymnastics.jpg";
+    import dance from "$lib/Landing/dance.jpg";
+    import cheerLeadingClasses from "$lib/Landing/cheerleadingclasses.jpg";
+    import preschoolClasses from "$lib/Landing/preschoolclasses.jpg";
+
+
     import {Paginator} from "@skeletonlabs/skeleton";
     import { slide, fly } from 'svelte/transition';
 
@@ -8,7 +18,7 @@
 
     const img = (src) => {
         const noLib = src.slice(4, src.length).toString()
-        return `src/lib/${noLib}`
+        return `src/lib${noLib}`
     }
 
     let page = {
@@ -76,7 +86,7 @@
                     <div class="mr-4">
                         <img class=" rounded-2xl"
                              alt={card.image.alt}
-                             src={img(card.image.src)}>
+                             src={card.image.src}>
                     </div>
                     <div class="w-5/12 r-4">
                         <h3>{card.title}</h3>
@@ -112,20 +122,20 @@
     <div class="container py-4">
         <!-- Card Block -->
         <div class="container flex flex-row flex-wrap justify-center">
-            {#each data.bottomLinks as card}
+            {#each data.bottomLinks as {title, body, image:{ alt, src}, name, href}}
                 <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1">
                     <div class="mr-4">
                         <img class=" rounded-2xl"
-                             alt={card.image.alt}
-                             src={img(card.image.src)}>
+                             {alt}
+                             {src}>
                     </div>
                     <div class="w-5/12 r-4">
-                        <h3>{card.title}</h3>
-                        <p>{card.body}</p>
+                        <h3>{title}</h3>
+                        <p>{body}</p>
 
-                        {#if (card.name && card.href)}
+                        {#if (name && href)}
                             <div class="container pt-3">
-                                <a type="button" class="btn variant-filled-tertiary ps-5 pe-5" href="{card.href}">{card.name}</a>
+                                <a type="button" class="btn variant-filled-tertiary ps-5 pe-5" href="{href}">{name}</a>
                             </div>
                         {/if}
                     </div>
