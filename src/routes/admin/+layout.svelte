@@ -1,5 +1,5 @@
 <script>
-    import Group from "$lib/components/Group.svelte";
+
 </script>
 <div id="logobox">
     <!-- Box containing Logo -->

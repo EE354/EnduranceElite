@@ -1,47 +1,4 @@
 <script>
-    import Group from "$lib/components/Group.svelte";
-    import axios from "axios";
-    import {ready} from "@roxi/routify";
-    import { apiDomain } from "../../stores";
-
-
-    let groups = [];
-
-    let selectedGroup = null;
-
-    //Code for button toggles
-    let activeButton;
-    $: activeButton = undefined;
-
-    const selected = "btn-primary";
-    const secondary = "btn-secondary";
-
-    const getClass = (id, active) => {
-        if (active === id)  {
-            return selected;
-        } else {
-            return secondary;
-        }
-    };
-
-    function menuClick(id) {
-        activeButton = id;
-        selectedGroup = groups[id];
-    }
-
-    (async () => {
-        try {
-            const response = await axios({
-                method: "GET",
-                url: `${apiDomain}/api/groups/`
-            });
-            groups = response.data;
-            $ready();
-        } catch (e) {
-            console.log(e)
-        }
-    })();
-
 
 </script>
 
@@ -51,9 +8,6 @@
     <div id="Contents">
         <!-- Box containing The Menu Contents -->
         <div id="Groups">
-            {#each groups as group, i (group._id)}
-                <button on:click={() => {menuClick(i)}} class="btn {getClass(i, activeButton)}">{group.name}</button>
-            {/each}
         </div>
         <!-- Add Group Button -->
         <button type="button" class="btn btn-primary" >Add</button>
