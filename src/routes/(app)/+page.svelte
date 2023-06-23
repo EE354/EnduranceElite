@@ -11,6 +11,7 @@
 
     import {Paginator} from "@skeletonlabs/skeleton";
     import { slide, fly } from 'svelte/transition';
+    import PageFooter from "./PageFooter.svelte";
 
     export let data;
 
@@ -160,3 +161,5 @@
     </div>
 
 </main>
+
+<PageFooter />

@@ -1,4 +1,4 @@
-import {dateOfBirthSchema, emailSchema, nameSchema, passwordSchema} from "$lib/server/zodSchemas";
+import {dateOfBirthSchema, emailSchema, nameSchema, passwordSchema} from "$lib/server/zodSchemas.js";
 import {auth} from "$lib/server/lucia.js";
 import {fail, redirect} from "@sveltejs/kit";
 import {toastStore} from "@skeletonlabs/skeleton";

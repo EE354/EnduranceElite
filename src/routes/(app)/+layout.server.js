@@ -10,6 +10,7 @@ export const load = async ({locals, url}) => {
         status: 200,
         user: user,
         session: session,
-        disableLayout: isAdmin,
+        isAdmin: true,
+        url: url.pathname
     }
 }

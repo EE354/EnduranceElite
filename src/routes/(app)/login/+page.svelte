@@ -18,7 +18,7 @@
 
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center">
+<div class="container h-full mx-auto flex justify-center content-center mb-96">
     <div class="space-y-5 container flex justify-center items-center">
         <form method="POST" action="?/login" use:enhance>
             <label class="label">

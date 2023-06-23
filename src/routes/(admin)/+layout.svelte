@@ -10,8 +10,8 @@
         <AppBar>
 
             <svelte:fragment slot="lead">
-                    <a href="/" class="flex flex-row">
-                        <img alt="Endurance Elite Logo" class="badge w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/EE Logo.png"/>
+                    <a href="/admin" class="flex flex-row">
+                        <img alt="Endurance Elite Logo" class="w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/EE Logo.png"/>
                         <p class="pl-4 pt-3 dark:text-white text-black text-xl font-">Admin</p>
                     </a>
 
@@ -33,17 +33,26 @@
 
     <svelte:fragment slot="sidebarLeft">
         <AppRail>
-            <AppRailAnchor href="/calendar" selected={$page.url.pathname === '/calendar'}>
+            <!-- Calendar Button -->
+            <AppRailAnchor href="/admin/events" selected={$page.url.pathname === '/calendar'}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
                     event
                     </span>
                 </svelte:fragment>
-                <span><p class="text-black dark:text-white">Calendar</p></span>
+                <span><p class="text-black dark:text-white">Events</p></span>
             </AppRailAnchor>
 
-            <!-- --- -->
+            <!-- Bottom slot -->
             <svelte:fragment slot="trail">
+                <AppRailAnchor href="/" selected={$page.url.pathname === '/'}>
+                    <svelte:fragment slot="lead">
+                            <span class="material-symbols-outlined">
+                                home
+                            </span>
+                    </svelte:fragment>
+                    <span><p class="text-black dark:text-white">Home</p></span>
+                </AppRailAnchor>
                 <AppRailTile><div class="p-4"><LightSwitch /></div></AppRailTile>
             </svelte:fragment>
         </AppRail>
@@ -51,6 +60,8 @@
 
 
     <slot />
+
+
 </AppShell>
 
 <slot/>

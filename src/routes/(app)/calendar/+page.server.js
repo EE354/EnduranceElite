@@ -22,13 +22,11 @@ export const load = async ({locals}) => {
         const {session, user} = locals.auth.validateUser();
 
         const events = await Event.find();
-        console.log(events)
         let formattedEvents = [];
         for (let event of events) {
             formattedEvents.push(formatEvent(event));
         }
 
-        console.log(formattedEvents)
         return {
             status: 200,
             user: user,

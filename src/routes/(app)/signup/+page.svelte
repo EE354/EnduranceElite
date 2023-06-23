@@ -6,14 +6,10 @@
     const errorToast = {
         message: "There was an error signing up",
         background: "variant-filled-error",
-        shown: false,
-
     }
 
 
     export let form;
-    let formLast;
-
 
     $: if (form?.message) {
         errorToast.message = form.message
@@ -23,8 +19,8 @@
 
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center">
-    <div class="space-y-5 container flex justify-center items-center">
+<div class="container h-full mt-32  mb-56 flex justify-center content-center">
+    <div class="space-y-5 container flex justify-center content-center">
         <form method="POST" use:enhance>
             <label class="label">
                 <span>Name</span>

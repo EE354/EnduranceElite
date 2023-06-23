@@ -17,18 +17,10 @@
 
 <svelte:head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </svelte:head>
 
 <Modal />
 <Toast />
 
 <slot />
-<style>
-    .material-symbols-outlined {
-        font-variation-settings:
-                'FILL' 1,
-                'wght' 500,
-                'GRAD' 0,
-                'opsz' 40
-    }
-</style>
