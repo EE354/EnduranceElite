@@ -52,7 +52,7 @@
     </div>
 
 
-    <div class="card container max-w-[1440px] bg-primary-500 dark:bg-primary-900 rounded-2xl p-2">
+    <div class="card container w-full bg-primary-500 dark:bg-primary-900 rounded-2xl p-2">
         <!-- 1st Divider : News Bar -->
         <div class="container pl-6 flex flex-row justify-between">
             <h2 class="grow-0">News</h2>
@@ -85,9 +85,9 @@
         <!-- Card Block -->
         <div class="container lg:flex flex-wrap justify-center">
             {#each data.topLinks as card}
-                <div class="card w-[300px] md:w-[600px] bg-surface md:flex flex-row justify-center card-hover p-3 m-2" in:fly|local >
-                    <div class="mr-5 p-0">
-                        <img class=" rounded-2xl"
+                <div class="card bg-surface md:flex flex-row justify-center card-hover p-3 m-2" in:fly|local >
+                    <div class="mr-5">
+                        <img class="rounded-2xl w-[16rem] max-h-[16rem]"
                              alt={card.image.alt}
                              src={card.image.src}>
                     </div>
@@ -107,10 +107,10 @@
     </div>
 
 
-    <div class="card container max-w-[1440px] bg-primary-500 dark:bg-primary-900 flex flex-row">
-        <div class="container w-4/12 h-3/12 p-4">
+    <div class="card container bg-primary-500 dark:bg-primary-900 flex flex-row">
+        <div class="container w-4/12 h-3/12 p-4 mx-6">
             <img
-                    class="rounded-xl"
+                    class="rounded-xl w-[24em] h-[14em] object-cover"
                     alt="3 Children Posing"
                     src="$lib/Landing/image1.jpg">
         </div>
@@ -124,15 +124,15 @@
 
     <div class="container py-4">
         <!-- Card Block -->
-        <div class="container lg:flex flex-row flex-wrap justify-center">
+        <div class="container lg:flex flex-wrap justify-center">
             {#each data.bottomLinks as {title, body, image:{ alt, src}, name, href}}
-                <dev class="card w-[300px] md:w-[600px] bg-surface md:flex flex-row justify-center card-hover p-3 m-2">
-                    <div class="mr-4">
-                        <img class=" rounded-2xl"
+                <dev class="card bg-surface md:flex flex-row justify-center card-hover p-3 m-2"l>
+                    <div class="mr-5">
+                        <img class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
                              {alt}
                              {src}>
                     </div>
-                    <div class="w-5/12 r-4">
+                    <div class="w-[290px] r-4">
                         <h3>{title}</h3>
                         <p>{body}</p>
 
@@ -147,10 +147,10 @@
         </div>
     </div>
 
-    <div class="card container max-w-[1440px] bg-primary-500 dark:bg-primary-900 flex flex-row">
+    <div class="card container w-full bg-primary-500 dark:bg-primary-900 flex flex-row">
         <div class="container w-4/12 h-500 p-4">
             <img
-                    class="rounded-xl"
+                    class="rounded-xl w-[24em] h-[14em] object-cover"
                     alt="3 Children Posing"
                     src="$lib/Landing/image4.jpg">
         </div>

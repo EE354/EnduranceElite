@@ -10,17 +10,22 @@
     </div>
     
     {#each data.cards as {title, description, subtitle1, subtitle2, subtitle3, subdesc1, subdesc2, subdesc3}}
-            <div class="card container">
-                <h2>{title}</h2>
-                <p>{description}</p>
-                <h4>{subtitle1}</h4>
-                <h4>{subtitle2}</h4>
-                <h4>{subtitle3}</h4>
-                <p>{subdesc1}</p>
-                <p>{subdesc2}</p>
-                <p>{subdesc3}</p>
+            <div class="card container w-[600rem]">
+                <h2 class="bg-primary-500">{title}</h2>
+                <p class="col-span-3">{description}</p>
+                <div class="flex">
+                    <h4 class="bg-primary-500">{subtitle1}</h4>
+                    <h4>{subtitle2}</h4>
+                    <h4>{subtitle3}</h4>
+                </div>
+                <div class="flex">
+                    <p>{subdesc1}</p>
+                    <p>{subdesc2}</p>
+                    <p>{subdesc3}</p>
+                </div>
             </div>
     {/each}
+    
         <!-- <h2 slot="title" style="font-size: 40px;">Membership Fee</h2>
         <p slot="body">An annual membership fee is collected from all students enrolled in classes. Benefits of Membership Fees include the ability to enroll in any class or program and discounts on Special Activities such as Open Gym, Parent’s Night Out, Friday Night Flick & Day Camps.</p>
         <h4 slot="subtitle1">Each Member Pays:</h4>
@@ -28,47 +33,3 @@
         <p slot="subbody2">*Your annual registration will be charged on the 15th of the month you registered.</p>
         <p slot="subbody3">Annual registration fees are charged to the card on file. Annual registration fees are non-refundable</p> -->
 </div>
-
-<style>
-
-    #content-container {
-        /* Box */
-
-        /* Positioning */
-        margin: 24px;
-        padding: 24px;
-        display: grid;
-        grid-template-columns: auto auto auto;
-
-        /* Dimensions */
-        max-width: 621px;
-        /* min-height: 415px; */
-        height: auto;
-
-        /* Properties */
-        border-radius: 32px;
-        background-color: #35CAD5;
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-    }
-
-    #header-text {
-        /* Flex Vertically */
-        display: flex;
-        flex-direction: column;
-        grid-column-start: 1;
-        grid-column-end: 4;
-
-        /* Dimensions */
-        min-height: 240px;
-    }
-
-    .subbody {
-        margin-right: 8px;
-    }
-
-    #header-text :global(> :first-child) {
-        font-size: 40px;
-	}
-
-</style>
