@@ -24,7 +24,7 @@
                     <a class="nav-link" href="/account">Account</a>
                 {:else}
                     <a class="nav-link text-black dark:text-white " href="/signup"><p class="dark:text-white text-black">Signup</p></a>
-                    <a class="btn variant-filled-tertiary" href="/login"><p class="dark:text-white text-black">Login</p></a>
+                    <a class="btn bg-primary-500 dark:bg-primary-900" href="/login"><p class="dark:text-white text-black">Login</p></a>
                 {/if}
             </svelte:fragment>
 

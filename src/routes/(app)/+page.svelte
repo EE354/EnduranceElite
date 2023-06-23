@@ -42,7 +42,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 leo magna, mollis vel risus nec, commodo mollis libero.
             </p>
-            <button class="btn variant-filled-success w-28">Join</button>
+            <button class="btn bg-primary-500 dark:bg-primary-900 w-28">Join</button>
         </div>
         <img
                 class="lg:w-4/12 rounded-2xl grow  lg:grow-0"
@@ -52,9 +52,9 @@
     </div>
 
 
-    <div class="container variant-ghost-success rounded-2xl p-2 "><!-- 1st Divider : News Bar -->
+    <div class="bg-primary-500 dark:bg-primary-900 rounded-2xl p-2">
+        <!-- 1st Divider : News Bar -->
         <div class="container pl-6 flex flex-row justify-between">
-
             <h2 class="grow-0">News</h2>
             <div class="pt-4 pr-10 grow ">
                 <Paginator
@@ -69,7 +69,7 @@
         <!-- Wrapper for overflow -->
         <div class="container flex overflow-x-auto">
             {#each newsItems as news}
-                <a class="card variant-filled-surface w-modal-slim rounded-2xl mx-2" href="/news/{news.id}">
+                <a class="card bg-neutral-300 w-modal-slim rounded-2xl mx-2" href="/news/{news.id}">
                     <div class="container p-4">
                         <p>{news.date}</p>
                         <h3>{news.title}</h3>
@@ -83,31 +83,31 @@
 
     <div class="container py-4">
         <!-- Card Block -->
-        <div class="container flex flex-row flex-wrap justify-center">
+        <div class="container lg:flex flex-wrap justify-center">
             {#each data.topLinks as card}
-                <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1" in:fly|local >
-                    <div class="mr-4">
+                <div class="card w-[300px] md:w-[600px] bg-surface md:flex flex-row justify-center card-hover p-3 m-2" in:fly|local >
+                    <div class="mr-5 p-0">
                         <img class=" rounded-2xl"
                              alt={card.image.alt}
                              src={card.image.src}>
                     </div>
-                    <div class="w-5/12 r-4">
+                    <div class="w-[290px] r-4">
                         <h3>{card.title}</h3>
                         <p>{card.body}</p>
 
                         {#if (card.name && card.href)}
                             <div class="container pt-3">
-                                <a type="button" class="btn variant-filled-tertiary ps-5 pe-5" href="{card.href}">{card.name}</a>
+                                <a type="button" class="btn bg-primary-500 dark:bg-primary-900 ps-5 pe-5" href="{card.href}">{card.name}</a>
                             </div>
                         {/if}
                     </div>
-                </dev>
+                </div>
             {/each}
         </div>
     </div>
 
 
-    <div class="card variant-ghost-tertiary flex flex-row">
+    <div class="card bg-primary-500 dark:bg-primary-900 flex flex-row">
         <div class="container w-4/12 h-3/12 p-4">
             <img
                     class="rounded-xl"
@@ -124,9 +124,9 @@
 
     <div class="container py-4">
         <!-- Card Block -->
-        <div class="container flex flex-row flex-wrap justify-center">
+        <div class="container lg:flex flex-row flex-wrap justify-center">
             {#each data.bottomLinks as {title, body, image:{ alt, src}, name, href}}
-                <dev class="card w-5/12 bg-surface flex flex-row justify-center py-8 m-1">
+                <dev class="card w-[300px] md:w-[600px] bg-surface md:flex flex-row justify-center card-hover p-3 m-2">
                     <div class="mr-4">
                         <img class=" rounded-2xl"
                              {alt}
@@ -138,7 +138,7 @@
 
                         {#if (name && href)}
                             <div class="container pt-3">
-                                <a type="button" class="btn variant-filled-tertiary ps-5 pe-5" href="{href}">{name}</a>
+                                <a type="button" class="btn bg-primary-500 dark:bg-primary-900 ps-5 pe-5" href="{href}">{name}</a>
                             </div>
                         {/if}
                     </div>
@@ -147,8 +147,8 @@
         </div>
     </div>
 
-    <div class="card variant-ghost-tertiary flex flex-row">
-        <div class="container w-4/12 h-3/12 p-4">
+    <div class="card bg-primary-500 dark:bg-primary-900 flex flex-row">
+        <div class="container w-4/12 h-500 p-4">
             <img
                     class="rounded-xl"
                     alt="3 Children Posing"
