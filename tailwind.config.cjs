@@ -13,6 +13,9 @@ module.exports = {
 				sans: ['Plus Jakarta Sans', 'sans-serif'],
 			}
 		},
+		container: {
+			center: true,
+		},
 	},
 	plugins: [forms,typography,...skeleton()],
 }

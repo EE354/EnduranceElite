@@ -52,7 +52,7 @@
     </div>
 
 
-    <div class="bg-primary-500 dark:bg-primary-900 rounded-2xl p-2">
+    <div class="card container max-w-[1440px] bg-primary-500 dark:bg-primary-900 rounded-2xl p-2">
         <!-- 1st Divider : News Bar -->
         <div class="container pl-6 flex flex-row justify-between">
             <h2 class="grow-0">News</h2>
@@ -107,7 +107,7 @@
     </div>
 
 
-    <div class="card bg-primary-500 dark:bg-primary-900 flex flex-row">
+    <div class="card container max-w-[1440px] bg-primary-500 dark:bg-primary-900 flex flex-row">
         <div class="container w-4/12 h-3/12 p-4">
             <img
                     class="rounded-xl"
@@ -147,7 +147,7 @@
         </div>
     </div>
 
-    <div class="card bg-primary-500 dark:bg-primary-900 flex flex-row">
+    <div class="card container max-w-[1440px] bg-primary-500 dark:bg-primary-900 flex flex-row">
         <div class="container w-4/12 h-500 p-4">
             <img
                     class="rounded-xl"
