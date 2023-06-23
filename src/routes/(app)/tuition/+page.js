@@ -14,5 +14,7 @@ export const load = async ({ locals}) => {
         },
     ]
 
-    return cards;
+    return {
+        cards
+    };
 };
