@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import {MONGODB_URI} from "$env/static/private";
-import {auth} from "$lib/server/lucia.js";
+import { MONGODB_URI } from "$env/static/private";
+import { auth } from "$lib/server/lucia.js";
 
 export const handle = async ({event, resolve}) => {
 

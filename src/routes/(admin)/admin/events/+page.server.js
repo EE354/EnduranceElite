@@ -5,9 +5,9 @@ import {Event} from "$lib/server/models/Event";
 export const load = async () => {
     const env = await Event.find({}).sort({timeStamp: 1});
     console.log(env);
-    const events = env.JSON();
+    const events = env;
     return {
-        events: events,
+        events: JSON.parse(JSON.stringify(env)),
     }
 }
 

@@ -4,16 +4,14 @@ const formatEvent = (event) => {
     return {
         resourceId: event.id,
         title: event.name,
-        start: new Date(event.dateTime.startDate),
-        end: new Date(event.dateTime.endDate),
+        start: event.dateTime.startDate,
+        end: event.dateTime.endDate,
         allDay: event.allDay,
         extendedProps: {
             description: event.description,
             location: event.location,
         }
     };
-
-    ;
 };
 
 

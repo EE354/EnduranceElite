@@ -57,11 +57,13 @@
                     <thead>
                     <tr>
                         <th>#</th>
+                        <th>Start</th>
+                        <th>End</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>location</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th></th>
+                        <th class="w-6"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -71,12 +73,13 @@
                                 <input type="hidden" name="id" value="{event._id}">
                             </form>
                             <td>{i + start + 1}</td>
+                            <td>{new Date(event.timeStamp.start).toString()}</td>
+                            <td>{new Date(event.timeStamp.start).toString()}</td>
                             <td>{event.name}</td>
                             <td>{event.description}</td>
                             <td>{event.location}</td>
-                            <td><button form="formButtons" formaction="?/editEvent" >Edit</button></td>
-                            <td><button form="formButtons" formaction="?/delete">Delete</button></td>
-
+                            <td class="table-cell-fit"><button form="formButtons" formaction="?/editEvent" ><span class="material-symbols-outlined">edit</span></button></td>
+                            <td><button form="formButtons" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>
                     {/each}
