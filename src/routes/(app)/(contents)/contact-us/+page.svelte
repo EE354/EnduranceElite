@@ -42,7 +42,7 @@
                 <span>Comments</span>
                 <textarea class="textarea" rows="4" placeholder="Enter your message here." />
             </label>
-            <button class="btn bg-primary-600 dark:bg-primary-900 w-28">Join</button>
+            <button class="btn bg-primary-600 dark:bg-primary-900 w-28">Submit</button>
         </form>
     </div>
 </main>
