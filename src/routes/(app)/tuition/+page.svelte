@@ -8,7 +8,7 @@
         <div>
             <h1>Tuition</h1>
             <p>All classes and teams at Endurance Elite Gymnastics & Dance are paid monthly. Automatic payment through our Parent Portal is mandatory for registration into a class. Your child will be continuously enrolled and monthly tuition will be charged to your card on file. You never have to worry about pre-registration or losing your spot again! Listed below you will find our tuition rates, discounts & policies. Any addition class taken by a student or their immediate family member will receive a 10% discount on EVERY addition class (not just one!) Discounts are also available for Military families.Policies are subject to change, however, you will be notified via email through the parent portal.</p>
-            <button class="btn bg-primary-600 dark:bg-primary-900">Tuition</button>
+            <a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="">Parent Portal</a>
         </div>
         <img 
             class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
