@@ -42,7 +42,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 leo magna, mollis vel risus nec, commodo mollis libero.
             </p>
-            <button class="btn bg-primary-500 dark:bg-primary-900 w-28">Join</button>
+            <button class="btn bg-primary-600 dark:bg-primary-900 w-28">Join</button>
         </div>
         <img
                 class="lg:w-4/12 rounded-2xl grow  lg:grow-0"
@@ -52,7 +52,7 @@
     </div>
 
 
-    <div class="card container w-full bg-primary-500 dark:bg-primary-900 rounded-2xl p-2">
+    <div class="card container w-full bg-primary-600 dark:bg-primary-900 rounded-2xl p-2">
         <!-- 1st Divider : News Bar -->
         <div class="container pl-6 flex flex-row justify-between">
             <h2 class="grow-0">News</h2>
