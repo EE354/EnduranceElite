@@ -13,9 +13,9 @@
 
         <h4>Business Hours</h4>
         <p>
-            Monday-Friday<br />8am-9am
-            Saturday<br />8am-2pm
-            Sunday<br />Special Events Only
+            <u>Monday-Friday:</u><br />8am-9am<br />
+            <u>Saturday:</u><br />8am-2pm<br />
+            <u>Sunday:</u><br />Special Events Only
         </p>
     </div>
 
