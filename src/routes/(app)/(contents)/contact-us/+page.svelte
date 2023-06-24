@@ -1,6 +1,6 @@
-<main class="container flex">
+<main class="container lg:flex">
 
-    <div class="card bg-primary-500 m-4 p-4 w-1/4">
+    <div class="card bg-primary-500 m-4 p-4 lg:w-1/4">
         <!-- Contact Information Block -->
         <h4>Contact Information</h4>
         <p>
@@ -42,7 +42,7 @@
                 <span>Comments</span>
                 <textarea class="textarea" rows="4" placeholder="Enter your message here." />
             </label>
-            <button class="btn bg-primary-600 dark:bg-primary-900 w-28">Submit</button>
+            <input type="submit" class="btn bg-primary-600"/>
         </form>
     </div>
 </main>
