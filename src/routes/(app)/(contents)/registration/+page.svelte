@@ -48,7 +48,7 @@
 					<br />Monthly tuition is automatically charged every:
 					<span class="font-bold">1st of the Month</span>
 				</p>
-				<a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="">Tuition</a>
+				<a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="/">Tuition</a>
 			</div>
 			<div class="divider-vertical w-1 h-100% bg-secondary-500 ml-1 mr-12" />
 			<div>
@@ -86,9 +86,7 @@
 					be an active member.
 					<br /><br />Free Trials DO NOT apply to Adult Drop-In Classes
 				</p>
-				<a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href=""
-					>Parent Portal</a
-				>
+				<a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="/">Parent Portal</a>
 			</div>
 			<div class="divider-vertical w-1 h-100% bg-secondary-500 ml-1 mr-12" />
 			<div>
