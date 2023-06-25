@@ -48,6 +48,14 @@
 
 
             <svelte:fragment slot="trail">
+                <AppRailAnchor href="https://app.iclasspro.com/portal/enduranceelite">
+                    <svelte:fragment slot="lead">
+                            <span class="material-symbols-outlined">
+                                captive_portal
+                            </span>
+                    </svelte:fragment>
+                    <span><p class="text-black dark:text-white">Parent portal</p></span>
+                </AppRailAnchor>
                 {#if data.isAdmin}
                     <AppRailAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
                         <svelte:fragment slot="lead">

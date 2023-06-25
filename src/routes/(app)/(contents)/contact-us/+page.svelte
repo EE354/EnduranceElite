@@ -19,7 +19,7 @@
         </p>
     </div>
 
-    <div class="container shadow-lg m-4 p-4">
+    <div class="container shadow-lg m-4 p-4 rounded-xl">
         <!-- Contract Form Block -->
         <h4 class="cols-span2">We'd Love to Hear from You!</h4>
         <form>
