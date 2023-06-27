@@ -90,10 +90,15 @@
             </li>
 
             <!-- Account -->
-            <li class="nav-item my-auto">
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a class="nav-link" href={$url("/login")}>Account</a>
-            </li>
+            {#if $account.email != null}
+                <li class="nav-item active">
+                    <a class="nav-link" href={$url('./account')}>Account</a>
+                </li>
+            {:else}
+                <li class="nav-item active">
+                    <a class="nav-link" href={$url('./login')}>Login</a>
+                </li>
+            {/if}
         </ul>
     </div>
 </nav>
