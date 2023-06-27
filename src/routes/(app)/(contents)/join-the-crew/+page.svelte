@@ -1,5 +1,5 @@
 <main class="container">
-    <div class="container text-center bg-primary-500 p-4">
+    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4">
         <!-- Header Block -->
         <h1>Join the Crew</h1>
     </div>

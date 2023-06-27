@@ -4,7 +4,7 @@
 <main>
     <div class="container">
         
-        <div class="container text-center bg-primary-500 p-4 flex">
+        <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex">
             <!-- Header Block -->
             <div>
                 <h1>Tuition</h1>
