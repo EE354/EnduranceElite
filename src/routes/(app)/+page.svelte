@@ -36,7 +36,7 @@
     <!-- First Block of Contents -->
     <div class="container flex flex-row flex-wrap justify-center lg:flex-nowrap py-4">
         <!-- 1st Block of Contents -->
-        <div class="container flex flex-col pt-24 pl-20">
+        <div class="container flex flex-col lg:py-24 py-12 lg:pl-20">
             <h1>Those Who Endure, Conquer</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
@@ -44,11 +44,11 @@
             </p>
             <button class="btn bg-primary-600 dark:bg-primary-900 w-28">Join</button>
         </div>
-        <img
-                class="lg:w-4/12 rounded-2xl grow  lg:grow-0"
+        <div><img
+                class=" rounded-2xl grow object-cover lg:grow-0"
                 alt="Arm Stretch"
                 src="$lib/Landing/image2.jpg"
-        />
+        /></div>
     </div>
 
 
@@ -56,7 +56,7 @@
         <!-- 1st Divider : News Bar -->
         <div class="container pl-6 flex flex-row justify-between">
             <h2 class="grow-0">News</h2>
-            <div class="pt-4 pr-10 grow ">
+            <div class="pt-4 pr-10 grow">
                 <Paginator
                     controlVariant="variant-filled-surface"
                     buttonClasses="!px-3 mt-1 !h-auto btn variant-filled-surface border-0"
@@ -83,7 +83,7 @@
 
     <div class="container py-4">
         <!-- Card Block -->
-        <div class="container lg:flex flex-wrap justify-center">
+        <div class="container grid place-items-center lg:flex flex-wrap justify-center">
             {#each data.topLinks as card}
                 <div class="card bg-surface md:flex flex-row justify-center card-hover p-3 m-2" in:fly|local >
                     <div class="mr-5">
@@ -124,7 +124,7 @@
 
     <div class="container py-4">
         <!-- Card Block -->
-        <div class="container lg:flex flex-wrap justify-center">
+        <div class="container grid place-items-center lg:flex flex-wrap justify-center">
             {#each data.bottomLinks as {title, body, image:{ alt, src}, name, href}}
                 <dev class="card bg-surface md:flex flex-row justify-center card-hover p-3 m-2"l>
                     <div class="mr-5">
