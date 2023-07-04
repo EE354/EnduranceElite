@@ -15,19 +15,19 @@
 
     export let data;
 
-    $: newsItems = data.news.slice(page.offset, page.offset + page.limit);
+    // $: newsItems = data.news.slice(page.offset, page.offset + page.limit);
 
     const img = (src) => {
         const noLib = src.slice(4, src.length).toString()
         return `src/lib${noLib}`
     }
 
-    let page = {
-        offset: 0,
-        limit: 4,
-        size: data.news.length,
-        amounts: [1, 2, 3, 4, 5],
-    }
+    // let page = {
+    //     offset: 0,
+    //     limit: 4,
+    //     size: data.news.length,
+    //     amounts: [1, 2, 3, 4, 5],
+    // }
 
 
 </script>
@@ -39,10 +39,9 @@
         <div class="container flex flex-col lg:py-24 py-12 lg:pl-20">
             <h1>Those Who Endure, Conquer</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                leo magna, mollis vel risus nec, commodo mollis libero.
+                Discover your passion, ignite your spirit, and achieve greatness in a world of limitless possibilities at our premier athletic center.
             </p>
-            <button class="btn bg-primary-600 dark:bg-primary-900 w-28">Join</button>
+            <a href="/signup" type="button" class="btn bg-primary-600 dark:bg-primary-900 w-28">Join</a>
         </div>
         <div><img
                 class=" rounded-2xl grow object-cover lg:grow-0"
@@ -52,34 +51,33 @@
     </div>
 
 
-    <div class="card container w-full bg-primary-600 dark:bg-primary-900 rounded-2xl p-2">
+    <div class="card container bg-primary-600 dark:bg-primary-900 rounded-2xl p-4">
         <!-- 1st Divider : News Bar -->
-        <div class="container pl-6 flex flex-row justify-between">
+        <div class="container pl-1 flex flex-row justify-between">
             <h2 class="grow-0">News</h2>
             <div class="pt-4 pr-10 grow">
-                <Paginator
+                <!-- <Paginator
                     controlVariant="variant-filled-surface"
                     buttonClasses="!px-3 mt-1 !h-auto btn variant-filled-surface border-0"
                     justify="justify-end"
                     bind:settings={page}
                     showPreviousNextButtons={true}
-                />
+                /> -->
             </div>
         </div>
         <!-- Wrapper for overflow -->
-        <div class="container flex overflow-x-auto">
-            {#each newsItems as news}
-                <a class="card bg-neutral-300 w-modal-slim rounded-2xl mx-2" href="/news/{news.id}">
-                    <div class="container p-4">
+        <div class="container flex overflow-x-auto gap-2 p-2 ">
+            {#each data.news as news}
+            <a class="card bg-neutral-300 w-modal-slim rounded-2xl h-[14rem] pr-2 py-1" href="/">
+                <div class="container overflow-y-auto p-2 pl-4 w-[19rem]">
                         <p>{news.date}</p>
                         <h3>{news.title}</h3>
-                        <p>{news.body}</p>
+                        <p class="h-[8rem]">{news.body}</p>
                     </div>
                 </a>
             {/each}
         </div>
     </div>
-
 
     <div class="container py-4">
         <!-- Card Block -->
@@ -97,7 +95,7 @@
 
                         {#if (card.name && card.href)}
                             <div class="container pt-3">
-                                <a type="button" class="btn bg-primary-500 dark:bg-primary-900 ps-5 pe-5" href="{card.href}">{card.name}</a>
+                                <a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="{card.href}">{card.name}</a>
                             </div>
                         {/if}
                     </div>
@@ -138,7 +136,7 @@
 
                         {#if (name && href)}
                             <div class="container pt-3">
-                                <a type="button" class="btn bg-primary-500 dark:bg-primary-900 ps-5 pe-5" href="{href}">{name}</a>
+                                <a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="{href}">{name}</a>
                             </div>
                         {/if}
                     </div>

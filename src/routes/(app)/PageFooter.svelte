@@ -11,32 +11,29 @@
                     class="h-5/12"
             >
         </div>
-        <div class="w-3/4 flex flex-row justify-around mt-8">
+        <div class="w-3/4 flex flex-row justify-around gap-2 mt-8">
             <div>
-                <h4 class="mb-4">Legal</h4>
-                <p>Random Links</p>
-                <p>bullshit and more at 6</p>
-                <p>Terms</p>
+                <h4 class="mb-4">Location</h4>
+                <p>
+                    Endurance Elite Gymnastics & Dance
+                    <br>15814 University Oak #114
+                    <br>San Antonio, TX 78249
+                </p>
             </div>
             <div>
-                <h4 class="mb-4">Legal</h4>
-                <p>Claim</p>
-                <p>Privacy</p>
-                <p>Terms</p>
+                <h4 class="mb-4">Contact</h4>
+                <p>
+                    enduranceelitegym@gmail.com
+                    <br>Tel: 210-769-6359
+                </p>
             </div>
             <div>
-                <h4 class="mb-4">Legal</h4>
-                <p>Claim</p>
-                <p>Privacy</p>
-                <p>Terms</p>
+                <h4 class="mb-4">Socials</h4>
+                <p>@eecraftleyscraps</p>
+                <p>@enduranceelite7785</p>
+                <p>@Endurance Elite Gymnastics & Dance</p>
+                <p>@enduranceelitegym</p>
             </div>
-            <div>
-                <h4 class="mb-4">Legal</h4>
-                <p>Claim</p>
-                <p>Privacy</p>
-                <p>Terms</p>
-            </div>
-
         </div>
     </div>
 
