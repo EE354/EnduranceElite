@@ -32,7 +32,7 @@
 
 </script>
 
-<main class="p-6">
+<main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 bg-contain p-6">
     <!-- First Block of Contents -->
     <div class="container flex flex-row flex-wrap justify-center lg:flex-nowrap py-4">
         <!-- 1st Block of Contents -->
