@@ -54,15 +54,45 @@ export const actions = {
             }
         }
 
-
-
-
-
     },
-    delete: {
+    delete: async({locals, request}) => {
+        // TODO: implement delete
+        const {session, user} = await locals.auth.validateUser();
 
+        const form = await request.formData();
+
+        try {
+            
+
+            return {
+                status: 200,
+                message: "Event deleted successfully"
+            }
+        } catch (e) {
+            return {
+                status: 400,
+                message: e.message
+            }
+        }
     },
-    update: {
+    update: async({locals, request}) => {
+        //TODO: implement update
+        const {session, user} = await locals.auth.validateUser();
 
+        const form = await request.formData();
+
+        try {
+            
+
+            return {
+                status: 200,
+                message: "Event updated successfully"
+            }
+        } catch (e) {
+            return {
+                status: 400,
+                message: e.message
+            }
+        }
     }
 }
