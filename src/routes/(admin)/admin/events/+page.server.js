@@ -56,13 +56,13 @@ export const actions = {
 
     },
     delete: async({locals, request}) => {
-        // TODO: implement delete
         const {session, user} = await locals.auth.validateUser();
 
         const form = await request.formData();
+        const id = form.get("id");
 
         try {
-            
+            await Event.deleteOne({_id: id})
 
             return {
                 status: 200,
@@ -81,18 +81,5 @@ export const actions = {
 
         const form = await request.formData();
 
-        try {
-            
-
-            return {
-                status: 200,
-                message: "Event updated successfully"
-            }
-        } catch (e) {
-            return {
-                status: 400,
-                message: e.message
-            }
-        }
     }
 }

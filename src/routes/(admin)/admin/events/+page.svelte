@@ -69,6 +69,7 @@
                     <tbody>
                     {#each paginatedSource as event, i (event._id, i)}
                         <tr>
+                            <!--TODO: fix id not being the first event-->
                             <form id="formButtons" method="post">
                                 <input type="hidden" name="id" value="{event._id}">
                             </form>
