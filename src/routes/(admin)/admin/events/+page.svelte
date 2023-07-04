@@ -121,11 +121,11 @@
                 </label>
                 <label class="my-4">
                     <h5>Location</h5>
-                    <input type="text" name="location" class="input input-bordered" placeholder="Event Name">
+                    <input type="text" name="location" class="input input-bordered" placeholder="Event Location">
                 </label>
 
                 <button class="btn variant-filled-secondary ">Add Event</button>
-                <input class="btn variant-filled-error" type="reset" value="clear">
+                <input class="btn variant-filled-error" type="reset" value="Clear">
             </form>
         </div>
     </div>
