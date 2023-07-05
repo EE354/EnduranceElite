@@ -34,7 +34,7 @@
 
 <main class=" p-6">
     <!-- First Block of Contents -->
-    <div class="container flex flex-row flex-wrap justify-center lg:flex-nowrap py-4">
+    <div class="container flex flex-row items-center flex-wrap justify-center lg:flex-nowrap py-4">
         <!-- 1st Block of Contents -->
         <div class="container flex flex-col lg:py-24 py-12 lg:pl-20">
             <h1>Those Who Endure,<br>Conquer</h1>
@@ -160,4 +160,6 @@
 
 </main>
 
-<PageFooter />
+<div class="bg-neutral-100">
+    <PageFooter />
+</div>

@@ -1,8 +1,8 @@
 
 
 
-<hr class="mb-16 !border-t-2 flex justify-center content-center">
-<div class=" container p-4 flex justify-center content-center ">
+<hr class="!border-t-2 bg-neutral-100 flex justify-center content-center">
+<div class="container p-16 flex justify-center content-center ">
     <div class="container md:flex justify-center">
         <div class="" >
             <img
