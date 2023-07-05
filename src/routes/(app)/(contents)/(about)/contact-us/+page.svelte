@@ -1,5 +1,5 @@
-<main class="container lg:flex">
-
+<main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 h-full">
+<div class="container lg:flex">
     <div class="card bg-primary-500 m-4 p-4 lg:w-1/4">
         <!-- Contact Information Block -->
         <h4>Contact Information</h4>
@@ -19,7 +19,7 @@
         </p>
     </div>
 
-    <div class="container shadow-lg m-4 p-4 rounded-xl">
+    <div class="container bg-neutral-100 shadow-lg m-4 p-4 rounded-xl">
         <!-- Contract Form Block -->
         <h4 class="cols-span2">We'd Love to Hear from You!</h4>
         <form>
@@ -45,4 +45,5 @@
             <input type="submit" class="btn bg-primary-600"/>
         </form>
     </div>
+</div>
 </main>

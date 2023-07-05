@@ -1,7 +1,7 @@
 <script>
     export let data;
 </script>
-<main>
+<main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500">
     <div class="container">
         
         <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex">
@@ -21,8 +21,8 @@
         <div class="container flex flex-wrap">
 
         {#each data.cards as {title, description, header1, header2, header3, note1, note2, note3}}
-                <div class="card container w-[40rem] min-h-[24rem] grid grid-flow-row-dense grid-cols-3 m-4 p-4">
-                    <h2 class="col-span-3 text-4xl">{title}</h2>
+                <div class="card container bg-neutral-100 shadow-lg w-[40rem] min-h-[24rem] grid grid-flow-row-dense grid-cols-3 m-4 p-4">
+                    <h2 class="col-span-3 text-4xl text-primary-800">{title}</h2>
                     <p class="col-span-3">{description}</p>
                     <h4 class="">{header1}</h4>
                     <h4>{header2}</h4>
