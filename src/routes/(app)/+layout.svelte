@@ -44,6 +44,24 @@
                 <span><p class="text-black dark:text-white">Calendar</p></span>
             </AppRailAnchor>
 
+            <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    chat
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Messages</p></span>
+            </AppRailAnchor>
+
+            <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    weight
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Training</p></span>
+            </AppRailAnchor>
+
 
 
 
