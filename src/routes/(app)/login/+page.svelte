@@ -29,8 +29,19 @@
                 <span>Password</span>
                 <input class="input" type="password" name="password" placeholder="Password"/>
             </label>
-
-            <input type="submit" class="btn variant-filled"/>
+            <div class="flex flex-row mt-2">
+                <input type="submit" class="btn bg-primary-600" value="Log In"/>   
+                <div class="container grid items-center justify-items-center">
+                    <a href="/login" class="font-semibold hover:underline">Forgot Password?</a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="grid justify-items-center">
+                <div>
+                    <span>Don't have an Account?</span>
+                    <a href="/signup" class="font-semibold hover:underline">Sign Up</a>
+                </div>
+            </div>
         </form>
     </div>
 </div>
