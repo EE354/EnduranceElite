@@ -71,7 +71,5 @@
         </AppRail>
     </svelte:fragment>
     
-    <div class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 dark:bg-secondary-900 bg-contain">
-        <slot />
-    </div>
+    <slot />
 </AppShell>
