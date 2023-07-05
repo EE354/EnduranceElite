@@ -30,6 +30,7 @@
                         <li>Recreational Gymnastics Coach</li>
                         <li>Boy's Competitive Team Coach</li>
                         <li>Cheer/Tumbling Coach</li>
+                        <li>Dance Instructors (Ballet, Hip Hop, Contemporary, Preschool, Tap, etc.)</li>
                     </ul>
                 </div>
             </div>
