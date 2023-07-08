@@ -28,14 +28,15 @@
 </script>
 
 <div class="w-full grid grid-cols-[auto_1fr] gap-1">
-    <div class="bg-surface-500/30 p-4">(nav)</div>
-    <div class="bg-surface-500/30 p-4">(feed)</div>
+    <div class="bg-surface-500/30 p-4">Contacts</div>
+    <div class="bg-surface-500/30 p-4">Messages</div>
 </div>
 
 <div class="h-full grid grid-rows-[auto_1fr_auto] gap-1">
-    <div class="bg-surface-500/30 p-4">(search)</div>
+    <div class="bg-surface-500/30 p-4">
+        <input class="input" type="search" name="search" placeholder="Search contacts">
+    </div>
     <div class="bg-surface-500/30 p-4">(list)</div>
-    <div class="bg-surface-500/30 p-4">(footer)</div>
 </div>
 
 
@@ -74,14 +75,3 @@
             rows="1"></textarea>
     <button class="variant-filled-primary">Send</button>
 </div>
-
-<div bind:this={elemChat} class="overflow-y-auto">(chat)</div>
-
-
-<textarea
-        bind:value={currentMessage} name="prompt" id="prompt"
-        placeholder="Write a message..."></textarea>
-
-
-
-<button on:click={addMessage}>Send</button>
