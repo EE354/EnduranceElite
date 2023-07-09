@@ -33,6 +33,7 @@
 		"@event-calendar/day-grid": "^1.5.0",
 		"@event-calendar/interaction": "^1.5.0",
 		"@lucia-auth/adapter-mongoose": "^2.0.0",
+		"dotenv": "^16.3.1",
 		"lucia-auth": "^1.8.0",
 		"mongoose": "^7.3.1",
 		"multer": "^1.4.5-lts.1",

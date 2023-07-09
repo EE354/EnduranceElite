@@ -1,6 +1,7 @@
 import {fail, redirect} from "@sveltejs/kit";
 import {emailSchema, passwordSchema} from "$lib/server/zodSchemas.js";
 import {auth} from "$lib/server/lucia.js";
+import {returnRedirect} from "$lib/server/sharedFunctions.js";
 
 
 export const load = async ({locals}) => {
@@ -10,9 +11,8 @@ export const load = async ({locals}) => {
 }
 
 export const actions = {
-    login: async ({request, locals}) => {
+    login: async ({request, locals, url}) => {
         try {
-            console.log("login");
             //Get form data
             const form = await request.formData();
             const email = form.get("email");
@@ -36,6 +36,6 @@ export const actions = {
             });
         }
         //If successful, redirect to home page
-        throw redirect(302, "/");
+        returnRedirect(url);
     }
 }

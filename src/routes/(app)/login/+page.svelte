@@ -2,18 +2,8 @@
     import { enhance } from "$app/forms";
     import { toastStore } from '@skeletonlabs/skeleton';
 
-    const errorToast = {
-        message: "There was an error logging in",
-        background: "varient-filled-error"
-
-    }
     export let form;
 
-
-    $: if (form?.message) {
-        errorToast.message = form.message
-        toastStore.trigger(errorToast)
-    }
 
 
 </script>

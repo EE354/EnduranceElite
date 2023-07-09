@@ -36,11 +36,11 @@ export const User = (() => {
                     type: String,
                     required: true,
                 },
-                isActive: {
+                emailVerified: {
                     type: Boolean,
                     default: true
                 },
-                role: {
+                roleId: {
                     type: Number,
                     default: 0
                 }

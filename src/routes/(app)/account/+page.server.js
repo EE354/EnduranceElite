@@ -1,11 +1,12 @@
 import {redirect} from "@sveltejs/kit";
 import {auth} from "$lib/server/lucia.js";
+import {loginRedirect} from "$lib/server/sharedFunctions.js";
 
 
-export const load = async ({locals}) => {
+export const load = async ({locals, url}) => {
     const {session, user} = await locals.auth.validateUser();
 
-    if (!session.sessionId) throw redirect(302, "/");
+    if (!session) loginRedirect(url);
 
     // TEMP DUMMY DATA
     const groups = [
@@ -40,16 +41,27 @@ export const load = async ({locals}) => {
 
 }
 
+
+export const load = async ({locals, url}) => {
+
+
+    return {
+        status: 200,
+        user: user,
+        session: session
+    }
+}
+
+
 export const actions = {
-    logout: async ({locals}) => {
-        console.log("logout")
+    logout: async ({locals, url}) => {
         const {session} = await locals.auth.validateUser();
 
-        if (!session?.sessionId) throw redirect(302, "/login");
+        if (!session?.sessionId) loginRedirect(url);
 
         await auth.invalidateSession(session.sessionId);
 
 
-        throw redirect(302, "/login");
+        throw loginRedirect(url);
     }
 }

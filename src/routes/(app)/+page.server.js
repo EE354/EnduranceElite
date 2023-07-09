@@ -8,7 +8,6 @@ import cheerLeadingClasses from "$lib/Landing/cheerleadingclasses.jpg";
 import preschoolClasses from "$lib/Landing/preschoolclasses.jpg";
 
 export const load = async ({ locals}) => {
-
     //Get user
     const {session, user} = await locals.auth.validateUser();
 

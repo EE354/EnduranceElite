@@ -22,6 +22,8 @@ export const auth = lucia({
             },
             dateOfBirth: userData.dateOfBirth,
             email: userData.email,
+            emailVerified: userData.emailVerified,
+            roleId: userData.roleId,
         };
     }
 });

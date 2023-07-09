@@ -1,7 +1,8 @@
 <script>
 
-    import {Paginator, toastStore} from "@skeletonlabs/skeleton";
-    import {enhance} from "$app/forms";
+    import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
+
+    import EventDrawer from "./EventDrawer.svelte";
 
     const errorToast = {
         message: "There was an error signing up",
@@ -40,15 +41,26 @@
         page.offset * page.limit + page.limit // end
     );
 
+    const AddNewEvent = () => {
+        drawerStore.open({
+            id: "EventDrawer",
+            position: "right",
+            width: "w-6/12",
+        });
+    }
+
 </script>
 
 
 <main>
     <div class="container flex justify-center w-auto">
 
-        <div class="container w-2/3">
-            <div>
+        <div class="container mt-3">
+            <div class="flex justify-between">
                 <h3 class="pl-5 pt-5">Events</h3>
+
+                <button on:click={AddNewEvent} class="btn variant-filled-primary">Add Event</button>
+
             </div>
 
             <div class="table-container p-4">
@@ -97,37 +109,6 @@
 
 
 
-        </div>
-        <div class="container w-1/3">
-            <form method="POST" action="?/create" use:enhance>
-                <h3 class="p-5">Add New Event</h3>
-                <hr class="!border-surface dark:!border-surface-50 mb-4">
-
-                <label class="my-4">
-
-                    <h5>Start Date</h5>
-                    <input type="datetime-local" name="start" class="input input-bordered my-2" >
-
-                    <h5>End Date</h5>
-                    <input type="datetime-local" name="end" class="input input-bordered" >
-                </label>
-
-                <label class="my-4">
-                    <h5>Event Name</h5>
-                    <input type="text" class="input input-bordered" name="name" placeholder="Event Name">
-                </label>
-                <label class="my-4">
-                    <h5>Description</h5>
-                    <textarea class="textarea" rows="4" name="description" placeholder="Event description" />
-                </label>
-                <label class="my-4">
-                    <h5>Location</h5>
-                    <input type="text" name="location" class="input input-bordered" placeholder="Event Location">
-                </label>
-
-                <button class="btn variant-filled-secondary ">Add Event</button>
-                <input class="btn variant-filled-error" type="reset" value="Clear">
-            </form>
         </div>
     </div>
 </main>

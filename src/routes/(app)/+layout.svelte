@@ -44,6 +44,7 @@
                 <span><p class="text-black dark:text-white">Calendar</p></span>
             </AppRailAnchor>
 
+
             <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
@@ -74,7 +75,7 @@
                     </svelte:fragment>
                     <span><p class="text-black dark:text-white">Parent portal</p></span>
                 </AppRailAnchor>
-                {#if data.isAdmin}
+                {#if data.roleId >= 3}
                     <AppRailAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
                         <svelte:fragment slot="lead">
                             <span class="material-symbols-outlined">
