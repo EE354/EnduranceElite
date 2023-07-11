@@ -2,7 +2,8 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import EventDrawer from "./AddEventDrawer.svelte";
+    import AddEventDrawer from "./AddEventDrawer.svelte";
+    import EditEventDrawer from "./EditEventDrawer.svelte";
 
     const errorToast = {
         message: "There was an error signing up",
@@ -43,7 +44,15 @@
 
     const AddNewEvent = () => {
         drawerStore.open({
-            id: "EventDrawer",
+            id: "AddEventDrawer",
+            position: "right",
+            width: "w-6/12",
+        });
+    }
+
+    const EditEvent = () => {
+        drawerStore.open({
+            id: "EditEventDrawer",
             position: "right",
             width: "w-6/12",
         });
