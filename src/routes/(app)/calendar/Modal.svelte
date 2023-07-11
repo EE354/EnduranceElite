@@ -18,4 +18,3 @@
         <p>{event.extendedProps.description}</p>
     </div>
 </div>
-
