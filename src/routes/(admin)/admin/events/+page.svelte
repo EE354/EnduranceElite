@@ -100,7 +100,7 @@
                             <td>{event.name}</td>
                             <td>{event.description}</td>
                             <td>{event.location}</td>
-                            <td class="table-cell-fit"><button form="formButtons" formaction="?/editEvent" ><span class="material-symbols-outlined">edit</span></button></td>
+                            <td class="table-cell-fit"><button on:click={EditEvent}><span class="material-symbols-outlined">edit</span></button></td>
                             <td><button form="formButtons" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>
