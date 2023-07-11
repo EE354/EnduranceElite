@@ -41,6 +41,10 @@ export const load = async ({locals, url}) => {
 
 }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 export const actions = {
     logout: async ({locals, url}) => {
         const {session} = await locals.auth.validateUser();

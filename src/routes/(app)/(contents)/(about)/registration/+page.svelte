@@ -1,5 +1,4 @@
 <main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 h-full">
-	<div class="container">
 		<div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex flex-rows gap-4">
 			<!-- Header Block -->
 			<div class="">
@@ -23,6 +22,7 @@
 			/>
 		</div>
 
+	<div class="container flex flex-wrap justify-center">
 		<div class="container w-11/12 bg-neutral-100 shadow-lg m-4 p-4">
 			<!-- Information Block -->
 			<h3>Enrollment is always open!</h3>
