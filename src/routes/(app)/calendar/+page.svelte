@@ -23,8 +23,6 @@
         component: modalComponent,
     }
 
-
-
     let calendar;
     let plugins = [DayGrid, Interaction];
     let options = {
@@ -37,7 +35,6 @@
         },
         events: data.events,
     };
-
 
 </script>
 <div class="container p-4 ">
