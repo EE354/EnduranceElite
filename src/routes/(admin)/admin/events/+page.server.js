@@ -74,7 +74,7 @@ export const actions = {
             }
         }
     },
-    update: async({locals, request}) => {
+    edit: async({locals, request}) => {
         //TODO: implement update
         const {session, user} = await locals.auth.validateUser();
 
