@@ -28,6 +28,10 @@ export const User = (() => {
                     type: [String],
                     default: []
                 },
+                training: {
+                  type: [String],
+                    default: []
+                },
                 groups: {
                     type: [String],
                     default: []
@@ -42,7 +46,7 @@ export const User = (() => {
                 },
                 roleId: {
                     type: Number,
-                    default: 0
+                    default: 1
                 }
             },
             { _id: false, collection: 'users'}

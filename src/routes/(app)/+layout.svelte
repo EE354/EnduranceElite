@@ -13,8 +13,9 @@
         <AppBar>
 
             <svelte:fragment slot="lead">
-                <a href="/">
-                    <img alt="Endurance Elite Logo" class="badge w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/ee-icon.png"/>
+                <a href="/" class="inline-flex h-1/3">
+                    <img alt="Endurance Elite Logo" class="badge w-2/12 p-0" style="max-height: 160%" src="$lib/Logos/ee-icon.png"/>
+                    <h4 class=" ml-4 inline-block mt-4 align-middle">Endurance Elite</h4>
                 </a>
             </svelte:fragment>
 
@@ -43,8 +44,16 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Calendar</p></span>
             </AppRailAnchor>
+            <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    chat
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Chat</p></span>
+            </AppRailAnchor>
 
-
+            {#if data.role >= 1}
             <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
@@ -53,8 +62,10 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Messages</p></span>
             </AppRailAnchor>
+            {/if}
 
-            <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
+            {#if data.role >= 3}
+            <AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
                     weight
@@ -62,6 +73,7 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Training</p></span>
             </AppRailAnchor>
+            {/if}
 
             <AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
                 <svelte:fragment slot="lead">
@@ -81,7 +93,7 @@
                     </svelte:fragment>
                     <span><p class="text-black dark:text-white">Parent portal</p></span>
                 </AppRailAnchor>
-                {#if data.roleId >= 3}
+                {#if data.role >= 3}
                     <AppRailAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
                         <svelte:fragment slot="lead">
                             <span class="material-symbols-outlined">
