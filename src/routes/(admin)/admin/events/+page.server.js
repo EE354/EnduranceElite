@@ -3,6 +3,8 @@ import {Event} from "$lib/server/models/Event";
 
 
 export const load = async () => {
+
+
     return {
         events: JSON.parse(JSON.stringify(Event.find({}).sort({timeStamp: 1}))),
     }

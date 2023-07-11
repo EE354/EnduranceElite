@@ -53,7 +53,7 @@
                 <span><p class="text-black dark:text-white">Chat</p></span>
             </AppRailAnchor>
 
-
+            {#if data.role >= 1}
             <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
@@ -62,8 +62,10 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Messages</p></span>
             </AppRailAnchor>
+            {/if}
 
-            <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
+            {#if data.role >= 3}
+            <AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
                     weight
@@ -71,6 +73,7 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Training</p></span>
             </AppRailAnchor>
+            {/if}
 
             <AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
                 <svelte:fragment slot="lead">
@@ -90,7 +93,7 @@
                     </svelte:fragment>
                     <span><p class="text-black dark:text-white">Parent portal</p></span>
                 </AppRailAnchor>
-                {#if data.roleId >= 3}
+                {#if data.role >= 3}
                     <AppRailAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
                         <svelte:fragment slot="lead">
                             <span class="material-symbols-outlined">
