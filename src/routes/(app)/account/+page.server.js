@@ -1,12 +1,13 @@
 import {redirect} from "@sveltejs/kit";
 import {auth} from "$lib/server/lucia.js";
-import {loginRedirect} from "$lib/server/sharedFunctions.js";
+import {protectRoute, loginRedirect} from "$lib/utils.js";
 
 
 export const load = async ({locals, url}) => {
     const {session, user} = await locals.auth.validateUser();
 
-    if (!session) loginRedirect(url);
+    protectRoute(url, user, session, 1);
+
 
     // TEMP DUMMY DATA
     const groups = [
@@ -41,10 +42,6 @@ export const load = async ({locals, url}) => {
 
 }
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 export const actions = {
     logout: async ({locals, url}) => {
         const {session} = await locals.auth.validateUser();
@@ -52,7 +49,6 @@ export const actions = {
         if (!session?.sessionId) loginRedirect(url);
 
         await auth.invalidateSession(session.sessionId);
-
 
         throw loginRedirect(url);
     }
