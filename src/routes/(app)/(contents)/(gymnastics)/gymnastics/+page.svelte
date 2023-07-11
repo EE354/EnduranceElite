@@ -1,4 +1,4 @@
-<main>
+<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 flex">
         <!-- Header Block -->
         <div>

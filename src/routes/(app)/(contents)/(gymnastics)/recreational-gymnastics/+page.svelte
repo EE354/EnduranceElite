@@ -6,7 +6,7 @@
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex">
         <!-- Header Block -->
         <div>
-            <h1>Preschool Gymnastics</h1>
+            <h1>Recreational Gymnastics</h1>
         </div>
     </div>
 
