@@ -16,7 +16,8 @@
 
 
     import {AppBar, AppRail, AppRailAnchor, AppRailTile, AppShell, LightSwitch, Modal} from "@skeletonlabs/skeleton";
-    import EventDrawer from "./(admin)/admin/events/EventDrawer.svelte";
+    import AddEventDrawer from "./(admin)/admin/events/AddEventDrawer.svelte";
+    import EditEventDrawer from './(admin)/admin/events/EditEventDrawer.svelte';
     import {page} from "$app/stores";
     import {get} from "svelte/store";
 
@@ -33,8 +34,11 @@
 <Toast />
 
 <Drawer>
-    {#if $drawerStore.id === "EventDrawer"}
-        <EventDrawer/>
+    {#if $drawerStore.id === "AddEventDrawer"}
+        <AddEventDrawer/>
+    {/if}
+    {#if $drawerStore.id === "EditEventDrawer"}
+        <EditEventDrawer/>
     {/if}
 </Drawer>
 
