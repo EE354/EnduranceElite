@@ -63,8 +63,14 @@
                 <span><p class="text-black dark:text-white">Training</p></span>
             </AppRailAnchor>
 
-
-
+            <AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                        schedule
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Schedule</p></span>
+            </AppRailAnchor>
 
             <svelte:fragment slot="trail">
                 <AppRailAnchor href="https://app.iclasspro.com/portal/enduranceelite">
