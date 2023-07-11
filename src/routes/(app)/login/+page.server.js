@@ -1,7 +1,7 @@
 import {fail, redirect} from "@sveltejs/kit";
 import {emailSchema, passwordSchema} from "$lib/server/zodSchemas.js";
 import {auth} from "$lib/server/lucia.js";
-import {returnRedirect} from "$lib/server/sharedFunctions.js";
+import {returnRedirect} from "$lib/utils.js";
 
 
 export const load = async ({locals}) => {

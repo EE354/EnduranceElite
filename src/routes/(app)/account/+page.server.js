@@ -1,7 +1,6 @@
 import {redirect} from "@sveltejs/kit";
 import {auth} from "$lib/server/lucia.js";
-import {loginRedirect} from "$lib/server/sharedFunctions.js";
-import {protectRoute} from "$lib/utils.js";
+import {protectRoute, loginRedirect} from "$lib/utils.js";
 
 
 export const load = async ({locals, url}) => {
