@@ -19,7 +19,6 @@ const formatSchedule = (schedule) => {
     };
 };
 
-
 export const load = async ({locals}) => {
     try {
         const {session, user} = locals.auth.validateUser();
