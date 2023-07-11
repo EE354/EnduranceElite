@@ -1,18 +1,19 @@
-import {Event} from '$lib/server/models/Event';
+import {Schedule} from '$lib/server/models/Schedule';
 
-const formatEvent = (event) => {
+const formatSchedule = (schedule) => {
     /* TODO: implement a better color picking system*/
     //Generate a number between 0 and 255
     const genColor = () => Math.floor(Math.random() * 256);
     return {
-        resourceId: event.id,
-        title: event.name,
-        start: new Date(event.timeStamp.start),
-        end: new Date(event.timeStamp.end),
-        allDay: event.allDay,
+        resourceId: schedule.id,
+        title: schedule.name,
+        name: schedule.employee,
+        start: new Date(schedule.timeStamp.start),
+        end: new Date(schedule.timeStamp.end),
+        allDay: schedule.allDay,
         extendedProps: {
-            description: event.description,
-            location: event.location,
+            description: schedule.description,
+            location: schedule.location,
         },
         backgroundColor: `rgb(${genColor()}, ${genColor()}, ${genColor()})`,
     };
@@ -23,16 +24,16 @@ export const load = async ({locals}) => {
     try {
         const {session, user} = locals.auth.validateUser();
 
-        const events = await Event.find();
-        let formattedEvents = [];
-        for (let event of events) {
-            formattedEvents.push(formatEvent(event));
+        const schedules = await Schedule.find();
+        let formattedSchedules = [];
+        for (let schedule of schedules) {
+            formattedSchedules.push(formatSchedule(schedule));
         }
 
         return {
             status: 200,
             user: user,
-            events: formattedEvents,
+            schedules: formattedSchedules,
         }
     } catch (e) {
         console.log(e)
