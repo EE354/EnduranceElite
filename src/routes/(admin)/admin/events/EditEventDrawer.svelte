@@ -3,8 +3,8 @@
 </script>
 
 <main class="grid place-items-center">
-    <form method="POST" action="?/create" use:enhance class="w-10/12">
-        <h3 class="p-5">Add New Event</h3>
+    <form method="POST" action="?/edit" use:enhance class="w-10/12">
+        <h3 class="p-5">Edit Event</h3>
         <hr class="!border-surface dark:!border-surface-50 mb-4">
 
         <label class="my-4">
