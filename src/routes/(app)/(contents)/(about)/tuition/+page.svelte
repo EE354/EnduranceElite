@@ -18,7 +18,7 @@
             >
         </div>
         
-        <div class="container flex flex-wrap">
+        <div class="container flex flex-wrap justify-center">
 
         {#each data.cards as {title, description, header1, header2, header3, note1, note2, note3}}
                 <div class="card container bg-neutral-100 shadow-lg w-[40rem] min-h-[24rem] grid grid-flow-row-dense grid-cols-3 m-4 p-4">
