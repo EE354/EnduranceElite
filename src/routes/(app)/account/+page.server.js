@@ -41,18 +41,6 @@ export const load = async ({locals, url}) => {
 
 }
 
-
-export const load = async ({locals, url}) => {
-
-
-    return {
-        status: 200,
-        user: user,
-        session: session
-    }
-}
-
-
 export const actions = {
     logout: async ({locals, url}) => {
         const {session} = await locals.auth.validateUser();
