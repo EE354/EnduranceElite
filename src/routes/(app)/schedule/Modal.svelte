@@ -1,7 +1,7 @@
 <script>
     import {modalStore} from "@skeletonlabs/skeleton";
 
-    export let event;
+    export let schedule;
 </script>
 
 <div class="card">
@@ -10,11 +10,11 @@
     </div>
     <div class=" p-10">
         <div class="container pb-4">
-            <h2>{event.title}</h2>
-            <p class="text-gray-500">Start: {event.start.toLocaleString()}</p>
-            <p class="text-gray-500">End: {event.end.toLocaleString()}</p>
+            <h2>{schedule.title}</h2>
+            <p class="text-gray-500">Start: {schedule.start.toLocaleString()}</p>
+            <p class="text-gray-500">End: {schedule.end.toLocaleString()}</p>
         </div>
         <hr class="!border-t-2"/>
-        <p>{event.extendedProps.description}</p>
+        <p>{schedule.extendedProps.description}</p>
     </div>
 </div>
