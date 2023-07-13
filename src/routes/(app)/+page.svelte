@@ -54,7 +54,7 @@
     <div class="card container bg-primary-600 dark:bg-primary-900 rounded-2xl p-4">
         <!-- 1st Divider : News Bar -->
         <div class="container pl-1 flex flex-row justify-between">
-            <h2 class="grow-0">News</h2>
+            <h2>News</h2>
             <div class="pt-4 pr-10 grow">
                 <!-- <Paginator
                     controlVariant="variant-filled-surface"
@@ -113,7 +113,7 @@
                     src="$lib/Landing/image1.jpg">
         </div>
         <div class="container flex flex-col pt-8">
-            <h2 class="text-[2rem] pb-4">We're Hiring</h2>
+            <h2>We're Hiring</h2>
             <p>We offer competitive pay and benefits. Experience is not necessary. We will train anyone with a great attitude and who loves kids. Must be available to work weekends. Fill out our application today! We'd love to meet with you.</p>
         </div>
 
@@ -153,7 +153,7 @@
                     src="$lib/Landing/image4.jpg">
         </div>
         <div class="container flex flex-col p-4 lg:pt-8 lg:pr-8">
-            <h4 class="text-[2rem] pb-4">Competitions</h4>
+            <h2>Competitions</h2>
             <p>Competitive gymnasts are selected throughout the Endurance Elite programs based on discipline, skill and the ability to take a correction and apply it. We currently offer USA Gymnastics Developmental Program for levels 3-10. Younger gymnasts may be invited to join PreTeam before starting a competitive path. Gymnasts interested in trying out for the Endurance Elite competitive team and that are currently enrolled in another gym's program, must provide a recommendation letter from their current coach and a financial statement in good standing.</p>
         </div>
     </div>

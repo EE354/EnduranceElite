@@ -13,9 +13,8 @@
     $: console.log(search);
 </script>
 <div class="container m-4 ml-8">
-    <h1>
-        Welcome {data.user.name.first} {data.user.name.last} to the account dashboard
-    </h1>
+    <h1>Account Dashboard</h1>
+    <p>Logged In As {data.user.name.first} {data.user.name.last}</p>
 
     <form method="POST" action="?/logout" class="mt-4">
         <button type="submit" value="" class="btn variant-filled-error">Logout</button>
