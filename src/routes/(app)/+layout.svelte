@@ -3,7 +3,23 @@
     import { beforeNavigate } from "$app/navigation";
     import {page} from "$app/stores";
 
+    // Pop up imports from skeleton and floating ui
+    import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+    import { storePopup } from '@skeletonlabs/skeleton';
+    import { popup } from '@skeletonlabs/skeleton';
+
     export let data;
+
+    
+    const popupClick = {
+        event: 'click',
+        target: 'popupClick',
+        placement: 'top'
+    };
+
+					
+
+    storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
 
 
@@ -22,7 +38,17 @@
 
             <svelte:fragment slot="trail">
                 {#if data.session?.sessionId}
-                    <a class="nav-link" href="/account">Account</a>
+                <button use:popup={popupClick}>Account</button>
+                
+                <div class="card p-4" data-popup="popupClick">
+                    <a href="/account">Dashboard</a>
+                    <a href="/">Settings</a>
+                    <hr class="rounded">
+                    <form method="POST" action="?/logout" class="mt-4">
+                        <button type="submit" value="" class="btn variant-filled-error">Logout</button>
+                    </form>
+                </div>
+					
                 {:else}
                     <a class="nav-link text-black dark:text-white " href="/signup"><p class="dark:text-white text-black">Signup</p></a>
                     <a class="btn bg-primary-600 dark:bg-primary-900" href="/login"><p class="dark:text-white text-black">Login</p></a>
