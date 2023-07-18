@@ -1,12 +1,12 @@
-import {dateOfBirthSchema, eventDateSchema, nameSchema, stringSchema} from "$lib/server/zodSchemas.js";
-import {Event} from "$lib/server/models/Event";
+import {dateOfBirthSchema, scheduleDateSchema, nameSchema, stringSchema} from "$lib/server/zodSchemas.js";
+import {Schedule} from "$lib/server/models/Schedule";
 
 
 export const load = async () => {
 
 
     return {
-        events: JSON.parse(JSON.stringify(await Event.find({}).sort({timeStamp: 1}))),
+        schedules: JSON.parse(JSON.stringify(await Schedule.find({}).sort({timeStamp: 1}))),
     }
 }
 
@@ -26,13 +26,14 @@ export const actions = {
 
 
         try {
-            eventDateSchema.parse(start);
-            eventDateSchema.parse(end);
+            scheduleDateSchema.parse(start);
+            scheduleDateSchema.parse(end);
             nameSchema.parse(name);
+            employeeSchema.parse(employee);
             stringSchema.parse(description);
             stringSchema.parse(location);
 
-            await Event.create({
+            await Schedule.create({
                 timeStamp: {
                     start: start,
                     end: end,
@@ -40,11 +41,12 @@ export const actions = {
                 name: name,
                 description: description,
                 location: location,
+                employee: employee,
             });
 
             return {
                 status: 200,
-                message: "Event created successfully",
+                message: "Schedule created successfully",
             }
         } catch (e) {
             return {
@@ -61,11 +63,11 @@ export const actions = {
         const id = form.get("id");
 
         try {
-            await Event.deleteOne({_id: id})
+            await Schedule.deleteOne({_id: id})
 
             return {
                 status: 200,
-                message: "Event deleted successfully"
+                message: "Schedule deleted successfully"
             }
         } catch (e) {
             return {
