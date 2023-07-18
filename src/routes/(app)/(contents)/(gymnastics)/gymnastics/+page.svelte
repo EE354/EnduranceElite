@@ -17,6 +17,7 @@
     </div>
 
     <div class="container bg-primary-500 dark:bg-primary-900 p-4 max-w-[64rem]">
+        <!-- Essay Block -->
         <p><b>Why Gymnastics is Great for Young Kids<br>
         By Shari Medini, Gymnast Mindset</b></p><br>
 

@@ -13,26 +13,23 @@
 <main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex-row">
         <!-- Header Block -->
-        <h1>Preschool Dance</h1>
-        <h2 class="text-primary-200 text-shadow italic"><q>Dance is the language of the Soul</q></h2>
+        <h1>Recreational Dance</h1>
+        <h2 class="text-primary-200 text-shadow italic"><q>Allow yourself to be a beginner. No one starts off being perfect.</q></h2>
+    </div>
+
+    <div class="container flex flex-wrap justify-center align-center bg-primary-500 m-4">
+        <nav>
+            <!-- <a href="#" on:click|preventDefault={scrollIntoView}></a>
+            <a href="#" on:click|preventDefault={scrollIntoView}></a>
+            <a href="#" on:click|preventDefault={scrollIntoView}></a>
+            <a href="#" on:click|preventDefault={scrollIntoView}></a> -->
+            <a href="#hiphop" on:click|preventDefault={scrollIntoView}>Hip Hop</a>
+        </nav>
     </div>
 
     <div class="container flex flex-wrap justify-center">
-        <!-- Main Contents -->
-        <div class="w-11/12 bg-neutral-100 flex justify-center shadow-lg m-4 p-4">
-            <!-- Nav Buttons - Scroll to Position On Page -->
-            <nav>
-                <a href="#tiptoe" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Tippy Toe Dance</a>
-                <a href="#ballet" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Ballet Bears</a>
-                <a href="#jazzy" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Jazzy Jazzers</a>
-                <a href="#hiphop" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Hip Hop Hooray</a>
-                <a href="#minisampler" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Mini Sampler BJG</a>
-            </nav>
-        </div>
-
-        <!-- Card Block -->
         {#each data.cards as {id, title, description, src, alt, ages, duration, payment, note, href, name}}
-            <div {id} class="card bg-neutral-100 shadow-lg w-[40rem] min-h-[24rem] flex-cols m-4 p-4">
+            <div {id} class="card container bg-neutral-100 shadow-lg w-[40rem] min-h-[24rem] flex-cols m-4 p-4">
                 <h2 class="col-span-3 text-4xl text-primary-800">{title}</h2>
                 <div class="flex gap-2">
                 <img class="w-[18rem] rounded-md" {src} {alt}>
@@ -46,6 +43,6 @@
                 </div>
                 <p class="col-span-3">{description}</p>
             </div>
-        {/each} 
+        {/each}
     </div>
 </main>

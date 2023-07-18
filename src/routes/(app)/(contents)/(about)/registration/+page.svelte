@@ -1,28 +1,30 @@
 <main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 h-full">
-		<div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex flex-rows gap-4">
-			<!-- Header Block -->
-			<div class="">
-				<h1>Registration</h1>
-				<p>
-					Registration is done through our Parent Portal. Create a Login and search through the many
-					awesome classes Endurance Elite has to offer. We make it easy to sign up for classes online
-					from your computer or phone, 24 hours a day. Fill in your information, choose your class and
-					insert payment information. We are looking forward to seeing you in the gym!
-					<br /><br />If you have questions on how to register online contact our office staff at: (210)
-					769-6359
-					<br /><br />Please read through all of the class descriptions to decide which class best fits
-					your needs.
-				</p>
-				<button class="btn bg-primary-600 dark:bg-primary-900">Parent Portal Login</button>
-			</div>
-			<img
-				class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
-				alt="5 People Smiling and Hugging"
-				src="$lib/Regular/registration.jpg"
-			/>
+	<div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex flex-rows gap-4">
+		<!-- Header Block -->
+		<div class="">
+			<h1>Registration</h1>
+			<p>
+				Registration is done through our Parent Portal. Create a Login and search through the many
+				awesome classes Endurance Elite has to offer. We make it easy to sign up for classes online
+				from your computer or phone, 24 hours a day. Fill in your information, choose your class and
+				insert payment information. We are looking forward to seeing you in the gym!
+				<br /><br />If you have questions on how to register online contact our office staff at: (210)
+				769-6359
+				<br /><br />Please read through all of the class descriptions to decide which class best fits
+				your needs.
+			</p>
+			<button class="btn bg-primary-600 dark:bg-primary-900">Parent Portal Login</button>
 		</div>
+		<img
+			class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
+			alt="5 People Smiling and Hugging"
+			src="$lib/Regular/registration.jpg"
+		/>
+	</div>
 
 	<div class="container flex flex-wrap justify-center">
+		<!-- Main Contents -->
+		
 		<div class="container w-11/12 bg-neutral-100 shadow-lg m-4 p-4">
 			<!-- Information Block -->
 			<h3>Enrollment is always open!</h3>

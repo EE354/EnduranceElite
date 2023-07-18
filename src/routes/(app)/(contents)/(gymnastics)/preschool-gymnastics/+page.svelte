@@ -11,6 +11,7 @@
     </div>
 
     <div class="container flex flex-wrap justify-center">
+        <!-- Card Block -->
         {#each data.cards as {title, description, src, alt, note1, note2, href, name}}
             <div class="card container bg-neutral-100 shadow-lg w-[40rem] min-h-[24rem] flex-cols m-4 p-4">
                 <h2 class="col-span-3 text-4xl text-primary-800">{title}</h2>
