@@ -49,7 +49,7 @@ export const load = async ({ locals}) => {
         },
         {
             id: "hiphop",
-            title: "Hip Hop",
+            title: "Hip Hop Hooray",
             description: "Hip Hop Hooray introduces the young dancer to old and new styles of hip hop techniques, creating movements to popular music. Dancers are encouraged to express their personalities in the movements and exhibit confidence and showmanship. Hip Hop Hooray  will learn one routine for the holiday show and one routine for the summer recital.",
             src: hiphophooray,
             alt: "3 Kids Posing in Blue and Black Attire",
