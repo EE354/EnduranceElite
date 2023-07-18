@@ -66,9 +66,9 @@
             </div>
         </div>
         <!-- Wrapper for overflow -->
-        <div class="container snap-x snap-mandatory scroll-smooth flex overflow-x-auto gap-2 p-2 ">
+        <div class="container flex overflow-x-auto gap-2 p-2 ">
             {#each data.news as news}
-            <a class="snap-center card bg-neutral-100 w-modal-slim rounded-2xl h-[14rem] pr-2 py-1" href="/">
+            <a class="card bg-neutral-100 w-modal-slim rounded-2xl h-[14rem] pr-2 py-1" href="/">
                 <div class="container overflow-y-auto p-2 pl-4 w-[19rem]">
                         <p>{news.date}</p>
                         <h3>{news.title}</h3>
