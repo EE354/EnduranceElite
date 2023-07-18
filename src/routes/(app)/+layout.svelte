@@ -42,7 +42,7 @@
                 
                 <div class="card p-4" data-popup="popupClick">
                     <a href="/account">Dashboard</a>
-                    <a href="/">Settings</a>
+                    <a href="/settings">Settings</a>
                     <hr class="rounded">
                     <form method="POST" action="/account?/logout" class="mt-4">
                         <button type="submit" value="" class="btn variant-filled-error">Logout</button>
