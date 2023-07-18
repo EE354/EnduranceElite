@@ -91,7 +91,7 @@
                     {#each paginatedSource as event, i (event._id, i)}
                         <tr>
                             <!--TODO: fix id not being the first event-->
-                            <form id="formButtons" method="post">
+                            <form id="{event._id}" method="post">
                                 <input type="hidden" name="id" value="{event._id}">
                             </form>
                             <td>{i + start + 1}</td>
@@ -101,7 +101,7 @@
                             <td>{event.description}</td>
                             <td>{event.location}</td>
                             <td class="table-cell-fit"><button on:click={EditEvent}><span class="material-symbols-outlined">edit</span></button></td>
-                            <td><button form="formButtons" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
+                            <td><button form="{event._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>
                     {/each}

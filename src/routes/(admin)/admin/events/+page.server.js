@@ -6,7 +6,7 @@ export const load = async () => {
 
 
     return {
-        events: JSON.parse(JSON.stringify(Event.find({}).sort({timeStamp: 1}))),
+        events: JSON.parse(JSON.stringify(await Event.find({}).sort({timeStamp: 1}))),
     }
 }
 
