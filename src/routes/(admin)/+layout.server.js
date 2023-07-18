@@ -6,8 +6,7 @@ export const load = async ({locals, url}) => {
 
     console.log(user)
 
-    // TODO: check if user is admin
-    if (user != null) {
+    if (user != null && user?.role == 3) {
         return {
             status: 200,
             session: session,
