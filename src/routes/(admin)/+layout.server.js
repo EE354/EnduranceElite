@@ -6,9 +6,15 @@ export const load = async ({locals, url}) => {
 
     console.log(user)
 
-    return {
-        status: 200,
-        session: session,
-        role: user?.role || 0,
+    
+    if (user != null) {
+        return {
+            status: 200,
+            session: session,
+            role: user?.role || 0,
+        }
+    } else {
+        throw redirect(307, '/login')
     }
+    
 }
