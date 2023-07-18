@@ -29,11 +29,11 @@
         view: 'dayGridMonth',
         eventClick: async (info) => {
             //Set the props of the modal component
-            modalComponent.props = { event: info.event };
+            modalComponent.props = { schedule: info.schedule };
             //Trigger the modal activation
             modalStore.trigger(modal);
         },
-        events: data.events,
+        scheduless: data.schedules,
     };
 
 </script>
