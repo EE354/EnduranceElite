@@ -74,7 +74,7 @@
 
             <div class="table-container p-4">
                 <!-- Native Table Element -->
-                <table class="table table-hover">
+                <table class="table table-hover overflow-auto">
                     <thead>
                     <tr>
                         <th>#</th>
