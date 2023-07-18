@@ -4,6 +4,7 @@
 
     import AddEventDrawer from "./AddEventDrawer.svelte";
     import EditEventDrawer from "./EditEventDrawer.svelte";
+    import {editEvent} from "./store.js";
 
     const errorToast = {
         message: "There was an error signing up",
@@ -17,6 +18,8 @@
 
     export let data;
     export let form;
+
+    console.log(data.events)
 
     $: if (form?.error?.message) {
         errorToast.message = form.message
@@ -50,7 +53,8 @@
         });
     }
 
-    const EditEvent = () => {
+    const startEdit = (event) => {
+        $editEvent = event;
         drawerStore.open({
             id: "EditEventDrawer",
             position: "right",
@@ -99,7 +103,8 @@
                             <td>{event.name}</td>
                             <td>{event.description}</td>
                             <td>{event.location}</td>
-                            <td class="table-cell-fit"><button on:click={EditEvent}><span class="material-symbols-outlined">edit</span></button></td>
+
+                            <td class="table-cell-fit"><button on:click={() => {startEdit(event)}} ><span class="material-symbols-outlined">edit</span></button></td>
                             <td><button form="{event._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>

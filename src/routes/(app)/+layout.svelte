@@ -79,17 +79,6 @@
                 <span><p class="text-black dark:text-white">Chat</p></span>
             </AppRailAnchor>
 
-            {#if data.role >= 1}
-            <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
-                <svelte:fragment slot="lead">
-                    <span class="material-symbols-outlined text-black dark:text-white">
-                    chat
-                    </span>
-                </svelte:fragment>
-                <span><p class="text-black dark:text-white">Messages</p></span>
-            </AppRailAnchor>
-            {/if}
-
             {#if data.role >= 3}
             <AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
