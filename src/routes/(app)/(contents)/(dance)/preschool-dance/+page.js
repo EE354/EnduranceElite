@@ -11,6 +11,7 @@ export const load = async ({ locals}) => {
         {
             id: "tiptoe",
             title: "Tippy Toe Dance",
+            subclass: "",
             description: "Tippy Toe Dance is an introductory ballet and jazz combo class created for the beginner dancer. Dance terminology and basic rhythm will be introduced in a fun, high energetic, creatively themed class, as well as, focusing on coordination, listening skills and basic motor skills. The instructors make learning fun with music, games, props and rewards. This interactive class will have your little dancer excited to attend class and show off her new moves.  The tippy toe dancers will learn two routines throughout the year. One will be performed for the holiday show and the other will be performed at the summer recital.",
             src: tippytoedance,
             alt: "Kid Ballet Class",
@@ -24,6 +25,7 @@ export const load = async ({ locals}) => {
         {
             id: "ballet",
             title: "Ballet Bears",
+            subclass: "",
             description: "Ballet Bears are first time ballerinas learning basic movement themes such as; jumping, balletic runs walks, spinning and skipping. Students continue to work as a group and with partners to facilitate a sense of teamwork. Ballet Bears will learn one routine for the holiday show and one routine for the summer recital.",
             src: balletbears,
             alt: "Kid Ballet Class in Tutus",
@@ -37,6 +39,7 @@ export const load = async ({ locals}) => {
         {
             id: "jazzy",
             title: "Jazzy Jazzers",
+            subclass: "",
             description: "Jazz is a well known dance technique made up of Broadway dance to swing dance, to fun hip hop like isolated movements and even fast lyrical movements. The fun just pours out during this high energy class. Jazzy Jazzers are beginner dancers becoming familiar with jazz technique and energetic movements. Jazzy Jazzers will perform one routine for the holiday show and one routine for the summer recital.",
             src: jazzyjazzers,
             alt: "Kid Jazz Class",
@@ -50,6 +53,7 @@ export const load = async ({ locals}) => {
         {
             id: "hiphop",
             title: "Hip Hop Hooray",
+            subclass: "",
             description: "Hip Hop Hooray introduces the young dancer to old and new styles of hip hop techniques, creating movements to popular music. Dancers are encouraged to express their personalities in the movements and exhibit confidence and showmanship. Hip Hop Hooray  will learn one routine for the holiday show and one routine for the summer recital.",
             src: hiphophooray,
             alt: "3 Kids Posing in Blue and Black Attire",
@@ -63,7 +67,8 @@ export const load = async ({ locals}) => {
         {
             id: "minisampler",
             title: "Mini Sampler BJG",
-            description: "BALLET, JAZZ, GYMNASTICS: Can't decide between gymnastics and dance? Now you don't need to. We have the convenience of offering three classes in one! Ballet and Jazz will take place the first half of class in the studio and gymnastics the last half in the Big gym. Levels are based on experience. The gymnastics portion of the class will include vault, bars, beam, floor and rings.",
+            subclass: "BALLET, JAZZ, GYMNASTICS",
+            description: "Can't decide between gymnastics and dance? Now you don't need to. We have the convenience of offering three classes in one! Ballet and Jazz will take place the first half of class in the studio and gymnastics the last half in the Big gym. Levels are based on experience. The gymnastics portion of the class will include vault, bars, beam, floor and rings.",
             src: minisamplerbjg,
             alt: "Kid Photoshoot",
             ages: "Ages: 7 Years & Up",
