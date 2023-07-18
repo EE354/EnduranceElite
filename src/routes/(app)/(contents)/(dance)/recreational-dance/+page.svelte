@@ -19,9 +19,10 @@
 
     <div class="container flex flex-wrap justify-center">
         <!-- Main Contents -->
-        <div class="w-11/12 bg-neutral-100 flex justify-center shadow-lg m-4 p-4">
+        <div class="w-11/12 bg-neutral-100 justify-center shadow-lg m-4 p-4">
             <!-- Nav Buttons - Scroll to Position On Page -->
-            <nav>
+            <h4 class="mb-4 text-center">Click your Style to Scroll!</h4>
+            <nav class="flex flex-wrap gap-2">
                 <a href="#crisscross" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Criss Cross</a>
                 <a href="#combo" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Combo</a>
                 <a href="#hiphop" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Hip Hop</a>
@@ -40,16 +41,18 @@
         {#each data.cards as {id, title, subclass, description, notice, src, alt, ages, duration, payment, note, href, name}}
             <div {id} class="card bg-neutral-100 shadow-lg w-[40rem] min-h-[24rem] flex-cols  m-4 p-4">
                 <h2 class="col-span-3 text-4xl text-primary-800 mb-4">{title}</h2>
-                <div class="flex gap-4">
+                <div class="md:flex gap-4">
                     <img class="w-[18rem] rounded-md" {src} {alt}>
-                        <div class="relative">
-                            <div class="mb-4">
-                                <p><b>Ages: {ages}</b></p>
-                                <p><b>{duration}</b></p>
-                                <p><b>{payment}</b></p>
+                        <div>
+                            <div class="flex gap-4 mt-2 md:mt-0">
+                                <div class="mb-4">
+                                    <p><b>Ages: {ages}</b></p>
+                                    <p><b>{duration}</b></p>
+                                    <p><b>{payment}</b></p>
+                                </div>
+                                <a type="button" class="btn w-44 h-11 col-span-3 bg-primary-600 dark:bg-primary-900" {href}>{name}</a>
                             </div>
                             <p>{note}</p>
-                            <a type="button" class="btn col-span-3 bg-primary-600 dark:bg-primary-900 md:absolute bottom-0" {href}>{name}</a>
                         </div>
                 </div>
                 <p>{subclass}</p>
