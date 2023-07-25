@@ -11,11 +11,18 @@
     export let data;
 
     
-    const popupClick = {
+    const accountPopup = {
         event: 'click',
         target: 'popupClick',
         placement: 'top'
     };
+
+    const infoPopup = {
+        event: 'click',
+        target: 'infoPopup',
+        placement: 'right'
+    };
+
 
 					
 
@@ -37,10 +44,10 @@
 
             <svelte:fragment slot="trail">
                 {#if data.session?.sessionId}
-                <button use:popup={popupClick}>Account</button>
+                <button use:popup={accountPopup}>Account</button>
                 
                 <div class="card p-4" data-popup="popupClick">
-                    <a href="/account">Dashboard</a>
+                    <a href="/account">WASD</a>
                     <a href="/settings">Settings</a>
                     <hr class="rounded">
                     <form method="POST" action="/account?/logout" class="mt-4">
@@ -61,6 +68,15 @@
     <!-- Left Rail -->
     <svelte:fragment slot="sidebarLeft">
         <AppRail>
+            <button class="w-20 bg-surface" use:popup={infoPopup}>
+                <span class="material-symbols-outlined text-black dark:text-white">
+                    info
+                </span>
+            </button>
+
+            <div class="card p-4" data-popup="infoPopup">
+                
+            </div>
             <AppRailAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
