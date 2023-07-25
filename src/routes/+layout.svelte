@@ -24,6 +24,8 @@
     import AddTrainingDrawer from "$lib/Drawers/AddTrainingDrawer.svelte";
     import AddScheduleDrawer from "$lib/Drawers/AddScheduleDrawer.svelte";
     import EditScheduleDrawer from "$lib/Drawers/EditScheduleDrawer.svelte";
+    import AddGroupDrawer from "$lib/Drawers/AddGroupDrawer.svelte";
+    import EditGroupDrawer from "$lib/Drawers/EditGroupDrawer.svelte";
 
     $: if ($page.form?.error) {
         $toastStore.trigger({ message: $page.data.error, background: 'variant-filled-error' });
@@ -55,6 +57,12 @@
     {/if}
     {#if $drawerStore.id === "EditScheduleDrawer"}
         <EditScheduleDrawer/>
+    {/if}
+    {#if $drawerStore.id === "AddGroupDrawer"}
+        <AddGroupDrawer/>
+    {/if}
+    {#if $drawerStore.id === "EditGroupDrawer"}
+        <EditGroupDrawer/>
     {/if}
 
 </Drawer>
