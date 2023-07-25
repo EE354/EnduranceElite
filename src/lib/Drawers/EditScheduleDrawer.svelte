@@ -33,7 +33,7 @@
             <input type="text" name="location" class="input input-bordered" placeholder="Schedule Location">
         </label>
 
-        <button class="btn variant-filled-secondary ">Add Schedule</button>
+        <button class="btn variant-filled-secondary ">Update Schedule</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>
