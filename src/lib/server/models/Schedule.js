@@ -16,13 +16,13 @@ export const Schedule =(() => {
                             required: true
                         }
                     },
-                    description: {
-                        type: String,
-                        default: ""
-                    },
                     employee: {
                         type: String,
                         required: true
+                    },
+                    description: {
+                        type: String,
+                        default: ""
                     }
                 }
             )
