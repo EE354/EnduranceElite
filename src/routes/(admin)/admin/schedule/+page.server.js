@@ -20,7 +20,6 @@ export const actions = {
 
         if (start > end) throw new Error("Start date must be before end date");
 
-
         try {
             eventDateSchema.parse(start);
             eventDateSchema.parse(end);

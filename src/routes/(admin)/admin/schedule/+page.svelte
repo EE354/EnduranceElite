@@ -111,9 +111,6 @@
                         showPreviousNextButtons="{true}"
                 />
             </div>
-
-
-
         </div>
     </div>
 </main>
