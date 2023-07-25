@@ -21,16 +21,8 @@
             <input type="text" name="employee" class="input input-bordered" placeholder="Employee Name">
         </label>
         <label class="my-4">
-            <h5>Schedule Name</h5>
-            <input type="text" class="input input-bordered" name="name" placeholder="Schedule Name">
-        </label>
-        <label class="my-4">
             <h5>Description</h5>
             <textarea class="textarea" rows="4" name="description" placeholder="Schedule description" />
-        </label>
-        <label class="my-4">
-            <h5>Location</h5>
-            <input type="text" name="location" class="input input-bordered" placeholder="Schedule Location">
         </label>
 
         <button class="btn variant-filled-secondary ">Add Schedule</button>
