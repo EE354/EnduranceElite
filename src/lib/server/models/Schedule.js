@@ -16,17 +16,9 @@ export const Schedule =(() => {
                             required: true
                         }
                     },
-                    name: {
-                        type: String,
-                        required: true
-                    },
                     description: {
                         type: String,
                         default: ""
-                    },
-                    location: {
-                        type: String,
-                        default: "Endurance Elite Gymnastics & Dance"
                     },
                     employee: {
                         type: String,

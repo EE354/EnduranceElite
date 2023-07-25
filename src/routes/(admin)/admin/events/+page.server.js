@@ -16,6 +16,8 @@ export const actions = {
     create: async ({locals, request}) => {
         const {session, user} = await locals.auth.validateUser();
 
+        protectRoute(url, user, session, 3)
+
         const form = await request.formData();
         const start = new Date(form.get("start"));
         const end = new Date(form.get("end"));
@@ -75,9 +77,9 @@ export const actions = {
             }
         }
     },
-    edit: async({locals, request}) => {
-        //TODO: implement update
+    edit: async({locals, request, url}) => {
         const {session, user} = await locals.auth.validateUser();
+        protectRoute(url, user, session, 3)
 
         const form = await request.formData();
         const id = form.get("id");
@@ -86,7 +88,6 @@ export const actions = {
         const name = form.get("name");
         const description = form.get("description");
         const location = form.get("location");
-            console.log({id, start, end, name, description, location})
 
         if (start > end) throw new Error("Start date must be before end date");
 
@@ -96,9 +97,6 @@ export const actions = {
             nameSchema.parse(name);
             stringSchema.parse(description);
             stringSchema.parse(location);
-
-
-
 
             const event = await Event.findById(id);
 

@@ -17,7 +17,6 @@
     export let data;
     export let form;
 
-    console.log(data.events)
 
     $: if (form?.error?.message) {
         errorToast.message = form.message

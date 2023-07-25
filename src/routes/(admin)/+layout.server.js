@@ -1,19 +1,10 @@
 import {redirect} from "@sveltejs/kit";
+import {protectRoute} from "$lib/utils.js";
 
 
 export const load = async ({locals, url}) => {
     const {session, user} = await locals.auth.validateUser();
 
-    console.log(user)
-
-    if (user != null && user?.role == 3) {
-        return {
-            status: 200,
-            session: session,
-            role: user?.role || 0,
-        }
-    } else {
-        throw redirect(307, '/login')
-    }
+    protectRoute(url, user, session, 3)
     
 }

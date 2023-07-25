@@ -27,6 +27,10 @@ export const Event =(() => {
                     location: {
                         type: String,
                         default: "Endurance Elite Gymnastics & Dance"
+                    },
+                    group: {
+                        type: String,
+                        default: ""
                     }
                 }
             )
