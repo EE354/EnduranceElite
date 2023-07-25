@@ -1,7 +1,7 @@
 <script>
     import {enhance} from "$app/forms";
-    import {editEvent} from "./store.js";
-    import DateInput from "./DateInput.svelte";
+    import {editEvent} from "../../routes/(admin)/admin/store.js";
+    import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
 </script>
 
 <main class="grid place-items-center">
@@ -11,14 +11,14 @@
         <h3 class="p-5">Edit Event</h3>
         <hr class="!border-surface dark:!border-surface-50 mb-4">
 
-        <label class="my-4">
+        <div class="my-4">
 
             <h5>Start Date</h5>
             <DateInput name="start" bind:date={$editEvent.timeStamp.start}/>
 
             <h5>End Date</h5>
             <DateInput name="end" bind:date={$editEvent.timeStamp.end}/>
-        </label>
+        </div>
 
         <label class="my-4">
             <h5>Event Name</h5>

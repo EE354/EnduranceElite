@@ -2,9 +2,7 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import AddEventDrawer from "./AddEventDrawer.svelte";
-    import EditEventDrawer from "./EditEventDrawer.svelte";
-    import {editEvent} from "./store.js";
+    import {editEvent} from "../store.js";
 
     const errorToast = {
         message: "There was an error signing up",

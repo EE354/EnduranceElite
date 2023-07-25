@@ -35,7 +35,6 @@
                 </a>
             </svelte:fragment>
 
-
             <svelte:fragment slot="trail">
                 {#if data.session?.sessionId}
                 <button use:popup={popupClick}>Account</button>
@@ -70,6 +69,8 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Calendar</p></span>
             </AppRailAnchor>
+
+            {#if data.role >= 1}
             <AppRailAnchor href="/chat" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
@@ -78,8 +79,10 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Chat</p></span>
             </AppRailAnchor>
+            {/if}
 
-            {#if data.role >= 3}
+            {#if data.role >= 2}
+
             <AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
@@ -90,6 +93,8 @@
             </AppRailAnchor>
             {/if}
 
+
+            {#if data.role >= 2}
             <AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
@@ -98,6 +103,7 @@
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Schedule</p></span>
             </AppRailAnchor>
+            {/if}
 
             <svelte:fragment slot="trail">
                 <AppRailAnchor href="https://app.iclasspro.com/portal/enduranceelite">

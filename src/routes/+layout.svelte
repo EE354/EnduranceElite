@@ -16,10 +16,12 @@
 
 
     import {AppBar, AppRail, AppRailAnchor, AppRailTile, AppShell, LightSwitch, Modal} from "@skeletonlabs/skeleton";
-    import AddEventDrawer from "./(admin)/admin/events/AddEventDrawer.svelte";
-    import EditEventDrawer from './(admin)/admin/events/EditEventDrawer.svelte';
+    import AddEventDrawer from "$lib/Drawers/AddEventDrawer.svelte";
+    import EditEventDrawer from '$lib/Drawers/EditEventDrawer.svelte';
     import {page} from "$app/stores";
     import {get} from "svelte/store";
+    import EditTrainingDrawer from "$lib/Drawers/EditTrainingDrawer.svelte";
+    import AddTrainingDrawer from "$lib/Drawers/AddTrainingDrawer.svelte";
 
     $: if ($page.form?.error) {
         $toastStore.trigger({ message: $page.data.error, background: 'variant-filled-error' });
@@ -39,6 +41,12 @@
     {/if}
     {#if $drawerStore.id === "EditEventDrawer"}
         <EditEventDrawer/>
+    {/if}
+    {#if $drawerStore.id === "AddTrainingDrawer"}
+        <AddTrainingDrawer/>
+    {/if}
+    {#if $drawerStore.id === "EditTrainingDrawer"}
+        <EditTrainingDrawer/>
     {/if}
 </Drawer>
 

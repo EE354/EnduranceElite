@@ -1,9 +1,11 @@
 import {dateOfBirthSchema, eventDateSchema, nameSchema, stringSchema} from "$lib/server/zodSchemas.js";
 import {Event} from "$lib/server/models/Event";
+import {protectRoute} from "$lib/utils.js";
 
 
-export const load = async () => {
-
+export const load = async ({url, locals}) => {
+    const {session, user} = await locals.auth.validateUser();
+    protectRoute(url, user, session, 3)
 
     return {
 

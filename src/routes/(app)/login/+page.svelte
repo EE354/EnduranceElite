@@ -1,11 +1,5 @@
 <script>
     import { enhance } from "$app/forms";
-    import { toastStore } from '@skeletonlabs/skeleton';
-
-    export let form;
-
-
-
 </script>
 
 <div class="container h-full mx-auto flex justify-center content-center mb-96">

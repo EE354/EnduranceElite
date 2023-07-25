@@ -3,7 +3,7 @@ import {Event} from '$lib/server/models/Event';
 const formatEvent = (event) => {
     /* TODO: implement a better color picking system*/
     //Generate a number between 0 and 255
-    const genColor = () => Math.floor(Math.random() * 256);
+    const genColor = () => Math.floor(Math.random() * 6);
     return {
         resourceId: event.id,
         title: event.name,
@@ -14,7 +14,7 @@ const formatEvent = (event) => {
             description: event.description,
             location: event.location,
         },
-        backgroundColor: `rgb(${genColor()}, ${genColor()}, ${genColor()})`,
+        backgroundColor: `rgba(var(--color-secondary-${900}) / 1);`,
     };
 };
 

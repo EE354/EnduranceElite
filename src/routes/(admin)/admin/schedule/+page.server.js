@@ -1,13 +1,9 @@
-import {dateOfBirthSchema, scheduleDateSchema, nameSchema, stringSchema} from "$lib/server/zodSchemas.js";
+import { nameSchema, stringSchema, eventDateSchema } from "$lib/server/zodSchemas.js";
 import {Schedule} from "$lib/server/models/Schedule";
 
 
 export const load = async () => {
 
-
-    return {
-        schedules: JSON.parse(JSON.stringify(await Schedule.find({}).sort({timeStamp: 1}))),
-    }
 }
 
 
@@ -26,18 +22,14 @@ export const actions = {
 
 
         try {
-            scheduleDateSchema.parse(start);
-            scheduleDateSchema.parse(end);
+            eventDateSchema.parse(start);
+            eventDateSchema.parse(end);
             nameSchema.parse(name);
-            employeeSchema.parse(employee);
             stringSchema.parse(description);
             stringSchema.parse(location);
 
             await Schedule.create({
-                timeStamp: {
-                    start: start,
-                    end: end,
-                },
+                timeStamp: { start: start, end: end},
                 name: name,
                 description: description,
                 location: location,

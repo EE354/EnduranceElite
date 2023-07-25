@@ -7,10 +7,8 @@ export const load = async ({locals, url}) => {
     const {session, user} = await locals.auth.validateUser();
     protectRoute(url, user, session, 2)
 
-    const dbUser = await User.findById(user.id).populate("training")
-
-    console.log(dbUser)
-
+    const dbUser = await User.findById(user.userId).populate("training")
+    
     if (!dbUser) {
         return {
             status: 404,

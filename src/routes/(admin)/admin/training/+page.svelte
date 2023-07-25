@@ -2,8 +2,7 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import AddScheduleDrawer from "$lib/Drawers/AddScheduleDrawer.svelte";
-    import EditScheduleDrawer from "$lib/Drawers/EditScheduleDrawer.svelte";
+    import {editEvent} from "../store.js";
 
     const errorToast = {
         message: "There was an error signing up",
@@ -11,12 +10,14 @@
     }
 
     const successToast = {
-        message: "Schedule created",
+        message: "Event created",
         background: "variant-filled-success",
     }
 
     export let data;
     export let form;
+
+    console.log(data.events)
 
     $: if (form?.error?.message) {
         errorToast.message = form.message
@@ -29,32 +30,33 @@
 
     let page = {
         offset: 0,
-        limit: data.schedules.length,
-        total: data.schedules.length,
+        limit: data.events.length,
+        total: data.events.length,
         amounts: [5, 8, 10, 12, 16, 20]
     }
 
     $: start = page.offset * page.limit;
     $: end = start + page.limit;
 
-    $: paginatedSource = data.schedules.slice(
+    $: paginatedSource = data.events.slice(
         page.offset * page.limit,             // start
         page.offset * page.limit + page.limit // end
     );
 
-    const AddNewSchedule = () => {
+    const AddNewEvent = () => {
         drawerStore.open({
-            id: "AddScheduleDrawer",
+            id: "AddEventDrawer",
             position: "right",
-            width: "w-6/12",
+            width: "w-6/12"
         });
     }
 
-    const EditSchedule = () => {
+    const startEdit = (event) => {
+        $editEvent = event;
         drawerStore.open({
-            id: "EditScheduleDrawer",
+            id: "EditEventDrawer",
             position: "right",
-            width: "w-6/12",
+            width: "w-6/12"
         });
     }
 
@@ -66,9 +68,9 @@
 
         <div class="container mt-3">
             <div class="flex justify-between">
-                <h3 class="pl-5 pt-5">Schedules</h3>
+                <h3 class="pl-5 pt-5">Events</h3>
 
-                <button on:click={AddNewSchedule} class="btn variant-filled-primary">Add Schedule</button>
+                <button on:click={AddNewEvent} class="btn variant-filled-primary">Add Event</button>
 
             </div>
 
@@ -88,19 +90,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {#each paginatedSource as schedule, i (schedule._id, i)}
+                    {#each paginatedSource as event, i (event._id, i)}
                         <tr>
-                            <form id="{schedule._id}" method="post">
-                                <input type="hidden" name="id" value="{schedule._id}">
+                            <form id="{event._id}" method="post">
+                                <input type="hidden" name="id" value="{event._id}">
                             </form>
                             <td>{i + start + 1}</td>
-                            <td>{new Date(schedule.timeStamp.start).toString()}</td>
-                            <td>{new Date(schedule.timeStamp.start).toString()}</td>
-                            <td>{schedule.name}</td>
-                            <td>{schedule.description}</td>
-                            <td>{schedule.location}</td>
-                            <td class="table-cell-fit"><button on:click={EditSchedule}><span class="material-symbols-outlined">edit</span></button></td>
-                            <td><button form="{schedule._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
+                            <td>{new Date(event.timeStamp.start).toString()}</td>
+                            <td>{new Date(event.timeStamp.start).toString()}</td>
+                            <td>{event.name}</td>
+                            <td>{event.description}</td>
+                            <td>{event.location}</td>
+
+                            <td class="table-cell-fit"><button on:click={() => {startEdit(event)}} ><span class="material-symbols-outlined">edit</span></button></td>
+                            <td><button form="{event._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>
                     {/each}
