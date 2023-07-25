@@ -2,7 +2,7 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import {editEvent} from "../store.js";
+    import {editTraining} from "../store.js";
 
     const errorToast = {
         message: "There was an error signing up",
@@ -43,18 +43,18 @@
         page.offset * page.limit + page.limit // end
     );
 
-    const AddNewEvent = () => {
+    const AddNewTraining = () => {
         drawerStore.open({
-            id: "AddEventDrawer",
+            id: "AddTrainingDrawer",
             position: "right",
             width: "w-6/12"
         });
     }
 
-    const startEdit = (event) => {
-        $editEvent = event;
+    const startTraining = (training) => {
+        $editTraining = training;
         drawerStore.open({
-            id: "EditEventDrawer",
+            id: "EditTrainingDrawer",
             position: "right",
             width: "w-6/12"
         });
@@ -70,7 +70,7 @@
             <div class="flex justify-between">
                 <h3 class="pl-5 pt-5">Events</h3>
 
-                <button on:click={AddNewEvent} class="btn variant-filled-primary">Add Event</button>
+                <button on:click={AddNewTraining} class="btn variant-filled-primary">Add Training</button>
 
             </div>
 
@@ -80,30 +80,25 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Start</th>
-                        <th>End</th>
                         <th>Name</th>
+                        <th>Type</th>
                         <th>Description</th>
-                        <th>location</th>
                         <th></th>
                         <th class="w-6"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    {#each paginatedSource as event, i (event._id, i)}
+                    {#each paginatedSource as training, i (training._id, i)}
                         <tr>
-                            <form id="{event._id}" method="post">
-                                <input type="hidden" name="id" value="{event._id}">
+                            <form id="{training._id}" method="post">
+                                <input type="hidden" name="id" value="{training._id}">
                             </form>
                             <td>{i + start + 1}</td>
-                            <td>{new Date(event.timeStamp.start).toString()}</td>
-                            <td>{new Date(event.timeStamp.start).toString()}</td>
-                            <td>{event.name}</td>
-                            <td>{event.description}</td>
-                            <td>{event.location}</td>
+                            <td>{training.name}</td>
+                            <td>{training.description}</td>
 
-                            <td class="table-cell-fit"><button on:click={() => {startEdit(event)}} ><span class="material-symbols-outlined">edit</span></button></td>
-                            <td><button form="{event._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
+                            <td class="table-cell-fit"><button on:click={() => {startTraining(training)}} ><span class="material-symbols-outlined">edit</span></button></td>
+                            <td><button form="{training._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>
                     {/each}

@@ -14,9 +14,9 @@ export const Group = (() => {
                         type: String,
                         default: ""
                     },
-                    settings: {
-                        type: Object,
-                        default: {}
+                    members: {
+                        type: [String],
+                        default: []
                     }
                 }
             )
