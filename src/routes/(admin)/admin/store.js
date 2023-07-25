@@ -9,3 +9,19 @@ export const editEvent = writable({
         end: "",
     }
 });
+
+export const editTraining = writable({
+    name: "",
+    description: "",
+    location: "",
+    timeStamp: {
+        start: "",
+        end: "",
+    }
+});
+
+export const editGroup = writable({
+    name: "",
+    members: "",
+    description: "",
+});
