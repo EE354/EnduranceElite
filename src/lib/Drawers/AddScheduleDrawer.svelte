@@ -15,7 +15,7 @@
             <h5>End Date</h5>
             <input type="datetime-local" name="end" class="input input-bordered" >
         </label>
-        <!-- TODO: Implement this better (maybe a dropdown of employees?)-->
+        <!-- fuck you-->
         <label class="my-4">
             <h5>Employee Name</h5>
             <input type="text" name="employee" class="input input-bordered" placeholder="Employee Name">

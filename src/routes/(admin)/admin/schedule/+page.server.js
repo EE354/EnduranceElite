@@ -14,25 +14,21 @@ export const actions = {
         const form = await request.formData();
         const start = new Date(form.get("start"));
         const end = new Date(form.get("end"));
-        const name = form.get("name");
+        const employee = form.get("employee")
         const description = form.get("description");
-        const location = form.get("location");
 
         if (start > end) throw new Error("Start date must be before end date");
 
         try {
             eventDateSchema.parse(start);
             eventDateSchema.parse(end);
-            nameSchema.parse(name);
+            nameSchema.parse(employee);
             stringSchema.parse(description);
-            stringSchema.parse(location);
 
             await Schedule.create({
                 timeStamp: { start: start, end: end},
-                name: name,
-                description: description,
-                location: location,
                 employee: employee,
+                description: description,
             });
 
             return {
