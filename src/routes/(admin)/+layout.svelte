@@ -35,7 +35,7 @@
     <svelte:fragment slot="sidebarLeft">
         <AppRail>
             <!-- Calendar Button -->
-            <AppRailAnchor href="/admin/events" selected={$page.url.pathname === '/calendar'}>
+            <AppRailAnchor href="/admin/events" selected={$page.url.pathname === '/admin/events'}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
                     event
@@ -45,7 +45,7 @@
             </AppRailAnchor>
 
             <!-- Schedule Button -->
-            <AppRailAnchor href="/admin/schedule" selected={$page.url.pathname === '/schedule'}>
+            <AppRailAnchor href="/admin/schedule" selected={$page.url.pathname === '/admin/schedule'}>
                 <svelte:fragment slot="lead">
                     <span class="material-symbols-outlined text-black dark:text-white">
                     schedule
@@ -62,6 +62,14 @@
                     </span>
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Training</p></span>
+            </AppRailAnchor>
+            <AppRailAnchor href="/admin/groups" selected={$page.url.pathname === '/admin/groups'}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    group
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Groups</p></span>
             </AppRailAnchor>
 
             <!-- Bottom slot -->

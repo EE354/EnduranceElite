@@ -2,9 +2,6 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import AddScheduleDrawer from "$lib/Drawers/AddScheduleDrawer.svelte";
-    import EditScheduleDrawer from "$lib/Drawers/EditScheduleDrawer.svelte";
-
     const errorToast = {
         message: "There was an error signing up",
         background: "variant-filled-error",
