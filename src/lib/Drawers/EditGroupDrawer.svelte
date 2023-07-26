@@ -1,6 +1,6 @@
 <script>
     import {enhance} from "$app/forms";
-    import {editGroup} from "../../routes/(admin)/admin/groups/+page.js";
+    import {editGroup} from "$lib/store";
     import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
 </script>
 

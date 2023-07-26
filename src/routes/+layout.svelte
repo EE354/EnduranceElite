@@ -42,26 +42,19 @@
 <Drawer>
     {#if $drawerStore.id === "AddEventDrawer"}
         <AddEventDrawer/>
-    {/if}
-    {#if $drawerStore.id === "EditEventDrawer"}
+    {:else if $drawerStore.id === "EditEventDrawer"}
         <EditEventDrawer/>
-    {/if}
-    {#if $drawerStore.id === "AddTrainingDrawer"}
+    {:else if $drawerStore.id === "AddTrainingDrawer"}
         <AddTrainingDrawer/>
-    {/if}
-    {#if $drawerStore.id === "EditTrainingDrawer"}
+    {:else if  $drawerStore.id === "EditTrainingDrawer"}
         <EditTrainingDrawer/>
-    {/if}
-    {#if $drawerStore.id === "AddScheduleDrawer"}
+    {:else if $drawerStore.id === "AddScheduleDrawer"}
         <AddScheduleDrawer/>
-    {/if}
-    {#if $drawerStore.id === "EditScheduleDrawer"}
+    {:else if $drawerStore.id === "EditScheduleDrawer"}
         <EditScheduleDrawer/>
-    {/if}
-    {#if $drawerStore.id === "AddGroupDrawer"}
+    {:else if $drawerStore.id === "AddGroupDrawer"}
         <AddGroupDrawer/>
-    {/if}
-    {#if $drawerStore.id === "EditGroupDrawer"}
+    {:else if $drawerStore.id === "EditGroupDrawer"}
         <EditGroupDrawer/>
     {/if}
 

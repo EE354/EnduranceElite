@@ -2,7 +2,7 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import {editTraining} from "../store.js";
+    import {editTraining} from "$lib/store.js";
 
     const errorToast = {
         message: "There was an error signing up",

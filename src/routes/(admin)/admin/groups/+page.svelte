@@ -2,7 +2,7 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    import {editGroup} from "../store.js";
+    import {editGroup} from "$lib/store.js";
 
     const errorToast = {
         message: "There was an error loading the page",
