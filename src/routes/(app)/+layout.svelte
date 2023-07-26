@@ -31,9 +31,10 @@
     const aboutPopup = {
         event: 'click',
         target: 'aboutPopup',
-        placement: 'right',
-        middleware: 200,
-        
+        placement: 'bottom',
+        middleware: {
+            offset: 24,
+        }
     };
 					
 
@@ -54,11 +55,23 @@
             </svelte:fragment>
 
             <svelte:fragment slot="trail">
+
+                <button class="w-20 bg-surface" use:popup={aboutPopup}>About</button>
+                <button class="w-20 bg-surface" use:popup={aboutPopup}>Activities</button>
+                <button class="w-20 bg-surface" use:popup={aboutPopup}>Events</button>
+
+                <div class="bg-neutral-200 p-4 w-50" data-popup="aboutPopup">
+                    <div><a href="/">About Us</a></div>
+                    <div><a href="/tuition">Tuition</a></div>
+                    <div><a href="/crew">Crew</a></div>
+                    <div><a href="/join-the-crew">Join the Crew</a></div>
+                    <div><a href="/contact-us">Contact Us</a></div>
+                </div>
                 {#if data.session?.sessionId}
                 <button use:popup={accountPopup}>Account</button>
                 
                 <div class="card p-4" data-popup="popupClick">
-                    <a href="/account">WASD</a>
+                    <a href="/account">Dashboard</a>
                     <a href="/settings">Settings</a>
                     <hr class="rounded">
                     <form method="POST" action="/account?/logout" class="mt-4">
@@ -79,7 +92,7 @@
     <!-- Left Rail -->
     <svelte:fragment slot="sidebarLeft">
         <AppRail>
-            <button class="w-20 bg-surface" use:popup={infoPopup}>
+            <!-- <button class="w-20 bg-surface" use:popup={infoPopup}>
                 <span class="material-symbols-outlined text-black dark:text-white">
                     info
                 </span>
@@ -99,7 +112,7 @@
                 <div><a href="/crew">Crew</a></div>
                 <div><a href="/join-the-crew">Join the Crew</a></div>
                 <div><a href="/contact-us">Contact Us</a></div>
-            </div>
+            </div> -->
             
             <AppRailAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
                 <svelte:fragment slot="lead">
