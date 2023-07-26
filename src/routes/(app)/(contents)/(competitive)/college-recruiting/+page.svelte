@@ -3,7 +3,7 @@
 </script>
 
 <main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
-    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 flex">
+    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
             <h1 class="text-primary-200 text-shadow italic">
@@ -15,9 +15,9 @@
             <br><p><b>Please email Coach Ashley at ashleyg.enduranceelitegym@gmail.com for more information.</b></p>
         </div>
         <img 
-            class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
-            alt="Ballerina Bending and Dancing"
-            src="$lib/Regular/Dance/dance.jpg"
+            class="container rounded-2xl w-[24rem] mt-4 lg:mt-0 object-cover"
+            alt="Gymnast Jumping and Doing a Splits Mid Jump"
+            src="$lib/Regular/Competitive/collegerecruiting.jpg"
         >
     </div>
 
@@ -26,7 +26,7 @@
         <!-- Main Contents -->
         <div class="flex gap-4 bg-neutral-100 shadow-lg m-4 p-4">
             <!-- White Info Block -->
-            <Avatar src="" width="w-32" rounded="rounded-full"/>
+            <Avatar src="https://static.wixstatic.com/media/b16c48_75f41412bf0346cdb7f4688d3a20b535~mv2.jpg/v1/crop/x_0,y_14,w_515,h_515/fill/w_144,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Optionals%201_edited.jpg" width="w-32" rounded="rounded-full" initials="PV"/>
             <div>
                 <h3>Palvi Vagal</h3>
                 <p>Class of 2025</p>

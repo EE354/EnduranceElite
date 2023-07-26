@@ -3,7 +3,7 @@
 </script>
 
 <main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
-    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 flex">
+    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
             <h1 class="text-primary-200 text-shadow italic">
@@ -14,9 +14,9 @@
             <br><p>Through communication, hard work, and teamwork we are proud to offer a competitive team program fit for anyone looking to work hard and become part of a gym family.</p>
         </div>
         <img 
-            class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
-            alt="Ballerina Bending and Dancing"
-            src="$lib/Regular/Dance/dance.jpg"
+            class="container rounded-2xl w-[24rem] mt-4 lg:mt-0 object-cover"
+            alt="Gymnast Jumping and Doing a Splits Mid Jump"
+            src="$lib/Regular/Competitive/teaminformation.jpg"
         >
     </div>
 
@@ -48,6 +48,10 @@
 				</div>
 			</div>
 		</div>
+
+        <!-- Flyer Ad -->
+        <img alt="Competitive Team Tryouts for the 2023-2024 Season. Sunday, July 23rd AT 10AM, AT: Endurance Elite, COST: $25/Athlete, Open invitation to try out for the men & women's competitive teams. How To Register: Parent Portal (Pre-registration required) Walk-ins will not be accepted, Experience Level: Any (Recreational or Competitive)." 
+            src="$lib/Regular/Competitive/competitiveteam_tryouts_2023-2024.jpg">
 
         <div class="bg-neutral-100 w-11/12 shadow-lg m-4 p-4">
             <!-- White Info Block -->
@@ -116,10 +120,14 @@
             </ul><br>
         </div>
 
-        <div class="bg-primary-500 text-center">
-            <h2>For more info</h2>
-            <h3>on Women's and Men's Team</h3>
-            <h3>Email Ashley at ashleyg.enduranceelitegym@gmail.com to set up a meeting!</h3>
+        <div class="lg:flex bg-primary-500 text-center">
+            <img alt="Gymnast Kneeling" src="$lib/Regular/Competitive/left_formoreinfo.jpg">
+            <div class="flex gap-4 shadow-lg m-4 p-4 text-center">
+                <p class="text-xl">Email Ashley at 
+                    <br><b>ashleyg.enduranceelitegym@gmail.com </b>
+                    <br>for more information</p>
+            </div>
+            <img alt="Gymnasting Posing" src="$lib/Regular/Competitive/right_formoreinfo.jpg">
         </div>
     </div>
 </main>
