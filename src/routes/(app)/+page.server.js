@@ -53,7 +53,7 @@ export const load = async ({ locals}) => {
             title: "Birthday Parties",
             body: "Book your party with EE and leave the party planning to us. We've got you covered. We entertain the kids, buy the pizza (and cake too if you'd like), provide the invitations and decorations as well as blow up the bounce house.",
             name: "Read More",
-            href: "/gymnastics",
+            href: "/birthday-parties",
         },
         {
             image: {
@@ -73,7 +73,7 @@ export const load = async ({ locals}) => {
             title: "Sampler Classes",
             body: "Take dance and gymnastics in ONE awesome class! We have Sampler BJG (Ballet, Jazz, Gymnastics) and BTG (Ballet, Tap, Gymnastics). Levels are based on experience. Half of the class is in the dance studio and half is out in the main gym. ",
             name: "See Classes",
-            href: "https://app.iclasspro.com/portal/enduranceelite",
+            href: "/recreational-dance#samplerbjg",
         },
         {
             image: {
@@ -82,8 +82,8 @@ export const load = async ({ locals}) => {
             },
             title: "Open Gym",
             body: "Need extra time in the gym? Or do you just want to play on the equipment. Come to open gym! We offer supervision and a clean safe environment for everyone of all ages to play and enjoy. All ages are welcome!",
-            name: "See Schedule",
-            href: "/",
+            name: "See More",
+            href: "/open-gym",
         },
     ]
     const bottomLinks = [
@@ -105,7 +105,7 @@ export const load = async ({ locals}) => {
             title: "Dance Classes",
             body: "Dance classes start at age 2 years and go through Adult. If you are a beginner dancer or a professional dancer, there are many classes and times to chose from. Most genres are offered through EE. Why go anywhere else?",
             name: "See More",
-            href: "/",
+            href: "/dance",
         },
         {
             image: {
@@ -115,7 +115,7 @@ export const load = async ({ locals}) => {
             title: "Cheerleading",
             body: "We provide cheerleading classes to instruct motions, cheers, stunts, tumbling and dance. We also offer tumbling classes to focus only on floor skills for the up and coming gymnast, dancer or cheerleader.",
             name: "See More",
-            href: "/",
+            href: "/cheer",
         },
         {
             image: {
@@ -125,7 +125,7 @@ export const load = async ({ locals}) => {
             title: "Preschool Classes",
             body: "Preschool classes are designed for the future gymnasts and dancers to learn the basics and to provide a fun and safe learning environment. Students will learn to interact in a group setting and follow directions.",
             name: "See More",
-            href: "/",
+            href: "/preschool-dance#tippytoe",
         },
     ]
 

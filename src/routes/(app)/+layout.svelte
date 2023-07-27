@@ -17,27 +17,27 @@
 
 	export let data;
 
-    let selectedNav = null;
+	let selectedNav = null;
 
-    //Code for button toggles
-    let activeButton;
-    $: activeButton = undefined;
+	//Code for button toggles
+	let activeButton;
+	$: activeButton = undefined;
 
-    const selected = "bg-primary-500 dark:bg-primary-900";
-    const secondary = "btn-secondary";
+	const selected = 'bg-primary-500 dark:bg-primary-900';
+	const secondary = 'btn-secondary';
 
-    const getClass = (id, active) => {
-        if (active == id)  {
-            return selected;
-        } else {
-            return secondary;
-        }
-    };
+	const getClass = (id, active) => {
+		if (active == id) {
+			return selected;
+		} else {
+			return secondary;
+		}
+	};
 
-    function menuClick(id) {
-        activeButton = id;
-        selectedNav = id;
-    }
+	function menuClick(id) {
+		activeButton = id;
+		selectedNav = id;
+	}
 
 	const accountPopup = {
 		event: 'click',
@@ -51,7 +51,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				crossAxis: -37,
+				crossAxis: -37
 			}
 		}
 	};
@@ -62,7 +62,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				crossAxis: -257,
+				crossAxis: -257
 			}
 		}
 	};
@@ -73,7 +73,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				crossAxis: 0,
+				crossAxis: 0
 			}
 		}
 	};
@@ -99,23 +99,41 @@
 
 			<svelte:fragment slot="trail">
 				<!-- Navigation for Static Pages -->
-                <button on:click={() => {menuClick(1)}} class="w-20 h-12 {getClass(1, activeButton)}" use:popup={aboutPopup}>About</button>
-				<button on:click={() => {menuClick(3)}} class="w-20 h-12 {getClass(3, activeButton)}" use:popup={eventsPopup}>Events</button>
-                <button on:click={() => {menuClick(2)}} class="w-20 h-12 {getClass(2, activeButton)}" use:popup={activitiesPopup}>Activities</button>
-			
+				<button
+					on:click={() => {
+						menuClick(1);
+					}}
+					class="w-20 h-12 {getClass(1, activeButton)}"
+					use:popup={aboutPopup}>About</button
+				>
+				<button
+					on:click={() => {
+						menuClick(3);
+					}}
+					class="w-20 h-12 {getClass(3, activeButton)}"
+					use:popup={eventsPopup}>Events</button
+				>
+				<button
+					on:click={() => {
+						menuClick(2);
+					}}
+					class="w-20 h-12 {getClass(2, activeButton)}"
+					use:popup={activitiesPopup}>Activities</button
+				>
+
 				<div
 					class="neutral dark:bg-[#31465B] border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
 					data-popup="aboutPopup"
 				>
 					<!-- About Popup -->
-					<div><a href="/">About Us</a></div>
+					<div><a href="/about">About Us</a></div>
 					<div><a href="/tuition">Tuition</a></div>
 					<div><a href="/crew">Crew</a></div>
 					<div><a href="/join-the-crew">Join the Crew</a></div>
 					<div><a href="/contact-us">Contact Us</a></div>
 				</div>
 
-                <div
+				<div
 					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
 					data-popup="eventsPopup"
 				>
@@ -209,7 +227,6 @@
 	<!-- Left Rail -->
 	<svelte:fragment slot="sidebarLeft">
 		<AppRail>
-			
 			<AppRailAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
 				<svelte:fragment slot="lead">
 					<span class="material-symbols-outlined text-black dark:text-white"> event </span>

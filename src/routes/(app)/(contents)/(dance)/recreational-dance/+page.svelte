@@ -28,7 +28,7 @@
                 <a href="#hiphop" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Hip Hop</a>
                 <a href="#jazz" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Jazz</a>
                 <a href="#contemp" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Contemporary</a>
-                <a href="#samplerbtj" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Sampler</a>
+                <a href="#samplerbjg" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Sampler</a>
                 <a href="#ballet" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Ballet</a>
                 <a href="#danceteam" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Dance Team Prep</a>
                 <a href="#tap" class="btn bg-primary-600 dark:bg-primary-900" on:click|preventDefault={scrollIntoView}>Tap</a>
