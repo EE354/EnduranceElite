@@ -2,7 +2,7 @@
 
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex-row">
         <!-- Header Block -->
         <h1>Competitive Teams</h1>
@@ -14,14 +14,14 @@
         <img alt="Person Doing the Splits" src="$lib/Regular/Competitive/competitiveteams.jpg">
 
         <div class="md:flex">
-            <div class="w-11/12 bg-neutral-100 justify-center shadow-lg m-4 p-4">
+            <div class="w-11/12 neutral justify-center shadow-lg m-4 p-4">
                 <h3>ENDURANCE ELITE GYMNASTICS TEAM</h3>
                 <br><p>Our primary objective at Endurance Elite is to provide a positive, safe and fun experience for all of our gymnasts. Our goal as coaches is to develop not only great gymnasts, but also well-rounded people! Coaches play a huge part in the gymnast’s life and it’s important that our bond of trust is built and nurtured. We will not only lead by example, but we will believe in and encourage our gymnasts, providing to them strength and support. Our vision for this program is to have coaches who not only say what they are going to do, but do what they say.</p>
                 <br><p>Through a well-organized and disciplined program, we hope to give each gymnast the opportunity to meet his/her goals. We wish to provide high quality coaching, striving to be competitive at the state, regional, national and world levels. Long-term goals for our gymnasts include placing individually in meets, being successful as a team, earning college scholarships and competition as professional elite gymnasts. Through gymnastics the gymnasts will improve their self-esteem, learn goal setting and sportsmanship, stay physically fit and have an activity that is both challenging and rewarding.</p>
                 <br><p><b>*Please Note: Team enrollment is through invitation only.</b></p>
             </div>
 
-            <div class="w-11/12 bg-neutral-100 justify-center shadow-lg m-4 p-4">
+            <div class="w-11/12 neutral justify-center shadow-lg m-4 p-4">
                 <h3>ENDURANCE DANCE COMPANY</h3>
                 <br><p>It is with great pride and a long-time dream, that Endurance Elite can introduce a dual program to both the gymnastics and dance communities. We are starting to see that gymnastics is not complete without the ability of proper dance technique and dance is not successful without acro skills and training. At Endurance Elite, our goal is to create a “Super” Athlete, both successful in gymnastics and dance, therefore showing strength and equality in both sport and art form. We are creating a healthier, stronger, more aware athlete that can perform with confidence and grow through the sport with less injury and a better performance all around.</p>
                 <br><p>Athletes are selected to be on the Elite Dance Company through the Endurance Elite Gymnastics Team. Members of the Elite Dance Company MUST compete dance and gymnastics. No member will participate as a dancer only. The Elite Dance Company is an extension of the Endurance Elite Gymnastics Team.</p>
@@ -31,7 +31,7 @@
 
         <div class="flex-column md:grid md:grid-cols-3 text-center">
             <!-- Cards -->
-            <div class="bg-primary-400 p-16 col-span-1">
+            <div class="bg-primary-400 dark:bg-primary-900 p-16 col-span-1">
                 <svg class="container" preserveAspectRatio="xMidYMid meet" data-bbox="50 0 100 200" xmlns="http://www.w3.org/2000/svg" viewBox="50 0 100 280" height="120" width="200" role="presentation" aria-hidden="true">
                     <g>
                         <path d="M97 0h7v33h-7V0z"></path>
@@ -47,7 +47,7 @@
                     <a href="/team-information" class="md:absolute inset-x-0 bottom-0">READ MORE ></a>
                 </div>
             </div>
-            <div class="bg-secondary-400 p-16 col-span-1">
+            <div class="bg-secondary-400 dark:bg-secondary-800 p-16 col-span-1">
                 <svg class="container" preserveAspectRatio="xMidYMid meet" data-bbox="53.245 47.211 93.512 105.578" viewBox="53.245 47.211 93.512 155" height="120" width="200" xmlns="http://www.w3.org/2000/svg" data-type="tint" role="presentation" aria-hidden="true">
                     <g>
                         <path d="M100 47.211L53.245 79.502v10.287H61.5v7h4.104v36.003l6.376-10.255 6.417 10.647V96.789H82.5v-7h7v7h4.104v36.003l6.376-10.255 6.417 10.647V96.789h4.104v-7h7v7h4.104v36.003l6.376-10.255 6.417 10.647V96.789h4.104v-7h8.255V79.501L100 47.211zm-24.604 75.183l-3.376-5.603-3.417 5.495V96.789h6.793v25.605zM79.5 93.789h-15v-4h15v4zm23.896 28.605l-3.376-5.603-3.417 5.495V96.789h6.793v25.605zm4.104-28.605h-15v-4h15v4zm23.896 28.605l-3.376-5.603-3.417 5.495V96.789h6.793v25.605zm4.104-28.605h-15v-4h15v4zm8.255-7h-87.51v-5.713L100 50.856l43.755 30.219v5.714z" fill="#FFFFFF"></path>
@@ -61,7 +61,7 @@
                     <a href="/college-recruiting" class="md:absolute inset-x-0 bottom-0">READ MORE ></a>
                 </div>
             </div>
-            <div class="bg-primary-300 p-16 col-span-1">
+            <div class="bg-primary-300 dark:bg-primary-700 p-16 col-span-1">
                 <svg class="container" preserveAspectRatio="xMidYMid meet" data-bbox="38.5 38.5 123 123" viewBox="38.5 38.5 123 200" height="120" width="200" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-juha5v6b svg [data-color="1"] {fill: #FFFFFF;}</style></defs>
                     <g>
                         <path fill="#4FBFB7" d="M158.572 82.429v5.857H41.429v-5.857h117.143z" data-color="1"></path>
@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <div class="flex gap-4 bg-neutral-100 shadow-lg m-4 p-4 text-center">
+        <div class="flex gap-4 neutral shadow-lg m-4 p-4 text-center">
             <p class="text-xl">Email Ashley at 
                 <br><b>ashleyg.enduranceelitegym@gmail.com </b>
                 <br>for more information</p>

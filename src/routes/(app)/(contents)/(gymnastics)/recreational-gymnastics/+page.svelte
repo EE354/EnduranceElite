@@ -10,14 +10,14 @@
     }
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 flex-row">
         <!-- Header Block -->
         <h1>Recreational Gymnastics</h1>
     </div>
 
     <div class="container flex flex-wrap justify-center">
-        <div class="w-11/12 bg-neutral-100 justify-center shadow-lg m-4 p-4">
+        <div class="w-11/12 neutral justify-center shadow-lg m-4 p-4">
             <!-- Nav Buttons - Scroll to Position On Page -->
             <h4 class="mb-4 text-center">Click your Style to Scroll!</h4>
             <nav class="flex flex-wrap gap-2">

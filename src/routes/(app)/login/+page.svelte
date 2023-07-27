@@ -14,7 +14,7 @@
                 <input class="input" type="password" name="password" placeholder="Password"/>
             </label>
             <div class="flex flex-row mt-2">
-                <input type="submit" class="btn bg-primary-600" value="Log In"/>   
+                <input type="submit" class="btn bg-primary-600 dark:bg-primary-900" value="Log In"/>   
                 <div class="container grid items-center justify-items-center">
                     <a href="/login" class="font-semibold hover:underline">Forgot Password?</a>
                 </div>

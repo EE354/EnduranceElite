@@ -2,7 +2,7 @@
     import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
@@ -24,13 +24,13 @@
 
     <div class="container flex flex-wrap align-center justify-center">
         <!-- Main Contents -->
-        <div class="flex gap-4 bg-neutral-100 shadow-lg m-4 p-4">
+        <div class="flex gap-4 neutral shadow-lg m-4 p-4">
             <!-- White Info Block -->
             <Avatar src="https://static.wixstatic.com/media/b16c48_75f41412bf0346cdb7f4688d3a20b535~mv2.jpg/v1/crop/x_0,y_14,w_515,h_515/fill/w_144,h_144,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Optionals%201_edited.jpg" width="w-32" rounded="rounded-full" initials="PV"/>
             <div>
                 <h3>Palvi Vagal</h3>
                 <p>Class of 2025</p>
-                <a href="https://www.instagram.com/palvi_gymnast.2025/?igshid=MzRlODBiNWFlZA%3D%3D" class="btn bg-primary-500">Palvi's Instagram</a>
+                <a href="https://www.instagram.com/palvi_gymnast.2025/?igshid=MzRlODBiNWFlZA%3D%3D" class="btn bg-primary-500 dark:bg-primary-900">Palvi's Instagram</a>
             </div>
         </div>
     </div>

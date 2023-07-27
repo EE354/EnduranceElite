@@ -32,7 +32,7 @@
 
 </script>
 
-<main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 dark:bg-secondary-900 bg-contain p-6">
+<main class="bg-[url('$lib/Regular/background.jpg')] dark:bg-[url('$lib/Regular/background_dark_2.png')] bg-secondary-500 dark:bg-secondary-900 bg-contain p-6">
     <!-- First Block of Contents -->
     <div class="container flex flex-row items-center flex-wrap justify-center lg:flex-nowrap py-4 gap-12">
         <!-- 1st Block of Contents -->
@@ -51,7 +51,7 @@
     </div>
 
 
-    <div class="card container bg-primary-600 dark:bg-primary-900 rounded-2xl p-4">
+    <div class="card container bg-primary-600 dark:bg-primary-900 rounded-2xl p-4 dark:shadow-2xl">
         <!-- 1st Divider : News Bar -->
         <div class=" pl-1 flex flex-row justify-between">
             <h2>News</h2>
@@ -102,7 +102,7 @@
         {/each}
     </div>
     
-    <div class="card container bg-primary-500 dark:bg-primary-900 flex flex-row">
+    <div class="card container bg-primary-500 dark:bg-primary-900 flex flex-row dark:shadow-2xl">
         <!-- Divider Content -->
         <div class="w-4/12 h-3/12 p-4 mx-6">
             <img
@@ -143,7 +143,7 @@
         </div>
     </div>
 
-    <div class="card container w-full bg-primary-600 dark:bg-primary-900 lg:flex flex-row">
+    <div class="card container w-full bg-primary-600 dark:bg-primary-900 lg:flex flex-row dark:shadow-2xl">
         <!-- Divider Content -->
         <div class="lg:w-4/12 h-[18rem] p-4">
             <img

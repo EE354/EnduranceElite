@@ -1,4 +1,4 @@
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 flex">
         <!-- Header Block -->
         <div>
@@ -19,7 +19,7 @@
 
     <div class="container flex flex-wrap align-center justify-center">
         <!-- Main Contents -->
-        <div class="w-11/12 bg-neutral-100 shadow-lg m-4 p-4">
+        <div class="w-11/12 neutral shadow-lg m-4 p-4">
             <!-- White Info Block -->
             <h3>WHY Endurance Elite Dance Classes are different than other dance schools: </h3>
             <p>At Endurance Elite we believe that movement is growth and the joy of learning should be shared with each and every one of our students. Our classes are structured so that all students are engaged in the lesson, meaning there is little to zero time for sitting, waiting in lines or standing around. Our energetic and active dance instructors make it their number one priority to maintain their class' full attention and participation.</p>

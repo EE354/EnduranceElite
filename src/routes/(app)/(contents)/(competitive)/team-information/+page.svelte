@@ -2,7 +2,7 @@
     import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
@@ -53,7 +53,7 @@
         <img alt="Competitive Team Tryouts for the 2023-2024 Season. Sunday, July 23rd AT 10AM, AT: Endurance Elite, COST: $25/Athlete, Open invitation to try out for the men & women's competitive teams. How To Register: Parent Portal (Pre-registration required) Walk-ins will not be accepted, Experience Level: Any (Recreational or Competitive)." 
             src="$lib/Regular/Competitive/competitiveteam_tryouts_2023-2024.jpg">
 
-        <div class="bg-neutral-100 w-11/12 shadow-lg m-4 p-4">
+        <div class="neutral w-11/12 shadow-lg m-4 p-4">
             <!-- White Info Block -->
             <h3>Women's Team Level Progressions</h3><br>
             <h4>Mini Elite- ages 3-4: 2 hours a week</h4>
@@ -120,7 +120,7 @@
             </ul><br>
         </div>
 
-        <div class="lg:flex bg-primary-500 text-center">
+        <div class="lg:flex bg-primary-500 dark:bg-primary-900 text-center">
             <img alt="Gymnast Kneeling" src="$lib/Regular/Competitive/left_formoreinfo.jpg">
             <div class="flex gap-4 shadow-lg m-4 p-4 text-center">
                 <p class="text-xl">Email Ashley at 

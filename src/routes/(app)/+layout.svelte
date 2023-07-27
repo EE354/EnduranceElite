@@ -23,7 +23,7 @@
     let activeButton;
     $: activeButton = undefined;
 
-    const selected = "bg-primary-500";
+    const selected = "bg-primary-500 dark:bg-primary-900";
     const secondary = "btn-secondary";
 
     const getClass = (id, active) => {
@@ -98,17 +98,13 @@
 			</svelte:fragment>
 
 			<svelte:fragment slot="trail">
-				<!-- <button
-					class="w-20 bg-primary-500 h-12"
-					use:popup={aboutPopup}
-					on:click={toggleFocus}>About</button
-				> -->
+				<!-- Navigation for Static Pages -->
                 <button on:click={() => {menuClick(1)}} class="w-20 h-12 {getClass(1, activeButton)}" use:popup={aboutPopup}>About</button>
 				<button on:click={() => {menuClick(3)}} class="w-20 h-12 {getClass(3, activeButton)}" use:popup={eventsPopup}>Events</button>
                 <button on:click={() => {menuClick(2)}} class="w-20 h-12 {getClass(2, activeButton)}" use:popup={activitiesPopup}>Activities</button>
 			
 				<div
-					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 text-sm"
+					class="neutral dark:bg-[#31465B] border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
 					data-popup="aboutPopup"
 				>
 					<!-- About Popup -->
@@ -120,7 +116,7 @@
 				</div>
 
                 <div
-					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 text-sm"
+					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
 					data-popup="eventsPopup"
 				>
 					<!-- Events Popup -->
@@ -144,41 +140,41 @@
 				</div>
 
 				<div
-					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 text-sm"
+					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
 					data-popup="activitiesPopup"
 				>
 					<!-- Activities Popup -->
 					<div class="grid grid-cols-3 gap-4">
 						<div class="col-span-1">
-							<a href="/gymnastics" class="font-bold">Gymnastics</a>
+							<a href="/gymnastics" class="font-bold dark:font-normal">Gymnastics</a>
 							<hr />
 							<a href="/preschool-gymnastics">Preschool Gymnastics</a>
 							<br />
 							<a href="/recreational-gymnastics">Recreational Gymnastics</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/dance" class="font-bold">Dance</a>
+							<a href="/dance" class="font-bold dark:font-normal">Dance</a>
 							<hr />
 							<a href="/preschool-dance">Preschool Dance</a>
 							<br />
 							<a href="/recreational-dance">Recreational Dance</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/cheer" class="font-bold">Cheer</a>
+							<a href="/cheer" class="font-bold dark:font-normal">Cheer</a>
 							<hr />
 							<a href="/cheer-classes">Cheer Classes</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/ninja-warrior" class="font-bold">Ninja Warrior</a>
+							<a href="/ninja-warrior" class="font-bold dark:font-normal">Ninja Warrior</a>
 							<hr />
 						</div>
 						<div class="col-span-1">
-							<a href="/adult" class="font-bold">Adult</a>
+							<a href="/adult" class="font-bold dark:font-normal">Adult</a>
 							<hr />
 							<a href="/adult-classes">Adult Classes</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/competitive" class="font-bold">Competitive</a>
+							<a href="/competitive" class="font-bold dark:font-normal">Competitive</a>
 							<hr />
 							<a href="/team-information">Team Information</a>
 							<br />

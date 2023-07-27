@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 md:flex">
         <!-- Header Block -->
         <div>
@@ -23,7 +23,7 @@
     <div class="container flex flex-wrap align-center justify-center">
         <!-- Main Contents -->
         <img alt="Adult Break Dancing" src="$lib/Regular/Adult/adult.jpg">
-        <div class="w-11/12 bg-neutral-100 shadow-lg m-4 p-4 text-center">
+        <div class="w-11/12 neutral  shadow-lg m-4 p-4 text-center">
             <!-- White Info Block -->
             <h3>DROP - IN   RATE:</h3>
             <h4>*No monthly commitment required.</h4>
@@ -32,7 +32,7 @@
 
         <div class="md:flex">
     
-            <div class="bg-neutral-100 shadow-lg m-4 p-4 rounded-xl">
+            <div class="neutral shadow-lg m-4 p-4 rounded-xl">
                 <!-- Information Block-->
                 <h4 class="text-center">Attending Adult Classes</h4>
                 <br><p>

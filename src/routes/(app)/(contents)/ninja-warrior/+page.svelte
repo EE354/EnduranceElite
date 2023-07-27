@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 flex">
         <!-- Header Block -->
         <div>
@@ -24,7 +24,7 @@
 
     <div class="container flex flex-wrap align-center justify-center">
         <!-- Main Contents -->
-        <div class="w-11/12 bg-neutral-100 shadow-lg m-4 p-4">
+        <div class="w-11/12 neutral shadow-lg m-4 p-4">
             <!-- White Info Block -->
             <h3>Ninja Warrior</h3>
             <p>Welcome to Endurance Elite Ninja Warrior! Soon we will be building out a brand-new top of the line Ninja Warrior course. Coming March 2022!</p><br>

@@ -1,4 +1,4 @@
-<main class="bg-[url('$lib/Regular/background.jpg')] bg-secondary-500 h-full">
+<main>
     <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4">
         <!-- Header Block -->
         <h1>Join the Crew</h1>
@@ -7,7 +7,7 @@
     <div class="container flex flex-wrap justify-center">
         <!-- Main Contents -->
         
-        <div class="container card w-11/12 bg-primary-500 m-4 p-4">
+        <div class="card w-11/12 bg-primary-500 m-4 p-4">
             <!-- Step Block -->
             <span class="text-center w-100%"><h3>Now Hiring</h3></span>
             <div class="flex">
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="container w-11/12 bg-neutral-100 shadow-lg m-4 p-4">
+        <div class="container w-11/12 neutral shadow-lg m-4 p-4">
             <!-- Information Block -->
             <p>
                 To become apart of our CREW please submit the following to Ashley at:
