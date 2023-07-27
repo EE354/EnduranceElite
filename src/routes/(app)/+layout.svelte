@@ -126,11 +126,11 @@
 					data-popup="aboutPopup"
 				>
 					<!-- About Popup -->
-					<div><a href="/about">About Us</a></div>
-					<div><a href="/tuition">Tuition</a></div>
-					<div><a href="/crew">Crew</a></div>
-					<div><a href="/join-the-crew">Join the Crew</a></div>
-					<div><a href="/contact-us">Contact Us</a></div>
+					<div><a href="/about" class="hover:underline">About Us</a></div>
+					<div><a href="/tuition" class="hover:underline">Tuition</a></div>
+					<div><a href="/crew" class="hover:underline">Crew</a></div>
+					<div><a href="/join-the-crew" class="hover:underline">Join the Crew</a></div>
+					<div><a href="/contact-us" class="hover:underline">Contact Us</a></div>
 				</div>
 
 				<div
@@ -139,19 +139,19 @@
 				>
 					<!-- Events Popup -->
 					<div class="grid grid-cols-3 gap-x-8 gap-y-4">
-						<div class="col-span-1"><a href="/">Special Events</a></div>
-						<div class="col-span-1"><a href="/open-gym">Open Gym</a></div>
-						<div class="col-span-1"><a href="/camps">Camps</a></div>
-						<div class="col-span-1"><a href="/friday-night-flick">Friday Night Flick</a></div>
-						<div class="col-span-1"><a href="/parents-night-out">Parent's Night Out</a></div>
-						<div class="col-span-1"><a href="/birthday-parties">Birthday Parties</a></div>
-						<div class="col-span-1"><a href="/clinics">Clinics</a></div>
-						<div class="col-span-1"><a href="/after-school">After School</a></div>
-						<div class="col-span1"><a href="/field-trips">Field Trips</a></div>
-						<div class="col-span-1">
+						<div class="col-span-1 hover:underline"><a href="/">Special Events</a></div>
+						<div class="col-span-1 hover:underline"><a href="/open-gym">Open Gym</a></div>
+						<div class="col-span-1 hover:underline"><a href="/camps">Camps</a></div>
+						<div class="col-span-1 hover:underline"><a href="/friday-night-flick">Friday Night Flick</a></div>
+						<div class="col-span-1 hover:underline"><a href="/parents-night-out">Parent's Night Out</a></div>
+						<div class="col-span-1 hover:underline"><a href="/birthday-parties">Birthday Parties</a></div>
+						<div class="col-span-1 hover:underline"><a href="/clinics">Clinics</a></div>
+						<div class="col-span-1 hover:underline"><a href="/after-school">After School</a></div>
+						<div class="col-span-1 hover:underline"><a href="/field-trips">Field Trips</a></div>
+						<div class="col-span-1 hover:underline">
 							<a href="/gymnastics-ninja-showcase">Gymnastics/Ninja Summer Showcase 2023</a>
 						</div>
-						<div class="col-span-1">
+						<div class="col-span-1 hover:underline">
 							<a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a>
 						</div>
 					</div>
@@ -164,39 +164,39 @@
 					<!-- Activities Popup -->
 					<div class="grid grid-cols-3 gap-4">
 						<div class="col-span-1">
-							<a href="/gymnastics" class="font-bold dark:font-normal">Gymnastics</a>
+							<a href="/gymnastics" class="font-bold dark:font-normal hover:underline">Gymnastics</a>
 							<hr />
-							<a href="/preschool-gymnastics">Preschool Gymnastics</a>
+							<a href="/preschool-gymnastics" class="hover:underline">Preschool Gymnastics</a>
 							<br />
 							<a href="/recreational-gymnastics">Recreational Gymnastics</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/dance" class="font-bold dark:font-normal">Dance</a>
+							<a href="/dance" class="font-bold dark:font-normal hover:underline">Dance</a>
 							<hr />
-							<a href="/preschool-dance">Preschool Dance</a>
+							<a href="/preschool-dance" class="hover:underline">Preschool Dance</a>
 							<br />
-							<a href="/recreational-dance">Recreational Dance</a>
+							<a href="/recreational-dance" class="hover:underline">Recreational Dance</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/cheer" class="font-bold dark:font-normal">Cheer</a>
+							<a href="/cheer" class="font-bold dark:font-normal hover:underline">Cheer</a>
 							<hr />
-							<a href="/cheer-classes">Cheer Classes</a>
+							<a href="/cheer-classes" class="hover:underline">Cheer Classes</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/ninja-warrior" class="font-bold dark:font-normal">Ninja Warrior</a>
+							<a href="/ninja-warrior" class="font-bold dark:font-normal hover:underline">Ninja Warrior</a>
 							<hr />
 						</div>
 						<div class="col-span-1">
-							<a href="/adult" class="font-bold dark:font-normal">Adult</a>
+							<a href="/adult" class="font-bold dark:font-normal hover:underline">Adult</a>
 							<hr />
-							<a href="/adult-classes">Adult Classes</a>
+							<a href="/adult-classes" class="hover:underline">Adult Classes</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/competitive" class="font-bold dark:font-normal">Competitive</a>
+							<a href="/competitive" class="font-bold dark:font-normal hover:underline">Competitive</a>
 							<hr />
-							<a href="/team-information">Team Information</a>
+							<a href="/team-information" class="hover:underline">Team Information</a>
 							<br />
-							<a href="/college-recruiting">College Recruiting</a>
+							<a href="/college-recruiting" class="hover:underline">College Recruiting</a>
 						</div>
 					</div>
 				</div>
