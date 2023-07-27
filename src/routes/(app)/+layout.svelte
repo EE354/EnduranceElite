@@ -209,28 +209,7 @@
 	<!-- Left Rail -->
 	<svelte:fragment slot="sidebarLeft">
 		<AppRail>
-			<!-- <button class="w-20 bg-surface" use:popup={infoPopup}>
-                <span class="material-symbols-outlined text-black dark:text-white">
-                    info
-                </span>
-            </button>
-
-            <div class="card grid grid-cols-1 p-4 z-50" data-popup="infoPopup">
-                <div>
-                    <button class="w-20 bg-surface" use:popup={aboutPopup}>About</button>
-                </div>
-                
-            </div>
-
-            
-            <div class="card p-4 w-50" data-popup="aboutPopup">
-                <div><a href="/about">About Us</a></div>
-                <div><a href="/tuition">Tuition</a></div>
-                <div><a href="/crew">Crew</a></div>
-                <div><a href="/join-the-crew">Join the Crew</a></div>
-                <div><a href="/contact-us">Contact Us</a></div>
-            </div> -->
-
+			
 			<AppRailAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
 				<svelte:fragment slot="lead">
 					<span class="material-symbols-outlined text-black dark:text-white"> event </span>
