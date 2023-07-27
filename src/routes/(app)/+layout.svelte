@@ -1,5 +1,4 @@
 <script>
-
 	import {
 		AppBar,
 		AppRail,
@@ -18,21 +17,32 @@
 
 	export let data;
 
+    let selectedNav = null;
+
+    //Code for button toggles
+    let activeButton;
+    $: activeButton = undefined;
+
+    const selected = "bg-primary-500";
+    const secondary = "btn-secondary";
+
+    const getClass = (id, active) => {
+        if (active == id)  {
+            return selected;
+        } else {
+            return secondary;
+        }
+    };
+
+    function menuClick(id) {
+        activeButton = id;
+        selectedNav = id;
+    }
+
 	const accountPopup = {
 		event: 'click',
 		target: 'popupClick',
 		placement: 'top'
-	};
-
-	const infoPopup = {
-		event: 'click',
-		target: 'infoPopup',
-		placement: 'right',
-		middleware: {
-			offset: {
-				crossAxis: 58
-			}
-		}
 	};
 
 	const aboutPopup = {
@@ -41,7 +51,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				mainAxis: 32
+				crossAxis: -37,
 			}
 		}
 	};
@@ -52,7 +62,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				mainAxis: 32
+				crossAxis: -257,
 			}
 		}
 	};
@@ -63,7 +73,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				mainAxis: 32
+				crossAxis: 0,
 			}
 		}
 	};
@@ -88,12 +98,17 @@
 			</svelte:fragment>
 
 			<svelte:fragment slot="trail">
-				<button class="w-20 bg-surface" use:popup={aboutPopup}>About</button>
-				<button class="w-20 bg-surface" use:popup={activitiesPopup}>Activities</button>
-				<button class="w-20 bg-surface" use:popup={eventsPopup}>Events</button>
-
+				<!-- <button
+					class="w-20 bg-primary-500 h-12"
+					use:popup={aboutPopup}
+					on:click={toggleFocus}>About</button
+				> -->
+                <button on:click={() => {menuClick(1)}} class="w-20 h-12 {getClass(1, activeButton)}" use:popup={aboutPopup}>About</button>
+				<button on:click={() => {menuClick(3)}} class="w-20 h-12 {getClass(3, activeButton)}" use:popup={eventsPopup}>Events</button>
+                <button on:click={() => {menuClick(2)}} class="w-20 h-12 {getClass(2, activeButton)}" use:popup={activitiesPopup}>Activities</button>
+			
 				<div
-					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 gap-4 text-sm"
+					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 text-sm"
 					data-popup="aboutPopup"
 				>
 					<!-- About Popup -->
@@ -104,8 +119,32 @@
 					<div><a href="/contact-us">Contact Us</a></div>
 				</div>
 
+                <div
+					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 text-sm"
+					data-popup="eventsPopup"
+				>
+					<!-- Events Popup -->
+					<div class="grid grid-cols-3 gap-x-8 gap-y-4">
+						<div class="col-span-1"><a href="/">Special Events</a></div>
+						<div class="col-span-1"><a href="/open-gym">Open Gym</a></div>
+						<div class="col-span-1"><a href="/camps">Camps</a></div>
+						<div class="col-span-1"><a href="/friday-night-flick">Friday Night Flick</a></div>
+						<div class="col-span-1"><a href="/parents-night-out">Parent's Night Out</a></div>
+						<div class="col-span-1"><a href="/birthday-parties">Birthday Parties</a></div>
+						<div class="col-span-1"><a href="/clinics">Clinics</a></div>
+						<div class="col-span-1"><a href="/after-school">After School</a></div>
+						<div class="col-span1"><a href="/field-trips">Field Trips</a></div>
+						<div class="col-span-1">
+							<a href="/gymnastics-ninja-showcase">Gymnastics/Ninja Summer Showcase 2023</a>
+						</div>
+						<div class="col-span-1">
+							<a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a>
+						</div>
+					</div>
+				</div>
+
 				<div
-					class="bg-neutral-100 border-[1px] border-neutral-400 arrow p-4 w-50 text-sm"
+					class="bg-neutral-100 border-[1px] border-neutral-400 p-4 w-50 text-sm"
 					data-popup="activitiesPopup"
 				>
 					<!-- Activities Popup -->
@@ -145,26 +184,6 @@
 							<br />
 							<a href="/college-recruiting">College Recruiting</a>
 						</div>
-					</div>
-				</div>
-
-				<div
-					class="bg-neutral-100 border-[1px] border-neutral-400 arrow p-4 w-50 text-sm"
-					data-popup="eventsPopup"
-				>
-					<!-- Events Popup -->
-					<div class="grid grid-cols-3 gap-x-8 gap-y-4">
-						<div class="col-span-1"><a href="/">Special Events</a></div>
-						<div class="col-span-1"><a href="/open-gym">Open Gym</a></div>
-						<div class="col-span-1"><a href="/camps">Camps</a></div>
-						<div class="col-span-1"><a href="/friday-night-flick">Friday Night Flick</a></div>
-						<div class="col-span-1"><a href="/parents-night-out">Parent's Night Out</a></div>
-						<div class="col-span-1"><a href="/birthday-parties">Birthday Parties</a></div>
-						<div class="col-span-1"><a href="/clinics">Clinics</a></div>
-						<div class="col-span-1"><a href="/after-school">After School</a></div>
-						<div class="col-span1"><a href="/field-trips">Field Trips</a></div>
-						<div class="col-span-1"><a href="/gymnastics-ninja-showcase">Gymnastics/Ninja Summer Showcase 2023</a></div>
-						<div class="col-span-1"><a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a></div>
 					</div>
 				</div>
 
