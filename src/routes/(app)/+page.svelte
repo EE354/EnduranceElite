@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="card bg-primary-600 dark:bg-primary-900 rounded-2xl p-4 dark:shadow-2xl">
+        <div class="card bg-primary-600 dark:bg-primary-900 rounded-2xl p-8 dark:shadow-2xl">
             <!-- 1st Divider : News Bar -->
             <div class=" pl-1 flex flex-row justify-between">
                 <h2>News</h2>
@@ -78,7 +78,7 @@
             {/each}
         </div>
 
-        <div class="bg-primary-500 dark:bg-primary-900 md:flex gap-4 dark:shadow-2xl p-4">
+        <div class="bg-primary-600 dark:bg-primary-900 md:flex gap-4 dark:shadow-2xl p-8">
             <!-- Divider Content -->
             <img
                     class="container rounded-xl w-[20rem] object-cover"
@@ -128,7 +128,7 @@
 
 
         <div
-            class="card bg-primary-500 dark:bg-primary-900 lg:flex dark:shadow-2xl p-4"
+            class="card bg-primary-600 dark:bg-primary-900 lg:flex dark:shadow-2xl p-8"
         >
             <!-- Divider Content -->
             <img
