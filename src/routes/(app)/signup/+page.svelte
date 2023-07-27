@@ -43,7 +43,7 @@
 			</label>
 
 			<div class="flex mt-2">
-				<input type="submit" class="btn bg-primary-600 dark:bg-primary-900" name="Sign Up"/>
+				<input type="submit" class="btn bg-primary-600 dark:bg-primary-900" value="Sign Up"/>
 				<div class="container grid items-center justify-items-center">
 					<div>
 						<span>Already have an Account?</span>

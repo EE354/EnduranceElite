@@ -214,10 +214,10 @@
 					</div>
 				{:else}
 					<a class="nav-link text-black dark:text-white" href="/signup"
-						><p class="dark:text-white text-black">Signup</p></a
+						>Sign Up</a
 					>
 					<a class="btn bg-primary-600 dark:bg-primary-900" href="/login"
-						><p class="dark:text-white text-black">Login</p></a
+						>Log In</a
 					>
 				{/if}
 			</svelte:fragment>
