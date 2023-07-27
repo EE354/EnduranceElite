@@ -164,35 +164,35 @@
 					<!-- Activities Popup -->
 					<div class="grid grid-cols-3 gap-4">
 						<div class="col-span-1">
-							<a href="/gymnastics" class="font-bold dark:font-normal hover:underline">Gymnastics</a>
+							<a href="/gymnastics" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Gymnastics</a>
 							<hr />
 							<a href="/preschool-gymnastics" class="hover:underline">Preschool Gymnastics</a>
 							<br />
 							<a href="/recreational-gymnastics">Recreational Gymnastics</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/dance" class="font-bold dark:font-normal hover:underline">Dance</a>
+							<a href="/dance" class="font-bold dark:font-normal pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Dance</a>
 							<hr />
 							<a href="/preschool-dance" class="hover:underline">Preschool Dance</a>
 							<br />
 							<a href="/recreational-dance" class="hover:underline">Recreational Dance</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/cheer" class="font-bold dark:font-normal hover:underline">Cheer</a>
+							<a href="/cheer" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Cheer</a>
 							<hr />
 							<a href="/cheer-classes" class="hover:underline">Cheer Classes</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/ninja-warrior" class="font-bold dark:font-normal hover:underline">Ninja Warrior</a>
+							<a href="/ninja-warrior" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Ninja Warrior</a>
 							<hr />
 						</div>
 						<div class="col-span-1">
-							<a href="/adult" class="font-bold dark:font-normal hover:underline">Adult</a>
+							<a href="/adult" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Adult</a>
 							<hr />
 							<a href="/adult-classes" class="hover:underline">Adult Classes</a>
 						</div>
 						<div class="col-span-1">
-							<a href="/competitive" class="font-bold dark:font-normal hover:underline">Competitive</a>
+							<a href="/competitive" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Competitive</a>
 							<hr />
 							<a href="/team-information" class="hover:underline">Team Information</a>
 							<br />

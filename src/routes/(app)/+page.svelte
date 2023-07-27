@@ -78,7 +78,7 @@
             {/each}
         </div>
 
-        <div class="bg-primary-600 dark:bg-primary-900 md:flex gap-4 dark:shadow-2xl p-8">
+        <div class="card bg-primary-600 dark:bg-primary-900 md:flex gap-4 dark:shadow-2xl p-8">
             <!-- Divider Content -->
             <img
                     class="container rounded-xl w-[20rem] object-cover"
