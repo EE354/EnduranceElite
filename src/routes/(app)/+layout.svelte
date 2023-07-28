@@ -46,30 +46,6 @@
 	};
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
-
-	// Code for Mobile Menu
-	import { onMount } from "svelte";
-
-	// Show mobile icon and display menu
-	let showMobileMenu = false;
-
-	// Mobile menu click event handler
-	const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);
-
-	// Media match query handler
-	const mediaQueryHandler = e => {
-	// Reset mobile state
-	if (!e.matches) {
-		showMobileMenu = false;
-	}
-	};
-
-	// Attach media query listener on mount hook
-	onMount(() => {
-	const mediaListener = window.matchMedia("(max-width: 767px)");
-
-	mediaListener.addListener(mediaQueryHandler);
-	});
 </script>
 
 <AppShell>
