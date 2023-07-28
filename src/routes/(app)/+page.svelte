@@ -69,8 +69,10 @@
                                 <a
                                     type="button"
                                     class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5"
-                                    href={card.href}>{card.name}</a
-                                >
+                                    href={card.href}>
+                                    {card.name}
+                                    <i class="ml-4 fa-solid fa-angle-right"></i>
+                                </a>
                             </div>
                         {/if}
                     </div>
@@ -117,8 +119,10 @@
                                 <a
                                     type="button"
                                     class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5"
-                                    href={card.href}>{card.name}</a
-                                >
+                                    href={card.href}>
+                                    {card.name}
+                                    <i class="ml-4 fa-solid fa-angle-right"></i>
+                                </a>
                             </div>
                         {/if}
                     </div>
