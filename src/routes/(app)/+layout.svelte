@@ -16,6 +16,7 @@
 	import { popup } from '@skeletonlabs/skeleton';
 
 	export let data;
+	let screenSize;
 
 	let selectedNav = null;
 
@@ -45,8 +46,12 @@
 		placement: 'top'
 	};
 
+
+
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
+
+<svelte:window bind:innerWidth={screenSize} />
 
 <AppShell>
 	<!-- Nav Bar -->
@@ -66,50 +71,54 @@
 
 			<svelte:fragment slot="trail">
 	
-				<!-- Set Nav Buttons and Nav Pop Up Menus-->
-				{#each data.navItems as {id, label, menu, menuString, span, parentNavItems}}
-					<button on:click={() => { menuClick(id); }} class="w-20 h-12 {getClass(id, activeButton)}" use:popup={menu}>{label}</button>
-					<div
-					class="neutral dark:bg-[#31465B] border-[1px] p-4 shadow-2xl text-sm"
-					data-popup="{menuString}"
-					>
-						<div class="grid grid-cols-3 gap-4">
-							{#each parentNavItems as {label, href, childNavItems}}
-								<div class="{span}">
-									<a {href} class="hover:underline">{label}</a>
-									{#if childNavItems != null}
-										<hr />
-										{#each childNavItems as {label, href}}
-											<a {href} class="hover:underline">{label}</a>
+				{#if screenSize > 800}
+					<!-- Set Nav Buttons and Nav Pop Up Menus-->
+					{#each data.navItems as {id, label, menu, menuString, span, parentNavItems}}
+						<button on:click={() => { menuClick(id); }} class="w-20 h-12 {getClass(id, activeButton)}" use:popup={menu}>{label}</button>
+						<div
+						class="neutral dark:bg-[#31465B] border-[1px] p-4 shadow-2xl text-sm"
+						data-popup="{menuString}"
+						>
+							<div class="grid grid-cols-3 gap-4">
+								{#each parentNavItems as {label, href, childNavItems}}
+									<div class="{span}">
+										<a {href} class="hover:underline">{label}</a>
+										{#if childNavItems != null}
+											<hr />
+											{#each childNavItems as {label, href}}
+												<a {href} class="hover:underline">{label}</a>
+												<br />
+											{/each}
+										{:else}
 											<br />
-										{/each}
-									{:else}
-										<br />
-									{/if}
-								</div>
-							{/each}
+										{/if}
+									</div>
+								{/each}
+							</div>
 						</div>
-					</div>
-				{/each}
+					{/each}
 
-				{#if data.session?.sessionId}
-					<button use:popup={accountPopup}>Account</button>
+					{#if data.session?.sessionId}
+						<button use:popup={accountPopup}>Account</button>
 
-					<div class="card p-4" data-popup="popupClick">
-						<a href="/account">Dashboard</a>
-						<a href="/settings">Settings</a>
-						<hr class="rounded" />
-						<form method="POST" action="/account?/logout" class="mt-4">
-							<button type="submit" value="" class="btn variant-filled-error">Logout</button>
-						</form>
-					</div>
+						<div class="card p-4" data-popup="popupClick">
+							<a href="/account">Dashboard</a>
+							<a href="/settings">Settings</a>
+							<hr class="rounded" />
+							<form method="POST" action="/account?/logout" class="mt-4">
+								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
+							</form>
+						</div>
+					{:else}
+						<a class="nav-link text-black dark:text-white" href="/signup"
+							>Sign Up</a
+						>
+						<a class="btn bg-primary-600 dark:bg-primary-900" href="/login"
+							>Log In</a
+						>
+					{/if}
 				{:else}
-					<a class="nav-link text-black dark:text-white" href="/signup"
-						>Sign Up</a
-					>
-					<a class="btn bg-primary-600 dark:bg-primary-900" href="/login"
-						>Log In</a
-					>
+					<i class="fa-solid fa-bars"></i>
 				{/if}
 			</svelte:fragment>
 		</AppBar>
