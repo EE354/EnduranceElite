@@ -3,10 +3,6 @@ export const load = async ({ locals}) => {
     //Set page data
     const dayCamps = [
         {
-            title: "2022-2023 DAY Camps",
-            date: "& Dates:",
-        },
-        {
             title: "Labor Day Camp",
             date: "September 5, 2022",
         },

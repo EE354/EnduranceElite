@@ -2,8 +2,8 @@
     export let data;
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
-    <div class="text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
+<main>
+    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-8 mb-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
             <h1 class="text-primary-200 text-shadow italic">CAMPS</h1>
@@ -20,7 +20,8 @@
             <p>You can register online with our Parent Portal.</p>
             <br />
             <p>Happy Camping!!!</p>
-            <a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="https://app.iclasspro.com/portal/enduranceelite/camps/1"
+            <br />
+            <a type="button" class="btn bg-primary-600 dark:bg-primary-800 ps-5 pe-5" href="https://app.iclasspro.com/portal/enduranceelite/camps/1"
                 >Camp Registration</a
             >
         </div>
@@ -31,78 +32,210 @@
         />
     </div>
 
-    <div class="container md:flex align-center justify-center">
+    <div class="container align-center justify-center">
         <!-- Main Contents -->
-        <div class="gap-4 bg-neutral-100 shadow-lg m-4 p-4 text-center">
-            <!-- White Info Block -->
-            <div class="bg-primary-200 p-4">
-                <h3>2022 Fall Schedule</h3>
-                <h4>Starting August 8, 2022</h4>
-            </div>
-            {#each data.dayCamps as {title, date}}
-                <div class="bg-primary-200 p-4">
-                    <h3>{title}</h3>
-                    <h4>{date}</h4>
-                    <hr>
+        <div class="lg:flex">
+            <div class="gap-4 neutral shadow-lg m-4 p-4 text-center">
+                <!-- White Info Block -->
+                <div class="bg-primary-200 dark:bg-primary-900 p-4">
+                    <h3>2022-2023 Day Schedule</h3>
+                    <h4>& Dates:</h4>
+                    <hr />
                 </div>
-            {/each}
+                {#each data.dayCamps as {title, date}}
+                    <div class="bg-primary-200 dark:bg-primary-900 p-4">
+                        <h3>{title}</h3>
+                        <h4>{date}</h4>
+                        <hr />
+                    </div>
+                {/each}
+            </div>
+
+            <div>
+                <div class="rounded-xl primary-500 h-fit shadow-2xl m-4 p-8">
+                    <!-- Step Block -->
+                    <span class="text-center  pr-4">
+                        <h3>DAY CAMP INFORMATION:</h3>
+                    </span>
+                    <div class="md:flex">
+                        <div class="w-11/12 px-4">
+                            <!-- Left Side of Block -->
+                            <p><b>Ages 4-15</b></p>
+                            <p>(Must be FULLY potty trained)</p>
+                            <br />
+
+                            <p><b>Camp Time:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>8:00 am - 6:00pm</p></li>
+                                <li><p>Drop off and Pick up times are at your convenience (price will not be adjusted)</p></li>
+                            </ul>
+                            <br />
+
+                            <p><b>PRICE:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li class="underline"><p>Members</p></li>
+                                <p>$50 a Day</p>
+                                <li class="underline"><p>Non-Members</p></li>
+                                <p>$65 a Day</p>
+                            </ul>
+                            <br />
+
+                            <p><b>Discounts:</b></p>
+                            <p>10% Off Siblings</p>
+                            <br />
+
+                            <p>Camp tuition is <b>NON-Refundable</b> (with a <span class="underline font-bold">24 hour</span> advanced notice: a credit may be given to use for another camp day). Camp credits will expire in 3 months.</p>
+                        </div>
+                        <div class="divider-vertical w-1 h-100% bg-neutral-600" />
+                        <div class="w-11/12 pl-8  pr-4">
+                            <!-- Right Side of Block -->
+                            <p><b>Day Camp Includes:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>Open Gym Time to Work on Gymnastics Equipment</p></li>
+                                <li><p>Gymnastics Challenges and Competitions</p></li>
+                                <li><p>Snacks & Drinks (twice a day)</p></li>
+                                <li><p>Gymnastics Obstacle Courses</p></li>
+                                <li><p>Trampoline & Pit</p></li>
+                            </ul>
+                            <br />
+
+                            <p><b>What to Bring:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>Lunch & Additional Snacks</p></li>
+                                <li><p>Water Bottle</p></li>
+                                <li><p>A change of clothes (just in case!)</p></li>
+                            </ul>
+                            <br />
+
+                            <p><b>Caution:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>Please be aware that gymnastics is a fun and exciting sport, however, students are subject to injuries. All injuries are properly treated with first aid and/or professional aid.</p></li>
+                            </ul>
+                            <br />
+
+                            <a class="btn bg-primary-600 dark:bg-primary-800" href="https://app.iclasspro.com/portal/enduranceelite/camps/1">Register for Camp</a>
+                            <br />
+                            <br />
+
+                            <p>See Sampler Day Camp Schedule Below</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="neutral text-center p-8">
+                    <h4>Sample Day Camp Schedule</h4>
+                <img class="container w-[24rem]" alt="Sample Day Camp Schedule" src="$lib/Regular/SpecialEvents/sample_day_camp_schedule.jpg">
+                </div>
+            </div>
         </div>
 
-        <div class="card bg-primary-500 shadow-lg m-4 p-4">
-            <!-- Step Block -->
-            <span class="text-center"><h3>OPEN GYM INFORMATION:</h3></span>
-            <div class="md:flex">
-                <div class="w-11/12">
-                    <!-- Left Side of Block -->
-                    <p class="underline">PRICES:</p>
-
-                    <p><b>1 Hour Lil' Foot Open Gym</b></p>
-                    <ul>
-                        <li>$5 for Members</li>
-                        <li>$50 Member Punch Card (11 Visits)</li>
-                        <li>$8 for Non-Members</li>
-                        <li>$80 Non-Member Punch Card (11 Visits)</li>
-                    </ul>
-                    <br>
-
-                    <p><b>2 Hour Open Gym- All Ages</b></p>
-                    <ul>
-                        <li>$10 for Members</li>
-                        <li>$100 Member Punch Card (11 Visits)</li>
-                        <li>$15 for Non-Members</li>
-                        <li>$150 Non-Member Punch Card (11 Visits)</li>
-                    </ul>
-                    <br>
-
-                    <p><b>2 Hour Adult Open Gym</b></p>
-                    <ul>
-                        <li>$10 for Members</li>
-                        <li>$100 Member Punch Card (11 Visits)</li>
-                        <li>$15 for Non-Members</li>
-                        <li>$150 for Non-Member Punch Card (11 Visits)</li>
-                    </ul>
-                    <br>
+        <div class="lg:flex">
+            <div class="gap-4 neutral shadow-lg m-4 p-4 text-center">
+                <!-- White Info Block -->
+                <div class="bg-primary-600 dark:bg-primary-900 p-4">
+                    <h3>2023 Summer Camps</h3>
+                    <h4>& Dates:</h4>
+                    <hr />
                 </div>
-                <div class="divider-vertical w-1 h-100% bg-neutral-600 ml-1 mr-12" />
-                <div class="w-11/12">
-                    <!-- Right Side of Block -->
-                    <p class="underline">How to Register for a TRIAL class:</p>
-                    <ul>
-                        <li>Foam Pit</li>
-                        <li>Use of Most Gymnastics Equipment</li>
-                        <li>Ninja Warrior Obstacle Course</li>
-                        <li>Aerial Silks</li>
-                        <li>Dance Studio Space</li>
-                        <li>Baby Gym (Lil' Foot ONLY)</li>
-                        <li>Coach Supervision</li>
-                    </ul>
-                    <br />
+                {#each data.summerCamps as {title, date}}
+                    <div class="bg-primary-600 dark:bg-primary-900 p-4">
+                        <h3>{title}</h3>
+                        <h4>{date}</h4>
+                        <hr />
+                    </div>
+                {/each}
+            </div>
 
-                    <p>*Coaches will NOT spot students during Open Gym. Open gym is designed for free play, not class time.</p>
-                    <br />
-                    <p>Children ages 14 years and younger should be accompanied by an adult in the building. Please do not drop off. Participation is not required.</p>
-                    <br />
-                    <p class="underline text-bold">All participants must create a parent portal before attending.</p>
+            <div>
+                <div class="rounded-xl primary-500 h-fit shadow-2xl m-4 p-8">
+                    <!-- Step Block -->
+                    <span class="text-center pr-4">
+                        <h3>SUMMER CAMP INFORMATION:</h3>
+                    </span>
+                    <div class="md:flex">
+                        <div class="w-11/12 px-4">
+                            <!-- Left Side of Block -->
+                            <p><b>Summer Camp Dates:</b></p>
+                            <p>First Week: May 30, 2022</p>
+                            <p>Last Week: Auguest 15, 2022</p>
+                            <br />
+
+                            <p><b>Ages 4-15</b></p>
+                            <p>(Must be FULLY potty trained)</p>
+                            <br />
+
+                            <p><b>Camp Time:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>8:00 am - 6:00pm</p></li>
+                                <li><p>Drop off and Pick up times are at your convenience (price will not be adjusted)</p></li>
+                            </ul>
+                            <br />
+
+                            <p><b>SUMMER CAMP PRICE:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li class="underline"><p>EARLY BIRD REGISTRATION</p></li>
+                                <p>Members & Non-Members</p>
+                                <p>$50 a Day</p>
+                                <p>$215 for the Week</p>
+                            </ul>
+                            <br />
+
+                            <ul class="list-disc pl-6">
+                                <li class="underline"><p>REGULAR Camp Tuition (Starting May 1st)</p></li>
+                                <p>Members & Non-Members</p>
+                                <p>$55 a Day</p>
+                                <p>$230 for the Week</p>
+                                <br />
+                                <p>Competitive Team Members</p>
+                                <p>$35 a Day</p>
+                                <p>$150 for the Week</p>
+                            </ul>
+                            <br />
+
+                            <p>Camp tuition is <b>NON-Refundable</b> (with a <span class="underline font-bold">24 hour</span> advanced notice: a credit may be given to use for another camp day). Camp credits will expire in 3 months.</p>
+                        </div>
+                        <div class="divider-vertical w-1 h-100% bg-neutral-600" />
+                        <div class="w-11/12 pl-8  pr-4">
+                            <!-- Right Side of Block -->
+                            <p><b>Summer Camp Includes:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>Open Gym Time to Work on Gymnastics Equipment</p></li>
+                                <li><p>Gymnastics Challenges and Competitions</p></li>
+                                <li><p>Snacks & Drinks (twice a day)</p></li>
+                                <li><p>Gymnastics Obstacle Courses</p></li>
+                                <li><p>Trampoline & Pit</p></li>
+                                <li><p>Water Relays Outside (Water Activities every Wednesday)</p></li>
+                            </ul>
+                            <br />
+
+                            <p><b>What to Bring:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>Lunch & Additional Snacks</p></li>
+                                <li><p>Water Bottle</p></li>
+                                <li><p>A change of clothes (just in case!)</p></li>
+                                <li><p>Clothes, Shoes & a Towel to get wet in (Water Activities every Wednesday)</p></li>
+                            </ul>
+                            <br />
+
+                            <p><b>Caution:</b></p>
+                            <ul class="list-disc pl-6">
+                                <li><p>Please be aware that gymnastics is a fun and exciting sport, however, students are subject to injuries. All injuries are properly treated with first aid and/or professional aid.</p></li>
+                            </ul>
+                            <br />
+
+                            <h3>Register Early! Space is Limited!</h3>
+                            <br/>
+
+                            <a class="btn bg-primary-600 dark:bg-primary-800" href="https://app.iclasspro.com/portal/enduranceelite/camps/1">Register for Camp</a>
+                            <br />
+                            <br />
+
+                            <p>See Sampler Summer Camp Schedule Below</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="neutral text-center p-8">
+                    <h4>Sample Summer Camp Schedule</h4>
+                <img alt="Sample Summer Camp Schedule" src="$lib/Regular/SpecialEvents/sample_camp_schedule.jpg">
                 </div>
             </div>
         </div>

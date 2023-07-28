@@ -2,8 +2,8 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
-    <div class="text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
+<main>
+    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
             <h1 class="text-primary-200 text-shadow italic">OPEN GYM</h1>
@@ -23,7 +23,8 @@
             <p class="underline font-bold">
                 All participants must create a parent portal before attending.
             </p>
-            <a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="https://app.iclasspro.com/portal/enduranceelite/dashboard"
+            <br />
+            <a type="button" class="btn bg-primary-600 dark:bg-primary-800 ps-5 pe-5" href="https://app.iclasspro.com/portal/enduranceelite/dashboard"
                 >Parent Portal</a
             >
         </div>
@@ -34,15 +35,15 @@
         />
     </div>
 
-    <div class="container md:flex align-center justify-center">
+    <div class="container md:flex gap-4 align-center justify-center p-4">
         <!-- Main Contents -->
-        <div class="gap-4 bg-neutral-100 shadow-lg m-4 p-4 text-center">
+        <div class="gap-4 neutral shadow-lg p-4 text-center">
             <!-- White Info Block -->
-            <div class="bg-primary-200 p-4">
+            <div class="bg-primary-200 dark:bg-primary-700 p-4">
                 <h3>2022 Fall Schedule</h3>
                 <h4>Starting August 8, 2022</h4>
             </div>
-            <div class="bg-primary-600 p-4">
+            <div class="bg-primary-600 dark:bg-primary-900 p-4">
                 <p>1 Hour-Lil' Foot Open Gym</p>
                 <p>Ages: Babies-5 Years</p>
                 <br />
@@ -52,7 +53,7 @@
                 <p>Every Thursday</p>
                 <p>11:00 am - 12:00 pm</p>
             </div>
-            <div class="bg-secondary-500 p-4">
+            <div class="bg-secondary-500 dark:bg-secondary-800 p-4">
                 <p>2 Hour Open Gym</p>
                 <p>All Ages</p>
                 <br />
@@ -62,7 +63,7 @@
                 <p>Every Saturday</p>
                 <p>12:00 - 2:00 pm</p>
             </div>
-            <div class="bg-primary-300 p-4">
+            <div class="bg-primary-300 dark:bg-primary-800 p-4">
                 <p>Adult Open Gym</p>
                 <p>Ages: 17+ Years</p>
                 <br />
@@ -74,14 +75,14 @@
             </div>
         </div>
 
-        <div class="card bg-primary-500 shadow-lg m-4 p-4">
+        <div class="card bg-primary-500 shadow-lg h-fit p-8 mt-8 md:mt-0">
             <!-- Step Block -->
             <span class="text-center"><h3>OPEN GYM INFORMATION:</h3></span>
             <div class="md:flex">
                 <div class="w-11/12">
                     <!-- Left Side of Block -->
                     <p class="underline">PRICES:</p>
-
+                    <br />
                     <p><b>1 Hour Lil' Foot Open Gym</b></p>
                     <ul>
                         <li>$5 for Members</li>
@@ -112,7 +113,8 @@
                 <div class="divider-vertical w-1 h-100% bg-neutral-600 ml-1 mr-12" />
                 <div class="w-11/12">
                     <!-- Right Side of Block -->
-                    <p class="underline">How to Register for a TRIAL class:</p>
+                    <p class="underline">Open Gym Includes:</p>
+                    <br />
                     <ul>
                         <li>Foam Pit</li>
                         <li>Use of Most Gymnastics Equipment</li>
