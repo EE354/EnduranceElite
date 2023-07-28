@@ -45,40 +45,31 @@
 		placement: 'top'
 	};
 
-	const aboutPopup = {
-		event: 'click',
-		target: 'aboutPopup',
-		placement: 'bottom',
-		middleware: {
-			offset: {
-				crossAxis: -37
-			}
-		}
-	};
-
-	const activitiesPopup = {
-		event: 'click',
-		target: 'activitiesPopup',
-		placement: 'bottom',
-		middleware: {
-			offset: {
-				crossAxis: -257
-			}
-		}
-	};
-
-	const eventsPopup = {
-		event: 'click',
-		target: 'eventsPopup',
-		placement: 'bottom',
-		middleware: {
-			offset: {
-				crossAxis: 0
-			}
-		}
-	};
-
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	// Code for Mobile Menu
+	import { onMount } from "svelte";
+
+	// Show mobile icon and display menu
+	let showMobileMenu = false;
+
+	// Mobile menu click event handler
+	const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);
+
+	// Media match query handler
+	const mediaQueryHandler = e => {
+	// Reset mobile state
+	if (!e.matches) {
+		showMobileMenu = false;
+	}
+	};
+
+	// Attach media query listener on mount hook
+	onMount(() => {
+	const mediaListener = window.matchMedia("(max-width: 767px)");
+
+	mediaListener.addListener(mediaQueryHandler);
+	});
 </script>
 
 <AppShell>
@@ -98,108 +89,32 @@
 			</svelte:fragment>
 
 			<svelte:fragment slot="trail">
-				<!-- Navigation for Static Pages -->
-				<button
-					on:click={() => {
-						menuClick(1);
-					}}
-					class="w-20 h-12 {getClass(1, activeButton)}"
-					use:popup={aboutPopup}>About</button
-				>
-				<button
-					on:click={() => {
-						menuClick(3);
-					}}
-					class="w-20 h-12 {getClass(3, activeButton)}"
-					use:popup={eventsPopup}>Events</button
-				>
-				<button
-					on:click={() => {
-						menuClick(2);
-					}}
-					class="w-20 h-12 {getClass(2, activeButton)}"
-					use:popup={activitiesPopup}>Activities</button
-				>
-
-				<div
-					class="neutral dark:bg-[#31465B] border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
-					data-popup="aboutPopup"
-				>
-					<!-- About Popup -->
-					<div><a href="/about" class="hover:underline">About Us</a></div>
-					<div><a href="/tuition" class="hover:underline">Tuition</a></div>
-					<div><a href="/crew" class="hover:underline">Crew</a></div>
-					<div><a href="/join-the-crew" class="hover:underline">Join the Crew</a></div>
-					<div><a href="/contact-us" class="hover:underline">Contact Us</a></div>
-				</div>
-
-				<div
-					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
-					data-popup="eventsPopup"
-				>
-					<!-- Events Popup -->
-					<div class="grid grid-cols-3 gap-x-8 gap-y-4">
-						<div class="col-span-1 hover:underline"><a href="/">Special Events</a></div>
-						<div class="col-span-1 hover:underline"><a href="/open-gym">Open Gym</a></div>
-						<div class="col-span-1 hover:underline"><a href="/camps">Camps</a></div>
-						<div class="col-span-1 hover:underline"><a href="/friday-night-flick">Friday Night Flick</a></div>
-						<div class="col-span-1 hover:underline"><a href="/parents-night-out">Parent's Night Out</a></div>
-						<div class="col-span-1 hover:underline"><a href="/birthday-parties">Birthday Parties</a></div>
-						<div class="col-span-1 hover:underline"><a href="/clinics">Clinics</a></div>
-						<div class="col-span-1 hover:underline"><a href="/after-school">After School</a></div>
-						<div class="col-span-1 hover:underline"><a href="/field-trips">Field Trips</a></div>
-						<div class="col-span-1 hover:underline">
-							<a href="/gymnastics-ninja-showcase">Gymnastics/Ninja Summer Showcase 2023</a>
-						</div>
-						<div class="col-span-1 hover:underline">
-							<a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a>
+	
+				<!-- Set Nav Buttons and Nav Pop Up Menus-->
+				{#each data.navItems as {id, label, menu, menuString, span, parentNavItems}}
+					<button on:click={() => { menuClick(id); }} class="w-20 h-12 {getClass(id, activeButton)}" use:popup={menu}>{label}</button>
+					<div
+					class="neutral dark:bg-[#31465B] border-[1px] p-4 shadow-2xl text-sm"
+					data-popup="{menuString}"
+					>
+						<div class="grid grid-cols-3 gap-4">
+							{#each parentNavItems as {label, href, childNavItems}}
+								<div class="{span}">
+									<a {href} class="hover:underline">{label}</a>
+									{#if childNavItems != null}
+										<hr />
+										{#each childNavItems as {label, href}}
+											<a {href} class="hover:underline">{label}</a>
+											<br />
+										{/each}
+									{:else}
+										<br />
+									{/if}
+								</div>
+							{/each}
 						</div>
 					</div>
-				</div>
-
-				<div
-					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
-					data-popup="activitiesPopup"
-				>
-					<!-- Activities Popup -->
-					<div class="grid grid-cols-3 gap-4">
-						<div class="col-span-1">
-							<a href="/gymnastics" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Gymnastics</a>
-							<hr />
-							<a href="/preschool-gymnastics" class="hover:underline">Preschool Gymnastics</a>
-							<br />
-							<a href="/recreational-gymnastics">Recreational Gymnastics</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/dance" class="font-bold dark:font-normal pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Dance</a>
-							<hr />
-							<a href="/preschool-dance" class="hover:underline">Preschool Dance</a>
-							<br />
-							<a href="/recreational-dance" class="hover:underline">Recreational Dance</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/cheer" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Cheer</a>
-							<hr />
-							<a href="/cheer-classes" class="hover:underline">Cheer Classes</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/ninja-warrior" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Ninja Warrior</a>
-							<hr />
-						</div>
-						<div class="col-span-1">
-							<a href="/adult" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Adult</a>
-							<hr />
-							<a href="/adult-classes" class="hover:underline">Adult Classes</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/competitive" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Competitive</a>
-							<hr />
-							<a href="/team-information" class="hover:underline">Team Information</a>
-							<br />
-							<a href="/college-recruiting" class="hover:underline">College Recruiting</a>
-						</div>
-					</div>
-				</div>
+				{/each}
 
 				{#if data.session?.sessionId}
 					<button use:popup={accountPopup}>Account</button>
