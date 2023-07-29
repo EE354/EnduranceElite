@@ -2,135 +2,122 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
-<main class="bg-secondary-500 bg-[url('$lib/Regular/background.jpg')]">
-    <div class="text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
-        <!-- Header Block -->
-        <div>
-            <h1 class="text-primary-200 text-shadow italic">OPEN GYM</h1>
-            <p>
-                At open gym you and/or your child are free to use the equipment and play, work on skills,
-                dance or just hang out. There is no structured instruction and no spotting.
-            </p>
-            <br />
-            <p>
-                Coaches are in the gym to make sure you and/or your child are safe and to enforce the rules.
-                We ask that children 14 and younger have a parent present. Please do not drop off and leave
-                unsupervised.
-            </p>
-            <br />
-            <p>We have Open Gym for all age groups. Choose the one that fits your needs.</p>
-            <br />
-            <p class="underline font-bold">
-                All participants must create a parent portal before attending.
-            </p>
-            <a type="button" class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5" href="https://app.iclasspro.com/portal/enduranceelite/dashboard"
-                >Parent Portal</a
-            >
+<main class="pb-8">
+	<div class="container">
+		<div class="text-center bg-primary-500 dark:bg-primary-900 p-4 mb-4 lg:flex gap-4">
+			<!-- Header Block -->
+			<h1 class="text-primary-200 text-shadow italic">Dance & Cheer Summer Showcase 2023</h1>
+			<img
+				class="container rounded-2xl w-[24rem] mt-4 lg:mt-0 object-cover"
+				alt="Beach Blast Showcase Art"
+				src="$lib/Regular/SpecialEvents/summer_showcase_2023.jpg"
+			/>
+		</div>
+
+		<div class="container lg:flex">
+			<div class="card bg-primary-500 shadow-lg mx-4 mb-8 p-8">
+				<!-- Step Block -->
+				<h3>Gymnastics/Ninja SUMMER Showcase 2023</h3>
+				<br />
+				<div class="md:flex">
+					<div class="w-11/12">
+						<!-- Left Side of Block -->
+						<p><b>When:</b></p>
+						<p>June 3, 2023</p>
+						<br />
+
+						<p><b>Where:</b></p>
+						<p>Endurance Elite Gymnastics & Dance</p>
+						<br />
+
+						<p><b>Show Times:</b></p>
+						<p>Listed below</p>
+						<br />
+
+						<p><b>Participation:</b></p>
+						<p>Must sign up prior to show. Participants receive a leotard or tshirt</p>
+						<br />
+
+						<p>
+							Please Note: Participation and Costumer Fees are <span class="underline font-bold"
+								>NON-REFUNDABLE.</span
+							>
+						</p>
+					</div>
+					<div class="divider-vertical w-1 h-100% bg-neutral-600 ml-1 mr-12" />
+					<div class="w-11/12 flex flex-wrap gap-4">
+						<!-- Right Side of Block -->
+						<div>
+							<p><b>Tickets:</b></p>
+							<ul class="list-disc pl-6">
+								<li><p>$10 (ages 3 & up) on sale NOW! Purchase at the front desk.</p></li>
+								<li>
+									<p>Two tickets are included with participation fee. Pick up at front desk.</p>
+								</li>
+								<li>
+									<p>First come, first serve (we have a limited amount of tickets available)</p>
+								</li>
+								<li><p>Must present ticket at the door to enter</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="neutral p-8 mb-8">
+				<h3 class="text-center">Dress Rehearsel & Pictures</h3>
+
+				<p><b>When:</b></p>
+				<p>Sunday, May 7, 2023</p>
+				<br />
+
+				<p><b>Where:</b></p>
+				<p>Endurance Elite Gymnastics & Dance</p>
+				<br />
+
+				<p><b>Show Times:</b></p>
+				<p>Please see below</p>
+				<br />
+
+				<p><b>What to bring:</b></p>
+				<p>
+					Come dressed in your first costume (instructions will be handed out prior to picture day).
+				</p>
+				<p>Bring additional costumes.</p>
+				<br />
+
+				<p>
+					Rehearsal is closed to parents. You may sit in the studio or wait in your car. We want to
+					surprise you at the show so NO PEAKING!
+				</p>
+				<br />
+
+				<p>Additional tickets & pictures packets will be available to purchase</p>
+			</div>
+		</div>
+
+        <div class="lg:flex gap-4 mb-8 p-8">
+            <img
+            class="container max-w-[32rem]"
+            alt="Beach Blast T-Shirts, Order Now!"
+            src="$lib/Regular/SpecialEvents/beachblast_tshirts.jpg"
+        />
+        <img
+            class="container max-w-[32rem]"
+            alt="Beach Blast $10 Tickets, On Sale Now!"
+            src="$lib/Regular/SpecialEvents/beachblast_tickets.jpg"
+        />
         </div>
         <img
-            class="container rounded-2xl w-[24rem] mt-4 lg:mt-0 object-cover"
-            alt="Kids Playing in the Foam Pit"
-            src="$lib/Regular/SpecialEvents/opengym.jpg"
+            class="container max-w-[32rem] mb-8"
+            alt="Beach Blast Pictures Order Form"
+            src="$lib/Regular/SpecialEvents/beachblast_pictures.jpg"
         />
-    </div>
+        <img
+            class="container max-w-[32rem]"
+            alt="Beach Blast Schedule"
+            src="$lib/Regular/SpecialEvents/beachblast_schedule.jpg"
+        />
 
-    <div class="container md:flex align-center justify-center">
-        <!-- Main Contents -->
-        <div class="gap-4 bg-neutral-100 shadow-lg m-4 p-4 text-center">
-            <!-- White Info Block -->
-            <div class="bg-primary-200 p-4">
-                <h3>2022 Fall Schedule</h3>
-                <h4>Starting August 8, 2022</h4>
-            </div>
-            <div class="bg-primary-600 p-4">
-                <p>1 Hour-Lil' Foot Open Gym</p>
-                <p>Ages: Babies-5 Years</p>
-                <br />
-                <p>Every Monday</p>
-                <p>9:00 - 10:00 am</p>
-                <br />
-                <p>Every Thursday</p>
-                <p>11:00 am - 12:00 pm</p>
-            </div>
-            <div class="bg-secondary-500 p-4">
-                <p>2 Hour Open Gym</p>
-                <p>All Ages</p>
-                <br />
-                <p>Every Tuesday & Friday</p>
-                <p>11:00 am - 1:00pm</p>
-                <br />
-                <p>Every Saturday</p>
-                <p>12:00 - 2:00 pm</p>
-            </div>
-            <div class="bg-primary-300 p-4">
-                <p>Adult Open Gym</p>
-                <p>Ages: 17+ Years</p>
-                <br />
-                <p>Every Wednesday</p>
-                <p>9:00 - 11:00 am</p>
-                <br />
-                <p>Every Thursday</p>
-                <p>7:00 - 9:00 pm</p>
-            </div>
-        </div>
-
-        <div class="card bg-primary-500 shadow-lg m-4 p-4">
-            <!-- Step Block -->
-            <span class="text-center"><h3>OPEN GYM INFORMATION:</h3></span>
-            <div class="md:flex">
-                <div class="w-11/12">
-                    <!-- Left Side of Block -->
-                    <p class="underline">PRICES:</p>
-
-                    <p><b>1 Hour Lil' Foot Open Gym</b></p>
-                    <ul>
-                        <li>$5 for Members</li>
-                        <li>$50 Member Punch Card (11 Visits)</li>
-                        <li>$8 for Non-Members</li>
-                        <li>$80 Non-Member Punch Card (11 Visits)</li>
-                    </ul>
-                    <br>
-
-                    <p><b>2 Hour Open Gym- All Ages</b></p>
-                    <ul>
-                        <li>$10 for Members</li>
-                        <li>$100 Member Punch Card (11 Visits)</li>
-                        <li>$15 for Non-Members</li>
-                        <li>$150 Non-Member Punch Card (11 Visits)</li>
-                    </ul>
-                    <br>
-
-                    <p><b>2 Hour Adult Open Gym</b></p>
-                    <ul>
-                        <li>$10 for Members</li>
-                        <li>$100 Member Punch Card (11 Visits)</li>
-                        <li>$15 for Non-Members</li>
-                        <li>$150 for Non-Member Punch Card (11 Visits)</li>
-                    </ul>
-                    <br>
-                </div>
-                <div class="divider-vertical w-1 h-100% bg-neutral-600 ml-1 mr-12" />
-                <div class="w-11/12">
-                    <!-- Right Side of Block -->
-                    <p class="underline">How to Register for a TRIAL class:</p>
-                    <ul>
-                        <li>Foam Pit</li>
-                        <li>Use of Most Gymnastics Equipment</li>
-                        <li>Ninja Warrior Obstacle Course</li>
-                        <li>Aerial Silks</li>
-                        <li>Dance Studio Space</li>
-                        <li>Baby Gym (Lil' Foot ONLY)</li>
-                        <li>Coach Supervision</li>
-                    </ul>
-                    <br />
-
-                    <p>*Coaches will NOT spot students during Open Gym. Open gym is designed for free play, not class time.</p>
-                    <br />
-                    <p>Children ages 14 years and younger should be accompanied by an adult in the building. Please do not drop off. Participation is not required.</p>
-                    <br />
-                    <p class="underline text-bold">All participants must create a parent portal before attending.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+	</div>
 </main>

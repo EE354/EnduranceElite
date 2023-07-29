@@ -55,7 +55,7 @@
                     in:fly|local
                 >
                     <img
-                        class="container rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
+                        class="container object-cover rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
                         alt={card.image.alt}
                         src={card.image.src}
                     />
@@ -69,8 +69,10 @@
                                 <a
                                     type="button"
                                     class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5"
-                                    href={card.href}>{card.name}</a
-                                >
+                                    href={card.href}>
+                                    {card.name}
+                                    <i class="ml-4 fa-solid fa-angle-right"></i>
+                                </a>
                             </div>
                         {/if}
                     </div>
@@ -103,7 +105,7 @@
                     in:fly|local
                 >
                     <img
-                        class="container rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
+                        class="container object-cover rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
                         alt={card.image.alt}
                         src={card.image.src}
                     />
@@ -117,8 +119,10 @@
                                 <a
                                     type="button"
                                     class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5"
-                                    href={card.href}>{card.name}</a
-                                >
+                                    href={card.href}>
+                                    {card.name}
+                                    <i class="ml-4 fa-solid fa-angle-right"></i>
+                                </a>
                             </div>
                         {/if}
                     </div>

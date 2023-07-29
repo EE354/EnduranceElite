@@ -24,7 +24,8 @@
     import AddGroupDrawer from "$lib/Drawers/AddGroupDrawer.svelte";
     import EditGroupDrawer from "$lib/Drawers/EditGroupDrawer.svelte";
     import AddQuestionModal from "$lib/Drawers/AddQuestionModal.svelte";
-
+    import MobileMenu from "$lib/Drawers/MobileMenu.svelte";
+    
     $: if ($page.form?.error) {
         $toastStore.trigger({ message: $page.data.error, background: 'variant-filled-error' });
     }
@@ -65,6 +66,8 @@
         <AddGroupDrawer/>
     {:else if $drawerStore.id === "EditGroupDrawer"}
         <EditGroupDrawer/>
+    {:else if $drawerStore.id === "MobileMenu"}
+        <MobileMenu/>
     {/if}
 
 </Drawer>

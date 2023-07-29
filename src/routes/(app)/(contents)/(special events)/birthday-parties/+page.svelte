@@ -77,7 +77,7 @@
                     <p>30 Minutes of Social Gather</p>
                     <br />
 
-                    <p><b>PRICE: (including the Birthday Childe)</b></p>
+                    <p><b>PRICE: (including the Birthday Child)</b></p>
                     <ul>
                         <li><p>$300 +Tax for 1-10 Children</p></li>
                         <li><p>$400 +Tax for 11-20 Children</p></li>
@@ -128,7 +128,7 @@
                     <p>30 Minutes of Social Gather</p>
                     <br />
 
-                    <p><b>PRICE: (including the Birthday Childe)</b></p>
+                    <p><b>PRICE: (including the Birthday Child)</b></p>
                     <ul>
                         <li><p>$350 +Tax for 1-10 Children</p></li>
                         <li><p>$450 +Tax for 11-20 Children</p></li>
@@ -180,7 +180,7 @@
                     <p>30 Minutes of Social Gather</p>
                     <br />
 
-                    <p><b>PRICE: (including the Birthday Childe)</b></p>
+                    <p><b>PRICE: (including the Birthday Child)</b></p>
                     <ul>
                         <li><p>$400 +Tax for 1-10 Children</p></li>
                         <li><p>$500 +Tax for 11-20 Children</p></li>

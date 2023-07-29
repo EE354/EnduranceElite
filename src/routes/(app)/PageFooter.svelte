@@ -10,18 +10,18 @@
         </div>
         <div class="w-[40rem] md:flex gap-4">
             <div>
-                <h4 class="my-4">Location</h4>
+                <p class="text-xl font-bold my-4">Location</p>
                 <p>Endurance Elite Gymnastics & Dance</p>
                 <p>15814 University Oak #114</p>
                 <p>San Antonio, TX 78249</p>
             </div>
             <div>
-                <h4 class="my-4">Contact</h4>
+                <p class="text-xl font-bold my-4">Contact</p>
                 <p>enduranceelitegym@gmail.com</p>
                 <p>Tel: 210-769-6359</p>
             </div>
             <div>
-                <h4 class="my-4">Socials</h4>
+                <p class="text-xl font-bold my-4">Socials</p>
                 <a class="flex gap-2" href="https://www.pinterest.com/eecraftleyscraps/">
                     <img alt="Pinterest" src="https://static.wixstatic.com/media/28e77d0b179d4121891d847ed43de6cc.png/v1/fill/w_32,h_32,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/28e77d0b179d4121891d847ed43de6cc.png">
                     <p>@eecraftleyscraps</p>

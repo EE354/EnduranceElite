@@ -15,7 +15,10 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { popup } from '@skeletonlabs/skeleton';
 
+	import {drawerStore} from "@skeletonlabs/skeleton";
+
 	export let data;
+	let screenSize;
 
 	let selectedNav = null;
 
@@ -45,41 +48,17 @@
 		placement: 'top'
 	};
 
-	const aboutPopup = {
-		event: 'click',
-		target: 'aboutPopup',
-		placement: 'bottom',
-		middleware: {
-			offset: {
-				crossAxis: -37
-			}
-		}
-	};
-
-	const activitiesPopup = {
-		event: 'click',
-		target: 'activitiesPopup',
-		placement: 'bottom',
-		middleware: {
-			offset: {
-				crossAxis: -257
-			}
-		}
-	};
-
-	const eventsPopup = {
-		event: 'click',
-		target: 'eventsPopup',
-		placement: 'bottom',
-		middleware: {
-			offset: {
-				crossAxis: 0
-			}
-		}
-	};
+	const openMobileMenu = () => {
+        drawerStore.open({
+            id: "MobileMenu",
+            position: "right",
+        });
+    }
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
+
+<svelte:window bind:innerWidth={screenSize} />
 
 <AppShell>
 	<!-- Nav Bar -->
@@ -98,64 +77,48 @@
 			</svelte:fragment>
 
 			<svelte:fragment slot="trail">
-				<!-- Navigation for Static Pages -->
-				<button
-					on:click={() => {
-						menuClick(1);
-					}}
-					class="w-20 h-12 {getClass(1, activeButton)}"
-					use:popup={aboutPopup}>About</button
-				>
-				<button
-					on:click={() => {
-						menuClick(3);
-					}}
-					class="w-20 h-12 {getClass(3, activeButton)}"
-					use:popup={eventsPopup}>Events</button
-				>
-				<button
-					on:click={() => {
-						menuClick(2);
-					}}
-					class="w-20 h-12 {getClass(2, activeButton)}"
-					use:popup={activitiesPopup}>Activities</button
-				>
+	
+				{#if screenSize > 800}
+					<!-- Set Nav Buttons and Nav Pop Up Menus-->
+					{#each data.navItems as {id, label, menu, menuString, span, parentNavItems}}
+						<button on:click={() => { menuClick(id); }} class="w-20 h-12 {getClass(id, activeButton)}" use:popup={menu}>{label}</button>
+						<div
+						class="neutral dark:bg-[#31465B] border-[1px] p-4 shadow-2xl text-sm"
+						data-popup="{menuString}"
+						>
+							<div class="grid grid-cols-3 gap-4">
+								{#each parentNavItems as {label, href, childNavItems}}
+									<div class="{span}">
+										<a {href} class="hover:underline">{label}</a>
+										{#if childNavItems != null}
+											<hr />
+											{#each childNavItems as {label, href}}
+												<a {href} class="hover:underline">{label}</a>
+												<br />
+											{/each}
+										{:else}
+											<br />
+										{/if}
+									</div>
+								{/each}
+							</div>
+						</div>
+					{/each}
 
-				<div
-					class="neutral dark:bg-[#31465B] border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
-					data-popup="aboutPopup"
-				>
-					<!-- About Popup -->
-					<div><a href="/about" class="hover:underline">About Us</a></div>
-					<div><a href="/tuition" class="hover:underline">Tuition</a></div>
-					<div><a href="/crew" class="hover:underline">Crew</a></div>
-					<div><a href="/join-the-crew" class="hover:underline">Join the Crew</a></div>
-					<div><a href="/contact-us" class="hover:underline">Contact Us</a></div>
-				</div>
+					{#if data.role >= 1}
+						<button use:popup={accountPopup}>Account</button>
 
-				<div
-					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
-					data-popup="eventsPopup"
-				>
-					<!-- Events Popup -->
-					<div class="grid grid-cols-3 gap-x-8 gap-y-4">
-						<div class="col-span-1 hover:underline"><a href="/">Special Events</a></div>
-						<div class="col-span-1 hover:underline"><a href="/open-gym">Open Gym</a></div>
-						<div class="col-span-1 hover:underline"><a href="/camps">Camps</a></div>
-						<div class="col-span-1 hover:underline"><a href="/friday-night-flick">Friday Night Flick</a></div>
-						<div class="col-span-1 hover:underline"><a href="/parents-night-out">Parent's Night Out</a></div>
-						<div class="col-span-1 hover:underline"><a href="/birthday-parties">Birthday Parties</a></div>
-						<div class="col-span-1 hover:underline"><a href="/clinics">Clinics</a></div>
-						<div class="col-span-1 hover:underline"><a href="/after-school">After School</a></div>
-						<div class="col-span-1 hover:underline"><a href="/field-trips">Field Trips</a></div>
-						<div class="col-span-1 hover:underline">
-							<a href="/gymnastics-ninja-showcase">Gymnastics/Ninja Summer Showcase 2023</a>
+						<div class="card p-4" data-popup="popupClick">
+							<a href="/account">Dashboard</a>
+							<a href="/settings">Settings</a>
+							<hr class="rounded" />
+							<form method="POST" action="/account?/logout" class="mt-4">
+								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
+							</form>
 						</div>
 						<div class="col-span-1 hover:underline">
 							<a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a>
 						</div>
-					</div>
-				</div>
 
 				<div
 					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
@@ -200,25 +163,18 @@
 						</div>
 					</div>
 				</div>
-
-				{#if data.role >= 1}
-					<button use:popup={accountPopup}>Account</button>
-
-					<div class="card p-4" data-popup="popupClick">
-						<a href="/account">Dashboard</a>
-						<a href="/settings">Settings</a>
-						<hr class="rounded" />
-						<form method="POST" action="/account?/logout" class="mt-4">
-							<button type="submit" value="" class="btn variant-filled-error">Logout</button>
-						</form>
-					</div>
+					{:else}
+						<a class="nav-link text-black dark:text-white" href="/signup"
+							>Sign Up</a
+						>
+						<a class="btn bg-primary-600 dark:bg-primary-900" href="/login"
+							>Log In</a
+						>
+					{/if}
 				{:else}
-					<a class="nav-link text-black dark:text-white" href="/signup"
-						>Sign Up</a
-					>
-					<a class="btn bg-primary-600 dark:bg-primary-900" href="/login"
-						>Log In</a
-					>
+				<button on:click={openMobileMenu}>
+					<i class="fa-solid fa-bars fa-xl"></i>
+				</button>
 				{/if}
 			</svelte:fragment>
 		</AppBar>
