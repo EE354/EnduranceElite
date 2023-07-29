@@ -116,10 +116,6 @@
 								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
 							</form>
 						</div>
-						<div class="col-span-1 hover:underline">
-							<a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a>
-						</div>
-
 				<div
 					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
 					data-popup="activitiesPopup"
