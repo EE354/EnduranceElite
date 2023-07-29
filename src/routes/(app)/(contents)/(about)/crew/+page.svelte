@@ -12,12 +12,12 @@
 		</div>
 	</div>
 
-	<div class="container flex flex-wrap gap-4 place-content-center">
+	<div class="container flex flex-wrap gap-4 place-content-center p-8">
         <!-- Avatars Grid -->
-		{#each data.crew as { name, roles }}
-			<div class="grid place-items-center h-1/6 w-1/6 text-center">
-				<Avatar src="" width="w-32" rounded="rounded-full" />
-				<h3>{name}</h3>
+		{#each data.crew as { name, roles, src, initials}}
+			<div class="grid place-items-center w-32 text-center">
+				<Avatar {src} {initials} width="w-32" rounded="rounded-full" />
+				<h2 class="text-xl">{name}</h2>
 				<p>{roles}</p>
 			</div>
 		{/each}

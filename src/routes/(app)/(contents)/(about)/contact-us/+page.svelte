@@ -1,6 +1,6 @@
 <main>
-	<div class="container lg:flex">
-		<div class="card bg-primary-500 m-4 p-4 lg:w-1/4">
+	<div class="container p-8 lg:flex">
+		<div class="card bg-primary-500 p-8 lg:w-3/7">
 			<!-- Contact Information Block -->
 			<h4>Contact Information</h4>
 			<p>
@@ -20,7 +20,7 @@
 			</p>
 		</div>
 
-		<div class="container neutral shadow-lg m-4 p-4 rounded-xl">
+		<div class="container neutral shadow-lg mt-8 lg:mt-0 lg:ml-8 p-8 rounded-xl">
 			<!-- Contract Form Block -->
 			<h4 class="cols-span2">We'd Love to Hear from You!</h4>
 			<form>
@@ -43,7 +43,7 @@
 					<span>Comments</span>
 					<textarea class="textarea" rows="4" placeholder="Enter your message here." />
 				</label>
-				<input type="submit" class="btn primary-600" />
+				<input type="submit" class="btn bg-primary-600 dark:bg-primary-800" value="Send" />
 			</form>
 		</div>
 	</div>

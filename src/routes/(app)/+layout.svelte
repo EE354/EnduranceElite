@@ -125,7 +125,7 @@
 						>
 					{/if}
 				{:else}
-				<button on:click={openMobileMenu}>
+				<button name="Expand for Navigation Menu" on:click={openMobileMenu}>
 					<i class="fa-solid fa-bars fa-xl"></i>
 				</button>
 				{/if}

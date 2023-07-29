@@ -1,8 +1,8 @@
 <main>
-	<div class="container">
+	<div class="container pb-8">
 		<!-- Contents Container -->
 
-		<div class="neutral shadow-lg p-4">
+		<div class="neutral shadow-lg p-8">
 			<!-- Header Block -->
 			<h2 class="primary-500">Welcome to Endurance Elite!</h2>
 			<p>At Endurance Elite our core philosophy is to provide an encouraging, clean and safe learning environment for all of the students and participants. The center will focus on supporting each athlete in their own personal ambitions and goals for future success in both sport and life. Staff is also a huge part of our success and we will focus on creating a highly educated, motivated and supportive group of coaches.</p>
@@ -24,7 +24,7 @@
 
 		<div class="w-5/8 flex gap-4">
 			<!-- Information Block -->
-			<div class="neutral p-4 shadow-xl">
+			<div class="neutral p-8 shadow-xl">
 				<h3 class="text-primary-500">Our Facility</h3>
 				<br />
 				<p>Our facility offers 10,000 sq. ft. of gymnastics space, ONE Baby Gym, and TWO Dance studios.</p>
@@ -37,7 +37,7 @@
 				<p>The future at Endurance Elite is so BRIGHT! Let's grow together! Our home is your home.</p>
 			</div>
 
-			<div class="w-11/12 neutral p-4 pl-8 shadow-xl">
+			<div class="w-11/12 neutral p-8 pl-12 shadow-xl">
 				<ul class="list-disc">
 					<li>Ninja Warrior Obstacle Course</li>
 					<li>Tumble Track Trampoline</li>
@@ -67,31 +67,31 @@
 				<h3>April 1, 2019</h3>
 				<p>We have AC units and Studio Frame Work!</p>
 			</div>
-			<div class="flex gap-4">
-				<img class="container" alt="AC added to the building" src="$lib/Regular/About/building_1_april_1_2019.jpg">
-				<img class="container" alt="Steel frames add for the studios" src="$lib/Regular/About/building_2_april_1_2019.jpg">
+			<div class="container w-fit flex gap-4">
+				<img alt="AC added to the building" src="$lib/Regular/About/building_1_april_1_2019.jpg">
+				<img alt="Steel frames add for the studios" src="$lib/Regular/About/building_2_april_1_2019.jpg">
 			</div>
 
 			<div class="container neutral w-3/4 my-4 border-4 border-primary-600 dark:border-primary-900 shadow-lg p-4 text-center">
 				<h3>May 4, 2019</h3>
 				<p>Insultation and Drywall are going up!</p>
 			</div>
-			<img class="container" alt="Empty building with foundations, insulation and dry wall added" src="$lib/Regular/About/building_march_11_2019.jpg">
+			<img class="container w-fit" alt="Empty building with foundations, insulation and dry wall added" src="$lib/Regular/About/building_march_11_2019.jpg">
 
 			<div class="container neutral w-3/4 my-4 border-4 border-primary-600 dark:border-primary-900 shadow-lg p-4 text-center">
 				<h3>May 24, 2019</h3>
 				<p>Bathroom fixtures are installed. Windows are in. Fancy brick wall looks amazing!!!</p>
 			</div>
-			<div class="flex gap-4">
-				<img class="container" alt="Bathroom sinks, toilers and frames added" src="$lib/Regular/About/building_1_may_24_2019.jpg">
-				<img class="container" alt="Fancy brick wall added" src="$lib/Regular/About/building_2_may_24_2019.jpg">
+			<div class="container w-fit flex gap-4">
+				<img alt="Bathroom sinks, toilers and frames added" src="$lib/Regular/About/building_1_may_24_2019.jpg">
+				<img alt="Fancy brick wall added" src="$lib/Regular/About/building_2_may_24_2019.jpg">
 			</div>
 
 			<div class="container neutral w-3/4 my-4 border-4 border-primary-600 dark:border-primary-900 shadow-lg p-4 text-center">
 				<h3>June 10, 2019</h3>
 				<p>Opening DAY!</p>
 			</div>
-			<img class="container" alt="Opening Day" src="$lib/Regular/About/building_june_10_2019.jpg">
+			<img class="container w-fit" alt="Opening Day" src="$lib/Regular/About/building_june_10_2019.jpg">
 
 			<div class="container neutral w-3/4 my-4 border-4 border-primary-600 dark:border-primary-900 shadow-lg p-4 text-center">
 				<h3>May 24, 2019</h3>
@@ -99,7 +99,7 @@
 			</div>
 			<div class="flex gap-4">
 				<!-- TODO: Add Video -->
-				<img alt="Baby Gym, the fun starts here!" src="$lib/Regular/About/building_june_2020.jpg">
+				<img class="container w-fit" alt="Baby Gym, the fun starts here!" src="$lib/Regular/About/building_june_2020.jpg">
 			</div>
 		</div>
 	</div>
