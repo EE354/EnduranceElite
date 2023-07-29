@@ -133,14 +133,10 @@ export const load = async ({locals, url}) => {
         // { label: "", href: "/" },
     ]
 
-    const activities = [
-        
-    ]
 
     return {
         status: 200,
-        role: user?.role || 0,
+        roleId: user?.roleId || 0,
         navItems,
-        activities,
     }
 }

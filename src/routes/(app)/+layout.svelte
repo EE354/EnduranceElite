@@ -105,7 +105,7 @@
 						</div>
 					{/each}
 
-					{#if data.role >= 1}
+					{#if data.roleId >= 1}
 						<button use:popup={accountPopup}>Account</button>
 
 						<div class="card p-4" data-popup="popupClick">
@@ -186,8 +186,8 @@
 				<span><p class="text-black dark:text-white">Calendar</p></span>
 			</AppRailAnchor>
 
-			{#if data.role >= 2}
-				{#if data.role >= 2}
+			{#if data.roleId >= 2}
+				{#if data.roleId >= 2}
 					<AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
 						<svelte:fragment slot="lead">
 							<span class="material-symbols-outlined text-black dark:text-white"> schedule </span>
@@ -211,7 +211,7 @@
 					</svelte:fragment>
 					<span><p class="text-black dark:text-white">Parent portal</p></span>
 				</AppRailAnchor>
-				{#if data.role >= 3}
+				{#if data.roleId >= 3}
 					<AppRailAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
 						<svelte:fragment slot="lead">
 							<span class="material-symbols-outlined"> shield_person </span>
