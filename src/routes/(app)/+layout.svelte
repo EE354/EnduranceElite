@@ -15,6 +15,8 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { popup } from '@skeletonlabs/skeleton';
 
+	import {drawerStore} from "@skeletonlabs/skeleton";
+
 	export let data;
 	let screenSize;
 
@@ -46,7 +48,12 @@
 		placement: 'top'
 	};
 
-
+	const openMobileMenu = () => {
+        drawerStore.open({
+            id: "MobileMenu",
+            position: "right",
+        });
+    }
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
@@ -118,7 +125,9 @@
 						>
 					{/if}
 				{:else}
+				<button on:click={openMobileMenu} class="btn variant-filled-primary">
 					<i class="fa-solid fa-bars"></i>
+				</button>
 				{/if}
 			</svelte:fragment>
 		</AppBar>
