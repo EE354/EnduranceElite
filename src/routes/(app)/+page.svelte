@@ -55,7 +55,7 @@
                     in:fly|local
                 >
                     <img
-                        class="container rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
+                        class="container object-cover rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
                         alt={card.image.alt}
                         src={card.image.src}
                     />
@@ -105,7 +105,7 @@
                     in:fly|local
                 >
                     <img
-                        class="container rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
+                        class="container object-cover rounded-lg w-[16rem] max-h-[16rem] md:mr-5"
                         alt={card.image.alt}
                         src={card.image.src}
                     />

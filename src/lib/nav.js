@@ -68,8 +68,8 @@ export const navItems = [
             { label: "Clinics", href: "/clinics" },
             { label: "After School", href: "/after-school" },
             { label: "Field Trips", href: "/field-trips" },
-            { label: "Gymnastics/Ninja Summer Showcase 2023", href: "/gymnastics-ninja-showcase" },
-            { label: "Dance/Cheer Summer Showcase 2023", href: "/cheer-dance-showcase" },
+            { label: "Gymnastics/ Ninja Summer Showcase 2023", href: "/gymnastics-ninja-showcase" },
+            { label: "Dance/ Cheer Summer Showcase 2023", href: "/cheer-dance-showcase" },
         ],
     },
     {

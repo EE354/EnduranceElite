@@ -125,8 +125,8 @@
 						>
 					{/if}
 				{:else}
-				<button on:click={openMobileMenu} class="btn variant-filled-primary">
-					<i class="fa-solid fa-bars"></i>
+				<button on:click={openMobileMenu}>
+					<i class="fa-solid fa-bars fa-xl"></i>
 				</button>
 				{/if}
 			</svelte:fragment>
