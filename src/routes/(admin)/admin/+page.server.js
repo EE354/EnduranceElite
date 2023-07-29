@@ -6,10 +6,12 @@ import gymnastics from "$lib/Landing/gymnastics.jpg";
 import dance from "$lib/Landing/dance.jpg";
 import cheerLeadingClasses from "$lib/Landing/cheerleadingclasses.jpg";
 import preschoolClasses from "$lib/Landing/preschoolclasses.jpg";
+import {protectRoute} from "$lib/utils.js";
 
-export const load = async ({ locals}) => {
+export const load = async ({url, locals}) => {
     //Get user
     const {session, user} = await locals.auth.validateUser();
+    protectRoute(url, user, session, 3)
 
     //Set page data
     const news = [

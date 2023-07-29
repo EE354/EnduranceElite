@@ -201,7 +201,7 @@
 					</div>
 				</div>
 
-				{#if data.session?.sessionId}
+				{#if data.role >= 1}
 					<button use:popup={accountPopup}>Account</button>
 
 					<div class="card p-4" data-popup="popupClick">

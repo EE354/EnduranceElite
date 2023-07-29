@@ -18,16 +18,6 @@
 
             </svelte:fragment>
 
-
-            <svelte:fragment slot="trail">
-                {#if data.session?.sessionId}
-                    <a class="nav-link" href="/account">Account</a>
-                {:else}
-                    <a class="nav-link text-black dark:text-whtie " href="/signup"><p class="dark:text-white text-black">Signup</p></a>
-                    <a class="btn variant-filled-tertiary" href="/login"><p class="dark:text-white text-black">Login</p></a>
-                {/if}
-            </svelte:fragment>
-
         </AppBar>
     </svelte:fragment>
 

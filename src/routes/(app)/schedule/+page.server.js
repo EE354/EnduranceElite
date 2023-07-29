@@ -1,4 +1,5 @@
 import {Schedule} from '$lib/server/models/Schedule';
+import {protectRoute} from '$lib/utils';
 
 const formatSchedule = (schedule) => {
     /* TODO: implement a better color picking system*/
@@ -19,10 +20,11 @@ const formatSchedule = (schedule) => {
     };
 };
 
-export const load = async ({locals}) => {
+export const load = async ({locals, url}) => {
     try {
         const {session, user} = locals.auth.validateUser();
-
+        
+        protectRoute(url, session, user, 2)
         const schedules = await Schedule.find();
         let formattedSchedules = [];
         for (let schedule of schedules) {
