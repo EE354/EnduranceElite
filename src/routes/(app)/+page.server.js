@@ -62,7 +62,7 @@ export const load = async ({ locals}) => {
             },
             title: "Adult Classes",
             body: "Looking to try something new or keep up with your favorite sport? Check out our adult gymnastics and dance classes. No commitment necessary. Drop in for a $12 fee.",
-            name: "Learn More",
+            name: "Check our Adult Classes",
             href: "/adult-classes",
         },
         {
@@ -82,7 +82,7 @@ export const load = async ({ locals}) => {
             },
             title: "Open Gym",
             body: "Need extra time in the gym? Or do you just want to play on the equipment. Come to open gym! We offer supervision and a clean safe environment for everyone of all ages to play and enjoy. All ages are welcome!",
-            name: "More Info",
+            name: "Check Times & Prices",
             href: "/open-gym",
         },
     ]
@@ -94,7 +94,7 @@ export const load = async ({ locals}) => {
             },
             title: "Gymnastics",
             body: "We offer gymnastics classes to ages 1 year to Adults. From Babynastics to Girl's and Boy's Rec classes and finally to Adult classes, there is something for everyone! As soon as you can walk, we can teach you gymnastics!",
-            name: "More Info",
+            name: "Check our Classes",
             href: "/gymnastics",
         },
         {
@@ -114,7 +114,7 @@ export const load = async ({ locals}) => {
             },
             title: "Cheerleading",
             body: "We provide cheerleading classes to instruct motions, cheers, stunts, tumbling and dance. We also offer tumbling classes to focus only on floor skills for the up and coming gymnast, dancer or cheerleader.",
-            name: "More Info",
+            name: "Check our Cheer Classes",
             href: "/cheer",
         },
         {
