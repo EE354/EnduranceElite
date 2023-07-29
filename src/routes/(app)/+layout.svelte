@@ -105,7 +105,7 @@
 						</div>
 					{/each}
 
-					{#if data.session?.sessionId}
+					{#if data.role >= 1}
 						<button use:popup={accountPopup}>Account</button>
 
 						<div class="card p-4" data-popup="popupClick">
@@ -116,6 +116,53 @@
 								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
 							</form>
 						</div>
+						<div class="col-span-1 hover:underline">
+							<a href="/dance-cheer-showcase">Dance/Cheeer Summer Showcase 2023</a>
+						</div>
+
+				<div
+					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
+					data-popup="activitiesPopup"
+				>
+					<!-- Activities Popup -->
+					<div class="grid grid-cols-3 gap-4">
+						<div class="col-span-1">
+							<a href="/gymnastics" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Gymnastics</a>
+							<hr />
+							<a href="/preschool-gymnastics" class="hover:underline">Preschool Gymnastics</a>
+							<br />
+							<a href="/recreational-gymnastics">Recreational Gymnastics</a>
+						</div>
+						<div class="col-span-1">
+							<a href="/dance" class="font-bold dark:font-normal pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Dance</a>
+							<hr />
+							<a href="/preschool-dance" class="hover:underline">Preschool Dance</a>
+							<br />
+							<a href="/recreational-dance" class="hover:underline">Recreational Dance</a>
+						</div>
+						<div class="col-span-1">
+							<a href="/cheer" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Cheer</a>
+							<hr />
+							<a href="/cheer-classes" class="hover:underline">Cheer Classes</a>
+						</div>
+						<div class="col-span-1">
+							<a href="/ninja-warrior" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Ninja Warrior</a>
+							<hr />
+						</div>
+						<div class="col-span-1">
+							<a href="/adult" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Adult</a>
+							<hr />
+							<a href="/adult-classes" class="hover:underline">Adult Classes</a>
+						</div>
+						<div class="col-span-1">
+							<a href="/competitive" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Competitive</a>
+							<hr />
+							<a href="/team-information" class="hover:underline">Team Information</a>
+							<br />
+							<a href="/college-recruiting" class="hover:underline">College Recruiting</a>
+						</div>
+					</div>
+				</div>
 					{:else}
 						<a class="nav-link text-black dark:text-white" href="/signup"
 							>Sign Up</a

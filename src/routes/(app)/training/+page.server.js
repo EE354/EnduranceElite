@@ -19,6 +19,6 @@ export const load = async ({locals, url}) => {
 
 
     return {
-        registeredTraining: dbUser.training
+        registeredTraining: dbUser.training || [],
     }
 }

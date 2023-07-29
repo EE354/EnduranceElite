@@ -12,7 +12,7 @@ export const Training = (() => {
                 required: true,
             },
             correctAnswer: {
-                type: String,
+                type: Number,
                 required: true,
             }
         });

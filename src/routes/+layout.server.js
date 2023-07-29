@@ -139,7 +139,6 @@ export const load = async ({locals, url}) => {
 
     return {
         status: 200,
-        session: session,
         role: user?.role || 0,
         navItems,
         activities,

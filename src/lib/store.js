@@ -11,13 +11,11 @@ export const editEvent = writable({
 });
 
 export const editTraining = writable({
-    name: "",
+    title: "",
     description: "",
-    location: "",
-    timeStamp: {
-        start: "",
-        end: "",
-    }
+    video: "",
+    tests: [],
+    currentlyEditing: 0,
 });
 
 export const editGroup = writable({
@@ -25,3 +23,6 @@ export const editGroup = writable({
     members: "",
     description: "",
 });
+
+
+export const questions = writable([]);
