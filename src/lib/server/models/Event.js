@@ -31,7 +31,7 @@ export const Event =(() => {
                     group: {
                         type: String,
                         default: ""
-                    }
+                    },
                 }
             )
         );
