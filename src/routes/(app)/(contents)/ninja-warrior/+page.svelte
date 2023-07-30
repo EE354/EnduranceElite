@@ -18,7 +18,7 @@
         <img 
             class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
             alt=""
-            src="$lib/Regular/tuition.jpg"
+            src="$lib/Regular/About/tuition.jpg"
         >
     </div>
 

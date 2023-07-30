@@ -18,7 +18,7 @@
 		<img
 			class="rounded-2xl w-[16rem] max-h-[16rem] object-cover"
 			alt="5 People Smiling and Hugging"
-			src="$lib/Regular/registration.jpg"
+			src="$lib/Regular/About/registration.jpg"
 		/>
 	</div>
 
