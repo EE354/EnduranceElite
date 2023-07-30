@@ -20,14 +20,14 @@
         <img
             class="container rounded-2xl w-[24rem] mt-4 lg:mt-0 object-cover"
             alt="Popcorn"
-            src="$lib/Regular/SpecialEvents/fridaynightflick.jpg"
+            src="$lib/Regular/SpecialEvents/parentsnightout.jpg"
         />
     </div>
 
     <div class="container align-center justify-center p-4">
         <!-- Main Contents -->
         <div class="lg:flex">
-            <div class="gap-4 neutral shadow-lg w-[40rem] p-4 text-center">
+            <div class="gap-4 neutral shadow-lg p-4 text-center">
                 <!-- White Info Block -->
                 <div class="bg-primary-200 dark:bg-primary-900 p-4">
                     <h3>2023 Friday Night Flicks</h3>

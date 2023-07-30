@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="container flex flex-wrap align-center justify-center">
+    <div class="container flex flex-wrap align-center justify-center pb-8">
         <!-- Main Contents -->
         <div class="card w-11/12 bg-primary-500 shadow-lg m-4 p-4">
 			<!-- Step Block -->
@@ -120,14 +120,14 @@
             </ul><br>
         </div>
 
-        <div class="lg:flex bg-primary-500 dark:bg-primary-900 text-center">
-            <img alt="Gymnast Kneeling" src="$lib/Regular/Competitive/left_formoreinfo.jpg">
-            <div class="flex gap-4 shadow-lg m-4 p-4 text-center">
+        <div class="lg:flex bg-primary-500 dark:bg-primary-900 text-center shadow-2xl">
+            <img class="container" alt="Gymnast Kneeling" src="$lib/Regular/Competitive/left_formoreinfo.jpg">
+            <div class="flex gap-4 m-4 p-4 text-center">
                 <p class="text-xl">Email Ashley at 
                     <br><b>ashleyg.enduranceelitegym@gmail.com </b>
                     <br>for more information</p>
             </div>
-            <img alt="Gymnasting Posing" src="$lib/Regular/Competitive/right_formoreinfo.jpg">
+            <img class="container" alt="Gymnasting Posing" src="$lib/Regular/Competitive/right_formoreinfo.jpg">
         </div>
     </div>
 </main>

@@ -8,7 +8,7 @@
         <h1>Competitive Teams</h1>
     </div>
 
-    <div class="container flex flex-wrap justify-center">
+    <div class="container flex flex-wrap justify-center pb-8">
         <!-- Main Contents -->
 
         <img alt="Person Doing the Splits" src="$lib/Regular/Competitive/competitiveteams.jpg">

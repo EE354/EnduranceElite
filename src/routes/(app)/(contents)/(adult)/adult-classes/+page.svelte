@@ -16,7 +16,7 @@
         <h1>Adult Classes</h1>
     </div>
 
-    <div class="container flex flex-wrap justify-center">
+    <div class="container flex flex-wrap justify-center pb-8">
         <img alt="Person Rolling on a Gymnastics Ball" src="$lib/Regular/Adult/adultclasses.jpg">
         <!-- Main Contents -->
         <!-- <div class="w-11/12 bg-neutral-100 justify-center shadow-lg m-4 p-4">

@@ -22,7 +22,7 @@
     </div>
 
 
-    <div class="container flex flex-wrap align-center justify-center">
+    <div class="container flex flex-wrap align-center justify-center pb-8">
         <!-- Main Contents -->
         <div class="flex gap-4 neutral shadow-lg m-4 p-4">
             <!-- White Info Block -->

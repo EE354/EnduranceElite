@@ -18,7 +18,7 @@
 		</div>
 	</div>
 
-	<div class="container flex flex-wrap justify-center">
+	<div class="container flex flex-wrap justify-center pb-8">
 		<div class="w-11/12 neutral shadow-lg m-8 p-8">
 			<!-- Nav Buttons - Scroll to Position On Page -->
 			<h4 class="mb-4 text-center">Click your Style to Scroll!</h4>

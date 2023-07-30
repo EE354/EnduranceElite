@@ -16,7 +16,7 @@
 		<h1>Cheerleading</h1>
 	</div>
 
-	<div class="container flex flex-wrap justify-center">
+	<div class="container flex flex-wrap justify-center pb-8">
 		<!-- Main Contents -->
 		<div class="w-11/12 neutral shadow-lg m-8 p-8">
 			<!-- Nav Buttons - Scroll to Position On Page -->
