@@ -1,6 +1,6 @@
 <script>
 
-    import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
+    import {drawerStore, modalStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
     import {editUser} from "$lib/store.js";
 
     export let data;
@@ -21,21 +21,12 @@
         page.offset * page.limit + page.limit // end
     );
 
-    const AddNewUser = () => {
-        drawerStore.open({
-            id: "AddUserDrawer",
-            position: "right",
-            width: "w-6/12",
-        });
-    }
-
-    const startEdit = (user) => {
+    const viewUser = (user) => {
         $editUser = user;
-        drawerStore.open({
-            id: "EditUserDrawer",
-            position: "right",
-            width: "w-6/12",
-        });
+        modalStore.trigger({
+            type: "component",
+            component: "viewUserModal",
+        })
     }
 
 </script>
@@ -47,9 +38,6 @@
         <div class="container mt-3">
             <div class="flex justify-between">
                 <h3 class="pl-5 pt-5">Users</h3>
-
-                <button on:click={AddNewUser} class="btn variant-filled-primary">Add User</button>
-
             </div>
 
             <div class="table-container py-4">
@@ -64,17 +52,13 @@
                     </thead>
                     <tbody>
                     {#each paginatedSource as user, i (user._id, i)}
-                        <tr>
+                        <tr on:click={() => viewUser(user)}>
                             <form id="{user._id}" method="post">
                                 <input type="hidden" name="id" value="{user._id}">
                             </form>
                             <td>{user.name.first} {user.name.last}</td>
                             <td>{user.email}</td>
                             <td>{(user.roleId === 1) ? "User" : (user.roleId === 2) ? "Employee" : (user.roleId === 3) ? "Admin" : user.roleId }</td>
-
-                            <td class="table-cell-fit"><button on:click={() => {startEdit(user)}} ><span class="material-symbols-outlined">edit</span></button></td>
-                            <td><button form="{user._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
-
                         </tr>
                     {/each}
                     </tbody>
@@ -87,9 +71,6 @@
                         showPreviousNextButtons="{true}"
                 />
             </div>
-
-
-
         </div>
     </div>
 </main>

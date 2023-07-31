@@ -26,10 +26,14 @@
     import AddQuestionModal from "$lib/components/AddQuestionModal.svelte";
     import MobileMenu from "$lib/components/MobileMenu.svelte";
     import EnrolledEmployees from "$lib/components/EnrolledEmployees.svelte";
+    import ViewUserModal from "$lib/components/ViewUserModal.svelte";
     
     $: if ($page.form?.error) {
-        $toastStore.trigger({ message: $page.data.error, background: 'variant-filled-error' });
+        toastStore.trigger({ message: $page.form.message, background: 'variant-filled-error' });
+    } else if ($page.form) {
+        toastStore.trigger({ message: $page.form.message, background: 'variant-filled-success' });
     }
+
 
     const modalComponentRegistry = {
 
@@ -41,6 +45,9 @@
 
         enrolledEmployees: {
             ref: EnrolledEmployees,
+        },
+        viewUserModal: {
+            ref: ViewUserModal,
         }
     };
 </script>
