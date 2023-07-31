@@ -17,7 +17,7 @@
     import EditEventDrawer from '$lib/components/EditEventDrawer.svelte';
     import {page} from "$app/stores";
 
-    import EditTrainingDrawer from "$lib/components/EditTrainingDrawer.svelte";
+
     import AddTrainingDrawer from "$lib/components/AddTrainingDrawer.svelte";
     import AddScheduleDrawer from "$lib/components/AddScheduleDrawer.svelte";
     import EditScheduleDrawer from "$lib/components/EditScheduleDrawer.svelte";
@@ -27,10 +27,11 @@
     import MobileMenu from "$lib/components/MobileMenu.svelte";
     import EnrolledEmployees from "$lib/components/EnrolledEmployees.svelte";
     import ViewUserModal from "$lib/components/ViewUserModal.svelte";
+    import GroupEnrollModal from "$lib/components/GroupEnrollModal.svelte";
     
-    $: if ($page.form?.error) {
+    $: if ($page.form?.status >= 300 && $page.form?.status < 400) {
         toastStore.trigger({ message: $page.form.message, background: 'variant-filled-error' });
-    } else if ($page.form) {
+    } else if ($page.form?.status >= 200 && $page.form?.status < 300) {
         toastStore.trigger({ message: $page.form.message, background: 'variant-filled-success' });
     }
 
@@ -48,6 +49,9 @@
         },
         viewUserModal: {
             ref: ViewUserModal,
+        },
+        groupEnrollment: {
+            ref: GroupEnrollModal,
         }
     };
 </script>

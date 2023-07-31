@@ -19,8 +19,8 @@ export const editTraining = writable({
 });
 
 export const editGroup = writable({
+    id: "",
     name: "",
-    members: "",
     description: "",
 });
 

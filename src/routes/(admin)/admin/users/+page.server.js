@@ -31,10 +31,14 @@ export const actions = {
             await User.findByIdAndUpdate({_id: id}, {roleId: role})
 
             return {
+                status: 200,
                 message: "User role updated successfully",
             }
         } catch (e) {
-            return fail(400, "Failed to update user role")
+            return {
+                status: 400,
+                message: "Failed to update user role"
+            }
         }
-    }
+    },
 }

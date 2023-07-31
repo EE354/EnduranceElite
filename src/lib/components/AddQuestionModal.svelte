@@ -68,7 +68,7 @@
                             <p>{i+1} )</p>
                             <input type="radio" group={selected} name="correctQuestion" value={i} class="input w-4">
                         </div>
-                        <textarea class="input h-1/2 rounded-lg" type="text" bind:value={question.q} placeholder="Potential Answer"></textarea>
+                        <textarea class="textarea h-1/2 rounded-lg" type="text" bind:value={question.q} placeholder="Potential Answer"></textarea>
                     <hr class="my-4"/>
                     </div>
                 {/each}
