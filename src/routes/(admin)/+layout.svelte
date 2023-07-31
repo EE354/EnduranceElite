@@ -63,13 +63,23 @@
             </AppRailAnchor>
 
             <AppRailAnchor href="/admin/users" selected={$page.url.pathname === '/admin/users'}>
-            <svelte:fragment slot="lead">
-                    <span class="material-symbols-outlined text-black dark:text-white">
-                    person
-                    </span>
-            </svelte:fragment>
-            <span><p class="text-black dark:text-white">Users</p></span>
-        </AppRailAnchor>
+                <svelte:fragment slot="lead">
+                        <span class="material-symbols-outlined text-black dark:text-white">
+                        person
+                        </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Users</p></span>
+            </AppRailAnchor>
+
+            <AppRailAnchor href="/admin/news"  selected={$page.url.pathname === '/admin/news'}>
+                <svelte:fragment slot="lead">
+                        <span class="material-symbols-outlined text-black dark:text-white">
+                        news
+                        </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">news</p></span>
+            </AppRailAnchor>
+
 
             <!-- Bottom slot -->
             <svelte:fragment slot="trail">
