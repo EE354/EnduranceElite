@@ -2,10 +2,10 @@
     //Import css files
     // Your selected Skeleton theme:
     import '../theme.postcss';
-    //import '@skeletonlabs/skeleton/themes/theme-crimson.css';
     // This contains the bulk of Skeletons required styles:
     import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
+
     import {Drawer, drawerStore, toastStore} from '@skeletonlabs/skeleton';
 
     import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
@@ -16,7 +16,7 @@
     import AddEventDrawer from "$lib/Drawers/AddEventDrawer.svelte";
     import EditEventDrawer from '$lib/Drawers/EditEventDrawer.svelte';
     import {page} from "$app/stores";
-    import {get} from "svelte/store";
+
     import EditTrainingDrawer from "$lib/Drawers/EditTrainingDrawer.svelte";
     import AddTrainingDrawer from "$lib/Drawers/AddTrainingDrawer.svelte";
     import AddScheduleDrawer from "$lib/Drawers/AddScheduleDrawer.svelte";
