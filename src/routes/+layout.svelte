@@ -70,8 +70,6 @@
         <EditEventDrawer/>
     {:else if $drawerStore.id === "AddTrainingDrawer"}
         <AddTrainingDrawer/>
-    {:else if  $drawerStore.id === "EditTrainingDrawer"}
-        <EditTrainingDrawer/>
     {:else if $drawerStore.id === "AddScheduleDrawer"}
         <AddScheduleDrawer/>
     {:else if $drawerStore.id === "EditScheduleDrawer"}

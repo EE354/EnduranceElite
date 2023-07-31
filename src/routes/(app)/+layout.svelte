@@ -59,17 +59,13 @@
 	// Event handler for clicking anywhere on the document
 	const handleOutsideClick = (event) => {
 		// Check if click was outside the element and its children
-		var clickedElement = event.target;
+		let clickedElement = event.target;
 		let button = getActiveButton();
 		if (button == null) {return};
 		if (!button.contains(clickedElement)) {
 			clearState(button);
 		};
 	}
-
-	onMount(async () => {
-		document.addEventListener('click', handleOutsideClick)
-	})
 
 	// Account Pop Up Config
 	const accountPopup = {
@@ -89,8 +85,7 @@
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
 
-<svelte:window bind:innerWidth={screenSize} />
-<main>
+<svelte:window bind:innerWidth={screenSize} on:click={handleOutsideClick} />
 <AppShell>
 	<!-- Nav Bar -->
 	<svelte:fragment slot="header">
@@ -112,7 +107,7 @@
 					<!-- Set Nav Buttons and Nav Pop Up Menus-->
 					{#each data.navItems as { id, label, menu, menuString, span, parentNavItems }}
 						<button {id}
-							on:click={() => menuClick(id	)}
+							on:click={() => menuClick(id)}
 							class="w-20 h-12 {getClass(id, activeButton)}"
 							use:popup={menu}>{label}</button
 						>
@@ -212,4 +207,4 @@
 
 	<slot />
 </AppShell>
-</main>
+
