@@ -58,9 +58,9 @@ export const  actions = {
         protectRoute(url, user, session, 3)
 
         const data = await request.formData();
-        
+
         try {
-            await User.updateMany({training: {$in: [params.videoId]}}, {
+            await User.updateMany({training: {_id: {$in: [params.videoId]}}}, {
                 $pull: {
                     training: params.videoId
                 }
@@ -70,7 +70,10 @@ export const  actions = {
                 const id = employees[i];
                 await User.findByIdAndUpdate(id, {
                     $addToSet: {
-                        training: params.videoId
+                        training: {
+                            _id: params.videoId,
+
+                        }
                     }
                 });
             }

@@ -3,6 +3,20 @@ import mongoose from "mongoose";
 export const User = (() => {
     try {
 
+        const trainingSchema = new mongoose.Schema({
+            _id: {
+                type: String,
+            },
+            chosenAnswers: {
+                type: [Number],
+                required: false,
+            },
+            completed: {
+                type: Boolean,
+                default: false,
+            }
+        });
+
         return mongoose.model(
         "auth_user",
         new mongoose.Schema(
@@ -25,7 +39,7 @@ export const User = (() => {
                     },
                 },
                 training: {
-                  type: [String],
+                  type: [trainingSchema],
                     default: []
                 },
                 groups: {
