@@ -59,5 +59,6 @@
         };
     }}>
         <input type="submit" class="btn variant-filled-tertiary my-2" value="Update Enrollment" />
+        <p class="text-sm text-gray-500">Clicking this buttton saves enrollment</p>
     </form>
 </main>

@@ -60,7 +60,7 @@ export const  actions = {
         const data = await request.formData();
 
         try {
-            await User.updateMany({training: {_id: {$in: [params.videoId]}}}, {
+            await User.updateMany({training: {$in: {_id: params.videoId}}}, {
                 $pull: {
                     training: params.videoId
                 }
@@ -72,7 +72,6 @@ export const  actions = {
                     $addToSet: {
                         training: {
                             _id: params.videoId,
-
                         }
                     }
                 });

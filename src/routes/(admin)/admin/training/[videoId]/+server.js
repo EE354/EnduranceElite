@@ -13,7 +13,7 @@ export const GET = async ({url, locals, params}) => {
     return json({
         training: await Training.findById(params.videoId),
         employees: await User.find({roleId: {$gte: 2}}),
-        enrolledEmployees: await User.find({roleId: {$gte: 2}, training: {$in: [params.videoId]}})
+        enrolledEmployees: await User.find({roleId: {$gte: 2}, training: {$in:{_id: params.videoId}}})
     });
 }
 

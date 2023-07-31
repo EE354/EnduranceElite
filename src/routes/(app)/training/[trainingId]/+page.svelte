@@ -5,17 +5,11 @@
     export let form;
     let training;
     $: training = data.training;
-    let chosenAnswers = [].fill(0, 0, training?.tests.length);
 
 </script>
 
 <main>
-    <form method="POST" use:enhance={({formData}) => {
-        formData.append("chosenAnswers", JSON.stringify(chosenAnswers));
-        return async ({ update }) => {
-            await update();
-        };
-    }}>
+    <form method="POST" use:enhance>
     <div class="flex flex-col mt-12 place-items-center">
         <div class="card p-4 w-5/6">
         <a class="btn variant-filled-surface mb-2" href="/admin/training">Back</a>
@@ -27,17 +21,25 @@
                 <div>
                     <h3>{test.question}</h3>
                     {#each test.possibleAnswers as answer, i}
+                        {@const id = crypto.randomUUID()}
                         <div class="flex-row flex">
-                            <input type="radio" class="input w-4" group={chosenAnswers[t]} id="{answer+i}" name="{test.question}" value={i}>
+                            <input type="radio" class="input w-4" group={test.question} id="{id}" name="{test.question}" value={i}>
                             <div class="grid h-full place-items-center">
-                                <label for={answer+i} class="pl-1 ">{answer}</label>
+                                <label for={id} class="pl-1 ">{answer}</label>
                             </div>
                         </div>
                     {/each}
                 </div>
             {/each}
             <hr class="my-2"/>
-            <input type="submit" class="btn variant-filled-surface" value="Submit">
+            {#if !data.completed}
+                {#if data.correct !== 0}
+                    <p>{data.correct} correct out of {training.tests.length}</p>
+                {/if}
+                <input type="submit" class="btn variant-filled-surface" value="Submit">
+            {:else}
+                <p>Completed</p>
+            {/if}
         </div>
     </div>
     </form>

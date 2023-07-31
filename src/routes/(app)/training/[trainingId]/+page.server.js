@@ -18,18 +18,24 @@ export const  actions = {
     default: async ({url, request, locals, params}) => {
         const {user, session} = await locals.auth.validateUser();
         protectRoute(url, user, session, 2)
-
-
-        const data = await request.formData();
-        const chosenAnswers = JSON.parse(data.get("chosenAnswers"));
-
         try {
             const training = await Training.findById(params.trainingId);
             const dbUser = await User.findById(user.userId).populate("training");
-            const userTraining = dbUser.training.find(t => t._id === params.trainingId)
+            const userTraining = await dbUser.training.find(t => t._id === params.trainingId)
+
+            const data = await request.formData();
+            const chosenAnswers = (() => {
+                const arr = []
+
+                for (let i = 0; i < training.tests.length; i++) {
+                    arr.push(data.get(training.tests[i].question))
+                }
+                return arr;
+            })();
+
             userTraining.chosenAnswers = chosenAnswers;
 
-            if (!dbUser.training.includes(params.trainingId)) {
+            if (!dbUser.training.some(training => training._id === params.trainingId)) {
                 return fail(300, "You are not enrolled in this training")
             }
 
@@ -48,15 +54,9 @@ export const  actions = {
                     correct: correct,
                 }
             }
-
-
-
-
         } catch (e) {
+            console.log(e)
             return fail(300, e.message);
         }
-
-
-
     }
 }
