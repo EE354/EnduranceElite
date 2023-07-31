@@ -6,15 +6,18 @@ import {User} from "$lib/server/models/User.js";
 
 export const  actions = {
     edit: async ({url, request, locals, params}) => {
+        //Route Protection
         const {user, session} = await locals.auth.validateUser();
         protectRoute(url, user, session, 3)
 
+        //Get the data from the form
         const data = await request.formData();
         const name = data.get("name");
         const description = data.get("description");
         const ytLink = data.get("url");
         const questions = JSON.parse(data.get("questions"));
 
+        //Validate the data
         try {
             nameSchema.parse(name);
             stringSchema.parse(description);
@@ -25,7 +28,9 @@ export const  actions = {
             return fail(300, e.errors[0].message);
         }
 
+
         try {
+            //Update the training
             const training = await Training.findByIdAndUpdate(params.videoId, {
                 title: name,
                 description: description,

@@ -18,7 +18,7 @@ export const  actions = {
         const name = data.get("name");
         const description = data.get("description");
         const ytLink = data.get("url");
-        const questions = JSON.parse(data.get("questions"));
+        const questions = JSON.parse(data.get("questions") || "[]");
 
         try {
             nameSchema.parse(name);
@@ -41,8 +41,11 @@ export const  actions = {
                 }})
             });
         } catch (e) {
-            console.log(e)
-            return fail(300, e.message);
+            return {
+                status: 300,
+                message: e.message
+            }
+
         }
 
     }

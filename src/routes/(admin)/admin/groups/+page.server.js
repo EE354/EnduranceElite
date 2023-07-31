@@ -42,8 +42,8 @@ export const actions = {
         } catch (e) {
             console.log(e)
             return {
-                status: 400,
-                message: "e.message",
+                status: 300,
+                message: "Group Could not be created",
             }
         }
 
