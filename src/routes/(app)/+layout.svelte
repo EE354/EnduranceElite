@@ -90,7 +90,7 @@
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
-
+<main>
 <AppShell>
 	<!-- Nav Bar -->
 	<svelte:fragment slot="header">
@@ -212,3 +212,4 @@
 
 	<slot />
 </AppShell>
+</main>
