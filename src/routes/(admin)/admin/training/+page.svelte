@@ -44,9 +44,9 @@
             </div>
             <hr class="my-2"/>
 
-            <div class="grid grid-cols-4 p-4">
+            <div class="grid grid-cols-4 gap-2 p-4">
                 {#each data.training as training}
-                    <a class="card p-4" href="admin/admin/training/{training.title}">
+                    <a class="card p-4" href="/admin/training/{training._id}">
                         <div class="">
                             <img src="https://img.youtube.com/vi/{getCode(training.video)}/0.jpg" class="rounded-xl mx-auto"/>
                         </div>

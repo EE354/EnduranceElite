@@ -1,5 +1,5 @@
 import {protectRoute} from "$lib/utils.js";
-import {json} from "@sveltejs/kit";
+import {fail, json} from "@sveltejs/kit";
 import {Training} from "$lib/server/models/Training.js";
 
 
@@ -8,6 +8,8 @@ export const GET = async ({url, locals, params}) => {
 
     protectRoute(url, user, session, 3)
 
-    return json(await (Training.find({}).sort({timeStamp: 1})));
+    const training = await (Training.findById(params.videoId))
+
+    return json(training);
 }
 

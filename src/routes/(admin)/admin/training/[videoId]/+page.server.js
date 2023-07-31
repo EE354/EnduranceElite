@@ -1,16 +1,10 @@
 import {protectRoute} from "$lib/utils.js";
-import {Training} from "$lib/server/models/Training.js";
-import {fail} from "@sveltejs/kit";
 import {nameSchema, questionSchema, stringSchema, urlSchema} from "$lib/server/zodSchemas.js";
-
-
-export const load = async ({ locals, url }) => {
-    const { session, user } = await locals.auth.validateUser();
-    protectRoute(url, user, session, 3)
-}
+import {fail} from "@sveltejs/kit";
+import {Training} from "$lib/server/models/Training.js";
 
 export const  actions = {
-    new: async ({url, request, locals}) => {
+    new: async ({url, request, locals, params}) => {
         const {user, session} = await locals.auth.validateUser();
         protectRoute(url, user, session, 3)
 
@@ -20,18 +14,18 @@ export const  actions = {
         const ytLink = data.get("url");
         const questions = JSON.parse(data.get("questions"));
 
-        //TODO: Validate data
         try {
             nameSchema.parse(name);
             stringSchema.parse(description);
             urlSchema.parse(ytLink);
             questionSchema.parse(questions);
         } catch (e) {
+            console.log(e)
             return fail(300, e.errors[0].message);
         }
 
         try {
-            const training = await Training.create({
+            const training = await Training.findByIdAndUpdate(params.videoId, {
                 title: name,
                 description: description,
                 video: ytLink,
