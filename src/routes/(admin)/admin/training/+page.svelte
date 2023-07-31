@@ -36,7 +36,7 @@
     <div class="container flex justify-center w-auto">
 
         <div class="container mt-3">
-            <div class="flex justify-between p-2">
+            <div class="flex justify-between">
                 <h3 class="pl-5 pt-5">Training</h3>
                 <button on:click={AddNewTraining} class="btn variant-filled-primary">Add New Training Video</button>
             </div>
