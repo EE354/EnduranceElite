@@ -29,11 +29,16 @@ export const actions = {
             //Login user / create session
             const session = await auth.createSession(key.userId);
             locals.auth.setSession(session);
+
+            return {
+                status: 200,
+                message: "Login successful"
+            }
         } catch (e) {
-            console.log(e);
-            return fail(401, {
-                message: "Username or password is incorrect"
-            });
+            return {
+                status: 300,
+                message: "Invalid email or password"
+            };
         }
         //If successful, redirect to home page
         returnRedirect(url);

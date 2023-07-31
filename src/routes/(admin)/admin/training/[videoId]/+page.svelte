@@ -19,12 +19,7 @@
             $editTraining.tests.forEach(test => test.noAnswers = test.possibleAnswers.length)
             $editTraining.noQuestions = $editTraining.tests.length
         }
-
-        console.log($editTraining)
-
         editing = !editing;
-
-
     }
 
     const showEnrolled = () => {
@@ -37,7 +32,12 @@
 </script>
 
 <main>
-    <form method="POST" action="?/delete" id="delete"></form>
+    <form method="POST" action="?/delete" id="delete" use:enhance={() => {
+            return async ({ update }) => {
+            await update();
+            $editTraining = [];
+        };
+    }}></form>
     <div class="flex flex-col mt-12 place-items-center">
         <div class="card container w-fit p-4 md:p-8">
             {#if !editing}
@@ -87,7 +87,7 @@
                     </label>
                     <label class="my-1">
                         <h4>Training Video Description</h4>
-                        <textarea class="input" type="text" name="description" bind:value={$editTraining.description} placeholder="Description"></textarea>
+                        <textarea class="textarea" type="text" name="description" bind:value={$editTraining.description} placeholder="Description"></textarea>
                     </label>
                     <button class="btn variant-filled-primary mb-2" on:click|preventDefault={showEnrolled} >Enrolled Employees</button>
                     <hr/>

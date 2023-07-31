@@ -32,6 +32,10 @@ export const Event =(() => {
                         type: String,
                         default: ""
                     },
+                    user: {
+                        type: String,
+                        default: ""
+                    }
                 }
             )
         );
