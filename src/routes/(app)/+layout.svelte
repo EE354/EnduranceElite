@@ -7,7 +7,6 @@
 		AppShell,
 		LightSwitch
 	} from '@skeletonlabs/skeleton';
-	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 
 	// Pop up imports from skeleton and floating ui
@@ -15,51 +14,83 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { popup } from '@skeletonlabs/skeleton';
 
-	import {drawerStore} from "@skeletonlabs/skeleton";
+	import { drawerStore } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
 
-	export let data;
-	let screenSize;
+	export let data;	// For loading external data
+	let screenSize;		// For mobile menu display
+	let activeButton;	// For static nav button state
 
-	let selectedNav = null;
-
-	//Code for button toggles
-	let activeButton;
-	$: activeButton = undefined;
-
+	// Buttons States
 	const selected = 'bg-primary-500 dark:bg-primary-900';
-	const secondary = 'btn-secondary';
+	const regular = '';
 
+	// Update Button State
 	const getClass = (id, active) => {
 		if (active == id) {
 			return selected;
 		} else {
-			return secondary;
+			return regular;
 		}
 	};
 
-	function menuClick(id) {
-		activeButton = id;
-		selectedNav = id;
+	// On Nav Click
+	const menuClick = (id) => {
+		if (activeButton == id ) {
+			// If the button is clicked and the state is already active, clear state
+			clearState(getActiveButton());
+		} else {
+			activeButton = id;
+		}
+	};
+
+	// Returns reference to the active button element
+	const getActiveButton = () => {
+		return document.getElementById(activeButton);
 	}
 
+	// Clears styling and state for static nav buttons
+	const clearState = (button) => {
+		button.classList.remove('bg-primary-500');
+		button.classList.remove('dark:bg-primary-900');
+		activeButton = undefined;
+	};
+
+	// Event handler for clicking anywhere on the document
+	const handleOutsideClick = (event) => {
+		// Check if click was outside the element and its children
+		var clickedElement = event.target;
+		let button = getActiveButton();
+		if (button == null) {return};
+		if (!button.contains(clickedElement)) {
+			clearState(button);
+		};
+	}
+
+	onMount(async () => {
+		document.addEventListener('click', handleOutsideClick)
+	})
+
+	// Account Pop Up Config
 	const accountPopup = {
 		event: 'click',
 		target: 'popupClick',
 		placement: 'top'
 	};
 
+	// Mobile Menu Drawer Store Config
 	const openMobileMenu = () => {
-        drawerStore.open({
-            id: "MobileMenu",
-            position: "right",
-        });
-    }
+		drawerStore.open({
+			id: 'MobileMenu',
+			position: 'right'
+		});
+	};
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
-
+<main>
 <AppShell>
 	<!-- Nav Bar -->
 	<svelte:fragment slot="header">
@@ -77,22 +108,25 @@
 			</svelte:fragment>
 
 			<svelte:fragment slot="trail">
-	
 				{#if screenSize > 800}
 					<!-- Set Nav Buttons and Nav Pop Up Menus-->
-					{#each data.navItems as {id, label, menu, menuString, span, parentNavItems}}
-						<button on:click={() => { menuClick(id); }} class="w-20 h-12 {getClass(id, activeButton)}" use:popup={menu}>{label}</button>
+					{#each data.navItems as { id, label, menu, menuString, span, parentNavItems }}
+						<button {id}
+							on:click={() => menuClick(id	)}
+							class="w-20 h-12 {getClass(id, activeButton)}"
+							use:popup={menu}>{label}</button
+						>
 						<div
-						class="neutral dark:bg-[#31465B] border-[1px] p-4 shadow-2xl text-sm"
-						data-popup="{menuString}"
+							class="neutral dark:bg-[#31465B] border-[1px] p-4 shadow-2xl text-sm"
+							data-popup={menuString}
 						>
 							<div class="grid grid-cols-3 gap-4">
-								{#each parentNavItems as {label, href, childNavItems}}
-									<div class="{span}">
+								{#each parentNavItems as { label, href, childNavItems }}
+									<div class={span}>
 										<a {href} class="hover:underline">{label}</a>
 										{#if childNavItems != null}
 											<hr />
-											{#each childNavItems as {label, href}}
+											{#each childNavItems as { label, href }}
 												<a {href} class="hover:underline">{label}</a>
 												<br />
 											{/each}
@@ -107,7 +141,6 @@
 
 					{#if data.roleId >= 1}
 						<button use:popup={accountPopup}>Account</button>
-
 						<div class="card p-4" data-popup="popupClick">
 							<a href="/account">Dashboard</a>
 							<a href="/settings">Settings</a>
@@ -116,61 +149,14 @@
 								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
 							</form>
 						</div>
-				<div
-					class="neutral border-[1px] border-neutral-400 p-4 w-50 shadow-2xl text-sm"
-					data-popup="activitiesPopup"
-				>
-					<!-- Activities Popup -->
-					<div class="grid grid-cols-3 gap-4">
-						<div class="col-span-1">
-							<a href="/gymnastics" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Gymnastics</a>
-							<hr />
-							<a href="/preschool-gymnastics" class="hover:underline">Preschool Gymnastics</a>
-							<br />
-							<a href="/recreational-gymnastics">Recreational Gymnastics</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/dance" class="font-bold dark:font-normal pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Dance</a>
-							<hr />
-							<a href="/preschool-dance" class="hover:underline">Preschool Dance</a>
-							<br />
-							<a href="/recreational-dance" class="hover:underline">Recreational Dance</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/cheer" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Cheer</a>
-							<hr />
-							<a href="/cheer-classes" class="hover:underline">Cheer Classes</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/ninja-warrior" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Ninja Warrior</a>
-							<hr />
-						</div>
-						<div class="col-span-1">
-							<a href="/adult" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Adult</a>
-							<hr />
-							<a href="/adult-classes" class="hover:underline">Adult Classes</a>
-						</div>
-						<div class="col-span-1">
-							<a href="/competitive" class="font-bold dark:font-normal hover:underline  pt-1 pb-[0.8px] pr-1 pl-[2px] rounded-md hover:bg-primary-500 hover:dark:bg-primary-900">Competitive</a>
-							<hr />
-							<a href="/team-information" class="hover:underline">Team Information</a>
-							<br />
-							<a href="/college-recruiting" class="hover:underline">College Recruiting</a>
-						</div>
-					</div>
-				</div>
 					{:else}
-						<a class="nav-link text-black dark:text-white" href="/signup"
-							>Sign Up</a
-						>
-						<a class="btn bg-primary-600 dark:bg-primary-900" href="/login"
-							>Log In</a
-						>
+						<a class="nav-link text-black dark:text-white" href="/signup">Sign Up</a>
+						<a class="btn bg-primary-600 dark:bg-primary-900" href="/login">Log In</a>
 					{/if}
 				{:else}
-				<button name="Expand for Navigation Menu" on:click={openMobileMenu}>
-					<i class="fa-solid fa-bars fa-xl"></i>
-				</button>
+					<button name="Expand for Navigation Menu" on:click={openMobileMenu}>
+						<i class="fa-solid fa-bars fa-xl" />
+					</button>
 				{/if}
 			</svelte:fragment>
 		</AppBar>
@@ -226,3 +212,4 @@
 
 	<slot />
 </AppShell>
+</main>
