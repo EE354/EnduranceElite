@@ -2,10 +2,16 @@
     import {enhance} from "$app/forms";
     import {editEvent} from "../store.js";
     import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
+    import {drawerStore} from "@skeletonlabs/skeleton";
 </script>
 
 <main class="grid place-items-center">
-    <form method="POST" action="?/edit" use:enhance class="w-10/12">
+    <form method="POST" action="?/edit" use:enhance={() => {
+        return async ({update}) => {
+            await update();
+            drawerStore.close();
+        }
+    }} class="w-10/12">
         <input type="hidden" name="id" value="{$editEvent._id}" hidden >
 
         <h3 class="p-5">Edit Event</h3>

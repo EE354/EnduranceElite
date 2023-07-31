@@ -2,10 +2,16 @@
     import {enhance} from "$app/forms";
     import {editGroup} from "$lib/store";
     import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
+    import {drawerStore} from "@skeletonlabs/skeleton";
 </script>
 
 <main class="grid place-items-center">
-    <form method="POST" action="?/edit" use:enhance class="w-10/12">
+    <form method="POST" action="?/edit" use:enhance={() => {
+        return async ({update}) => {
+            await update();
+            drawerStore.close();
+        }
+    }} class="w-10/12">
         <input type="hidden" name="id" value="{$editGroup._id}" hidden >
 
         <h3 class="p-5">Edit Event</h3>
@@ -14,11 +20,6 @@
         <label class="my-4">
             <h5>Event Name</h5>
             <input type="text" class="input input-bordered" bind:value={$editGroup.name} name="name" placeholder="Event Name">
-        </label>
-
-        <label class="my-4">
-            <h5>Members</h5>
-            <input type="text" name="location" bind:value={$editGroup.location} class="input input-bordered" placeholder="Event Location">
         </label>
 
         <label class="my-4">

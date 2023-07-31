@@ -1,6 +1,6 @@
 <script>
 
-    import {modalStore} from "@skeletonlabs/skeleton";
+    import {drawerStore, modalStore} from "@skeletonlabs/skeleton";
     import {questions} from "$lib/store.js";
     import { enhance } from "$app/forms";
     import {json} from "@sveltejs/kit";
@@ -25,6 +25,7 @@
         return async ({ update }) => {
             await update();
             $questions = [];
+            drawerStore.close();
         };
     }}>
         <h1>Create Training</h1>
@@ -35,7 +36,7 @@
         </label>
         <label class="my-1">
             <h4>Training Video Description</h4>
-            <textarea class="input" type="text" name="description" placeholder="Description"></textarea>
+            <textarea class="textarea" type="text" name="description" placeholder="Description"></textarea>
         </label>
         <label class="my-1">
             <h4>Training Video URL</h4>

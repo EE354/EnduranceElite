@@ -13,10 +13,6 @@ export const Group = (() => {
                     description: {
                         type: String,
                         default: ""
-                    },
-                    members: {
-                        type: [String],
-                        default: []
                     }
                 }
             )
