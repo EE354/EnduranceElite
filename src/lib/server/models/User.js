@@ -24,10 +24,6 @@ export const User = (() => {
                         required: true,
                     },
                 },
-                classes: {
-                    type: [String],
-                    default: []
-                },
                 training: {
                   type: [String],
                     default: []

@@ -13,18 +13,19 @@
     import {storePopup, Toast} from '@skeletonlabs/skeleton';
     storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
     import {AppBar, AppRail, AppRailAnchor, AppRailTile, AppShell, LightSwitch, Modal} from "@skeletonlabs/skeleton";
-    import AddEventDrawer from "$lib/Drawers/AddEventDrawer.svelte";
-    import EditEventDrawer from '$lib/Drawers/EditEventDrawer.svelte';
+    import AddEventDrawer from "$lib/components/AddEventDrawer.svelte";
+    import EditEventDrawer from '$lib/components/EditEventDrawer.svelte';
     import {page} from "$app/stores";
 
-    import EditTrainingDrawer from "$lib/Drawers/EditTrainingDrawer.svelte";
-    import AddTrainingDrawer from "$lib/Drawers/AddTrainingDrawer.svelte";
-    import AddScheduleDrawer from "$lib/Drawers/AddScheduleDrawer.svelte";
-    import EditScheduleDrawer from "$lib/Drawers/EditScheduleDrawer.svelte";
-    import AddGroupDrawer from "$lib/Drawers/AddGroupDrawer.svelte";
-    import EditGroupDrawer from "$lib/Drawers/EditGroupDrawer.svelte";
-    import AddQuestionModal from "$lib/Drawers/AddQuestionModal.svelte";
-    import MobileMenu from "$lib/Drawers/MobileMenu.svelte";
+    import EditTrainingDrawer from "$lib/components/EditTrainingDrawer.svelte";
+    import AddTrainingDrawer from "$lib/components/AddTrainingDrawer.svelte";
+    import AddScheduleDrawer from "$lib/components/AddScheduleDrawer.svelte";
+    import EditScheduleDrawer from "$lib/components/EditScheduleDrawer.svelte";
+    import AddGroupDrawer from "$lib/components/AddGroupDrawer.svelte";
+    import EditGroupDrawer from "$lib/components/EditGroupDrawer.svelte";
+    import AddQuestionModal from "$lib/components/AddQuestionModal.svelte";
+    import MobileMenu from "$lib/components/MobileMenu.svelte";
+    import EnrolledEmployees from "$lib/components/EnrolledEmployees.svelte";
     
     $: if ($page.form?.error) {
         $toastStore.trigger({ message: $page.data.error, background: 'variant-filled-error' });
@@ -36,9 +37,11 @@
         addQuestion: {
             // Pass a reference to your custom component
             ref: AddQuestionModal,
-            // Provide a template literal for the default component slot
-            slot: '<p>Skeleton</p>'
         },
+
+        enrolledEmployees: {
+            ref: EnrolledEmployees,
+        }
     };
 </script>
 

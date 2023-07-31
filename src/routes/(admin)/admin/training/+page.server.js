@@ -20,7 +20,6 @@ export const  actions = {
         const ytLink = data.get("url");
         const questions = JSON.parse(data.get("questions"));
 
-        //TODO: Validate data
         try {
             nameSchema.parse(name);
             stringSchema.parse(description);

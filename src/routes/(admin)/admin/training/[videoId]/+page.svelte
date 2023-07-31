@@ -2,13 +2,11 @@
     import {onMount} from "svelte";
     import { enhance } from "$app/forms";
     import { editTraining } from "$lib/store.js";
+    import {modalStore} from "@skeletonlabs/skeleton";
 
     export let data;
     let training
     $: training = data.training;
-    onMount(() => {
-        console.log(training)
-    });
 
     let editing = false;
 
@@ -29,13 +27,21 @@
 
     }
 
+    const showEnrolled = () => {
+        modalStore.trigger({
+            type: "component",
+            component: "enrolledEmployees",
+        })
+    }
+
 </script>
 
 <main>
+    <form method="POST" action="?/delete" id="delete"></form>
     <div class="flex flex-col mt-12 place-items-center">
         <div class="card p-4 w-5/6">
-            <a class="btn variant-filled-surface mb-2" href="/admin/training">Back</a>
             {#if !editing}
+            <a class="btn variant-filled-surface mb-2" href="/admin/training">Back</a>
             <button on:click={startEdit}><span class="material-symbols-outlined">settings</span></button>
                 <iframe width="560" height="315" src="{training?.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <h1>{training?.title}</h1>
@@ -57,6 +63,7 @@
             {:else}
                 <button on:click={startEdit}><span class="material-symbols-outlined">cancel</span></button>
                 <button form="edit"><span class="material-symbols-outlined">check</span></button>
+                <button form="delete"><span class="material-symbols-outlined">delete</span></button>
                 <form method="POST" id="edit" action="?/edit" use:enhance={({formData}) => {
                     formData.append("questions", JSON.stringify($editTraining.tests));
                     console.log(formData.get("questions"))
@@ -81,6 +88,7 @@
                         <h4>Training Video Description</h4>
                         <textarea class="input" type="text" name="description" bind:value={$editTraining.description} placeholder="Description"></textarea>
                     </label>
+                    <button class="btn variant-filled-primary mb-2" on:click|preventDefault={showEnrolled} >Enrolled Employees</button>
                     <hr/>
                     <h3>Questions</h3>
                     {#each $editTraining.tests as test, i}

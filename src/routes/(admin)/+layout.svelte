@@ -62,6 +62,15 @@
                 <span><p class="text-black dark:text-white">Groups</p></span>
             </AppRailAnchor>
 
+            <AppRailAnchor href="/admin/users" selected={$page.url.pathname === '/admin/users'}>
+            <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    person
+                    </span>
+            </svelte:fragment>
+            <span><p class="text-black dark:text-white">Users</p></span>
+        </AppRailAnchor>
+
             <!-- Bottom slot -->
             <svelte:fragment slot="trail">
                 <AppRailAnchor href="/" selected={$page.url.pathname === '/'}>

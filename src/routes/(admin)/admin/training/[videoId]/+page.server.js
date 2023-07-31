@@ -1,10 +1,11 @@
 import {protectRoute} from "$lib/utils.js";
 import {nameSchema, questionSchema, stringSchema, urlSchema} from "$lib/server/zodSchemas.js";
-import {fail} from "@sveltejs/kit";
+import {fail, redirect} from "@sveltejs/kit";
 import {Training} from "$lib/server/models/Training.js";
+import {User} from "$lib/server/models/User.js";
 
 export const  actions = {
-    new: async ({url, request, locals, params}) => {
+    edit: async ({url, request, locals, params}) => {
         const {user, session} = await locals.auth.validateUser();
         protectRoute(url, user, session, 3)
 
@@ -40,5 +41,42 @@ export const  actions = {
             return fail(300, e.message);
         }
 
+    },
+    delete: async ({url, request, locals, params}) => {
+        const {user, session} = await locals.auth.validateUser();
+        protectRoute(url, user, session, 3)
+
+        try {
+            const training = await Training.findByIdAndDelete(params.videoId);
+        } catch (e) {
+            return fail(300, e.message);
+        }
+        throw redirect(300, "/admin/training")
+    },
+    enroll: async ({url, request, locals, params}) => {
+        const {user, session} = await locals.auth.validateUser();
+        protectRoute(url, user, session, 3)
+
+        const data = await request.formData();
+        
+        try {
+            await User.updateMany({training: {$in: [params.videoId]}}, {
+                $pull: {
+                    training: params.videoId
+                }
+            })
+            const employees = JSON.parse(data.get("users"));
+            for (let i = 0; i < employees.length; i++) {
+                const id = employees[i];
+                await User.findByIdAndUpdate(id, {
+                    $addToSet: {
+                        training: params.videoId
+                    }
+                });
+            }
+        } catch (e) {
+            console.log(e)
+            return fail(300, e.message);
+        }
     }
 }
