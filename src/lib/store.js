@@ -24,6 +24,8 @@ export const editGroup = writable({
     description: "",
 });
 
+export const adminUser = writable({});
+
 
 export const questions = writable([]);
 

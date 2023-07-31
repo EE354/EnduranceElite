@@ -9,10 +9,7 @@
 
 	export let form;
 
-	$: if (form?.message) {
-		errorToast.message = form.message;
-		toastStore.trigger(errorToast);
-	}
+
 </script>
 
 <div class="container h-full mt-32 mb-56 flex justify-center content-center">
