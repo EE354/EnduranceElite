@@ -98,9 +98,8 @@ export const actions = {
 
             schedule.timeStamp.start = start;
             schedule.timeStamp.end = end;
-            schedule.name = name;
+            schedule.employee = name;
             schedule.description = description;
-            schedule.location = location;
 
             await schedule.save();
 
