@@ -10,6 +10,15 @@ export const editEvent = writable({
     }
 });
 
+export const editSchedule = writable({
+    employee: "",
+    location: "",
+    timeStamp: {
+        start: "",
+        end: "",
+    }
+});
+
 export const editTraining = writable({
     title: "",
     description: "",
