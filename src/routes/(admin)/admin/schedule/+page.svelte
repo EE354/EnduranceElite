@@ -2,32 +2,13 @@
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
 
-    const errorToast = {
-        message: "There was an error signing up",
-        background: "variant-filled-error",
-    }
-
-    const successToast = {
-        message: "Schedule created",
-        background: "variant-filled-success",
-    }
-
     export let data;
     export let form;
 
-    $: if (form?.error?.message) {
-        errorToast.message = form.message
-        toastStore.trigger(errorToast)
-    }
-    $: if (form?.message) {
-        errorToast.message = form.message
-        toastStore.trigger(errorToast)
-    }
-
     let page = {
         offset: 0,
-        limit: data.schedules.length,
-        total: data.schedules.length,
+        limit: 5,
+        size: data.schedules.length,
         amounts: [5, 8, 10, 12, 16, 20]
     }
 

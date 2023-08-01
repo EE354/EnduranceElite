@@ -52,7 +52,8 @@
         },
         groupEnrollment: {
             ref: GroupEnrollModal,
-        }
+        },
+
     };
 </script>
 
