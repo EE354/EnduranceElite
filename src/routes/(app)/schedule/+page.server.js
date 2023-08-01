@@ -18,7 +18,7 @@ export const load = async ({locals, url}) => {
     try {
         const {session, user} = locals.auth.validateUser();
         
-        protectRoute(url, session, user, 2)
+        protectRoute(url, session, user, 2);
         const schedules = await Schedule.find();
         let formattedSchedules = [];
         for (let schedule of schedules) {
