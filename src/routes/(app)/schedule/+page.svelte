@@ -33,7 +33,7 @@
             //Trigger the modal activation
             modalStore.trigger(modal);
         },
-        scheduless: data.schedules,
+        schedules: data.schedules,
     };
 
 </script>
