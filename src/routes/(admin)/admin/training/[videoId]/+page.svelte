@@ -39,11 +39,12 @@
         };
     }}></form>
     <div class="flex flex-col mt-12 place-items-center">
-        <div class="card p-4 w-5/6">
+        <div class="card container w-fit p-4 md:p-8">
             {#if !editing}
             <a class="btn variant-filled-surface mb-2" href="/admin/training">Back</a>
             <button on:click={startEdit}><span class="material-symbols-outlined">settings</span></button>
-                <iframe width="560" height="315" src="{training?.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <!-- width="560" height="315" -->
+                <iframe class="w-[24rem] h-[13rem] md:w-[35rem] md:h-[20rem]" src="{training?.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <h1>{training?.title}</h1>
                 <p>{training?.description}</p>
                 <hr class="my-2"/>

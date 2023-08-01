@@ -40,9 +40,9 @@
                 <h3 class="pl-5 pt-5">Users</h3>
             </div>
 
-            <div class="table-container py-4">
+            <div class="table-container p-4">
                 <!-- Native Table Element -->
-                <table class="table table-hover">
+                <table class="table table-hover overflow-auto">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -64,13 +64,13 @@
                     </tbody>
 
                 </table>
-                <Paginator
-                        class="mt-4"
-                        bind:settings={page}
-                        showFirstLastButtons="{true}"
-                        showPreviousNextButtons="{true}"
-                />
             </div>
+            <Paginator
+                class="mt-4"
+                bind:settings={page}
+                showFirstLastButtons="{true}"
+                showPreviousNextButtons="{true}"
+            />
         </div>
     </div>
 </main>

@@ -190,7 +190,7 @@
 					<svelte:fragment slot="lead">
 						<span class="material-symbols-outlined"> captive_portal </span>
 					</svelte:fragment>
-					<span><p class="text-black dark:text-white">Parent portal</p></span>
+					<span><p class="text-black dark:text-white">Parent Portal</p></span>
 				</AppRailAnchor>
 				{#if data.roleId >= 3}
 					<AppRailAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>

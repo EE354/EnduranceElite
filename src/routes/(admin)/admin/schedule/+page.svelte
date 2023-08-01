@@ -83,13 +83,13 @@
                     </tbody>
 
                 </table>
-                <Paginator
+            </div>
+            <Paginator
                         class="mt-4"
                         bind:settings={page}
                         showFirstLastButtons="{true}"
                         showPreviousNextButtons="{true}"
                 />
-            </div>
         </div>
     </div>
 </main>

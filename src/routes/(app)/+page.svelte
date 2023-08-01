@@ -121,6 +121,7 @@
                                     class="btn bg-primary-600 dark:bg-primary-900 ps-5 pe-5"
                                     href={card.href}>
                                     {card.name}
+                                    <!-- (July 31, 2023) angle-right from FontAwesome. https://fontawesome.com/icons/angle-right?f=classic&s=solid -->
                                     <i class="ml-4 fa-solid fa-angle-right"></i>
                                 </a>
                             </div>

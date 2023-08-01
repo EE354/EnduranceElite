@@ -89,15 +89,14 @@
                     </tbody>
 
                 </table>
-                <Paginator
-                        class="mt-4"
-                        bind:settings={page}
-                        showFirstLastButtons="{true}"
-                        showPreviousNextButtons="{true}"
-                />
             </div>
 
-
+            <Paginator
+                class="mt-4"
+                bind:settings={page}
+                showFirstLastButtons="{true}"
+                showPreviousNextButtons="{true}"
+             />
 
         </div>
     </div>
