@@ -1,6 +1,8 @@
 <script>
     import {enhance} from "$app/forms";
     import {drawerStore} from "@skeletonlabs/skeleton";
+    import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
+    import {editSchedule} from "../store.js";
 </script>
 
 <main class="grid place-items-center">
@@ -10,24 +12,26 @@
             drawerStore.close();
         }
     }} class="w-10/12">
+        <input type="hidden" name="id" value="{editSchedule._id}" hidden>
+
         <h3 class="p-5">Edit Schedule</h3>
         <hr class="!border-surface dark:!border-surface-50 mb-4">
 
-        <label class="my-4">
+        <div class="my-4">
 
             <h5>Start Date</h5>
-            <input type="datetime-local" name="start" class="input input-bordered my-2" >
+            <DateInput name="start" bind:date={$editSchedule.timeStamp.start}/>
 
             <h5>End Date</h5>
-            <input type="datetime-local" name="end" class="input input-bordered" >
-        </label>
+            <DateInput name="end" bind:date={$editSchedule.timeStamp.end}/>
+        </div>
         <label class="my-4">
             <h5>Employee Name</h5>
-            <input type="text" name="employee" class="input input-bordered" placeholder="Employee Name">
+            <input type="text" name="employee" class="input input-bordered" bind:value={$editSchedule.employee} placeholder="Employee Name">
         </label>
         <label class="my-4">
             <h5>Description</h5>
-            <textarea class="textarea" rows="4" name="description" placeholder="Schedule description" />
+            <textarea class="textarea" rows="4" name="description" bind:value={$editSchedule.description} placeholder="Schedule description" />
         </label>
 
         <button class="btn variant-filled-secondary ">Update Schedule</button>
