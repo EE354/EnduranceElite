@@ -30,7 +30,7 @@
                 <p>
                     {($editUser.roleId === 1) ? "User" : ($editUser.roleId === 2) ? "Employee" : ($editUser.roleId === 3) ? "Admin" : ""} ({$editUser.roleId})
                     {#if $page.data.user.userId !== $editUser._id}<button on:click={startEdit}>
-                        <!-- (August 31, 2023) Pencil from FontAwesome. https://fontawesome.com/icons/pencil?f=classic&s=solid -->
+                        <!-- (July 31, 2023) pencil from FontAwesome. https://fontawesome.com/icons/pencil?f=classic&s=solid -->
                         <i class="fa-solid fa-pencil"></i></button>{/if}
                 </p>
             {:else}
@@ -50,8 +50,10 @@
     {#each userTrainings as training}
         <p>
             {#if $editUser.training.find(t => t._id === training._id)?.completed}
+                <!-- (July 31, 2023) x from FontAwesome. https://fontawesome.com/icons/x?f=classic&s=solid -->
                 <i class="fa-solid fa-x"></i>
             {:else}
+                <!-- (July 31, 2023) x from FontAwesome. https://fontawesome.com/icons/x?f=classic&s=solid -->
                 <i class="fa-solid fa-x"></i>
             {/if}
             {training.title}
@@ -70,7 +72,7 @@
     {/each}
     </ul>
     <br />
-    
+
     {#if editing}
         <form method="POST" use:enhance={({formData}) => {
             formData.append("_id", $editUser._id);

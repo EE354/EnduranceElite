@@ -77,7 +77,7 @@
                         news
                         </span>
                 </svelte:fragment>
-                <span><p class="text-black dark:text-white">news</p></span>
+                <span><p class="text-black dark:text-white">News</p></span>
             </AppRailAnchor>
 
 

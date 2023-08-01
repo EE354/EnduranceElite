@@ -44,7 +44,7 @@
 
             <div class="md:flex flex-wrap gap-2 p-4">
                 {#each data.training as training}
-                    <div class="card mb-4 md:mb-0 p-4">
+                    <div class="card w-[18rem] mb-4 md:mb-0 p-4">
                         <a href="/admin/training/{training._id}">
                             <img alt="Training Video" src="https://img.youtube.com/vi/{getCode(training.video)}/0.jpg" class="rounded-xl container w-[16rem]"/>
                             <hr class="m-2"/>
