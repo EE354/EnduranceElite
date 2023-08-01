@@ -41,7 +41,7 @@
         <label class="my-1">
             <h4>Training Video URL</h4>
             <p class="text-gray-500">The embedded src youtube link</p>
-            <input class="input" type="text" name="url" placeholder="Youtube URL link">
+            <input class="input" type="text" name="url" placeholder="https://www.youtube.com/embed/code">
         </label>
         <div>
             <h4>Training Video Questions</h4>
