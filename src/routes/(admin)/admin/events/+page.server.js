@@ -60,6 +60,8 @@ export const actions = {
     delete: async({locals, request}) => {
         const {session, user} = await locals.auth.validateUser();
 
+        protectRoute(url, user, session, 3);
+
         const form = await request.formData();
         const id = form.get("id");
 
@@ -79,6 +81,7 @@ export const actions = {
     },
     edit: async({locals, request, url}) => {
         const {session, user} = await locals.auth.validateUser();
+
         protectRoute(url, user, session, 3)
 
         const form = await request.formData();
@@ -118,7 +121,5 @@ export const actions = {
                 message: e.message,
             }
         }
-
-
     }
 }
