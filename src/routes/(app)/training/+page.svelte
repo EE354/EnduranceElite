@@ -22,17 +22,19 @@
             </div>
             <hr class="my-2"/>
 
-            <div class="grid grid-cols-4 gap-2 p-4">
+            <div class="md:flex flex-wrap gap-2 p-4">
                 {#each data.training as training}
-                    <a class="card p-4" href="/training/{training._id}">
-                        <div class="">
-                            <img src="https://img.youtube.com/vi/{getCode(training.video)}/0.jpg" class="rounded-xl mx-auto"/>
-                        </div>
-                        <hr class="m-2"/>
-                        <h3>{training.title}</h3>
-                        <p>{training.description}</p>
-                        <p>{training.tests.length} Question{((training.tests.length < 1) ? 's' : '')}</p>
-                    </a>
+                    <div class="card w-[18rem] mb-4 md:mb-0 p-4">
+                        <a href="/admin/training/{training._id}">
+                            <img alt="Training Video" src="https://img.youtube.com/vi/{getCode(training.video)}/0.jpg" class="rounded-xl container w-[16rem]"/>
+                            <hr class="m-2"/>
+                            <div class="p-4">
+                                <h3>{training.title}</h3>
+                                <p>{training.description}</p>
+                                <p>{training.tests.length} Question {((training.tests.length < 1) ? 's' : '')}</p>
+                            </div>
+                        </a>
+                    </div>
                 {/each}
             </div>
             {(data.training.length === 0) ? "No Enrolled Trainings" : ""}
