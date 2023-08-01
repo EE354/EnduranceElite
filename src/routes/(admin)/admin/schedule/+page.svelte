@@ -1,6 +1,7 @@
 <script>
 
     import {drawerStore, Paginator, toastStore} from "@skeletonlabs/skeleton";
+	import { editSchedule } from "../../../../lib/store.js";
 
     export let data;
     export let form;
@@ -28,7 +29,8 @@
         });
     }
 
-    const EditSchedule = () => {
+    const EditSchedule = (schedule) => {
+        $editSchedule = schedule;
         drawerStore.open({
             id: "EditScheduleDrawer",
             position: "right",
@@ -75,7 +77,8 @@
                             <td>{new Date(schedule.timeStamp.start).toString()}</td>
                             <td>{schedule.employee}</td>
                             <td>{schedule.description}</td>
-                            <td class="table-cell-fit"><button on:click={EditSchedule}><span class="material-symbols-outlined">edit</span></button></td>
+
+                            <td class="table-cell-fit"><button on:click={() => {EditSchedule(schedule)}}><span class="material-symbols-outlined">edit</span></button></td>
                             <td><button form="{schedule._id}" formaction="?/delete"><span class="material-symbols-outlined">delete</span></button></td>
 
                         </tr>
