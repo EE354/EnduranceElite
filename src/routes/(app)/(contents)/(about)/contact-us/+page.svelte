@@ -1,6 +1,11 @@
 <main>
+	<div class="container text-center bg-primary-500 dark:bg-primary-900 p-4">
+        <!-- Header Block -->
+        <h1>Contact Us</h1>
+    </div>
+
 	<div class="container p-8 lg:flex">
-		<div class="card bg-primary-500 p-8 lg:w-3/7">
+		<div class="card bg-primary-500 p-8 shadow-2xl lg:w-3/7">
 			<!-- Contact Information Block -->
 			<h4>Contact Information</h4>
 			<p>

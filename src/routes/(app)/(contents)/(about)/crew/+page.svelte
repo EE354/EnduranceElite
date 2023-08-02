@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-	<div class="container flex flex-wrap gap-4 place-content-center p-8">
+	<div class="container flex flex-wrap gap-8 place-content-center p-8">
         <!-- Avatars Grid -->
 		{#each data.crew as { name, roles, src, initials}}
 			<div class="grid place-items-center w-32 text-center">

@@ -11,7 +11,7 @@ export const load = async ({locals, url}) => {
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				crossAxis: -37
+				crossAxis: -48
 			}
 		}
 	};
@@ -33,7 +33,7 @@ export const load = async ({locals, url}) => {
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				crossAxis: 0
+				crossAxis: -200
 			}
 		}
 	};
@@ -51,7 +51,7 @@ export const load = async ({locals, url}) => {
                     href: "#",
                     childNavItems: [
                         { label: "About Us", href: "/about" },
-                        { label: "Tuition", href: "/tuition" },
+                        { label: "Tuition & Policies", href: "/tuition" },
                         { label: "Crew", href: "/crew" },
                         { label: "Join the Crew", href: "/join-the-crew" },
                         { label: "Contact Us", href: "/contact-us" },

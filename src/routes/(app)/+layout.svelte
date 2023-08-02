@@ -70,8 +70,13 @@
 	// Account Pop Up Config
 	const accountPopup = {
 		event: 'click',
-		target: 'popupClick',
-		placement: 'top'
+		target: 'accountPopup',
+		placement: 'bottom',
+		middleware: {
+			offset: {
+				crossAxis: 0
+			}
+		}
 	};
 
 	// Mobile Menu Drawer Store Config
@@ -118,15 +123,15 @@
 							<div class="grid grid-cols-3 gap-4">
 								{#each parentNavItems as { label, href, childNavItems }}
 									<div class={span}>
-										<a {href} class="hover:underline">{label}</a>
+										<div class="max-w-[8rem]">
+											<a {href} class="hover:underline">{label}</a>
+										</div>
 										{#if childNavItems != null}
 											<hr />
 											{#each childNavItems as { label, href }}
 												<a {href} class="hover:underline">{label}</a>
 												<br />
 											{/each}
-										{:else}
-											<br />
 										{/if}
 									</div>
 								{/each}
@@ -135,8 +140,8 @@
 					{/each}
 
 					{#if data.roleId >= 1}
-						<button use:popup={accountPopup}>Account</button>
-						<div class="card p-4" data-popup="popupClick">
+						<button class="w-20 h-12" use:popup={accountPopup}>Account</button>
+						<div class="neutral p-4" data-popup="accountPopup">
 							<a href="/account">Dashboard</a>
 							<a href="/settings">Settings</a>
 							<hr class="rounded" />
