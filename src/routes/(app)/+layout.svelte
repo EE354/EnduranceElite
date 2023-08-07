@@ -143,7 +143,7 @@
 
 					{#if data.roleId >= 1}
 						<button class="w-20 h-12" use:popup={accountPopup}>Account</button>
-						<div class="neutral text-center p-4" data-popup="accountPopup">
+						<div class="neutral dark:bg-[#31465B] border-[1px] text-center p-4 shadow-2xl" data-popup="accountPopup">
 							<a  href="/settings">Settings</a>
 							<hr class="rounded" />
 							<form method="POST" action="/account?/logout" class="mt-4">
@@ -156,9 +156,29 @@
 					{/if}
 				{:else}
 					<button name="Expand for Navigation Menu" on:click={openMobileMenu}>
+						<!-- (August 6th, 2023) bars from FontAwesome. https://fontawesome.com/icons/bars?f=classic&s=solid -->
 						<i class="fa-solid fa-bars fa-xl" />
 					</button>
+
+					<button class="w-8 h-12" use:popup={accountPopup}>
+						<!-- (August 6th, 2023) user from FontAwesome. https://fontawesome.com/icons/user?f=classic&s=regular -->
+						<i class="fa-regular fa-user fa-lg"></i>
+					</button>
+					<div class="neutral dark:bg-[#31465B] border-[1px] text-center p-4 shadow-2xl" data-popup="accountPopup">
+						{#if data.roleId >= 1}
+								<a  href="/settings">Settings</a>
+								<hr class="rounded" />
+								<form method="POST" action="/account?/logout" class="mt-4">
+									<button type="submit" value="" class="btn variant-filled-error">Logout</button>
+								</form>
+						{:else}
+							<a class="nav-link text-black dark:text-white" href="/signup">Sign Up</a>
+							<hr class="rounded"/>
+							<a class="btn bg-primary-600 dark:bg-primary-900 mt-4" href="/login">Log In</a>
+						{/if}
+					</div>
 				{/if}
+
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
