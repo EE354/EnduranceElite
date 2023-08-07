@@ -5,7 +5,9 @@
 		AppRailAnchor,
 		AppRailTile,
 		AppShell,
-		LightSwitch
+		LightSwitch,
+		TabGroup,
+		TabAnchor
 	} from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
 
@@ -142,7 +144,6 @@
 					{#if data.roleId >= 1}
 						<button class="w-20 h-12" use:popup={accountPopup}>Account</button>
 						<div class="neutral p-4" data-popup="accountPopup">
-							<a href="/account">Dashboard</a>
 							<a href="/settings">Settings</a>
 							<hr class="rounded" />
 							<form method="POST" action="/account?/logout" class="mt-4">
@@ -164,6 +165,7 @@
 
 	<!-- Left Rail -->
 	<svelte:fragment slot="sidebarLeft">
+		{#if screenSize > 800}
 		<AppRail>
 			<AppRailAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
 				<svelte:fragment slot="lead">
@@ -182,7 +184,7 @@
 					</AppRailAnchor>
 				{/if}
 
-				<AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
+				<AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/training')}>
 					<svelte:fragment slot="lead">
 						<span class="material-symbols-outlined text-black dark:text-white"> weight </span>
 					</svelte:fragment>
@@ -208,8 +210,62 @@
 				<AppRailTile><div class="p-4"><LightSwitch /></div></AppRailTile>
 			</svelte:fragment>
 		</AppRail>
+		{/if}
 	</svelte:fragment>
 
 	<slot />
+
+	<!-- Left Rail -->
+	<svelte:fragment slot="footer">
+		{#if screenSize <= 800}
+			<TabGroup 
+			justify="justify-center"
+			active="variant-filled-primary"
+			hover="hover:variant-soft-primary"
+			flex="flex-1 lg:flex-none"
+			rounded=""
+			border=""
+			class="bg-surface-100-800-token w-full"
+			>
+				<TabAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
+					<svelte:fragment slot="lead">
+						<span class="material-symbols-outlined text-black dark:text-white"> event </span>
+					</svelte:fragment>
+					<span><p class="text-black dark:text-white">Calendar</p></span>
+				</TabAnchor>
+				
+				{#if data.roleId >= 2}
+					<TabAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
+						<svelte:fragment slot="lead">
+							<span class="material-symbols-outlined text-black dark:text-white"> schedule </span>
+						</svelte:fragment>
+						<span><p class="text-black dark:text-white">Schedule</p></span>
+					</TabAnchor>
+					<TabAnchor href="/training" selected={$page.url.pathname.startsWith('/training')}>
+						<svelte:fragment slot="lead">
+							<span class="material-symbols-outlined text-black dark:text-white"> weight </span>
+						</svelte:fragment>
+						<span><p class="text-black dark:text-white">Training</p></span>
+					</TabAnchor>
+				{/if}
+
+				<TabAnchor href="https://app.iclasspro.com/portal/enduranceelite">
+					<svelte:fragment slot="lead">
+						<span class="material-symbols-outlined"> captive_portal </span>
+					</svelte:fragment>
+					<span><p class="text-black dark:text-white">Parent Portal</p></span>
+				</TabAnchor>
+
+				<!-- {#if data.roleId >= 3}
+					<TabAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
+						<svelte:fragment slot="lead">
+							<span class="material-symbols-outlined"> shield_person </span>
+						</svelte:fragment>
+						<span><p class="text-black dark:text-white">Admin</p></span>
+					</TabAnchor>
+				{/if} -->
+			</TabGroup>
+		{/if}
+	</svelte:fragment>
 </AppShell>
 
