@@ -1,9 +1,19 @@
 <script>
     import {AppBar, AppRail, AppRailAnchor, AppRailTile, AppShell, LightSwitch} from "@skeletonlabs/skeleton";
     import {page} from "$app/stores";
+    import {popup} from '@skeletonlabs/skeleton';
 
-    export let data;
-
+	// Account Pop Up Config
+	const accountPopup = {
+		event: 'click',
+		target: 'accountPopup',
+		placement: 'bottom',
+		middleware: {
+			offset: {
+				crossAxis: -32
+			}
+		}
+	};
 </script>
 
 <AppShell>
@@ -16,6 +26,17 @@
                         <p class="pl-4 pt-3 dark:text-white text-black text-xl font-">Admin Dashboard</p>
                     </a>
 
+            </svelte:fragment>
+
+            <svelte:fragment slot="trail">
+                <button class="w-20 h-12" use:popup={accountPopup}>Account</button>
+                    <div class="neutral dark:bg-[#31465B] border-[1px] text-center p-4 shadow-2xl" data-popup="accountPopup">
+                        <a  href="/settings">Settings</a>
+                        <hr class="rounded" />
+                        <form method="POST" action="/account?/logout" class="mt-4">
+                            <button type="submit" value="" class="btn variant-filled-error">Logout</button>
+                        </form>
+                    </div>
             </svelte:fragment>
 
         </AppBar>
