@@ -76,7 +76,7 @@
 		placement: 'bottom',
 		middleware: {
 			offset: {
-				crossAxis: 0
+				crossAxis: -32
 			}
 		}
 	};
@@ -143,8 +143,8 @@
 
 					{#if data.roleId >= 1}
 						<button class="w-20 h-12" use:popup={accountPopup}>Account</button>
-						<div class="neutral p-4" data-popup="accountPopup">
-							<a href="/settings">Settings</a>
+						<div class="neutral text-center p-4" data-popup="accountPopup">
+							<a  href="/settings">Settings</a>
 							<hr class="rounded" />
 							<form method="POST" action="/account?/logout" class="mt-4">
 								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
