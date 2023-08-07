@@ -2,15 +2,6 @@ import {Event} from '$lib/server/models/Event';
 import {Schedule} from "$lib/server/models/Schedule.js";
 import {User} from "$lib/server/models/User.js";
 
-const formatEvents = async (events, callback) => {
-    let formattedEvents = [];
-    for (let event of events) {
-        formattedEvents.push(await callback(event));
-    }
-    return formattedEvents;
-}
-
-
 export const load = async ({locals}) => {
     const formatEvent = async (event) => {
         return {
@@ -26,6 +17,7 @@ export const load = async ({locals}) => {
             backgroundColor: `rgba(var(--color-primary-${900}) / 1);`,
         };
     };
+
     const formatSchedule = async (event) => {
         const employee = await User.findById(event.employee);
         return {
@@ -43,6 +35,22 @@ export const load = async ({locals}) => {
         };
     };
 
+    const formatEvents = async (events) => {
+        let formattedEvents = [];
+        events.forEach((event) => {
+             formattedEvents.push(formatEvent(event));
+        })
+        console.log(events);
+        return formattedEvents;
+    }
+    
+    const formatSchedules = async (events) => {
+        let formattedEvents = [];
+        events.forEach((event) => {
+             formattedEvents.push(formatSchedule(event));
+        })
+        return formattedEvents;
+    }
 
     try {
         const {session, user} = await locals.auth.validateUser();
@@ -66,18 +74,16 @@ export const load = async ({locals}) => {
             })
         }
         if (user?.roleId >= 3) {
-            adminEvents.push(...await formatEvents((await Event.find()), formatEvent))
-            adminEvents.push(...await formatEvents((await Schedule.find()), formatSchedule))
+            adminEvents.push(...await formatEvents((await Event.find())))
+            adminEvents.push(...await formatSchedules((await Schedule.find())))
         }
-
-
 
         return {
             status: 200,
             user: user,
-            publicEvents: await formatEvents(publicEvents, user, formatEvent),
-            groupEvents: await formatEvents(groupEvents, user, formatEvent),
-            schedule: await formatEvents(schedule, user, formatSchedule),
+            publicEvents: await formatEvents(publicEvents, user),
+            groupEvents: await formatEvents(groupEvents, user),
+            schedule: await formatSchedules(schedule, user),
             adminEvents: adminEvents,
         }
     } catch (e) {

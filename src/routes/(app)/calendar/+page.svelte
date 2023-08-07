@@ -45,6 +45,7 @@
 
     let showFilter = false;
 
+    console.log(filteredEvents);
     let calendar;
     let plugins = [DayGrid, Interaction];
     let options = {
