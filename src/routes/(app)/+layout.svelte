@@ -17,7 +17,6 @@
 	import { popup } from '@skeletonlabs/skeleton';
 
 	import { drawerStore } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
 
 	export let data;	// For loading external data
 	let screenSize;		// For mobile menu display
