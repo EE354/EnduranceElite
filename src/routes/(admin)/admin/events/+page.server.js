@@ -1,6 +1,8 @@
 import {dateOfBirthSchema, eventDateSchema, nameSchema, stringSchema} from "$lib/server/zodSchemas.js";
 import {Event} from "$lib/server/models/Event";
 import {protectRoute} from "$lib/utils.js";
+import {Group} from "$lib/server/models/Group.js";
+import mongoose from "mongoose";
 
 
 export const load = async ({url, locals}) => {
@@ -15,7 +17,6 @@ export const load = async ({url, locals}) => {
 export const actions = {
     create: async ({locals, request, url}) => {
         const {session, user} = await locals.auth.validateUser();
-
         protectRoute(url, user, session, 3)
 
         const form = await request.formData();
@@ -24,16 +25,22 @@ export const actions = {
         const name = form.get("name");
         const description = form.get("description");
         const location = form.get("location");
-
-        if (start > end) throw new Error("Start date must be before end date");
-
+        const groupName = form.get("group");
 
         try {
+            if (start > end) throw new Error("Start date must be before end date");
             eventDateSchema.parse(start);
             eventDateSchema.parse(end);
             nameSchema.parse(name);
             stringSchema.parse(description);
             stringSchema.parse(location);
+            stringSchema.parse(groupName);
+
+            let group = ""
+            if (groupName !== "") {
+                group = await Group.findOne({name: groupName});
+                if (!group) throw new Error("Group does not exist");
+            }
 
             await Event.create({
                 timeStamp: {
@@ -43,6 +50,7 @@ export const actions = {
                 name: name,
                 description: description,
                 location: location,
+                group: group?._id.toString() ?? "",
             });
 
             return {
@@ -57,6 +65,7 @@ export const actions = {
         }
 
     },
+
     delete: async({locals, request}) => {
         const {session, user} = await locals.auth.validateUser();
 
@@ -79,6 +88,7 @@ export const actions = {
             }
         }
     },
+
     edit: async({locals, request, url}) => {
         const {session, user} = await locals.auth.validateUser();
 
@@ -91,23 +101,37 @@ export const actions = {
         const name = form.get("name");
         const description = form.get("description");
         const location = form.get("location");
-
-        if (start > end) throw new Error("Start date must be before end date");
+        const groupName = form.get("group");
 
         try {
+            if (start > end) throw new Error("Start date must be before end date");
+
             eventDateSchema.parse(start);
             eventDateSchema.parse(end);
             nameSchema.parse(name);
             stringSchema.parse(description);
             stringSchema.parse(location);
+            stringSchema.parse(groupName);
+
+            let group = ""
+            if (groupName !== "") {
+                const foundGroup = await Group.findOne({name: groupName});
+                if (!foundGroup) throw new Error("Group does not exist");
+                group = foundGroup._id.toString()
+                console.log(group)
+            }
+
+
 
             const event = await Event.findById(id);
+            console.log(event)
 
             event.timeStamp.start = start;
             event.timeStamp.end = end;
             event.name = name;
             event.description = description;
             event.location = location;
+            event.group = group;
 
             await event.save();
 
@@ -116,9 +140,11 @@ export const actions = {
                 message: "Event updated successfully",
             }
         } catch (e) {
+            console.log(e)
             return {
-                status: 400,
-                message: e.message,
+                status: 300,
+                message: "Event updated unsuccessfully",
+                error: true
             }
         }
     }

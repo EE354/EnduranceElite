@@ -1,8 +1,31 @@
 <script>
     import {enhance} from "$app/forms";
     import {editEvent} from "../store.js";
-    import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
-    import {drawerStore} from "@skeletonlabs/skeleton";
+    import DateInput from "./DateInput.svelte";
+    import {Autocomplete, drawerStore, popup} from "@skeletonlabs/skeleton";
+    import {page} from "$app/stores";
+
+    const getGroupOptions = (groups) => {
+        return groups.map(group => {
+            return {
+                label: group.name,
+                keyword: group.name,
+                value: group._id,
+                meta: {
+                    group
+                }
+            }
+        })
+    }
+    const popupSelect = (event) => {
+        const group = event.detail.meta.group;
+        $editEvent.group = group.name;
+    }
+    let popupSettings = {
+        event: 'focus-click',
+        target: 'popupAutocomplete',
+        placement: 'bottom',
+    };
 </script>
 
 <main class="grid place-items-center">
@@ -12,7 +35,7 @@
             drawerStore.close();
         }
     }} class="w-10/12">
-        <input type="hidden" name="id" value="{$editEvent._id}" hidden >
+        <input type="hidden" name="id" value="{$editEvent.id}" hidden >
 
         <h3 class="p-5">Edit Event</h3>
         <hr class="!border-surface dark:!border-surface-50 mb-4">
@@ -37,6 +60,26 @@
         <label class="my-4">
             <h5>Location</h5>
             <input type="text" name="location" bind:value={$editEvent.location} class="input input-bordered" placeholder="Event Location">
+        </label>
+
+        <label class="my-4">
+            <h5>Group Name</h5>
+            <p class="text-gray-500 ">Leave blank for public event</p>
+            <input
+                    class="input autocomplete"
+                    type="search"
+                    name="group"
+                    bind:value={$editEvent.group}
+                    placeholder=""
+                    use:popup={popupSettings}
+            />
+            <div data-popup="popupAutocomplete" class="card w-full max-w-sm max-h-48 p-4 overflow-y-auto" tabindex="-1">
+                <Autocomplete
+                        bind:input={$editEvent.group}
+                        options={getGroupOptions($page.data.groups)}
+                        on:selection={popupSelect}
+                />
+            </div>
         </label>
 
         <button class="btn variant-filled-primary" type="submit">Update Event</button>

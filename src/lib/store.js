@@ -8,7 +8,8 @@ export const editEvent = writable({
     timeStamp: {
         start: "",
         end: "",
-    }
+    },
+    group: ""
 });
 
 export const editSchedule = writable({
@@ -45,5 +46,4 @@ export const enabledFilters = localStorageStore("enabledFilters", {
     public: true,
     group: true,
     schedule: true,
-    admin: false,
 });

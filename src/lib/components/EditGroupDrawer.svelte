@@ -1,7 +1,7 @@
 <script>
     import {enhance} from "$app/forms";
     import {editGroup} from "$lib/store";
-    import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
+    import DateInput from "./DateInput.svelte";
     import {drawerStore} from "@skeletonlabs/skeleton";
 </script>
 

@@ -31,6 +31,7 @@
 
     const EditSchedule = (schedule) => {
         $editSchedule = schedule;
+        $editSchedule.name = schedule.employee.name.first + " " + schedule.employee.name.last;
         drawerStore.open({
             id: "EditScheduleDrawer",
             position: "right",

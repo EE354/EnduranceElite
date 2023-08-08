@@ -3,7 +3,7 @@ import {Schedule} from "$lib/server/models/Schedule.js";
 import {User} from "$lib/server/models/User.js";
 
 export const load = async ({locals}) => {
-    const formatEvent = async (event) => {
+    const formatEvent = (event) => {
         return {
             resourceId: event.id,
             title: event.name,
@@ -18,8 +18,7 @@ export const load = async ({locals}) => {
         };
     };
 
-    const formatSchedule = async (event) => {
-        const employee = await User.findById(event.employee);
+    const formatSchedule = (event, employee) => {
         return {
             resourceId: event.id,
             title: "Work Shift: " + employee.name.first + " " + employee.name.last,
@@ -35,20 +34,20 @@ export const load = async ({locals}) => {
         };
     };
 
-    const formatEvents = async (events) => {
+    const formatEvents = (events) => {
         let formattedEvents = [];
         events.forEach((event) => {
              formattedEvents.push(formatEvent(event));
         })
-        console.log(events);
         return formattedEvents;
     }
     
     const formatSchedules = async (events) => {
         let formattedEvents = [];
-        events.forEach((event) => {
-             formattedEvents.push(formatSchedule(event));
-        })
+        for (const event of events) {
+            const employee = await User.findById(event.employee);
+            formattedEvents.push(formatSchedule(event, employee));
+        }
         return formattedEvents;
     }
 
@@ -74,15 +73,15 @@ export const load = async ({locals}) => {
             })
         }
         if (user?.roleId >= 3) {
-            adminEvents.push(...await formatEvents((await Event.find())))
-            adminEvents.push(...await formatSchedules((await Schedule.find())))
+            adminEvents.push(...formatEvents((await Event.find())))
+            adminEvents.push(... await formatSchedules((await Schedule.find())))
         }
 
         return {
             status: 200,
             user: user,
-            publicEvents: await formatEvents(publicEvents, user),
-            groupEvents: await formatEvents(groupEvents, user),
+            publicEvents: formatEvents(publicEvents, user),
+            groupEvents: formatEvents(groupEvents, user),
             schedule: await formatSchedules(schedule, user),
             adminEvents: adminEvents,
         }

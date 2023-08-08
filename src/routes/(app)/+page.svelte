@@ -36,13 +36,13 @@
             <!-- Wrapper for overflow -->
             <div class=" scroll-smooth flex overflow-x-auto gap-2 p-2">
                 {#each data.news as news}
-                    <a class="card bg-neutral-100 w-modal-slim rounded-2xl h-[14rem] pr-2 py-1" href="/">
+                    <div class="card bg-neutral-100 w-modal-slim rounded-2xl h-[14rem] pr-2 py-1" href="/">
                         <div class="overflow-y-auto p-2 pl-4 w-[19rem]">
                             <p>{news.date}</p>
                             <h3>{news.title}</h3>
                             <p class="h-[8rem]">{news.body}</p>
                         </div>
-                    </a>
+                    </div>
                 {/each}
             </div>
         </div>

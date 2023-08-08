@@ -32,6 +32,7 @@
 
     const startEdit = (event) => {
         $editEvent = event;
+        console.log($editEvent)
         drawerStore.open({
             id: "EditEventDrawer",
             position: "right",
@@ -62,6 +63,7 @@
                         <th>Start</th>
                         <th>End</th>
                         <th>Name</th>
+                        <th>Group</th>
                         <th>Description</th>
                         <th>location</th>
                         <th></th>
@@ -76,8 +78,9 @@
                             </form>
                             <td>{i + start + 1}</td>
                             <td>{new Date(event.timeStamp.start).toString()}</td>
-                            <td>{new Date(event.timeStamp.start).toString()}</td>
+                            <td>{new Date(event.timeStamp.end).toString()}</td>
                             <td>{event.name}</td>
+                            <td>{event.group}</td>
                             <td>{event.description}</td>
                             <td>{event.location}</td>
 

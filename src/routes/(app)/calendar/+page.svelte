@@ -4,13 +4,18 @@
     import Interaction from '@event-calendar/interaction';
     import { modalStore } from "@skeletonlabs/skeleton";
     import {onMount} from "svelte";
-    import Modal from "./Modal.svelte";
+    import Modal from "$lib/components/EventModal.svelte";
     import FilterButton from "./FilterButton.svelte";
     import {enabledFilters} from "$lib/store.js";
+    import { slide } from 'svelte/transition';
+
 
     export let data;
-    console.log(data)
+    if (data.roleId === 0) {
+        enabledFilters.set({public: true, group: true, schedule: true});
+    }
 
+    //Get the enabled filters from the lists
     $: filteredEvents = (() => {
         let formatedEvents = [];
         if ($enabledFilters.public) {
@@ -20,9 +25,9 @@
             formatedEvents = [...formatedEvents, ...data.groupEvents];
         }
         if ($enabledFilters.employee) {
-            formatedEvents = [...formatedEvents, ...data.employeeEvents];
+            formatedEvents = [...formatedEvents, ...data.schedule];
         }
-        if ($enabledFilters.admin) {
+        if (adminFilter) {
             formatedEvents = [...data.adminEvents];
         }
         return formatedEvents;
@@ -44,11 +49,11 @@
     }
 
     let showFilter = false;
+    let adminFilter = false;
 
-    console.log(filteredEvents);
     let calendar;
     let plugins = [DayGrid, Interaction];
-    let options = {
+    $: options = {
         view: 'dayGridMonth',
         eventClick: async (info) => {
             //Set the props of the modal component
@@ -63,35 +68,39 @@
 
 </script>
 <div class="container p-4 ">
-        <button class="btn variant-filled-primary my-2" on:click={() => showFilter = !showFilter}>Show Filter</button>
+
+    {#if data.roleId > 0}
+    <button class="btn variant-filled-primary my-2" on:click={() => showFilter = !showFilter}>Show Filter</button>
         <hr/>
-        <div hidden={!showFilter} class="flex-col flex">
+    {/if}
+    {#if showFilter}
+        <div class="flex-col flex" transition:slide|global>
             <!-- Filter options for showing public events, events belonging to each group enrolled,
             schedules for employees if they are logged in, and showing everything for an admin -->
+            {#if !adminFilter}
+                <FilterButton bind:toggled={$enabledFilters.public}>
+                    <h3>Show Public Events</h3>
+                </FilterButton>
+                {#if data.roleId >= 1}
+                <FilterButton bind:toggled={$enabledFilters.group}>
+                    <h3>Show Group Events</h3>
+                </FilterButton>
+                {/if}
 
-            <FilterButton bind:toggled={$enabledFilters.public}>
-                <h3>Show Public Events</h3>
-            </FilterButton>
-
-            {#if data.roleId >= 1}
-            <FilterButton bind:toggled={$enabledFilters.group}>
-                <h3>Show Group Events</h3>
-            </FilterButton>
+                {#if data.roleId >= 2}
+                <FilterButton bind:toggled={$enabledFilters.schedule}>
+                    <h3>Show Schedule</h3>
+                </FilterButton>
+                {/if}
             {/if}
-
-            {#if data.roleId >= 2}
-            <FilterButton bind:toggled={$enabledFilters.schedule}>
-                <h3>Show Schedule</h3>
-            </FilterButton>
-            {/if}
-
             {#if data.roleId >= 3}
-            <FilterButton bind:toggled={$enabledFilters.admin}>
+            <FilterButton bind:toggled={adminFilter}>
                 <h3>Show All Events</h3>
             </FilterButton>
             {/if}
 
             <hr class="mt-2"/>
         </div>
-    <Calendar bind:this={calendar} {plugins} {options} />
+    {/if}
+    <Calendar bind:this={calendar} {plugins} bind:options={options} />
 </div>

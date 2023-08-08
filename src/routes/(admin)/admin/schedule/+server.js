@@ -9,6 +9,7 @@ export const GET = async ({url, locals}) => {
     protectRoute(url, user, session, 3);
 
     const resSchedules = await Schedule.find({})
+    const resEmployees = await User.find({roleId: { $gte: 2}})
 
     let schedules = [];
     for (let schedule of resSchedules) {
@@ -22,5 +23,8 @@ export const GET = async ({url, locals}) => {
         })
     }
 
-    return json(schedules);
+    return json({
+        schedules: schedules,
+        employees: resEmployees
+    });
 }
