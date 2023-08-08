@@ -24,7 +24,7 @@
             <textarea class="textarea" rows="4" name="description" placeholder="Group description" />
         </label>
 
-        <button class="btn variant-filled-secondary ">Add Group</button>
+        <button class="btn variant-filled-primary ">Add Group</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>

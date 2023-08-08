@@ -31,7 +31,7 @@
             <textarea class="textarea" rows="4" name="description" placeholder="Schedule description" />
         </label>
 
-        <button class="btn variant-filled-secondary ">Add Schedule</button>
+        <button class="btn variant-filled-primary ">Add Schedule</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>

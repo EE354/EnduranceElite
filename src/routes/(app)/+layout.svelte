@@ -100,8 +100,7 @@
 				<a href="/" class="inline-flex h-1/3">
 					<img
 						alt="Endurance Elite Logo"
-						class="badge w-2/12 p-0"
-						style="max-height: 160%"
+						class="badge w-1/6 p-0"
 						src="$lib/Logos/ee-icon.png"
 					/>
 					<h4 class="ml-4 inline-block mt-4 align-middle">Endurance Elite</h4>

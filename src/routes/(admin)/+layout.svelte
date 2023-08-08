@@ -22,7 +22,7 @@
 
             <svelte:fragment slot="lead">
                     <a href="/admin" class="flex flex-row">
-                        <img alt="Endurance Elite Logo" class="w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/EE Logo.png"/>
+                        <img alt="Endurance Elite Logo" class="badge w-[6.8rem] p-0" src="$lib/Logos/EE Logo.png"/>
                         <p class="pl-4 pt-3 dark:text-white text-black text-xl font-">Admin Dashboard</p>
                     </a>
 

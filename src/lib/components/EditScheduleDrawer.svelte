@@ -34,7 +34,7 @@
             <textarea class="textarea" rows="4" name="description" bind:value={$editSchedule.description} placeholder="Schedule description" />
         </label>
 
-        <button class="btn variant-filled-secondary ">Update Schedule</button>
+        <button class="btn variant-filled-primary ">Update Schedule</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>

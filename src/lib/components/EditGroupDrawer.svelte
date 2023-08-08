@@ -28,7 +28,7 @@
         </label>
 
 
-        <button class="btn variant-filled-secondary" type="submit">Update Group</button>
+        <button class="btn variant-filled-primary" type="submit">Update Group</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>
