@@ -55,6 +55,16 @@
                 <span><p class="text-black dark:text-white">Events</p></span>
             </AppRailAnchor>
 
+            <!-- Calendar Button -->
+            <AppRailAnchor href="/admin/schedule" selected={$page.url.pathname === '/admin/schedule'}>
+                <svelte:fragment slot="lead">
+                    <span class="material-symbols-outlined text-black dark:text-white">
+                    schedule
+                    </span>
+                </svelte:fragment>
+                <span><p class="text-black dark:text-white">Schedules</p></span>
+            </AppRailAnchor>
+
             <!-- Training Button -->
             <AppRailAnchor href="/admin/training" selected={$page.url.pathname === '/admin/training'}>
                 <svelte:fragment slot="lead">
@@ -80,15 +90,6 @@
                         </span>
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Users</p></span>
-            </AppRailAnchor>
-
-            <AppRailAnchor href="/admin/news"  selected={$page.url.pathname === '/admin/news'}>
-                <svelte:fragment slot="lead">
-                        <span class="material-symbols-outlined text-black dark:text-white">
-                        news
-                        </span>
-                </svelte:fragment>
-                <span><p class="text-black dark:text-white">News</p></span>
             </AppRailAnchor>
 
 

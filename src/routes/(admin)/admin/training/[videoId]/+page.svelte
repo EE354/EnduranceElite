@@ -11,14 +11,13 @@
     let editing = false;
 
     const startEdit = () => {
-        if (!editing) {
-            $editTraining.title = training.title;
-            $editTraining.description = training.description;
-            $editTraining.video = training.video;
-            $editTraining.tests = training.tests;
-            $editTraining.tests.forEach(test => test.noAnswers = test.possibleAnswers.length)
-            $editTraining.noQuestions = $editTraining.tests.length
-        }
+        $editTraining.title = training.title;
+        $editTraining.description = training.description;
+        $editTraining.video = training.video;
+        $editTraining.tests = training.tests;
+        $editTraining.tests.forEach(test => test.noAnswers = test.possibleAnswers.length)
+        $editTraining.noQuestions = $editTraining.tests.length
+
         editing = !editing;
     }
 
@@ -71,6 +70,7 @@
                     return async ({ update }) => {
                         await update();
                         $editTraining = [];
+                        startEdit();
                     };
                 }}>
 

@@ -41,6 +41,10 @@ export const  actions = {
                     correctAnswer: q.correctAnswer
                 }})
             });
+            return {
+                status: 200,
+                message: "Training updated successfully",
+            }
         } catch (e) {
             console.log(e)
             return fail(300, e.message);
@@ -53,6 +57,10 @@ export const  actions = {
 
         try {
             const training = await Training.findByIdAndDelete(params.videoId);
+            return {
+                status: 200,
+                message: "Training deleted successfully",
+            }
         } catch (e) {
             return fail(300, e.message);
         }
@@ -80,6 +88,11 @@ export const  actions = {
                         }
                     }
                 });
+            }
+
+            return {
+                status: 200,
+                message: "Users enrolled into training successfully",
             }
         } catch (e) {
             console.log(e)

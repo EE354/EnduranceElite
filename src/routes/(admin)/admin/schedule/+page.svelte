@@ -75,7 +75,7 @@
                             <td>{i + start + 1}</td>
                             <td>{new Date(schedule.timeStamp.start).toString()}</td>
                             <td>{new Date(schedule.timeStamp.start).toString()}</td>
-                            <td>{schedule.employee}</td>
+                            <td>{schedule.employee.name.first} {schedule.employee.name.last}</td>
                             <td>{schedule.description}</td>
 
                             <td class="table-cell-fit"><button on:click={() => {EditSchedule(schedule)}}><span class="material-symbols-outlined">edit</span></button></td>
