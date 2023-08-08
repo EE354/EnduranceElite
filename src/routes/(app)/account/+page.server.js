@@ -8,36 +8,10 @@ export const load = async ({locals, url}) => {
 
     protectRoute(url, user, session, 1);
 
-
-    // TEMP DUMMY DATA
-    const groups = [
-        {
-            id: 1,
-            name: "Group 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non sapien quam. Nam in porta augue, non ultricies erat. Nam vitae mauris quis magna tempus pretium. Curabitur quis augue tincidunt, euismod urna auctor, tincidunt massa. Phasellus nec sollicitudin turpis. Ut egestas arcu rutrum, molestie velit at, tempor ligula. Pellentesque quis efficitur nisl. Morbi tempus, libero ac ultrices fermentum, libero mauris tincidunt turpis, placerat eleifend nunc nisi nec ligula. Donec luctus ut nulla vel auctor. Sed eget nunc tellus.",
-        },
-        {
-            id: 2,
-            name: "Group 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non sapien quam. Nam in porta augue, non ultricies erat. Nam vitae mauris quis magna tempus pretium. Curabitur quis augue tincidunt, euismod urna auctor, tincidunt massa. Phasellus nec sollicitudin turpis. Ut egestas arcu rutrum, molestie velit at, tempor ligula. Pellentesque quis efficitur nisl. Morbi tempus, libero ac ultrices fermentum, libero mauris tincidunt turpis, placerat eleifend nunc nisi nec ligula. Donec luctus ut nulla vel auctor. Sed eget nunc tellus.",
-        },
-        {
-            id: 3,
-            name: "Group 3",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non sapien quam. Nam in porta augue, non ultricies erat. Nam vitae mauris quis magna tempus pretium. Curabitur quis augue tincidunt, euismod urna auctor, tincidunt massa. Phasellus nec sollicitudin turpis. Ut egestas arcu rutrum, molestie velit at, tempor ligula. Pellentesque quis efficitur nisl. Morbi tempus, libero ac ultrices fermentum, libero mauris tincidunt turpis, placerat eleifend nunc nisi nec ligula. Donec luctus ut nulla vel auctor. Sed eget nunc tellus.",
-        },
-        {
-            id: 4,
-            name: "Group 4",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non sapien quam. Nam in porta augue, non ultricies erat. Nam vitae mauris quis magna tempus pretium. Curabitur quis augue tincidunt, euismod urna auctor, tincidunt massa. Phasellus nec sollicitudin turpis. Ut egestas arcu rutrum, molestie velit at, tempor ligula. Pellentesque quis efficitur nisl. Morbi tempus, libero ac ultrices fermentum, libero mauris tincidunt turpis, placerat eleifend nunc nisi nec ligula. Donec luctus ut nulla vel auctor. Sed eget nunc tellus.",
-        },
-    ]
-
     return {
         status: 200,
         user: user,
         session: session,
-        groups
     }
 
 }

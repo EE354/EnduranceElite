@@ -35,7 +35,7 @@
             <input type="text" name="location" class="input input-bordered" placeholder="Event Location">
         </label>
 
-        <button class="btn variant-filled-secondary ">Add Event</button>
+        <button class="btn variant-filled-primary ">Add Event</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>

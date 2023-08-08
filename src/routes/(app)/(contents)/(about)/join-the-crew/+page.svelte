@@ -7,9 +7,9 @@
     <div class="container flex flex-wrap justify-center">
         <!-- Main Contents -->
 
-        <div class="rounded-xl primary-500 h-fit shadow-2xl m-4 p-8">
+        <div class="rounded-xl primary-500 h-fit shadow-2xl mt-8 p-8 pb-12">
             <!-- Step Block -->
-            <span class="text-center  pr-4">
+            <span class="text-center pr-4">
                 <h2>Now Hiring:</h2>
             </span>
             <div class="md:flex">

@@ -2,10 +2,10 @@
     export let data;
 </script>
 <main>
-    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-8 lg:flex gap-4">
+    <div class="container text-center bg-primary-500 dark:bg-primary-900 p-8 pt-4 lg:flex gap-4">
         <!-- Header Block -->
         <div>
-            <h1 class="text-primary-200 text-shadow italic">BIRTHDAY PARTIES</h1>
+            <h1 class="text-primary-200 text-shadow italic">TUITION & POLICIES</h1>
             <p>All classes and teams at Endurance Elite Gymnastics & Dance are paid monthly. Automatic payment through our Parent Portal is mandatory for registration into a class. Your child will be continuously enrolled and monthly tuition will be charged to your card on file. You never have to worry about pre-registration or losing your spot again!</p>
             <br />
             <p>Listed below you will find our tuition rates, discounts & policies. Any addition class taken by a student or their immediate family member will receive a 10% discount on EVERY addition class (not just one!) Discounts are also available for Military families.</p>

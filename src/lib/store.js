@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { localStorageStore } from '@skeletonlabs/skeleton';
 
 export const editEvent = writable({
     name: "",
@@ -39,3 +40,10 @@ export const adminUser = writable({});
 export const questions = writable([]);
 
 export const editUser = writable({});
+
+export const enabledFilters = localStorageStore("enabledFilters", {
+    public: true,
+    group: true,
+    schedule: true,
+    admin: false,
+});

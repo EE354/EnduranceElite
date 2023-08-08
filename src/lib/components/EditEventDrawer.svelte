@@ -39,7 +39,7 @@
             <input type="text" name="location" bind:value={$editEvent.location} class="input input-bordered" placeholder="Event Location">
         </label>
 
-        <button class="btn variant-filled-secondary" type="submit">Update Event</button>
+        <button class="btn variant-filled-primary" type="submit">Update Event</button>
         <input class="btn variant-filled-error" type="reset" value="Clear">
     </form>
 </main>

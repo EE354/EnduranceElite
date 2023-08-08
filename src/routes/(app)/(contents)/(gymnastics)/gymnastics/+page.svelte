@@ -1,5 +1,5 @@
 <main>
-	<div class="container text-center bg-primary-500 dark:bg-primary-900 p-8 mb-4 lg:flex gap-4">
+	<div class="container text-center bg-primary-500 dark:bg-primary-900 p-8 pt-4 mb-4 lg:flex gap-4">
 		<!-- Header Block -->
 		<div>
 			<h1 class="text-primary-200 text-shadow italic">GYMNASTICS</h1>

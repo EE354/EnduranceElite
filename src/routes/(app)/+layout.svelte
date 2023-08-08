@@ -5,7 +5,9 @@
 		AppRailAnchor,
 		AppRailTile,
 		AppShell,
-		LightSwitch
+		LightSwitch,
+		TabGroup,
+		TabAnchor
 	} from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
 
@@ -15,7 +17,6 @@
 	import { popup } from '@skeletonlabs/skeleton';
 
 	import { drawerStore } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
 
 	export let data;	// For loading external data
 	let screenSize;		// For mobile menu display
@@ -70,8 +71,13 @@
 	// Account Pop Up Config
 	const accountPopup = {
 		event: 'click',
-		target: 'popupClick',
-		placement: 'top'
+		target: 'accountPopup',
+		placement: 'bottom',
+		middleware: {
+			offset: {
+				crossAxis: -32
+			}
+		}
 	};
 
 	// Mobile Menu Drawer Store Config
@@ -94,8 +100,7 @@
 				<a href="/" class="inline-flex h-1/3">
 					<img
 						alt="Endurance Elite Logo"
-						class="badge w-2/12 p-0"
-						style="max-height: 160%"
+						class="badge w-1/6 p-0"
 						src="$lib/Logos/ee-icon.png"
 					/>
 					<h4 class="ml-4 inline-block mt-4 align-middle">Endurance Elite</h4>
@@ -118,15 +123,15 @@
 							<div class="grid grid-cols-3 gap-4">
 								{#each parentNavItems as { label, href, childNavItems }}
 									<div class={span}>
-										<a {href} class="hover:underline">{label}</a>
+										<div class="max-w-[8rem]">
+											<a {href} class="hover:underline">{label}</a>
+										</div>
 										{#if childNavItems != null}
 											<hr />
 											{#each childNavItems as { label, href }}
 												<a {href} class="hover:underline">{label}</a>
 												<br />
 											{/each}
-										{:else}
-											<br />
 										{/if}
 									</div>
 								{/each}
@@ -135,10 +140,9 @@
 					{/each}
 
 					{#if data.roleId >= 1}
-						<button use:popup={accountPopup}>Account</button>
-						<div class="card p-4" data-popup="popupClick">
-							<a href="/account">Dashboard</a>
-							<a href="/settings">Settings</a>
+						<button class="w-20 h-12" use:popup={accountPopup}>Account</button>
+						<div class="neutral dark:bg-[#31465B] border-[1px] text-center p-4 shadow-2xl" data-popup="accountPopup">
+							<a  href="/settings">Settings</a>
 							<hr class="rounded" />
 							<form method="POST" action="/account?/logout" class="mt-4">
 								<button type="submit" value="" class="btn variant-filled-error">Logout</button>
@@ -150,15 +154,36 @@
 					{/if}
 				{:else}
 					<button name="Expand for Navigation Menu" on:click={openMobileMenu}>
+						<!-- (August 6th, 2023) bars from FontAwesome. https://fontawesome.com/icons/bars?f=classic&s=solid -->
 						<i class="fa-solid fa-bars fa-xl" />
 					</button>
+
+					<button class="w-8 h-12" use:popup={accountPopup}>
+						<!-- (August 6th, 2023) user from FontAwesome. https://fontawesome.com/icons/user?f=classic&s=regular -->
+						<i class="fa-regular fa-user fa-lg"></i>
+					</button>
+					<div class="neutral dark:bg-[#31465B] border-[1px] text-center p-4 shadow-2xl" data-popup="accountPopup">
+						{#if data.roleId >= 1}
+								<a  href="/settings">Settings</a>
+								<hr class="rounded" />
+								<form method="POST" action="/account?/logout" class="mt-4">
+									<button type="submit" value="" class="btn variant-filled-error">Logout</button>
+								</form>
+						{:else}
+							<a class="nav-link text-black dark:text-white" href="/signup">Sign Up</a>
+							<hr class="rounded"/>
+							<a class="btn bg-primary-600 dark:bg-primary-900 mt-4" href="/login">Log In</a>
+						{/if}
+					</div>
 				{/if}
+
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 
 	<!-- Left Rail -->
 	<svelte:fragment slot="sidebarLeft">
+		{#if screenSize > 800}
 		<AppRail>
 			<AppRailAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
 				<svelte:fragment slot="lead">
@@ -168,17 +193,7 @@
 			</AppRailAnchor>
 
 			{#if data.roleId >= 2}
-				<!--
-				{#if data.roleId >= 2}
-					<AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
-						<svelte:fragment slot="lead">
-							<span class="material-symbols-outlined text-black dark:text-white"> schedule </span>
-						</svelte:fragment>
-						<span><p class="text-black dark:text-white">Schedule</p></span>
-					</AppRailAnchor>
-				{/if}-->
-
-				<AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
+				<AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/training')}>
 					<svelte:fragment slot="lead">
 						<span class="material-symbols-outlined text-black dark:text-white"> weight </span>
 					</svelte:fragment>
@@ -204,8 +219,56 @@
 				<AppRailTile><div class="p-4"><LightSwitch /></div></AppRailTile>
 			</svelte:fragment>
 		</AppRail>
+		{/if}
 	</svelte:fragment>
 
 	<slot />
+
+	<!-- Left Rail -->
+	<svelte:fragment slot="footer">
+		{#if screenSize <= 800}
+			<TabGroup 
+			justify="justify-center"
+			active="variant-filled-primary"
+			hover="hover:variant-soft-primary"
+			flex="flex-1 lg:flex-none"
+			rounded=""
+			border=""
+			class="bg-surface-100-800-token w-full"
+			>
+				<TabAnchor href="/calendar" selected={$page.url.pathname.startsWith('/calendar')}>
+					<svelte:fragment slot="lead">
+						<span class="material-symbols-outlined text-black dark:text-white"> event </span>
+					</svelte:fragment>
+					<span><p class="text-black dark:text-white">Calendar</p></span>
+				</TabAnchor>
+				
+				{#if data.roleId >= 2}
+					<TabAnchor href="/training" selected={$page.url.pathname.startsWith('/training')}>
+						<svelte:fragment slot="lead">
+							<span class="material-symbols-outlined text-black dark:text-white"> weight </span>
+						</svelte:fragment>
+						<span><p class="text-black dark:text-white">Training</p></span>
+					</TabAnchor>
+				{/if}
+
+				<TabAnchor href="https://app.iclasspro.com/portal/enduranceelite">
+					<svelte:fragment slot="lead">
+						<span class="material-symbols-outlined"> captive_portal </span>
+					</svelte:fragment>
+					<span><p class="text-black dark:text-white">Parent Portal</p></span>
+				</TabAnchor>
+
+				<!-- {#if data.roleId >= 3}
+					<TabAnchor href="/admin" selected={$page.url.pathname.startsWith('/admin')}>
+						<svelte:fragment slot="lead">
+							<span class="material-symbols-outlined"> shield_person </span>
+						</svelte:fragment>
+						<span><p class="text-black dark:text-white">Admin</p></span>
+					</TabAnchor>
+				{/if} -->
+			</TabGroup>
+		{/if}
+	</svelte:fragment>
 </AppShell>
 

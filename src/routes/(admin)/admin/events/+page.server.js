@@ -13,7 +13,7 @@ export const load = async ({url, locals}) => {
 }
 
 export const actions = {
-    create: async ({locals, request}) => {
+    create: async ({locals, request, url}) => {
         const {session, user} = await locals.auth.validateUser();
 
         protectRoute(url, user, session, 3)

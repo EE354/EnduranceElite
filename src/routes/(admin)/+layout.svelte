@@ -1,9 +1,19 @@
 <script>
     import {AppBar, AppRail, AppRailAnchor, AppRailTile, AppShell, LightSwitch} from "@skeletonlabs/skeleton";
     import {page} from "$app/stores";
+    import {popup} from '@skeletonlabs/skeleton';
 
-    export let data;
-
+	// Account Pop Up Config
+	const accountPopup = {
+		event: 'click',
+		target: 'accountPopup',
+		placement: 'bottom',
+		middleware: {
+			offset: {
+				crossAxis: -32
+			}
+		}
+	};
 </script>
 
 <AppShell>
@@ -12,10 +22,21 @@
 
             <svelte:fragment slot="lead">
                     <a href="/admin" class="flex flex-row">
-                        <img alt="Endurance Elite Logo" class="w-1/4 p-0" style="max-height: 160%" src="$lib/Logos/EE Logo.png"/>
+                        <img alt="Endurance Elite Logo" class="badge w-[6.8rem] p-0" src="$lib/Logos/EE Logo.png"/>
                         <p class="pl-4 pt-3 dark:text-white text-black text-xl font-">Admin Dashboard</p>
                     </a>
 
+            </svelte:fragment>
+
+            <svelte:fragment slot="trail">
+                <button class="w-20 h-12" use:popup={accountPopup}>Account</button>
+                    <div class="neutral dark:bg-[#31465B] border-[1px] text-center p-4 shadow-2xl" data-popup="accountPopup">
+                        <a  href="/settings">Settings</a>
+                        <hr class="rounded" />
+                        <form method="POST" action="/account?/logout" class="mt-4">
+                            <button type="submit" value="" class="btn variant-filled-error">Logout</button>
+                        </form>
+                    </div>
             </svelte:fragment>
 
         </AppBar>
@@ -32,16 +53,6 @@
                     </span>
                 </svelte:fragment>
                 <span><p class="text-black dark:text-white">Events</p></span>
-            </AppRailAnchor>
-
-            <!-- Schedule Button -->
-            <AppRailAnchor href="/admin/schedule" selected={$page.url.pathname === '/admin/schedule'}>
-                <svelte:fragment slot="lead">
-                    <span class="material-symbols-outlined text-black dark:text-white">
-                    schedule
-                    </span>
-                </svelte:fragment>
-                <span><p class="text-black dark:text-white">Schedule</p></span>
             </AppRailAnchor>
 
             <!-- Training Button -->

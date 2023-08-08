@@ -69,7 +69,7 @@ export const navItems = [
             { label: "After School", href: "/after-school" },
             { label: "Field Trips", href: "/field-trips" },
             { label: "Gymnastics/ Ninja Summer Showcase 2023", href: "/gymnastics-ninja-showcase" },
-            { label: "Dance/ Cheer Summer Showcase 2023", href: "/cheer-dance-showcase" },
+            { label: "Dance/ Cheer Summer Showcase 2023", href: "/dance-cheer-showcase" },
         ],
     },
     {
