@@ -55,16 +55,6 @@
                 <span><p class="text-black dark:text-white">Events</p></span>
             </AppRailAnchor>
 
-            <!-- Schedule Button -->
-            <AppRailAnchor href="/admin/schedule" selected={$page.url.pathname === '/admin/schedule'}>
-                <svelte:fragment slot="lead">
-                    <span class="material-symbols-outlined text-black dark:text-white">
-                    schedule
-                    </span>
-                </svelte:fragment>
-                <span><p class="text-black dark:text-white">Schedule</p></span>
-            </AppRailAnchor>
-
             <!-- Training Button -->
             <AppRailAnchor href="/admin/training" selected={$page.url.pathname === '/admin/training'}>
                 <svelte:fragment slot="lead">

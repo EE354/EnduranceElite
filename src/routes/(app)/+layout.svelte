@@ -193,15 +193,6 @@
 			</AppRailAnchor>
 
 			{#if data.roleId >= 2}
-				{#if data.roleId >= 2}
-					<AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
-						<svelte:fragment slot="lead">
-							<span class="material-symbols-outlined text-black dark:text-white"> schedule </span>
-						</svelte:fragment>
-						<span><p class="text-black dark:text-white">Schedule</p></span>
-					</AppRailAnchor>
-				{/if}
-
 				<AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/training')}>
 					<svelte:fragment slot="lead">
 						<span class="material-symbols-outlined text-black dark:text-white"> weight </span>
@@ -253,12 +244,6 @@
 				</TabAnchor>
 				
 				{#if data.roleId >= 2}
-					<TabAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
-						<svelte:fragment slot="lead">
-							<span class="material-symbols-outlined text-black dark:text-white"> schedule </span>
-						</svelte:fragment>
-						<span><p class="text-black dark:text-white">Schedule</p></span>
-					</TabAnchor>
 					<TabAnchor href="/training" selected={$page.url.pathname.startsWith('/training')}>
 						<svelte:fragment slot="lead">
 							<span class="material-symbols-outlined text-black dark:text-white"> weight </span>
