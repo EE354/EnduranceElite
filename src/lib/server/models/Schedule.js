@@ -16,6 +16,10 @@ export const Schedule =(() => {
                             required: true
                         }
                     },
+                    name: {
+                        type: String,
+                        required: true
+                    },
                     employee: {
                         type: String,
                         required: true

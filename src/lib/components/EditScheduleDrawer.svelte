@@ -1,8 +1,41 @@
 <script>
     import {enhance} from "$app/forms";
-    import {drawerStore} from "@skeletonlabs/skeleton";
     import DateInput from "../../routes/(admin)/admin/events/DateInput.svelte";
     import {editSchedule} from "../store.js";
+    import {Autocomplete, drawerStore, popup} from "@skeletonlabs/skeleton";
+    import {page} from "$app/stores";
+
+
+    let popupSettings = {
+        event: 'focus-click',
+        target: 'popupAutocomplete',
+        placement: 'bottom',
+    };
+
+    let employeeInput = "";
+    $: employees = data.employees.map(employee => {
+        return {
+            label: employee.name.first + ' ' + employee.name.last,
+            keyword: employee.name.first + ' ' + employee.name.last,
+            value: employee._id,
+            meta: {
+                employee
+            }
+        }
+    })
+
+    const onInputChipSelect = (event) => {
+        const employee = event.detail.meta.employee;
+        enrolledEmployees = [...enrolledEmployees, employee];
+        inputChip = '';
+    }
+    const removeChip = ({detail}) => {
+        enrolledEmployees = enrolledEmployees.filter((employee, index) => {
+            return index !== detail.chipIndex;
+        });
+        enrolledEmployees = [...enrolledEmployees];
+    }
+
 </script>
 
 <main class="grid place-items-center">
@@ -27,7 +60,21 @@
         </div>
         <label class="my-4">
             <h5>Employee Name</h5>
-            <input type="text" name="employee" class="input input-bordered" bind:value={$editSchedule.employee} placeholder="Employee Name">
+            <input
+                    class="input autocomplete"
+                    type="search"
+                    name="autocomplete-search"
+                    bind:value={employeeInput}
+                    placeholder="Search..."
+                    use:popup={popupSettings}
+            />
+            <div data-popup="popupAutocomplete">
+                <Autocomplete
+                        bind:input={employeeInput}
+                        options={flavorOptions}
+                        on:selection={onPopupDemoSelect}
+                />
+            </div>
         </label>
         <label class="my-4">
             <h5>Description</h5>

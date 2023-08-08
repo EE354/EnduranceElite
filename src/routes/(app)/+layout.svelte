@@ -168,6 +168,7 @@
 			</AppRailAnchor>
 
 			{#if data.roleId >= 2}
+				<!--
 				{#if data.roleId >= 2}
 					<AppRailAnchor href="/schedule" selected={$page.url.pathname.startsWith('/schedule')}>
 						<svelte:fragment slot="lead">
@@ -175,7 +176,7 @@
 						</svelte:fragment>
 						<span><p class="text-black dark:text-white">Schedule</p></span>
 					</AppRailAnchor>
-				{/if}
+				{/if}-->
 
 				<AppRailAnchor href="/training" selected={$page.url.pathname.startsWith('/chat')}>
 					<svelte:fragment slot="lead">

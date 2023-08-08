@@ -1,4 +1,7 @@
 <script>
+    import { pwaInfo } from 'virtual:pwa-info'
+
+    $: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''
     //Import css files
     // Your selected Skeleton theme:
     import '../theme.postcss';
@@ -57,7 +60,9 @@
     };
 </script>
 
+
 <svelte:head>
+    {@html webManifest}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </svelte:head>
 
@@ -85,4 +90,10 @@
 
 </Drawer>
 
-<slot />
+<main>
+    <slot />
+</main>
+
+{#await import('$lib/ReloadPrompt.svelte') then { default: ReloadPrompt}}
+    <ReloadPrompt />
+{/await}
