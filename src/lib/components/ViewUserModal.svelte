@@ -5,9 +5,18 @@
     import {enhance} from "$app/forms";
     import {modalStore} from "@skeletonlabs/skeleton";
 
-    const userTrainings = $page.data.trainings.filter(training => $editUser.training.some(userTraining => userTraining.id === training.id));
-    const userGroups = $page.data.groups.filter(group => $editUser.groups.some(userGroup => userGroup.id === group.id));
+    let userTrainings = $page.data.trainings.filter(training => {
+        return $editUser.training.some(userTrainings => {
+        return training._id === userTrainings._id;
+    })});
+    let userGroups = $page.data.groups.filter(group => $editUser.groups.some(userGroup => userGroup  === group.id));
     let editing = false;
+
+    console.log($page.data.trainings)
+    console.log($page.data.groups)
+    $: console.log($editUser)
+    $: console.log(userTrainings)
+    $: console.log(userGroups)
 
     const startEdit = () => {
         editing = !editing;
@@ -47,6 +56,7 @@
     <br />
 
     <p>Enrolled Training:</p>
+    <ul class="List-disc pl-6">
     {#each userTrainings as training}
         <p>
             {#if $editUser.training.find(t => t._id === training._id)?.completed}
@@ -61,6 +71,7 @@
     {:else}
         <p>No Training Found</p>
     {/each}
+    </ul>
     <br />
 
     <p>Groups</p>
